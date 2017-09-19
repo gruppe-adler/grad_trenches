@@ -1,5 +1,5 @@
 #define MAINPREFIX z
-#define PREFIX grad
+#define PREFIX grad_trench
 #define COMPONENT trenches
 #define COMPONENT_BEAUTIFIED Trenches
 

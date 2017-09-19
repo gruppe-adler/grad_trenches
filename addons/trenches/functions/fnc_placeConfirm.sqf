@@ -18,31 +18,31 @@
 params ["_unit"];
 
 // enable running again
-[_unit, "forceWalk", "ACE_Trenches", false] call EFUNC(common,statusEffect_set);
+[_unit, "forceWalk", "ACE_Trenches", false] call ace_common_fnc_statusEffect_set;
 
 // remove dig pfh
-[GVAR(digPFH)] call CBA_fnc_removePerFrameHandler;
-GVAR(digPFH) = -1;
+[ace_trenches_digPFH] call CBA_fnc_removePerFrameHandler;
+ace_trenches_digPFH = -1;
 
 // remove mouse button actions
-call EFUNC(interaction,hideMouseHint);
+call ace_interaction_fnc_hideMouseHint;
 
-[_unit, "DefaultAction", _unit getVariable [QGVAR(Dig), -1]] call EFUNC(common,removeActionEventHandler);
+[_unit, "DefaultAction", _unit getVariable ["ace_trenches_Dig", -1]] call ace_common_fnc_removeActionEventHandler;
 
-_unit setVariable [QGVAR(isPlacing), false, true];
+_unit setVariable ["ace_trenches_isPlacing", false, true];
 
 // Delete placement dummy and create real trench
 params ["_unit"];
-if (isNull GVAR(trench)) exitWith {};
+if (isNull ace_trenches_trench) exitWith {};
 
-deleteVehicle GVAR(trench);
-private _trench = createVehicle [GVAR(trenchClass), [0, 0, 0], [], 0, "NONE"];
+private _trenchTexture = (getObjectTextures ace_trenches_trench) select 0;
+deleteVehicle ace_trenches_trench;
+private _trench = createVehicle [ace_trenches_trenchClass, [0, 0, 0], [], 0, "NONE"];
+_trench setObjectTextureGlobal [0,_trenchTexture];
 
-GVAR(trenchPlacementData) params ["_dx", "_dy", "_offset"];
-private _basePos = GVAR(trenchPos);
-private _angle = (GVAR(digDirection) + getDir _unit);
-
-_trench setObjectTextureGlobal [0, GVAR(tenchTexture)];
+ace_trenches_trenchPlacementData params ["_dx", "_dy", "_offset"];
+private _basePos = ace_trenches_trenchPos;
+private _angle = (ace_trenches_digDirection + getDir _unit);
 
 // _v1 forward from the player, _v2 to the right, _v3 points away from the ground
 private _v3 = surfaceNormal _basePos;
@@ -68,8 +68,10 @@ for [{_ix = -_dx/2},{_ix <= _dx/2},{_ix = _ix + _dx/3}] do {
 };
 _basePos set [2, (_basePos select 2) + _minzoffset + _offset];
 private _vecDirAndUp = [_v1, _v3];
-GVAR(trench) = objNull;
+ace_trenches_trench = objNull;
 
-_trench setVariable [QGVAR(placeData), [_basePos, _vecDirAndUp], true];
+diag_log str([_basePos, _vecDirAndUp]);
 
-[_trench, _unit] call FUNC(continueDiggingTrench);
+_trench setVariable ["ace_trenches_placeData", [_basePos, _vecDirAndUp], true];
+
+[_trench, _unit] call ace_trenches_fnc_continueDiggingTrench;
