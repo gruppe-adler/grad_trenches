@@ -60,27 +60,27 @@ class CfgWorldsTextures {
 	
 	class Shapur_Baf {
 		surfaceTextureBasePath = "ca\shapur_baf\Data\";
-		filePrefix = "baf_asfalt_co.paa";
+		filePrefix = "_co.paa";
 	};
 	
 	class Takistan {
 		surfaceTextureBasePath = "ca\takistan\Data\";
-		filePrefix = "tk_beton_co.paa";
+		filePrefix = "_co.paa";
 		
 	};
 	
 	class Mountains_ACR {
 		surfaceTextureBasePath = "ca\afghan\Data\";
-        filePrefix = "tk_asfalt_co.paa";
+        filePrefix = "_co.paa";
 	};
 	
 	class utes {
 		surfaceTextureBasePath = "ca\utes\Data\";
-		filePrefix = "ut_skala_detail_co.paa";
+		filePrefix = "detail_co.paa";
 	};
 	
 	class Zagrabad {
 		surfaceTextureBasePath = "ca\zargabad\Data\";
-		filePrefix = "zr_beton_co.paa";
+		filePrefix = "_co.paa";
 	};
 };
