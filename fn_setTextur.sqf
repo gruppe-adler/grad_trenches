@@ -1,4 +1,4 @@
-if(!isServer) exithWith {};
+if(!isServer) exitWith {};
 params ["_obj"];
 _config = configfile >> "CfgWorlds" >> (worldName) >> "OutsideTerrain" >> "Layers" >> "Layer0" >> "texture";
 
@@ -15,7 +15,7 @@ if (isText _config) then {
 		if (isNil "_obj") exitWith {[_handle] call CBA_fnc_removePerFrameHandler;};
 		
 		_surface = surfaceType (getPos _obj);
-		_oldSurface = _obj getVaraible ["Grad_Trench_Surface",""];
+		_oldSurface = _obj getVariable ["Grad_Trench_Surface",""];
 		if (_surface != _oldSurface) then {
 			
 			_splitArray = _surface splitString "";
