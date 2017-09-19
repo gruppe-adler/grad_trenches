@@ -47,3 +47,5 @@ if(_surfaceType find "#Gdt" == -1) then {
 };
 
 [_surfaceType, _basePath] call _getTexturePath;
+
+diag_log format ["Grad_Trenches: Position: %1, SurfaceType: %2, Texture: %3", (position ACE_player), _surfaceType, _defaultTexture];
