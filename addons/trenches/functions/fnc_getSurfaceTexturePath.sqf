@@ -1,6 +1,7 @@
 /*
     @Authors
         Christian 'chris5790' Klemm
+		Marc 'Salbei' Heinze
     @Arguments
         ?
     @Return Value
@@ -12,9 +13,18 @@
 
 private _defaultTexture = "z\ace\addons\apl\data\zr_plevel_co.paa";
 
-if(!isText (configFile >> "CfgWorldsTextures" >> worldName >> "surfaceTextureBasePath")) exitWith { _defaultTexture };
+if(!isText (configFile >> "CfgWorldsTextures" >> worldName >> "surfaceTextureBasePath")) exitWith {_defaultTexture};
 
 private _surfaceType = surfaceType (position ACE_player);
+
+if (isArray (configFile >> "CfgWorldsTextures" >> worldName >> "pathList")) then {
+	{
+		if ((_x select 0) == _surfaceType) exitWith {_defaultTexture = _x select 1;};
+	}forEach (getArray (configFile >> "CfgWorldsTextures" >> worldName >> "pathList"));
+};
+
+if !(_defaultTexture == "z\ace\addons\apl\data\zr_plevel_co.paa") exitWith {_defaultTexture};
+
 private _getTexturePath = {
     params["_surfaceType", "_basePath"];
 

@@ -37,7 +37,7 @@ class CfgWorldsTextures {
 
     class Desert_E {
         surfaceTextureBasePath = "ca\Desert_E\data\";
-        filePrefix = "detail_co.paa";
+        filePrefix = "co.paa";
     };
 
     class prei_khmaoch_luong {
@@ -45,12 +45,13 @@ class CfgWorldsTextures {
     };
 
     class ProvingGrounds_PMC {
-        surfaceTextureBasePath = "CA\ProvingGrounds_PMC\Data\";
-        filePrefix = "detail_co.paa";
+        surfaceTextureBasePath = "ca\provinggrounds_pmc\Data\";
+        filePrefix = "co.paa";
     };
 	
 	class Sara {
 		surfaceTextureBasePath = "ca\sara\Data\";
+		filePrefix = "detail_co.paa";
 	};
 	class Sara_dbe1 : Sara {};
 	
@@ -60,26 +61,27 @@ class CfgWorldsTextures {
 	
 	class Shapur_Baf {
 		surfaceTextureBasePath = "ca\shapur_baf\Data\";
-		filePrefix = "_co.paa";
+		filePrefix = "co.paa";
 	};
 	
 	class Takistan {
 		surfaceTextureBasePath = "ca\takistan\Data\";
-		filePrefix = "_co.paa";
+		filePrefix = "co.paa";
 		
 	};
 	
 	class Mountains_ACR {
 		surfaceTextureBasePath = "ca\afghan\Data\";
-        filePrefix = "_co.paa";
+        filePrefix = "co.paa";
 	};
 	
 	class utes {
 		surfaceTextureBasePath = "ca\utes\Data\";
 		filePrefix = "detail_co.paa";
+		pathList = [["default", "a3\map_data\default.paa"]];
 	};
 	
-	class Zagrabad {
+	class Zargabad {
 		surfaceTextureBasePath = "ca\zargabad\Data\";
 		filePrefix = "_co.paa";
 	};
