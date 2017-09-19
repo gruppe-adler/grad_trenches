@@ -42,7 +42,7 @@ GVAR(trenchPlacementData) params ["_dx", "_dy", "_offset"];
 private _basePos = GVAR(trenchPos);
 private _angle = (GVAR(digDirection) + getDir _unit);
 
-_trench setObjectTextureGlobal [0, GVAR(texture)];
+_trench setObjectTextureGlobal [0, GVAR(tenchTexture)];
 
 // _v1 forward from the player, _v2 to the right, _v3 points away from the ground
 private _v3 = surfaceNormal _basePos;
