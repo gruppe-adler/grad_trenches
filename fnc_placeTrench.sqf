@@ -15,6 +15,7 @@
  * Public: No
  */
 #include "script_component.hpp"
+#include "cfgIsland.hpp"
 
 params ["_unit", "_trenchClass"];
 
@@ -38,8 +39,6 @@ GVAR(trench) = _trench;
 [QEGVAR(common,enableSimulationGlobal), [_trench, false]] call CBA_fnc_serverEvent;
 
 GVAR(digDirection) = 0;
-
-_path = [] call FUNC(getPath);
 
 // pfh that runs while the dig is in progress
 GVAR(digPFH) = [{
