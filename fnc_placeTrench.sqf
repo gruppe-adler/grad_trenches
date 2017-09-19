@@ -103,9 +103,10 @@ GVAR(digPFH) = [{
 		};
 			
 		_file = _splitArray joinString "";
-		_texture = _path + "\" + _file + ".paa";
+		_texture = format ["%1\%2.paa",_path,_file];
 			
 		GVAR(trench) setObjectTextureGlobal [0, _texture];
+		GVAR(trenchtexture) = _texture;
 		GVAR(trenchSurface) = _surface;
 	};
 	
