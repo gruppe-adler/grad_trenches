@@ -98,8 +98,7 @@ class CfgWorldsTextures {
 		filePrefix = "detail_co.paa";
 		class Surfaces {
 			class Default {
-				surfaceTextureBasePath = "a3\map_data\default.paa";
-				filePrefix = "detail_co.paa";
+				texturePath = "a3\map_data\default.paa";
 			};			
 		};
 	};
