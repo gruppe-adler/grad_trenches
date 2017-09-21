@@ -23,10 +23,9 @@ private _getTexturePath = {
     // remove leading #
     private _parsedSurfaceType = _surfaceType select [1, count _surfaceType];
     // check for overridden surface paths
-    private _localCfg = configFile >> "CfgWorldsTextures" >> worldName;
-    if(isClass (_localCfg >> "Surfaces" >> _parsedSurfaceType)) then {
-        _basePath = getText(_localCfg >> _parsedSurfaceType >> "surfaceTextureBasePath");
-        _filePrefix = getText(_localCfg >> _parsedSurfaceType >> "filePrefix");
+    private _overrideCfg = configFile >> "CfgWorldsTextures" >> worldName >> "Surfaces" >> _parsedSurfaceType >> "texturePath";
+    if(isText (_overrideCfg)) exitWith {
+        getText(_overrideCfg)
     };
     // get config file wildcard
     private _fileWildcard = getText(configfile >> "CfgSurfaces" >> _parsedSurfaceType >> "files");
