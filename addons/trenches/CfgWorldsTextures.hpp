@@ -6,14 +6,12 @@ class CfgWorldsTextures {
 
     class Altis: Default {
         surfaceTextureBasePath = "a3\map_data\";
-		
     };
     class Stratis: Altis {};
     class Malden: Altis {};
 	class VR: Altis {};
-	class Tanoa {
+	class Tanoa : Altis{
 		surfaceTextureBasePath = "A3\Map_Data_Exp\";
-		filePrefix = ".paa";
 	};
 
     class lythium: Default {
@@ -98,7 +96,7 @@ class CfgWorldsTextures {
 		filePrefix = "detail_co.paa";
 		class Surfaces {
 			class Default {
-				texturePath = "a3\map_data\default.paa";
+				texturePath = "a3\map_data\gdt_beach_co.paa";
 			};			
 		};
 	};
