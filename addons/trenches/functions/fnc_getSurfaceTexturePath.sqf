@@ -24,7 +24,7 @@ private _getTexturePath = {
     private _parsedSurfaceType = _surfaceType select [1, count _surfaceType];
     // check for overridden surface paths
     private _localCfg = configFile >> "CfgWorldsTextures" >> worldName;
-    if(isClass (_localCfg >> _parsedSurfaceType)) then {
+    if(isClass (_localCfg >> "Surfaces" >> _parsedSurfaceType)) then {
         _basePath = getText(_localCfg >> _parsedSurfaceType >> "surfaceTextureBasePath");
         _filePrefix = getText(_localCfg >> _parsedSurfaceType >> "filePrefix");
     };
