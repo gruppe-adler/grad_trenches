@@ -9,12 +9,16 @@ class CfgWorldsTextures {
 		
     };
     class Stratis: Altis {};
-    class Tanoa: Altis {};
     class Malden: Altis {};
 	class VR: Altis {};
+	class Tanoa {
+		surfaceTextureBasePath = "A3\Map_Data_Exp\";
+		filePrefix = ".paa";
+	};
 
     class lythium: Default {
         surfaceTextureBasePath = "GBR\lythium\data\";
+		filePrefix = ".paa";
     };
 
     // Bukovina
@@ -53,7 +57,7 @@ class CfgWorldsTextures {
 
     class prei_khmaoch_luong {
         surfaceTextureBasePath = "A3\Map_Data_Exp\";
-		
+		filePrefix = ".paa";		
     };
 
     class ProvingGrounds_PMC {
@@ -71,39 +75,36 @@ class CfgWorldsTextures {
 	
 	class SaraLite {
 		surfaceTextureBasePath = "ca\saralite\Data\";
-		
+		filePrefix = ".paa";		
 	};
 	
 	class Shapur_Baf {
 		surfaceTextureBasePath = "ca\shapur_baf\Data\";
 		filePrefix = "co.paa";
-		
 	};
 	
 	class Takistan {
 		surfaceTextureBasePath = "ca\takistan\Data\";
 		filePrefix = "co.paa";
-		
-		
 	};
 	
 	class Mountains_ACR {
 		surfaceTextureBasePath = "ca\afghan\Data\";
         filePrefix = "co.paa";
-		
 	};
 	
 	class utes {
 		surfaceTextureBasePath = "ca\utes\Data\";
 		filePrefix = "detail_co.paa";
-		surfaceList[] = {"#Default"};
-		pathList[] = {"a3\map_data\default.paa"};
-		
+		class Surfaces {
+			class Default {
+				pathList = "a3\map_data\default.paa";
+			};			
+		};
 	};
 	
 	class Zargabad {
 		surfaceTextureBasePath = "ca\zargabad\Data\";
 		filePrefix = "_co.paa";
-		
 	};
 };

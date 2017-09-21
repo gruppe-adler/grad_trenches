@@ -17,12 +17,12 @@ if(!isText (configFile >> "CfgWorldsTextures" >> worldName >> "surfaceTextureBas
 
 private _surfaceType = surfaceType (position ACE_player);
 
-private _cfg = (configFile >> "CfgWorldsTextures" >> worldName >> "pathList");
-if (isArray _cfg) then {
+private _cfg = configFile >> "CfgWorldsTextures" >> worldName >> "Surfaces";
+if (isArray (_cfg) && isArray (_cfg >> _surfaceType)) then {
 		private _surfaceArray = (getArray _cfg);
 		if ( _surfaceType in _surfaceArray) then {
 			
-			_defaultTexture = (getArray (configFile >> "CfgWorldsTextures" >> worldName >> "pathList")) select (_surfaceArray find _parsedSurfaceType);
+			_defaultTexture = (getArray (configFile >> "CfgWorldsTextures" >> worldName >> "pathList")) select (_surfaceArray find _surfaceType);
 		};
 };
 
