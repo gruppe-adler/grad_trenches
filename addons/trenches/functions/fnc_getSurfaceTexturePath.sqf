@@ -17,10 +17,13 @@ if(!isText (configFile >> "CfgWorldsTextures" >> worldName >> "surfaceTextureBas
 
 private _surfaceType = surfaceType (position ACE_player);
 
-if (isArray (configFile >> "CfgWorldsTextures" >> worldName >> "pathList")) then {
-	{
-		if ((_x select 0) == _surfaceType) exitWith {_defaultTexture = _x select 1;};
-	}forEach (getArray (configFile >> "CfgWorldsTextures" >> worldName >> "pathList"));
+private _cfg = (configFile >> "CfgWorldsTextures" >> worldName >> "pathList");
+if (isArray _cfg) then {
+		private _surfaceArray = (getArray _cfg);
+		if ( _surfaceType in _surfaceArray) then {
+			
+			_defaultTexture = (getArray (configFile >> "CfgWorldsTextures" >> worldName >> "pathList")) select (_surfaceArray find _parsedSurfaceType);
+		};
 };
 
 if !(_defaultTexture == "z\ace\addons\apl\data\zr_plevel_co.paa") exitWith {_defaultTexture};
@@ -46,6 +49,7 @@ if(_surfaceType find "#Gdt" == -1) then {
     _basePath = getText (configFile >> "CfgWorldsTextures" >> worldName >> "surfaceTextureBasePath")
 };
 
-[_surfaceType, _basePath] call _getTexturePath;
+_defaultTexture = [_surfaceType, _basePath] call _getTexturePath;
 
-diag_log format ["Grad_Trenches: Position: %1, SurfaceType: %2, Texture: %3", (position ACE_player), _surfaceType, _defaultTexture];
+diag_log format ["Grad_Trenches: Position: %1,WorldName: %2 ,SurfaceType: %3, Texture: %4", (position ACE_player), worldName ,_surfaceType, _defaultTexture];
+_defaultTexture;
