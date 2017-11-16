@@ -16,7 +16,7 @@ class CfgWorldsTextures {
 
     class lythium: Default {
         surfaceTextureBasePath = "GBR\lythium\data\";
-		filePrefix = ".paa";
+		filePrefix = "co.paa";
     };
 
     // Bukovina
