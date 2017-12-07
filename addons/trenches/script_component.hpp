@@ -15,4 +15,6 @@
     #define DEBUG_SETTINGS DEBUG_SETTINGS_TRENCHES
 #endif
 
+#define CAMOUFLAGE_DURATION 5
+
 #include "\z\ace\addons\main\script_macros.hpp"
