@@ -1,0 +1,13 @@
+name = "GRAD Trenches";
+author = "Gruppe Adler";
+picture = "Adler.paa";
+actionName = "Website";
+action = "https://github.com/gruppe-adler/grad_trenches/releases";
+description = "Gruppe Adler Trenches";
+logo = "Adler.paa";
+logoOver = "Adler.paa";
+tooltip = "Gruppe Adler Trenches";
+overview = "GRAD Trenches adds the ground texture to the ACE Trenches.";
+overviewPicture = "Adler.paa";
+overviewText = "";
+overviewFootnote = "";
