@@ -36,7 +36,7 @@ class CfgWorldsTextures {
     };
 
     //Chernarus Summer
-	  class Chernarus_Summer: Chernarus {
+      class Chernarus_Summer: Chernarus {
         camouflageObjects[] = {"ca\plants2\clutter\c_weed3.p3d"};
     };
 
@@ -74,7 +74,7 @@ class CfgWorldsTextures {
     //Prei Khmaoch Luong
     class prei_khmaoch_luong {
         surfaceTextureBasePath = "A3\Map_Data_Exp\";
-	    filePrefix = ".paa";
+        filePrefix = ".paa";
         camouflageObjects[] = {"a3\vegetation_f_exp\clutter\grass\c_Grass_Tropic.p3d"};
     };
 
@@ -86,7 +86,7 @@ class CfgWorldsTextures {
     };
 
     //Sahrani
-	class Sara {
+    class Sara {
         surfaceTextureBasePath = "ca\sara\Data\";
         filePrefix = "_detail_co.paa";
         camouflageObjects[] = {"ca\hotfix\ClutterFix_Grass_Long.p3d"};
@@ -173,14 +173,14 @@ class CfgWorldsTextures {
                 texturePath = "ca\sara\Data\travajih_mco.paa";
             };
         };
-	};
+    };
 
   //Shapur
-	class Shapur_Baf {
-		surfaceTextureBasePath = "ca\shapur_baf\Data\";
-		filePrefix = "co.paa";
+    class Shapur_Baf {
+        surfaceTextureBasePath = "ca\shapur_baf\Data\";
+        filePrefix = "co.paa";
         camouflageObjects[] = {"ca\plants_E\Clutter\c_Brush_Hard_EP1.p3d"};
-	};
+    };
 
     //Southern Sahrani
     class SaraLite {
@@ -188,15 +188,15 @@ class CfgWorldsTextures {
         filePrefix = "_detail_co.paa";
         camouflageObjects[] = {"ca\plants\clutter_grass_general.p3d"};
         class Surfaces {
-     		class leslist_detail_nohq {
-     			texturePath = "ca\saralite\Data\leslist_detail_nohq.paa";
-     		};
+             class leslist_detail_nohq {
+                 texturePath = "ca\saralite\Data\leslist_detail_nohq.paa";
+             };
             class leslist_mco {
-     			texturePath = "ca\saralite\Data\leslist_mco.paa";
-     		};
+                 texturePath = "ca\saralite\Data\leslist_mco.paa";
+             };
             class mesto_detail_nohq {
-     			texturePath = "ca\saralite\Data\mesto_detail_nohq.paa";
-     		};
+                 texturePath = "ca\saralite\Data\mesto_detail_nohq.paa";
+             };
             class mesto_mco {
                 texturePath = "ca\saralite\Data\mesto_mco.paa";
             };
@@ -236,18 +236,18 @@ class CfgWorldsTextures {
     };
 
     //Takistan
-	class Takistan {
-		surfaceTextureBasePath = "ca\takistan\Data\";
-		filePrefix = "co.paa";
+    class Takistan {
+        surfaceTextureBasePath = "ca\takistan\Data\";
+        filePrefix = "co.paa";
         camouflageObjects[] = {"ca\plants_E\Clutter\c_Brush_Soft_EP1.p3d"};
-	};
+    };
 
     //Takistan Mountains
-	class Mountains_ACR {
-		surfaceTextureBasePath = "ca\afghan\Data\";
+    class Mountains_ACR {
+        surfaceTextureBasePath = "ca\afghan\Data\";
         filePrefix = "co.paa";
         camouflageObjects[] = {"ca\plants_E\Clutter\c_GrassGreen_EP1.p3d"};
-	};
+    };
 
     //Tanoa
     class Tanoa : Altis{
@@ -261,21 +261,21 @@ class CfgWorldsTextures {
     };
 
     //Utes
-	class utes {
-		surfaceTextureBasePath = "ca\utes\Data\";
-		filePrefix = ".paa";
+    class utes {
+        surfaceTextureBasePath = "ca\utes\Data\";
+        filePrefix = ".paa";
         camouflageObjects[] = {"CUP\Terrains\cup_terrains_worlds\Clutter\c_GrassCrookedForest.p3d"};
-		class Surfaces {
-			class Default {
-				texturePath = "a3\map_data\gdt_beach_co.paa";
-			};
-		};
-	};
+        class Surfaces {
+            class Default {
+                texturePath = "a3\map_data\gdt_beach_co.paa";
+            };
+        };
+    };
 
     //Zargabad
-	class Zargabad {
-		surfaceTextureBasePath = "ca\zargabad\Data\";
-		filePrefix = "co.paa";
+    class Zargabad {
+        surfaceTextureBasePath = "ca\zargabad\Data\";
+        filePrefix = "co.paa";
         camouflageObjects[] = {"ca\plants_E\Clutter\c_Brush_Soft_EP1.p3d"};
-	};
+    };
 };
