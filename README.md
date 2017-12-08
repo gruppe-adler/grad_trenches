@@ -11,28 +11,28 @@ More images can be found [here](https://github.com/gruppe-adler/grad_trenches#mo
 - Camouflage your trench with small bushes
 
 ### Supported maps
-- Altis
-- Stratis
-- Malden
-- Tanoa
-- Lythium
-- Bukovina
-- Bystrica4
-- Chernarus
-- Celle
-- Porto
-- Desert
-- Rahmadi
-- Prei Khmaoch Luong
-- Proving Grounds
-- Sahrani
-- United Sahrani
-- Southern Sahrani
-- Shapur
-- Takistan
-- Takistan Mountains
-- Utes
-- Zargabad
+- [Altis](https://arma3.com/features/terrain)
+- [Stratis](https://arma3.com/features/terrain)
+- [Malden](https://arma3.com/dlc/malden)
+- [Tanoa](https://arma3.com/apex)
+- [Lythium](https://forums.bistudio.com/forums/topic/144930-wip-ffaa-v6-spanish-army-mod/)
+- [Bukovina](http://cup-arma3.org/terrains)
+- [Bystrica](http://cup-arma3.org/terrains)
+- [Chernarus](http://cup-arma3.org/terrains)
+- [Celle](http://www.armaholic.com/page.php?id=16585)
+- [Porto](http://cup-arma3.org/terrains)
+- [Desert](http://cup-arma3.org/terrains)
+- [Rahmadi](http://cup-arma3.org/terrains)
+- [Prei Khmaoch Luong](https://forums.bistudio.com/forums/topic/206159-prei-khmaoch-luong/)
+- [Proving Grounds](http://cup-arma3.org/terrains)
+- [Sahrani](http://cup-arma3.org/terrains)
+- [United Sahrani](http://cup-arma3.org/terrains)
+- [Southern Sahrani](http://cup-arma3.org/terrains)
+- [Shapur](http://cup-arma3.org/terrains)
+- [Takistan](http://cup-arma3.org/terrains)
+- [Takistan Mountains](http://cup-arma3.org/terrains)
+- [Utes](http://cup-arma3.org/terrains)
+- [Zargabad](http://cup-arma3.org/terrains)
 
 ## Requirements
 - Arma 3 1.76 or later
