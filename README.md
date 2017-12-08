@@ -35,7 +35,7 @@ More images can be found [here](https://github.com/gruppe-adler/grad_trenches#mo
 - Zargabad
 
 ## Requirements
-- Arma3 1.76 or later
+- Arma 3 1.76 or later
 - [ACE3](https://github.com/acemod/ACE3) 3.11.0 or later
 - [CBA_A3](https://github.com/CBATeam/CBA_A3) 3.4.1 or later
 
@@ -45,7 +45,12 @@ Downloads can be found under [Releases](https://github.com/gruppe-adler/grad_tre
 Currently this mod is shipped **without server key**. Please open an [issue](https://github.com/gruppe-adler/grad_trenches/issues/new) if you need one.
 
 #### Steam Workshop
-Support for Steam Worshop is currently in progress, sorry for that.
+Support for Steam Workshop is currently in progress, sorry for that.
+
+## License
+This project is licensed under **GPLv2**. All trench models are taken from [ACE3](https://github.com/acemod/ACE3) and slightly modified to fit our requirements.  
+We kindly request to not upload this mod to Armaholic or other mirrors for Arma 3 mods.  
+Plus, we ask you to not create mirrors in Steam Workshop. However, it is ok to include this mod into your mod pack on Steam Workshop.
 
 ## Bugs and Contributions
 Contributions and bug reports are well appreciated. Feel free to fork this project or to create issues.
@@ -89,15 +94,10 @@ class CfgWorldsTextures {
 The texture name for `gdt seabed` is missing the extension `_co.paa`. Therefore we have to set this as the file prefix leaving out the leading underscore.
 ```cpp
 class CfgWorldsTextures {
-
     class Altis {
-
         surfaceTextureBasePath = "A3\Map_Data\";
-
         filePrefix = "co.paa";
-
     };
-
 };
 ```
 
