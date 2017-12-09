@@ -90,7 +90,7 @@ ace_trenches_digPFH = [{
 
     if(surfaceType (position ACE_player) != GVAR(currentSurface)) then {
         GVAR(currentSurface) = surfaceType (position ACE_player);
-        _trench setObjectTextureGlobal [0, [] call FUNC(getSurfaceTexturePath)];
+        _trench setObjectTextureGlobal [0, [_trench] call FUNC(getSurfaceTexturePath)];
     };
 }, 0, [_unit, _trench]] call CBA_fnc_addPerFrameHandler;
 
@@ -100,7 +100,7 @@ ace_trenches_digPFH = [{
 _unit setVariable ["ace_trenches_Dig", [
     _unit, "DefaultAction",
     {ace_trenches_digPFH != -1},
-    {[_this select 0] call FUNC(placeConfirm)}
+    {[_this select 0] call ace_trenches_fnc_placeConfirm}
 ] call ace_common_fnc_addActionEventHandler];
 
 _unit setVariable ["ace_trenches_isPlacing", true, true];

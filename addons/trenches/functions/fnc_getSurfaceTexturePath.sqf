@@ -10,12 +10,16 @@
         ?
 */
 #include "script_component.hpp"
+params [
+    ["_object", objnull, [objNull]]
+];
+if(isNull _object) exitWith {};
 
 private _defaultTexture = "z\ace\addons\apl\data\zr_plevel_co.paa";
 
 if(!isText (configFile >> "CfgWorldsTextures" >> worldName >> "surfaceTextureBasePath")) exitWith {_defaultTexture};
 
-private _surfaceType = surfaceType (position ACE_player);
+private _surfaceType = surfaceType (position _object);
 
 private _getTexturePath = {
     params["_surfaceType", "_basePath", "_filePrefix"];
@@ -44,7 +48,7 @@ if((_surfaceType find "#Gdt" == -1) || {worldName == "Tanoa"}) then {
 };
 
 private _result = [_surfaceType, _basePath, getText(configFile >> "CfgWorldsTextures" >> worldName >> "filePrefix")] call _getTexturePath;
-diag_log format ["Grad_Trenches: Position: %1,WorldName: %2 ,SurfaceType: %3, Texture: %4", (position ACE_player), worldName ,_surfaceType, _defaultTexture];
+diag_log format ["GRAD_Trenches: Position: %1, WorldName: %2, SurfaceType: %3, Texture: %4", (position _object), worldName ,_surfaceType, _defaultTexture];
 
 if(isNil {_result}) then {
     _result = _defaultTexture;
