@@ -90,7 +90,7 @@ ace_trenches_digPFH = [{
 
     if(surfaceType (position ACE_player) != GVAR(currentSurface)) then {
         GVAR(currentSurface) = surfaceType (position ACE_player);
-        _trench setObjectTextureGlobal [0, [] call FUNC(getSurfaceTexturePath)];
+        _trench setObjectTextureGlobal [0, [_trench] call FUNC(getSurfaceTexturePath)];
     };
 }, 0, [_unit, _trench]] call CBA_fnc_addPerFrameHandler;
 

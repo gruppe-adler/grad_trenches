@@ -36,6 +36,8 @@ class CfgVehicles {
     class ACE_envelope_small: BagFence_base_F {
         model = QPATHTOF(data\ace_envelope_small4.p3d);
 		hiddenSelections[] = {"velka"};
+        editorCategory = "EdCat_Things";
+        editorSubcategory = "EdSubcat_Military";
 
         class CamouflagePositions {
             center[] = {0, 1.3, 0};
@@ -47,6 +49,8 @@ class CfgVehicles {
     class ACE_envelope_big: BagFence_base_F {
         model = QPATHTOF(data\ace_envelope_big4.p3d);
 		hiddenSelections[] = {"velka"};
+        editorCategory = "EdCat_Things";
+        editorSubcategory = "EdSubcat_Military";
 
         class CamouflagePositions {
             center[] = {-0.4, 0.4, 0.2};

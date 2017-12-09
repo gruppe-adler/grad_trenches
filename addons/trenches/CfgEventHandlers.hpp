@@ -2,6 +2,16 @@
         deleted = QUOTE(if (isServer) then {_this call FUNC(deleteCamouflage)}); \
     }
 
+#define TRENCH_INIT class GVAR(trenchInit) { \
+        init = QUOTE(_this call FUNC(initTrench)); \
+    }
+
+class Extended_PreStart_EventHandlers {
+    class ADDON {
+        init = QUOTE(call COMPILE_FILE(XEH_preStart));
+    };
+};
+
 class Extended_PreInit_EventHandlers {
     class ADDON {
         init = QUOTE(call COMPILE_FILE(XEH_preInit));
@@ -15,5 +25,15 @@ class Extended_Deleted_EventHandlers {
 
     class ACE_envelope_big {
         CAMOUFLAGE_DELETE;
+    };
+};
+
+class Extended_Init_EventHandlers {
+    class ACE_envelope_small {
+        TRENCH_INIT;
+    };
+
+    class ACE_envelope_big {
+        TRENCH_INIT;
     };
 };
