@@ -14,17 +14,13 @@ params [
 ];
 
 if (is3DEN) exitWith {
-    _object addEventHandler ["Dragged3DEN", {
-        params["_object"];
-        private _texture = [_object] call FUNC(getSurfaceTexturePath);
-        _object setObjectTexture [0, _texture];
-    }];
-
-    private _texture = [_object] call FUNC(getSurfaceTexturePath);
-    _object setObjectTexture [0, _texture];
+    [_object] call FUNC(initTrench3DEN);
 };
 
 if (local _object) then {
-    private _texture = [_object] call FUNC(getSurfaceTexturePath);
-    _object setObjectTextureGlobal [0, _texture];
+    // Has to be spawned to ensure MP compatibility
+    _object spawn {
+        private _texture = [_this] call FUNC(getSurfaceTexturePath);
+        _this setObjectTextureGlobal [0, _texture];
+    };
 };

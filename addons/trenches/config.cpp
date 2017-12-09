@@ -15,3 +15,4 @@ class CfgPatches {
 #include <CfgEventHandlers.hpp>
 #include <CfgVehicles.hpp>
 #include <CfgWorldsTextures.hpp>
+#include <Cfg3DEN.hpp>

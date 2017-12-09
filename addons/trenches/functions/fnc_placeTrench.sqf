@@ -100,7 +100,7 @@ ace_trenches_digPFH = [{
 _unit setVariable ["ace_trenches_Dig", [
     _unit, "DefaultAction",
     {ace_trenches_digPFH != -1},
-    {[_this select 0] call ace_trenches_fnc_placeConfirm}
+    {[_this select 0] call FUNC(placeConfirm)}
 ] call ace_common_fnc_addActionEventHandler];
 
 _unit setVariable ["ace_trenches_isPlacing", true, true];
