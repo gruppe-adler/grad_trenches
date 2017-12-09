@@ -73,7 +73,7 @@ prefix = "grad_trenches"
 pbo_name_prefix = "grad_trenches_"
 signature_blacklist = []
 importantFiles = ["mod.cpp", "LICENSE", "logo_grad_ca.paa"]
-versionFiles = ["README.md", "mod.cpp"]
+versionFiles = []
 
 ciBuild = False # Used for CI builds
 
