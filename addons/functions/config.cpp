@@ -3,16 +3,16 @@
 class CfgPatches {
     class ADDON {
         name = QUOTE(ADDON);
-        units[] = {"ACE_envelope_small","ACE_envelope_big"};
+        units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"ace_trenches"};
-        authors[] = {};
+        requiredAddons[] = { QMAINPATCH, "ace_trenches" };
+        authors[] = { "Salbei", "chris579" };
         VERSION_CONFIG;
     };
 };
 
+#include <Cfg3DEN.hpp>
 #include <CfgEventHandlers.hpp>
 #include <CfgVehicles.hpp>
 #include <CfgWorldsTextures.hpp>
-#include <Cfg3DEN.hpp>

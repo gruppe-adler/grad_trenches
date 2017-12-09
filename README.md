@@ -37,12 +37,11 @@ More images can be found [here](https://github.com/gruppe-adler/grad_trenches#mo
 ## Requirements
 - Arma 3 1.76 or later
 - [ACE3](https://github.com/acemod/ACE3) 3.11.0 or later
-- [CBA_A3](https://github.com/CBATeam/CBA_A3) 3.4.1 or later
+- [CBA_A3](https://github.com/CBATeam/CBA_A3) 3.5.0 or later
 
 ## Downloads
 #### GitHub
 Downloads can be found under [Releases](https://github.com/gruppe-adler/grad_trenches/releases).  
-Currently this mod is shipped **without server key**. Please open an [issue](https://github.com/gruppe-adler/grad_trenches/issues/new) if you need one.
 
 #### Steam Workshop
 Support for Steam Workshop is currently in progress, sorry for that.
