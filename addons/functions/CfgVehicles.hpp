@@ -28,6 +28,9 @@ class CfgVehicles {
                 class ace_trenches_digEnvelopeBig {
                     statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'ACE_envelope_big')])] call CBA_fnc_execNextFrame);
                 };
+                class grad_trenches_digEnvelopeGigant: ace_trenches_digEnvelopeBig {
+                    statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'GRAD_envelope_gigant')])] call CBA_fnc_execNextFrame);
+                };
             };
         };
     };
@@ -45,6 +48,19 @@ class CfgVehicles {
         TRENCHES_ACTIONS;
     };
     class ACE_envelope_big: BagFence_base_F {
+        editorCategory = "EdCat_Things";
+        editorSubcategory = "EdSubcat_Military";
+
+        class CamouflagePositions {
+            center[] = {-0.4, 0.4, 0.2};
+            left[] = {-1.75, 0.2, 0.2};
+            right[] = {1.75, 0.2, 0.2};
+        };
+
+        TRENCHES_ACTIONS;
+    };
+
+    class GRAD_envelope_gigant: BagFence_base_F {
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";
 
