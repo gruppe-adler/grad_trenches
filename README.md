@@ -10,6 +10,9 @@
     <a href="https://github.com/gruppe-adler/grad_trenches/releases">
         <img src="https://img.shields.io/github/downloads/gruppe-adler/grad_trenches/total.svg?style=flat-square&label=Downloads" alt="GRAD Trenches Downloads">
     </a>
+    <a href="http://steamcommunity.com/sharedfiles/filedetails/?id=1224892496">
+        <img src="https://img.shields.io/badge/Steam-Workshop-lightgrey.svg?style=flat-square" alt="Steam Workshop">
+    </a>
     <a href="https://forums.bistudio.com/forums/topic/212208-grad-trenches/">
         <img src="https://img.shields.io/badge/BIF-Thread-lightgrey.svg?style=flat-square" alt="BIF Thread">
     </a>
