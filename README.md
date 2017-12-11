@@ -2,7 +2,7 @@
 
 <p align="center">
     <a href="https://github.com/gruppe-adler/grad_trenches/releases/latest">
-        <img src="https://img.shields.io/github/release/gruppe-adler/grad_trenches.svg" alt="GRAD Trenches Version">
+        <img src="https://img.shields.io/github/release/gruppe-adler/grad_trenches.svg?style=flat-square" alt="GRAD Trenches Version">
     </a>
     <a href="https://github.com/gruppe-adler/grad_trenches/issues">
         <img src="https://img.shields.io/github/issues-raw/gruppe-adler/grad_trenches.svg?style=flat-square&label=Issues" alt="GRAD Trenches Issues">
