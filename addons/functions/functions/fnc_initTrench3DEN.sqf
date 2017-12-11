@@ -13,8 +13,6 @@ params [
     ["_object", objnull, [objNull]]
 ];
 
-diag_log "1";
-
 _initTrench = {
     params["_object"];
     _object addEventHandler ["Dragged3DEN", {
@@ -32,7 +30,7 @@ if (isNull _object) then {
     {
         diag_log str(_x);
         diag_log typeOf _x;
-        if(typeOf _x in ["ACE_envelope_small", "ACE_envelope_big"]) then {
+        if(typeOf _x in ["ACE_envelope_small", "ACE_envelope_big", "GRAD_envelope_gigant"]) then {
             [_x] call _initTrench;
         };
     } forEach (all3DENEntities select 0);
