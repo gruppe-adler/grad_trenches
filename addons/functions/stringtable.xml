@@ -17,5 +17,17 @@
             <English>Removing camouflage...</English>
             <German>Entferne Tarnung...</German>
         </Key>
+        <Key ID="STR_GRAD_Trenches_functions_EnvelopeGigantName">
+            <English>Envelope - Gigant</English>
+            <German>Rund - Sehr groß</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_EnevlopeGigantDescription">
+            <English>Giant Personal Trench</English>
+            <German>Sehr großer Schützengraben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_DigEnvelopeGigant">
+            <English>Dig Giant Trench</English>
+            <German>Grabe sehr großen Schützengraben</German>
+        </Key>
     </Package>
 </Project>
