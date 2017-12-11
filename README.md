@@ -1,8 +1,30 @@
-# Gruppe Adler Trenches
+![Logo](https://i.imgur.com/xSd30e4.jpg)
+
+<p align="center">
+    <a href="https://github.com/gruppe-adler/grad_trenches/releases/latest">
+        <img src="https://img.shields.io/github/release/gruppe-adler/grad_trenches.svg" alt="GRAD Trenches Version">
+    </a>
+    <a href="https://github.com/gruppe-adler/grad_trenches/issues">
+        <img src="https://img.shields.io/github/issues-raw/gruppe-adler/grad_trenches.svg?style=flat-square&label=Issues" alt="GRAD Trenches Issues">
+    </a>
+    <a href="https://github.com/gruppe-adler/grad_trenches/releases">
+        <img src="https://img.shields.io/github/downloads/gruppe-adler/grad_trenches/total.svg?style=flat-square&label=Downloads" alt="GRAD Trenches Downloads">
+    </a>
+    <a href="https://forums.bistudio.com/forums/topic/212208-grad-trenches/">
+        <img src="https://img.shields.io/badge/BIF-Thread-lightgrey.svg?style=flat-square" alt="BIF Thread">
+    </a>
+    <a href="https://github.com/gruppe-adler/grad_trenches/blob/master/LICENSE">
+        <img src="https://img.shields.io/badge/License-GPLv2-red.svg?style=flat-square" alt="GRAD Trenches License">
+    </a>
+</p>
+
+<p align="center">
+    <sup><strong>Visit Gruppe Adler on <a href="https://www.gruppe-adler.de/">our Website</a> | <a 
+    href="https://www.youtube.com/user/gruppeadler">YouTube</a> | <a href="https://twitter.com/Gruppe_Adler">Twitter</a></strong></sup>
+</p>
 
 This mod adds textures to ACE trenches based on the current ground texture. When placing a trench you can already see a preview how the trench will look like when placing it. Players can also camouflage their trenches with small bushes.
 
-![a.jpg](https://i.imgur.com/vUGCXHy.jpg)  
 More images can be found [here](https://github.com/gruppe-adler/grad_trenches#more-images).
 
 ## Features
@@ -47,7 +69,7 @@ Downloads can be found under [Releases](https://github.com/gruppe-adler/grad_tre
 Support for Steam Workshop is currently in progress, sorry for that.
 
 ## License
-This project is licensed under **GPLv2**. All trench models are taken from [ACE3](https://github.com/acemod/ACE3) and slightly modified to fit our requirements.  
+This project is licensed under **GPLv2**.  
 We kindly request to not upload this mod to Armaholic or other mirrors for Arma 3 mods.  
 Plus, we ask you to not create mirrors in Steam Workshop. However, it is ok to include this mod into your mod pack on Steam Workshop.
 
@@ -117,5 +139,9 @@ class utes {
 In this case `Default` is the ground texture name.
 
 ## More images
+![a.jpg](https://i.imgur.com/vUGCXHy.jpg)  
 ![b.jpg](https://i.imgur.com/ahEza0A.jpg)
-
+![Altis](https://i.imgur.com/nPBdWCO.jpg)
+![Chernarus](https://i.imgur.com/bi5TbBQ.jpg)
+![Takistan](https://i.imgur.com/FwTX2yA.jpg)
+![Summer Chernarus](https://i.imgur.com/lYi5EOx.jpg)
