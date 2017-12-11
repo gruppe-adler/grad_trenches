@@ -1,4 +1,4 @@
-![Logo](https://i.imgur.com/xSd30e4.jpg)
+![Logo](data/logo.png)
 
 <p align="center">
     <a href="https://github.com/gruppe-adler/grad_trenches/releases/latest">
@@ -144,7 +144,7 @@ In this case `Default` is the ground texture name.
 ## More images
 ![a.jpg](https://i.imgur.com/vUGCXHy.jpg)  
 ![b.jpg](https://i.imgur.com/ahEza0A.jpg)
-![Altis](https://i.imgur.com/nPBdWCO.jpg)
-![Chernarus](https://i.imgur.com/bi5TbBQ.jpg)
-![Takistan](https://i.imgur.com/FwTX2yA.jpg)
-![Summer Chernarus](https://i.imgur.com/lYi5EOx.jpg)
+![Altis](data/previews/altis.png)
+![Chernarus](data/previews/chernarus.png)
+![Takistan](data/previews/takistan.png)
+![Summer Chernarus](data/previews/chernarus_summer.png)
