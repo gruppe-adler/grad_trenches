@@ -48,10 +48,11 @@ if((_surfaceType find "#Gdt" == -1) || {worldName == "Tanoa"}) then {
 };
 
 private _result = [_surfaceType, _basePath, getText(configFile >> "CfgWorldsTextures" >> worldName >> "filePrefix")] call _getTexturePath;
-diag_log format ["GRAD_Trenches: Position: %1, WorldName: %2, SurfaceType: %3, Texture: %4", (position _object), worldName ,_surfaceType, _defaultTexture];
 
 if(isNil {_result}) then {
     _result = _defaultTexture;
 };
+
+diag_log format ["GRAD_Trenches: Position: %1, WorldName: %2, SurfaceType: %3, Texture: %4", (position _object), worldName ,_surfaceType, _result];
 
 _result;
