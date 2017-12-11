@@ -14,4 +14,3 @@
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
 *.psd filter=lfs diff=lfs merge=lfs -text
-*.png filter=lfs diff=lfs merge=lfs -text
