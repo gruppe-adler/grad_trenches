@@ -5,16 +5,16 @@
         <img src="https://img.shields.io/github/release/gruppe-adler/grad_trenches.svg" alt="GRAD Trenches Version">
     </a>
     <a href="https://github.com/gruppe-adler/grad_trenches/issues">
-        <img src="https://img.shields.io/github/issues-raw/gruppe-adler/grad_trenches.svg?style=flat-square&label=Issues" alt="ACE3 Issues">
+        <img src="https://img.shields.io/github/issues-raw/gruppe-adler/grad_trenches.svg?style=flat-square&label=Issues" alt="GRAD Trenches Issues">
     </a>
     <a href="https://github.com/gruppe-adler/grad_trenches/releases">
-        <img src="https://img.shields.io/github/downloads/gruppe-adler/grad_trenches/total.svg?style=flat-square&label=Downloads" alt="ACE3 Downloads">
+        <img src="https://img.shields.io/github/downloads/gruppe-adler/grad_trenches/total.svg?style=flat-square&label=Downloads" alt="GRAD Trenches Downloads">
     </a>
     <a href="https://forums.bistudio.com/forums/topic/212208-grad-trenches/">
         <img src="https://img.shields.io/badge/BIF-Thread-lightgrey.svg?style=flat-square" alt="BIF Thread">
     </a>
     <a href="https://github.com/gruppe-adler/grad_trenches/blob/master/LICENSE">
-        <img src="https://img.shields.io/badge/License-GPLv2-red.svg?style=flat-square" alt="ACE3 License">
+        <img src="https://img.shields.io/badge/License-GPLv2-red.svg?style=flat-square" alt="GRAD Trenches License">
     </a>
 </p>
 
@@ -69,7 +69,7 @@ Downloads can be found under [Releases](https://github.com/gruppe-adler/grad_tre
 Support for Steam Workshop is currently in progress, sorry for that.
 
 ## License
-This project is licensed under **GPLv2**. All trench models are taken from [ACE3](https://github.com/acemod/ACE3) and slightly modified to fit our requirements.  
+This project is licensed under **GPLv2**.  
 We kindly request to not upload this mod to Armaholic or other mirrors for Arma 3 mods.  
 Plus, we ask you to not create mirrors in Steam Workshop. However, it is ok to include this mod into your mod pack on Steam Workshop.
 
