@@ -1,5 +1,3 @@
-class CBA_Extended_EventHandlers;
-
 #define TRENCHES_ACTIONS class ACE_Actions { \
         class ACE_MainActions { \
             class GVAR(placeCamouflage) { \
@@ -29,6 +27,7 @@ class CfgVehicles {
                     statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'ACE_envelope_big')])] call CBA_fnc_execNextFrame);
                 };
                 class grad_trenches_digEnvelopeGigant: ace_trenches_digEnvelopeBig {
+                    displayName = CSTRING(DigEnvelopeGigant);
                     statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'GRAD_envelope_gigant')])] call CBA_fnc_execNextFrame);
                 };
             };
@@ -60,7 +59,17 @@ class CfgVehicles {
         TRENCHES_ACTIONS;
     };
 
-    class GRAD_envelope_gigant: BagFence_base_F {
+    class GRAD_envelope_gigant: ACE_envelope_big {
+        author = QAUTHOR;
+        displayName = CSTRING(EnvelopeGigantName);
+        descriptionShort = CSTRING(EnevlopeGigantDescription);
+        scope = 2;
+        ace_trenches_diggingDuration = 30;
+        ace_trenches_removalDuration = 20;
+        ace_trenches_noGeoClass = QUOTE(GRAD_envelope_gigant_noGeo);
+        ace_trenches_placementData[] = {6,1.1,0.20};
+        ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
+
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";
 
