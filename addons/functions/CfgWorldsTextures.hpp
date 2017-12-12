@@ -73,8 +73,8 @@ class CfgWorldsTextures {
 
     //Prei Khmaoch Luong
     class prei_khmaoch_luong {
-        surfaceTextureBasePath = "A3\Map_Data_Exp\";
-        filePrefix = ".paa";
+        surfaceTextureBasePath = "\blud_prei_art\data\ground\";
+        filePrefix = "co.paa";
         camouflageObjects[] = {"a3\vegetation_f_exp\clutter\grass\c_Grass_Tropic.p3d"};
     };
 
