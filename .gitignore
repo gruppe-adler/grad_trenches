@@ -1,4 +1,5 @@
-addons/*.pbo
 release/**
 
-tools/make.cache
+*.pbo
+*.cache
+*.biprivatekey
