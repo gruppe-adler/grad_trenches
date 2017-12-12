@@ -34,6 +34,7 @@ More images can be found [here](https://github.com/gruppe-adler/grad_trenches#mo
 - Supported on 22 Maps (Vanilla, CUP and more)
 - Custom map config, add your own map if it is not supported
 - Camouflage your trench with small bushes
+- One additional huge trench to place
 
 ### Supported maps
 - [Altis](https://arma3.com/features/terrain)
@@ -144,7 +145,8 @@ In this case `Default` is the ground texture name.
 ## More images
 ![a.jpg](https://i.imgur.com/vUGCXHy.jpg)  
 ![b.jpg](https://i.imgur.com/ahEza0A.jpg)
-![Altis](data/previews/altis.png)
-![Chernarus](data/previews/chernarus.png)
-![Takistan](data/previews/takistan.png)
-![Summer Chernarus](data/previews/chernarus_summer.png)
+![Altis](data/previews/altis_low.png)
+![Chernarus](data/previews/chernarus_low.png)
+![Takistan](data/previews/takistan_low.png)
+![Summer Chernarus](data/previews/chernarus_summer_low.png)
+[View high quality versions of this images](data/previews)
