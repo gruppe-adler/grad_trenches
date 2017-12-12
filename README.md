@@ -34,6 +34,7 @@ More images can be found [here](https://github.com/gruppe-adler/grad_trenches#mo
 - Supported on 22 Maps (Vanilla, CUP and more)
 - Custom map config, add your own map if it is not supported
 - Camouflage your trench with small bushes
+- One additional huge trench to place
 
 ### Supported maps
 - [Altis](https://arma3.com/features/terrain)
