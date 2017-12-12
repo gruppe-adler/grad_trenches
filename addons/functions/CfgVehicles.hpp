@@ -74,11 +74,10 @@ class CfgVehicles {
         editorSubcategory = "EdSubcat_Military";
 
         class CamouflagePositions {
-            center[] = {-0.4, 0.4, 0.2};
-            left[] = {-1.75, 0.2, 0.2};
-            right[] = {1.75, 0.2, 0.2};
+            left1[] = {-0.5, 0.3, 0.5};
+            left2[] = {-2.7, 0.3, 0.5};
+            right1[] = {2.7, 0.15, 0.35};
+            right2[] = {4.9, -0.5, -0.15};
         };
-
-        TRENCHES_ACTIONS;
     };
 };
