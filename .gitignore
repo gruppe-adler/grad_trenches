@@ -1,4 +1,4 @@
 addons/*.pbo
 release/**
 
-tools/make\.cache
+tools/make.cache
