@@ -1,0 +1,11 @@
+branches:
+  only:
+   - master
+   - release
+   - Development
+language: python
+python:
+- '3.5'
+script:
+- python3 tools/sqf_validator.py
+- python3 tools/config_style_checker.py
