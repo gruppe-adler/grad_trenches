@@ -41,6 +41,10 @@ class CfgVehicles {
                     displayName = CSTRING(DigEnvelopeGigant);
                     statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'GRAD_envelope_gigant')])] call CBA_fnc_execNextFrame);
                 };
+                class grad_trenches_digEnvelopeGigant: ace_trenches_digEnvelopeBig {
+                    displayName = CSTRING(DigEnvelopeGigant);
+                    statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'GRAD_envelope_vehicle')])] call CBA_fnc_execNextFrame);
+                };
             };
         };
     };
@@ -93,5 +97,26 @@ class CfgVehicles {
             right1[] = {2.7, 0.15, 0.35};
             right2[] = {4.9, -0.5, -0.15};
         };
+    };
+
+    class GRAD_envelope_vehicle: ACE_envelope_big {
+        author = QAUTHOR;
+        displayName = CSTRING(EnvelopeVehicleName);
+        descriptionShort = CSTRING(EnevlopeVehicleDescription);
+        scope = 2;
+        ace_trenches_diggingDuration = 60;
+        ace_trenches_removalDuration = 30;
+        ace_trenches_noGeoClass = QUOTE(GRAD_envelope_vehicle_noGeo);
+        ace_trenches_placementData[] = {6,1.1,0.20};
+        ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
+
+        editorCategory = "EdCat_Things";
+        editorSubcategory = "EdSubcat_Military";
+
+        class CamouflagePositions {
+                     left1[] = {-0.5, 0.3, 0.5};
+                    left2[] = {-2.7, 0.3, 0.5};
+                    right1[] = {2.7, 0.15, 0.35};
+                    right2[] = {4.9, -0.5, -0.15};};
     };
 };
