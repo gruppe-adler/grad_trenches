@@ -15,7 +15,7 @@ diag_log "Attribute value";
 diag_log str(_value);
 diag_log str(_object);
 
-if ([false, true] select _value) then {
+if (_value isEqualTo 1) then {
     diag_log "Placing camouflage";
     [_object] call FUNC(placeCamouflage);
 } else {

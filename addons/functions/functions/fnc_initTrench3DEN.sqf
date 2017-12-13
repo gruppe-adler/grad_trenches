@@ -27,6 +27,10 @@ _initTrench = {
 
     private _texture = [_object] call FUNC(getSurfaceTexturePath);
     _object setObjectTexture [0, _texture];
+
+    if (((_object get3DENAttribute QUOTE(grad_trenches_camouflageTrench)) select 0) isEqualTo 1) then {
+        [_object] call FUNC(placeCamouflage);
+    };
 };
 
 // If no object is given apply this to all trenches in 3den
