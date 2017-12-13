@@ -88,7 +88,7 @@ class CfgWorldsTextures {
     class Sara {
         surfaceTextureBasePath = "ca\sara\Data\";
         filePrefix = "_detail_co.paa";
-        camouflageObjects[] = {"ca\hotfix\ClutterFix_Grass_Long.p3d"};
+        camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d"};
         class Surfaces {
             class blato_detail_nohq {
                 texturePath = "ca\sara\Data\blato_detail_nohq.paa";
@@ -185,7 +185,7 @@ class CfgWorldsTextures {
     class SaraLite {
         surfaceTextureBasePath = "ca\saralite\Data\";
         filePrefix = "_detail_co.paa";
-        camouflageObjects[] = {"ca\plants\clutter_grass_general.p3d"};
+        camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d"};
         class Surfaces {
              class leslist_detail_nohq {
                  texturePath = "ca\saralite\Data\leslist_detail_nohq.paa";
@@ -238,14 +238,14 @@ class CfgWorldsTextures {
     class Takistan {
         surfaceTextureBasePath = "ca\takistan\Data\";
         filePrefix = "co.paa";
-        camouflageObjects[] = {"ca\plants_E\Clutter\c_Brush_Soft_EP1.p3d"};
+        camouflageObjects[] = {};
     };
 
     //Takistan Mountains
     class Mountains_ACR {
         surfaceTextureBasePath = "ca\afghan\Data\";
         filePrefix = "co.paa";
-        camouflageObjects[] = {"ca\plants_E\Clutter\c_GrassGreen_EP1.p3d"};
+        camouflageObjects[] = {};
     };
 
     //Tanoa
@@ -256,7 +256,7 @@ class CfgWorldsTextures {
 
     //United Sahrani
     class Sara_dbe1 : Sara {
-        camouflageObjects[] = {"ca\plants\clutter_grass_general.p3d"};
+        camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d"};
     };
 
     //Utes
