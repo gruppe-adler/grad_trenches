@@ -1,4 +1,4 @@
-![Logo](data/logo.png)
+[![Logo](data/logo.png)](https://github.com/gruppe-adler/grad_trenches)
 
 <p align="center">
     <a href="https://github.com/gruppe-adler/grad_trenches/releases/latest">
@@ -37,7 +37,8 @@ More images can be found [here](https://github.com/gruppe-adler/grad_trenches#mo
 - Supported on 22 Maps (Vanilla, CUP and more)
 - Custom map config, add your own map if it is not supported
 - Camouflage your trench with small bushes
-- One additional huge trench to place
+- Place trenches in 3DEN and camouflage them directly
+- New trenches to place: Giant trench where soldiers can stand behind and vehicle trenches to cover vulnerable parts
 
 ### Supported maps
 - [Altis](https://arma3.com/features/terrain)
@@ -146,10 +147,11 @@ class utes {
 In this case `Default` is the ground texture name.
 
 ## More images
+*Click on the images to see a high quality version*
 ![a.jpg](https://i.imgur.com/vUGCXHy.jpg)  
 ![b.jpg](https://i.imgur.com/ahEza0A.jpg)
-![Altis](data/previews/altis_low.png)
-![Chernarus](data/previews/chernarus_low.png)
-![Takistan](data/previews/takistan_low.png)
-![Summer Chernarus](data/previews/chernarus_summer_low.png)
-[View high quality versions of this images](data/previews)
+[![Altis](data/previews/altis_low.png)](data/previews/altis.png)
+[![Chernarus](data/previews/chernarus_low.png)](data/previews/chernarus.png)
+[![Takistan](data/previews/takistan_low.png)](data/previews/takistan.png)
+[![Summer Chernarus](data/previews/chernarus_summer_low.png)](data/previews/chernarus_summer.png)
+[![Vehicle trench](data/previews/vehicle_trench_low.png)](data/previews/vehicle_trench.png)
