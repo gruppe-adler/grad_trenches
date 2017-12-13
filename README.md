@@ -19,10 +19,13 @@
     <a href="https://github.com/gruppe-adler/grad_trenches/blob/master/LICENSE">
         <img src="https://img.shields.io/badge/License-GPLv2-red.svg?style=flat-square" alt="GRAD Trenches License">
     </a>
+    <a href="https://travis-ci.org/gruppe-adler/grad_trenches">
+        <img src="https://travis-ci.org/gruppe-adler/grad_trenches.svg?branch=master" alt="Build status">
+    </a>
 </p>
 
 <p align="center">
-    <sup><strong>Visit Gruppe Adler on <a href="https://www.gruppe-adler.de/">our Website</a> | <a 
+    <sup><strong>Visit Gruppe Adler on <a href="https://www.gruppe-adler.de/">our Website</a> | <a
     href="https://www.youtube.com/user/gruppeadler">YouTube</a> | <a href="https://twitter.com/Gruppe_Adler">Twitter</a></strong></sup>
 </p>
 
