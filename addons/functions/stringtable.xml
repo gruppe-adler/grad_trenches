@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="GRAD">
+    <Package name="trenches">
+        <Key ID="STR_grad_trenches_functions_PlaceCamouflage">
+            <English>Place camouflage</English>
+            <German>Tarnung platzieren</German>
+        </Key>
+        <Key ID="STR_grad_trenches_functions_PlaceCamouflageProgress">
+            <English>Placing camouflage...</English>
+            <German>Platziere Tarnung...</German>
+        </Key>
+        <Key ID="STR_grad_trenches_functions_RemoveCamouflage">
+            <English>Remove camouflage</English>
+            <German>Tarnung entfernen</German>
+        </Key>
+        <Key ID="STR_grad_trenches_functions_RemoveCamouflageProgress">
+            <English>Removing camouflage...</English>
+            <German>Entferne Tarnung...</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_EnvelopeGigantName">
+            <English>Envelope - Gigant</English>
+            <German>Rund - Sehr groß</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_EnevlopeGigantDescription">
+            <English>Giant Personal Trench</English>
+            <German>Sehr großer Schützengraben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_DigEnvelopeGigant">
+            <English>Dig Giant Trench</English>
+            <German>Grabe sehr großen Schützengraben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_CamouflageAttribute">
+            <English>Apply camouflage</English>
+            <German>Tarnung anbringen</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_CamouflageAttributeTooltip">
+            <English>Apply camouflage to this trench</English>
+            <German>Tarnung an diesen Graben anbringen</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_EnvelopeVehicleName">
+            <English>Envelope - Vehicle</English>
+            <German>Rund - Fahrzeug</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_EnevlopeVehicleDescription">
+            <English>Vehicle Trench</English>
+            <German>Fahrzeug Schützengraben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_DigEnvelopeVehicle">
+            <English>Dig Vehicle Trench</English>
+            <German>Grabe Fahrzeug Schützengraben</German>
+        </Key>
+    </Package>
+</Project>

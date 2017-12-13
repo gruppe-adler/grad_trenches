@@ -1,14 +1,44 @@
-# Gruppe Adler Trenches
+[![Logo](data/logo.png)](https://github.com/gruppe-adler/grad_trenches)
+
+<p align="center">
+    <a href="https://github.com/gruppe-adler/grad_trenches/releases/latest">
+        <img src="https://img.shields.io/github/release/gruppe-adler/grad_trenches.svg?style=flat-square" alt="GRAD Trenches Version">
+    </a>
+    <a href="https://github.com/gruppe-adler/grad_trenches/issues">
+        <img src="https://img.shields.io/github/issues-raw/gruppe-adler/grad_trenches.svg?style=flat-square&label=Issues" alt="GRAD Trenches Issues">
+    </a>
+    <a href="https://github.com/gruppe-adler/grad_trenches/releases">
+        <img src="https://img.shields.io/github/downloads/gruppe-adler/grad_trenches/total.svg?style=flat-square&label=Downloads" alt="GRAD Trenches Downloads">
+    </a>
+    <a href="http://steamcommunity.com/sharedfiles/filedetails/?id=1224892496">
+        <img src="https://img.shields.io/badge/Steam-Workshop-1B2838.svg?style=flat-square" alt="Steam Workshop">
+    </a>
+    <a href="https://forums.bistudio.com/forums/topic/212208-grad-trenches/">
+        <img src="https://img.shields.io/badge/BIF-Thread-lightgrey.svg?style=flat-square" alt="BIF Thread">
+    </a>
+    <a href="https://github.com/gruppe-adler/grad_trenches/blob/master/LICENSE">
+        <img src="https://img.shields.io/badge/License-GPLv2-red.svg?style=flat-square" alt="GRAD Trenches License">
+    </a>
+    <a href="https://travis-ci.org/gruppe-adler/grad_trenches">
+        <img src="https://travis-ci.org/gruppe-adler/grad_trenches.svg?branch=master" alt="Build status">
+    </a>
+</p>
+
+<p align="center">
+    <sup><strong>Visit Gruppe Adler on <a href="https://www.gruppe-adler.de/">our Website</a> | <a
+    href="https://www.youtube.com/user/gruppeadler">YouTube</a> | <a href="https://twitter.com/Gruppe_Adler">Twitter</a></strong></sup>
+</p>
 
 This mod adds textures to ACE trenches based on the current ground texture. When placing a trench you can already see a preview how the trench will look like when placing it. Players can also camouflage their trenches with small bushes.
 
-![a.jpg](https://i.imgur.com/vUGCXHy.jpg)  
 More images can be found [here](https://github.com/gruppe-adler/grad_trenches#more-images).
 
 ## Features
 - Supported on 22 Maps (Vanilla, CUP and more)
 - Custom map config, add your own map if it is not supported
 - Camouflage your trench with small bushes
+- Place trenches in 3DEN and camouflage them directly
+- New trenches to place: Giant trench where soldiers can stand behind and vehicle trenches to cover vulnerable parts
 
 ### Supported maps
 - [Altis](https://arma3.com/features/terrain)
@@ -37,18 +67,17 @@ More images can be found [here](https://github.com/gruppe-adler/grad_trenches#mo
 ## Requirements
 - Arma 3 1.76 or later
 - [ACE3](https://github.com/acemod/ACE3) 3.11.0 or later
-- [CBA_A3](https://github.com/CBATeam/CBA_A3) 3.4.1 or later
+- [CBA_A3](https://github.com/CBATeam/CBA_A3) 3.5.0 or later
 
 ## Downloads
 #### GitHub
 Downloads can be found under [Releases](https://github.com/gruppe-adler/grad_trenches/releases).  
-Currently this mod is shipped **without server key**. Please open an [issue](https://github.com/gruppe-adler/grad_trenches/issues/new) if you need one.
 
 #### Steam Workshop
 Support for Steam Workshop is currently in progress, sorry for that.
 
 ## License
-This project is licensed under **GPLv2**. All trench models are taken from [ACE3](https://github.com/acemod/ACE3) and slightly modified to fit our requirements.  
+This project is licensed under **GPLv2**.  
 We kindly request to not upload this mod to Armaholic or other mirrors for Arma 3 mods.  
 Plus, we ask you to not create mirrors in Steam Workshop. However, it is ok to include this mod into your mod pack on Steam Workshop.
 
@@ -118,5 +147,11 @@ class utes {
 In this case `Default` is the ground texture name.
 
 ## More images
+*Click on the images to see a high quality version*
+![a.jpg](https://i.imgur.com/vUGCXHy.jpg)  
 ![b.jpg](https://i.imgur.com/ahEza0A.jpg)
-
+[![Altis](data/previews/altis_low.png)](data/previews/altis.png)
+[![Chernarus](data/previews/chernarus_low.png)](data/previews/chernarus.png)
+[![Takistan](data/previews/takistan_low.png)](data/previews/takistan.png)
+[![Summer Chernarus](data/previews/chernarus_summer_low.png)](data/previews/chernarus_summer.png)
+[![Vehicle trench](data/previews/vehicle_trench_low.png)](data/previews/vehicle_trench.png)
