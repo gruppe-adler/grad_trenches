@@ -128,7 +128,7 @@ def main():
     bad_count = 0
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('-m','--module', help='only search specified folder', required=False, default="")
+    parser.add_argument('-m','--module', help='only search specified module addon folder', required=False, default="")
     args = parser.parse_args()
 
     # Allow running from root directory as well as from inside the tools directory
