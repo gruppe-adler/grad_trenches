@@ -32,9 +32,7 @@ _initTrench = {
 // If no object is given apply this to all trenches in 3den
 if (isNull _object) then {
     {
-        diag_log str(_x);
-        diag_log typeOf _x;
-        if(typeOf _x in ["ACE_envelope_small", "ACE_envelope_big", "GRAD_envelope_gigant"]) then {
+        if(getNumber(configFile >> "CfgVehicles" >> typeOf _x >> QGVAR(isTrench)) == 1) then {
             [_x] call _initTrench;
         };
     } forEach (all3DENEntities select 0);
