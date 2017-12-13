@@ -15,6 +15,17 @@
         }; \
     }
 
+#define TRENCHES_ATTRIBUTES class Attributes { \
+        class GVAR(camouflageAttribute) { \
+            control = "CheckboxNumber"; \
+            defaultValue = "0"; \
+            displayName = CSTRING(CamouflageAttribute); \
+            tooltip = CSTRING(CamouflageAttributeTooltip); \
+            expression = QUOTE([ARR_2(_this,_value)] call FUNC(applyCamouflageAttribute)); \
+            property = QUOTE(grad_trenches_camouflageTrench); \
+        }; \
+    }
+
 class CfgVehicles {
     class Man;
     class CAManBase: Man {
@@ -44,7 +55,9 @@ class CfgVehicles {
             left[] = {1.3, -0.8, 0.4};
             right[] = {-1.3,-0.8,0.4};
         };
+
         TRENCHES_ACTIONS;
+        TRENCHES_ATTRIBUTES;
     };
     class ACE_envelope_big: BagFence_base_F {
         editorCategory = "EdCat_Things";
@@ -57,6 +70,7 @@ class CfgVehicles {
         };
 
         TRENCHES_ACTIONS;
+        TRENCHES_ATTRIBUTES;
     };
 
     class GRAD_envelope_gigant: ACE_envelope_big {

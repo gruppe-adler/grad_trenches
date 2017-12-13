@@ -19,6 +19,10 @@ _initTrench = {
         params["_object"];
         private _texture = [_object] call FUNC(getSurfaceTexturePath);
         _object setObjectTexture [0, _texture];
+        {
+            private _pos = _x getVariable [QGVAR(positionData), [0,0,0]];
+            _x attachTo [_object, _pos];
+        } forEach (_object getVariable [QGVAR(camouflageObjects), []]);
     }];
 
     private _texture = [_object] call FUNC(getSurfaceTexturePath);

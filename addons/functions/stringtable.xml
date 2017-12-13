@@ -29,5 +29,13 @@
             <English>Dig Giant Trench</English>
             <German>Grabe sehr großen Schützengraben</German>
         </Key>
+        <Key ID="STR_GRAD_Trenches_functions_CamouflageAttribute">
+            <English>Apply camouflage</English>
+            <German>Tarnung anbringen</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_CamouflageAttributeTooltip">
+            <English>Apply camouflage to this trench</English>
+            <German>Tarnung an diesen Graben anbringen</German>
+        </Key>
     </Package>
 </Project>

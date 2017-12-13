@@ -1,3 +1,4 @@
+PREP(applyCamouflageAttribute);
 PREP(canPlaceCamouflage);
 PREP(canRemoveCamouflage);
 PREP(deleteCamouflage);

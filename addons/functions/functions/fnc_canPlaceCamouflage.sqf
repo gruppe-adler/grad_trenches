@@ -13,5 +13,4 @@
 params ["_trench"];
 
 (count (_trench getVariable [QGVAR(camouflageObjects), []]) == 0) && 
-{isArray (configFile >> "CfgWorldsTextures" >> worldName >> "camouflageObjects")} &&
 {count (getArray (configFile >> "CfgWorldsTextures" >> worldName >> "camouflageObjects")) > 0}
