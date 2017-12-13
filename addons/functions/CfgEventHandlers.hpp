@@ -26,6 +26,14 @@ class Extended_Deleted_EventHandlers {
     class ACE_envelope_big {
         CAMOUFLAGE_DELETE;
     };
+
+    class GRAD_envelope_gigant {
+        CAMOUFLAGE_DELETE;
+    };
+
+    class GRAD_envelope_vehicle {
+        CAMOUFLAGE_DELETE;
+    };
 };
 
 class Extended_Init_EventHandlers {
@@ -34,6 +42,14 @@ class Extended_Init_EventHandlers {
     };
 
     class ACE_envelope_big {
+        TRENCH_INIT;
+    };
+
+    class GRAD_envelope_gigant {
+        TRENCH_INIT;
+    };
+
+    class GRAD_envelope_vehicle {
         TRENCH_INIT;
     };
 };
