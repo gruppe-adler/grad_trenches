@@ -36,6 +36,14 @@ class CfgVehicles {
         model = QPATHTOF(apl\ace_envelope_big4_nogeo.p3d);
         hiddenSelections[] = {"velka"};
     };
+    class GRAD_envelope_small_noGeo: BagFence_base_F {
+        model = QPATHTOF(data\trench_small_nogeo.p3d);
+        hiddenSelections[] = {"velka"};
+    };
+    class GRAD_envelope_big_noGeo: BagFence_base_F {
+        model = QPATHTOF(data\trench_big_nogeo.p3d);
+        hiddenSelections[] = {"velka"};
+    };
     class GRAD_envelope_gigant_noGeo: BagFence_base_F {
         scope = 1;
         model = QPATHTOF(data\trench_gigant_nogeo.p3d);
