@@ -10,6 +10,10 @@ class CfgVehicles {
         model = QPATHTOF(apl\ace_envelope_big4.p3d);
         hiddenSelections[] = {"velka"};
     };
+    class GRAD_envelope_small: BagFence_base_F {
+        model = QPATHTOF(data\trench_small.p3d);
+        hiddenSelections[] = {"velka"};
+    };
     class GRAD_envelope_big: BagFence_base_F {
         model = QPATHTOF(data\trench_big.p3d);
         hiddenSelections[] = {"velka"};
