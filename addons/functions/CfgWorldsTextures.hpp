@@ -35,8 +35,15 @@ class CfgWorldsTextures {
     };
 
     //Chernarus Summer
-      class Chernarus_Summer: Chernarus {
+    class Chernarus_Summer: Chernarus {
         camouflageObjects[] = {"ca\plants2\clutter\c_weed3.p3d"};
+    };
+
+    //Chernarus Winter
+    class Chernarus_Winter {
+        surfaceTextureBasePath = "\chernarus_winter\data\";
+        filePrefix = "detail_co.paa";
+        camouflageObjects[] = {};
     };
 
     //Desert
