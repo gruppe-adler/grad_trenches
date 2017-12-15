@@ -62,7 +62,7 @@ class CfgWorldsTextures {
     };
 
     //Colleville
-    class Chernarus_Winter {
+    class Colleville {
         surfaceTextureBasePath = "WW2\TerrainsIF_t\Worlds\IF_Surfaces_t\staszow\";
         filePrefix = "co.paa";
         camouflageObjects[] = {};

@@ -51,6 +51,8 @@ class CfgVehicles {
 
     class BagFence_base_F;
     class ACE_envelope_small: BagFence_base_F {
+        ace_trenches_noGeoClass = QUOTE(ACE_envelope_small_noGeo);
+        ace_trenches_placementData[] = {8,1.1,0};
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";
         GVAR(isTrench) = 1;
@@ -65,6 +67,7 @@ class CfgVehicles {
         TRENCHES_ATTRIBUTES;
     };
     class ACE_envelope_big: BagFence_base_F {
+        ace_trenches_noGeoClass = QUOTE(ACE_envelope_big_noGeo);
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";
         GVAR(isTrench) = 1;
@@ -109,42 +112,6 @@ class CfgVehicles {
         ace_trenches_diggingDuration = 60;
         ace_trenches_removalDuration = 30;
         ace_trenches_noGeoClass = QUOTE(GRAD_envelope_vehicle_noGeo);
-        ace_trenches_placementData[] = {10,1.1,0.20};
-        ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
-
-        editorCategory = "EdCat_Things";
-        editorSubcategory = "EdSubcat_Military";
-
-        class CamouflagePositions {};
-        class Attributes {};
-    };
-
-    class GRAD_envelope_big: ACE_envelope_big {
-        author = QAUTHOR;
-        displayName = "Envelope - Big Good";
-        //descriptionShort = CSTRING(EnevlopeVehicleDescription);
-        scope = 2;
-        ace_trenches_diggingDuration = 60;
-        ace_trenches_removalDuration = 30;
-        ace_trenches_noGeoClass = QUOTE(GRAD_envelope_big_noGeo);
-        ace_trenches_placementData[] = {10,1.1,0.20};
-        ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
-
-        editorCategory = "EdCat_Things";
-        editorSubcategory = "EdSubcat_Military";
-
-        class CamouflagePositions {};
-        class Attributes {};
-    };
-
-    class GRAD_envelope_small: ACE_envelope_small {
-        author = QAUTHOR;
-        displayName = "Envelope - Small Good";
-        //descriptionShort = CSTRING(EnevlopeVehicleDescription);
-        scope = 2;
-        ace_trenches_diggingDuration = 60;
-        ace_trenches_removalDuration = 30;
-        ace_trenches_noGeoClass = QUOTE(GRAD_envelope_small_noGeo);
         ace_trenches_placementData[] = {10,1.1,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
 
