@@ -8,6 +8,20 @@ class CfgWorldsTextures {
     camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d" /*, "A3\plants_f\Clutter\c_Thistle_Thorn_Green.p3d"*/};
     };
 
+    //Baranow
+    class Baranow {
+        surfaceTextureBasePath = "WW2\TerrainsIF_t\Worlds\IF_Surfaces_t\staszow\";
+        filePrefix = "_co.paa";
+        camouflageObjects[] = {};
+    };
+
+    //Bray-Dunes
+    class SWU_Dunkirk_Bray_Dunes_1940 {
+        surfaceTextureBasePath = "WW2\TerrainsWW2_swurvin\Surfaces_t\";
+        filePrefix = "co.paa";
+        camouflageObjects[] = {};
+    };
+
     // Bukovina
     class Bootcamp_ACR {
         surfaceTextureBasePath = "ca\Bootcamp_ACR\data\";
@@ -46,11 +60,25 @@ class CfgWorldsTextures {
         camouflageObjects[] = {};
     };
 
+    //Colleville
+    class Chernarus_Winter {
+        surfaceTextureBasePath = "WW2\TerrainsIF_t\Worlds\IF_Surfaces_t\staszow\";
+        filePrefix = "co.paa";
+        camouflageObjects[] = {};
+    };
+
     //Desert
     class Desert_E {
         surfaceTextureBasePath = "ca\Desert_E\data\";
         filePrefix = "co.paa";
         camouflageObjects[] = {"ca\plants_E\Clutter\c_Brush_Hard_EP1.p3d"};
+    };
+
+    //Ivachev
+    class Ivachev {
+        surfaceTextureBasePath = "WW2\TerrainsIF_t\Worlds\IF_Surfaces_t\staszow\";
+        filePrefix = "co.paa";
+        camouflageObjects[] = {};
     };
 
     //Lythium
@@ -65,9 +93,30 @@ class CfgWorldsTextures {
         camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d"};
     };
 
+    //Montherme
+    class SWU_Ardennes_1940 {
+        surfaceTextureBasePath = "WW2\TerrainsWW2_swurvin\Surfaces_t\";
+        filePrefix = "co.paa";
+        camouflageObjects[] = {};
+    };
+
+    //Montherme Winter
+    class SWU_Ardennes_1944_Winter {
+        surfaceTextureBasePath = "WW2\TerrainsWW2_swurvin\Surfaces_t\";
+        filePrefix = "co.paa";
+        camouflageObjects[] = {};
+    };
+
     //Rahmadi
     class Intro: Chernarus {
         camouflageObjects[] = {"ca\plants\clutter_grass_flowers.p3d"};
+    };
+
+    //Panovo
+    class Panovo {
+        surfaceTextureBasePath = "WW2\TerrainsIF_t\Worlds\IF_Surfaces_t\staszow\";
+        filePrefix = "co.paa";
+        camouflageObjects[] = {};
     };
 
     //Porto
@@ -96,89 +145,13 @@ class CfgWorldsTextures {
         surfaceTextureBasePath = "ca\sara\Data\";
         filePrefix = "_detail_co.paa";
         camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d"};
-        class Surfaces {
-            class blato_detail_nohq {
-                texturePath = "ca\sara\Data\blato_detail_nohq.paa";
-            };
-            class blato_mco {
-                texturePath = "ca\sara\Data\blato_mco.paa";
-            };
-            class lesjeh_detail_nohq {
-                texturePath = "ca\sara\Data\lesjeh_detail_nohq.paa";
-            };
-            class lesjeh_mco {
-                texturePath = "ca\sara\Data\lesjeh_mco.paa";
-            };
-            class leslist_detail_nohq {
-                texturePath = "ca\sara\Data\leslist_detail_nohq.paa";
-            };
-            class leslist_mco {
-                texturePath = "ca\sara\Data\leslist_mco.paa";
-            };
-            class mesto_detail_nohq {
-                texturePath = "ca\sara\Data\mesto_detail_nohq.paa";
-            };
-            class mesto_mco {
-                texturePath = "ca\sara\Data\mesto_mco.paa";
-            };
-            class mesto2_detail_nohq {
-                texturePath = "ca\sara\Data\mesto2_detail_nohq.paa";
-            };
-            class mesto2_mco {
-                texturePath = "ca\sara\Data\mesto2_mco.paa";
-            };
-            class pisek_detail_nohq {
-                texturePath = "ca\sara\Data\pisek_detail_nohq.paa";
-            };
-            class pisek_mco {
-                texturePath = "ca\sara\Data\pisek_mco.paa";
-            };
-            class pisekplaz_detail_nohq {
-                texturePath = "ca\sara\Data\pisekplaz_detail_nohq.paa";
-            };
-            class pisekplaz_mco {
-                texturePath = "ca\sara\Data\pisekplaz_mco.paa";
-            };
-            class pisekpoust_detail_nohq {
-                texturePath = "ca\sara\Data\pisekpoust_detail_nohq.paa";
-            };
-            class pisekpoust_mco {
-                texturePath = "ca\sara\Data\pisekpoust_mco.paa";
-            };
-            class pole1_detail_nohq {
-                texturePath = "ca\sara\Data\pole1_detail_nohq.paa";
-            };
-            class pole1_mco {
-                texturePath = "ca\sara\Data\pole1_mco.paa";
-            };
-            class sara_a3_middle_mco {
-                texturePath = "ca\sara\Data\sara_a3_middle_mco.paa";
-            };
-            class skalaj_detail_nohq {
-                texturePath = "ca\sara\Data\skalaj_detail_nohq.paa";
-            };
-            class skalaj_mco {
-                texturePath = "ca\sara\Data\skalaj_mco.paa";
-            };
-            class skalas_detail_nohq{
-                texturePath = "ca\sara\Data\skalas_detail_nohq.paa";
-            };
-            class skalas_mco {
-                texturePath = "ca\sara\Data\skalas_mco.paa";
-            };
-            class trava_detail_nohq {
-                texturePath = "ca\sara\Data\trava_detail_nohq.paa";
-            };
-            class trava_mco {
-                texturePath = "ca\sara\Data\trava_mco.paa";
-            };
-            class travajih_detail_nohq {
-                texturePath = "ca\sara\Data\travajih_detail_nohq.paa";
-            };
-            class travajih_mco {
-                texturePath = "ca\sara\Data\travajih_mco.paa";
-            };
-        };
+    };
+
+    //Sark
+    class Hyde_Sark {
+        surfaceTextureBasePath = "WW2\TerrainsWW2_Hyde\Surfaces_t\";
+        filePrefix = "co.paa";
+        camouflageObjects[] = {};
     };
 
   //Shapur
@@ -193,47 +166,12 @@ class CfgWorldsTextures {
         surfaceTextureBasePath = "ca\saralite\Data\";
         filePrefix = "_detail_co.paa";
         camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d"};
-        class Surfaces {
-             class leslist_detail_nohq {
-                 texturePath = "ca\saralite\Data\leslist_detail_nohq.paa";
-             };
-            class leslist_mco {
-                 texturePath = "ca\saralite\Data\leslist_mco.paa";
-             };
-            class mesto_detail_nohq {
-                 texturePath = "ca\saralite\Data\mesto_detail_nohq.paa";
-             };
-            class mesto_mco {
-                texturePath = "ca\saralite\Data\mesto_mco.paa";
-            };
-            class pisek_detail_nohq {
-                texturePath = "ca\saralite\Data\pisek_detail_nohq.paa";
-            };
-            class pisek_mco {
-                texturePath = "ca\saralite\Data\pisek_mco.paa";
-            };
-            class pisekpoust_detail_nohq {
-                texturePath = "ca\saralite\Data\pisekpoust_detail_nohq.paa";
-            };
-            class pisekpoust_mco {
-                texturePath = "ca\saralite\Data\pisekpoust_mco.paa";
-            };
-            class saralite_a3_middle_mco {
-                texturePath = "ca\saralite\Data\saralite_a3_middle_mco.paa";
-            };
-            class skalaj_detail_nohq {
-                texturePath = "ca\saralite\Data\skalaj_detail_nohq.paa";
-            };
-            class skalaj_mco {
-                texturePath = "ca\saralite\Data\skalaj_mco.paa";
-            };
-            class travajih_detail_nohq {
-                texturePath = "ca\saralite\Data\travajih_detail_nohq.paa";
-            };
-            class travajih_mco {
-                texturePath = "ca\saralite\Data\travajih_mco.paa";
-            };
-        };
+    };
+
+    class Staszow {
+        surfaceTextureBasePath = "WW2\TerrainsIF_t\Worlds\IF_Surfaces_t\staszow\";
+        filePrefix = "co.paa";
+        camouflageObjects[] = {};
     };
 
     //Stratis
