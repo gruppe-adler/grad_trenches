@@ -3,6 +3,7 @@ class CfgWorldsTextures {
         surfaceTextureBasePath = "a3\map_data\";
         filePrefix = "co.paa";
     };
+
     //Altis
     class Altis: Default {
     camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d" /*, "A3\plants_f\Clutter\c_Thistle_Thorn_Green.p3d"*/};
