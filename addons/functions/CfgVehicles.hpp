@@ -51,6 +51,8 @@ class CfgVehicles {
 
     class BagFence_base_F;
     class ACE_envelope_small: BagFence_base_F {
+        ace_trenches_noGeoClass = QUOTE(ACE_envelope_small_noGeo);
+        ace_trenches_placementData[] = {8,1.1,0};
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";
         GVAR(isTrench) = 1;
@@ -65,6 +67,7 @@ class CfgVehicles {
         TRENCHES_ATTRIBUTES;
     };
     class ACE_envelope_big: BagFence_base_F {
+        ace_trenches_noGeoClass = QUOTE(ACE_envelope_big_noGeo);
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";
         GVAR(isTrench) = 1;
