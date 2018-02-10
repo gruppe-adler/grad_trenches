@@ -49,5 +49,66 @@
             <English>Dig Vehicle Trench</English>
             <German>Grabe Fahrzeug Schützengraben</German>
         </Key>
+
+        <Key ID="STR_GRAD_Trenches_functions_settingCategory">
+            <English>GRAD Trenches</English>
+            <German>GRAD Trenches</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_settingAllowDigging_displayName">
+            <English>Allow digging</English>
+            <German>Erlaube den Bau von Gräben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_settingAllowDigging_tooltip">
+            <English>Allow digging trenches with an entrenchment tool</English>
+            <German>Erlaube den Bau von Gräben mit dem Klappspaten</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_settingAllowCamouflage_displayName">
+            <English>Allow camouflage</English>
+            <German>Erlaube Tarnung</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_settingAllowCamouflage_tooltip">
+            <English>Allow camouflaging trenches</English>
+            <German>Erlaube das Tarnen von Gräben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_settingCamouflageRequireEntrenchmentTool_displayName">
+            <English>Require entrenchment tool for camouflaging</English>
+            <German>Klappspaten für Tarnen benötigt</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_settingCamouflageRequireEntrenchmentTool_tooltip">
+            <English>Require entrenchment tool for camouflaging</English>
+            <German>Fordere Klappspaten für das Tarnen von Gräben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_allowSmallEnvelope_displayName">
+            <English>Allow small envelope trenches</English>
+            <German>Erlaube kleine runde Gräben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_allowSmallEnvelope_tooltip">
+            <English>Allow digging of small envelope trenches</English>
+            <German>Erlaube das Graben von kleinen runden Gräben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_allowBigEnvelope_displayName">
+            <English>Allow big envelope trenches</English>
+            <German>Erlaube große runde Gräben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_allowBigEnvelope_tooltip">
+            <English>Allow digging of big envelope trenches</English>
+            <German>Erlaube das Graben von großen runden Gräben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_allowGigantEnvelope_displayName">
+            <English>Allow giant envelope trenches</English>
+            <German>Erlaube riesige runde Gräben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_allowGigantEnvelope_tooltip">
+            <English>Allow digging of giant envelope trenches</English>
+            <German>Erlaube das Graben von riesigen runden Gräben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_allowVehicleEnvelope_displayName">
+            <English>Allow vehicle envelope trenches</English>
+            <German>Erlaube runde Fahrzeuggräben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_allowVehicleEnvelope_tooltip">
+            <English>Allow digging of envelope vehicle trenches</English>
+            <German>Erlaube das Graben von runden Fahrzeuggräben</German>
+        </Key>
     </Package>
 </Project>
