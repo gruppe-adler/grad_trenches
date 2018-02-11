@@ -123,7 +123,7 @@ class CfgWorldsTextures {
     //Porto
     class Porto {
         surfaceTextureBasePath = "ca\desert2\data\";
-        filePrefix = ".paa";
+        filePrefix = "detail_co.paa";
         camouflageObjects[] = {};
     };
 
