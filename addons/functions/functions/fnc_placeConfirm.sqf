@@ -37,7 +37,7 @@ if (isNull ace_trenches_trench) exitWith {};
 
 private _trenchTexture = (getObjectTextures ace_trenches_trench) select 0;
 deleteVehicle ace_trenches_trench;
-private _trench = createVehicle [ace_trenches_trenchClass, [0, 0, 0], [], 0, "NONE"];
+private _trench = createVehicle [ace_trenches_trenchClass, position _unit, [], 0, "NONE"];
 _trench setObjectTextureGlobal [0,_trenchTexture];
 
 ace_trenches_trenchPlacementData params ["_dx", "_dy", "_offset"];
