@@ -74,7 +74,7 @@ More images can be found [here](https://github.com/gruppe-adler/grad_trenches#mo
 Downloads can be found under [Releases](https://github.com/gruppe-adler/grad_trenches/releases).  
 
 #### Steam Workshop
-Support for Steam Workshop is currently in progress, sorry for that.
+Subscribe to GRAD Trenches on [Steam Workshop](http://steamcommunity.com/sharedfiles/filedetails/?id=1224892496) and automaticially get the latest releases.
 
 ## License
 This project is licensed under **GPLv2**.  
