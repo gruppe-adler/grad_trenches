@@ -49,6 +49,18 @@
             <English>Dig Vehicle Trench</English>
             <German>Grabe Fahrzeug Schützengraben</German>
         </Key>
+        <Key ID="STR_GRAD_Trenches_functions_EnvelopeShortName">
+            <English>Envelope - Short</English>
+            <German>Rund - Kurz</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_EnevlopeShortDescription">
+            <English>Short Trench</English>
+            <German>Kurzer Schützengraben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_DigShortVehicle">
+            <English>Dig Short Trench</English>
+            <German>Grabe kurzen Schützengraben</German>
+        </Key>
 
         <Key ID="STR_GRAD_Trenches_functions_settingCategory">
             <English>GRAD Trenches</English>
@@ -77,6 +89,14 @@
         <Key ID="STR_GRAD_Trenches_functions_settingCamouflageRequireEntrenchmentTool_tooltip">
             <English>Require entrenchment tool for camouflaging</English>
             <German>Fordere Klappspaten für das Tarnen von Gräben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_allowShortEnvelope_displayName">
+            <English>Allow short envelope trenches</English>
+            <German>Erlaube kurze runde Gräben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_allowShortEnvelope_tooltip">
+            <English>Allow digging of short envelope trenches</English>
+            <German>Erlaube das Graben von kurzen runden Gräben</German>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowSmallEnvelope_displayName">
             <English>Allow small envelope trenches</English>
