@@ -24,6 +24,7 @@ class CfgVehicles {
     };
 
     class GRAD_envelope_short_noGeo: BagFence_base_F {
+		scope = 1;
         model = QPATHTOF(data\trench_short_nogeo.p3d);
         hiddenSelections[] = {"velka"};
     };

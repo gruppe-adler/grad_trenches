@@ -57,7 +57,7 @@
             <English>Short Trench</English>
             <German>Kurzer Schützengraben</German>
         </Key>
-        <Key ID="STR_GRAD_Trenches_functions_DigShortVehicle">
+        <Key ID="STR_GRAD_Trenches_functions_DigEnvelopeShort">
             <English>Dig Short Trench</English>
             <German>Grabe kurzen Schützengraben</German>
         </Key>

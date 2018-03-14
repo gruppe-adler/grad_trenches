@@ -145,6 +145,9 @@ class CfgVehicles {
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";
 
-        class CamouflagePositions {}; // TODO: add
+        class CamouflagePositions {
+			right[] = {1.1,0.2,0.2};
+			left[] = {-1.1,0.1,0.2};
+		};
     };
 };
