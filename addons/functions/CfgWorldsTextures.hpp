@@ -75,11 +75,32 @@ class CfgWorldsTextures {
         camouflageObjects[] = {"ca\plants_E\Clutter\c_Brush_Hard_EP1.p3d"};
     };
 
+    //G.O.S Al Rayak
+    class pja310 {
+        surfaceTextureBasePath = "mak\projetA3-10\Data\";
+        filePrefix = "co.paa";	
+        camouflageObjects[] = {/*"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d" ,*/ "A3\plants_f\Clutter\c_Thistle_Thorn_Green.p3d"};	
+    };
+
+    //G.O.S Leskovets
+    class pja314 {
+        surfaceTextureBasePath = "MAK\projetA3014\data\";
+        filePrefix = "co.paa";		
+        camouflageObjects[] = {/*"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d" ,*/ "A3\plants_f\Clutter\c_Thistle_Thorn_Green.p3d"};	
+    };
+
     //Ivachev
     class Ivachev {
         surfaceTextureBasePath = "WW2\TerrainsIF_t\Worlds\IF_Surfaces_t\staszow\";
         filePrefix = "co.paa";
         camouflageObjects[] = {};
+    };
+
+    // Kerama
+    class kerama {
+        surfaceTextureBasePath = "Kerama\data\";
+        filePrefix = "co.paa";		
+        camouflageObjects[] = {/*"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d" ,*/ "A3\plants_f\Clutter\c_Thistle_Thorn_Green.p3d"};	
     };
 
     //Lythium
