@@ -78,15 +78,15 @@ class CfgWorldsTextures {
     //G.O.S Al Rayak
     class pja310 {
         surfaceTextureBasePath = "mak\projetA3-10\Data\";
-        filePrefix = "co.paa";	
-        camouflageObjects[] = {/*"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d" ,*/ "A3\plants_f\Clutter\c_Thistle_Thorn_Green.p3d"};	
+        filePrefix = "co.paa";
+        camouflageObjects[] = {/*"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d" ,*/ "A3\plants_f\Clutter\c_Thistle_Thorn_Green.p3d"};
     };
 
     //G.O.S Leskovets
     class pja314 {
         surfaceTextureBasePath = "MAK\projetA3014\data\";
-        filePrefix = "co.paa";		
-        camouflageObjects[] = {/*"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d" ,*/ "A3\plants_f\Clutter\c_Thistle_Thorn_Green.p3d"};	
+        filePrefix = "co.paa";
+        camouflageObjects[] = {/*"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d" ,*/ "A3\plants_f\Clutter\c_Thistle_Thorn_Green.p3d"};
     };
 
     //Ivachev
@@ -99,8 +99,8 @@ class CfgWorldsTextures {
     // Kerama
     class kerama {
         surfaceTextureBasePath = "Kerama\data\";
-        filePrefix = "co.paa";		
-        camouflageObjects[] = {/*"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d" ,*/ "A3\plants_f\Clutter\c_Thistle_Thorn_Green.p3d"};	
+        filePrefix = "co.paa";
+        camouflageObjects[] = {/*"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d" ,*/ "A3\plants_f\Clutter\c_Thistle_Thorn_Green.p3d"};
     };
 
     //Lythium
