@@ -38,7 +38,10 @@ More images can be found [here](https://github.com/gruppe-adler/grad_trenches#mo
 - Custom map config, add your own map if it is not supported
 - Camouflage your trench with small bushes
 - Place trenches in 3DEN and camouflage them directly
-- New trenches to place: Giant trench where soldiers can stand behind and vehicle trenches to cover vulnerable parts
+- New trenches to place
+    - Giant trench where soldiers can stand behind
+    - Vehicle trench to cover vulnerable parts of tanks
+    - Short trench to quickly provide cover for 1-2 soldiers
 
 ### Supported maps
 - [Altis](https://arma3.com/features/terrain)
