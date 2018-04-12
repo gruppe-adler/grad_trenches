@@ -172,6 +172,11 @@ class CfgWorldsTextures {
         surfaceTextureBasePath = "ca\sara\Data\";
         filePrefix = "detail_co.paa";
         camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d"};
+        class Surfaces {
+            class mesto {
+                texturePath = "ca\sara\Data\mesto_co.paa";
+            };
+        };
     };
 
     //Sark
