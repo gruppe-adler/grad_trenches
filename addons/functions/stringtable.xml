@@ -4,47 +4,47 @@
         <Key ID="STR_grad_trenches_functions_PlaceCamouflage">
             <English>Place camouflage</English>
             <German>Tarnung platzieren</German>
-            <Russian>Камуфлировать окоп</Russian>            
+            <Russian>Камуфлировать окоп</Russian>
         </Key>
         <Key ID="STR_grad_trenches_functions_PlaceCamouflageProgress">
             <English>Placing camouflage...</English>
             <German>Platziere Tarnung...</German>
-            <Russian>Камуфлирую окоп...</Russian>            
+            <Russian>Камуфлирую окоп...</Russian>
         </Key>
         <Key ID="STR_grad_trenches_functions_RemoveCamouflage">
             <English>Remove camouflage</English>
             <German>Tarnung entfernen</German>
-            <Russian>Убрать камуфляж</Russian>            
+            <Russian>Убрать камуфляж</Russian>
         </Key>
         <Key ID="STR_grad_trenches_functions_RemoveCamouflageProgress">
             <English>Removing camouflage...</English>
             <German>Entferne Tarnung...</German>
-            <Russian>Убираю камуфляж окопа...</Russian>            
+            <Russian>Убираю камуфляж окопа...</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeGigantName">
             <English>Envelope - Gigant</English>
             <German>Rund - Sehr groß</German>
-            <Russian>Огромный окоп</Russian>            
+            <Russian>Огромный окоп</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnevlopeGigantDescription">
             <English>Giant Personal Trench</English>
             <German>Sehr großer Schützengraben</German>
-            <Russian>Огромный окоп для пехоты</Russian>            
+            <Russian>Огромный окоп для пехоты</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_DigEnvelopeGigant">
             <English>Dig Giant Trench</English>
             <German>Grabe sehr großen Schützengraben</German>
-            <Russian>Вырыть огромный окоп</Russian>            
+            <Russian>Вырыть огромный окоп</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_CamouflageAttribute">
             <English>Apply camouflage</English>
             <German>Tarnung anbringen</German>
-            <Russian>Применить камуфляж</Russian>            
+            <Russian>Применить камуфляж</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_CamouflageAttributeTooltip">
             <English>Apply camouflage to this trench</English>
             <German>Tarnung an diesen Graben anbringen</German>
-            <Russian>Применить камуфляж к этому окопу</Russian>            
+            <Russian>Применить камуфляж к этому окопу</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeVehicleName">
             <English>Envelope - Vehicle</English>
@@ -160,6 +160,34 @@
             <English>Allow digging of envelope vehicle trenches</English>
             <German>Erlaube das Graben von runden Fahrzeuggräben</German>
             <Russian>Разрешить копать окопы для техники</Russian>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_settingBuildFatigueFactor_displayName">
+            <English>Fatigue factor</English>
+            <German>Ausdauerkoeffizient</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_settingBuildFatigueFactor_tooltip">
+            <English>The fatigue factor when building trenches (0 to deactive fatigue use)</English>
+            <German>Der Ausdauerkoeffizient beim Bauen von Gräben (0 zum Deaktivieren)</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_ShortEnvelopeDigTime">
+            <English>Dig time (in seconds) for short envelope trenches</English>
+            <German>Zeit (in Sekunden) um kurze runde Gräben zu graben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_SmallEnvelopeDigTime">
+            <English>Dig time (in seconds) for small envelope trenches</English>
+            <German>Zeit (in Sekunden) um kleine runde Gräben zu graben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_BigEnvelopeDigTime">
+            <English>Dig time (in seconds) for big envelope trenches</English>
+            <German>Zeit (in Sekunden) um große runde Gräben zu graben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_GigantEnvelopeDigTime">
+            <English>Dig time (in seconds) for gigant envelope trenches</English>
+            <German>Zeit (in Sekunden) um riesige runde Gräben zu graben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_VehicleEnvelopeDigTime">
+            <English>Dig time (in seconds) for vehicle envelope trenches</English>
+            <German>Zeit (in Sekunden) um runde Fahrzeuggräben zu graben</German>
         </Key>
     </Package>
 </Project>

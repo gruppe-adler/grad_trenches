@@ -74,4 +74,4 @@ diag_log str([_basePos, _vecDirAndUp]);
 
 _trench setVariable ["ace_trenches_placeData", [_basePos, _vecDirAndUp], true];
 
-[_trench, _unit] call ace_trenches_fnc_continueDiggingTrench;
+[_trench, _unit] call FUNC(continueDiggingTrench);

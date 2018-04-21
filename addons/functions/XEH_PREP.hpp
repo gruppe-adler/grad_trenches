@@ -1,6 +1,7 @@
 PREP(applyCamouflageAttribute);
 PREP(canPlaceCamouflage);
 PREP(canRemoveCamouflage);
+PREP(continueDiggingTrench);
 PREP(deleteCamouflage);
 PREP(getSurfaceTexturePath);
 PREP(initTrench);
@@ -9,3 +10,4 @@ PREP(placeCamouflage);
 PREP(placeConfirm);
 PREP(placeTrench);
 PREP(removeCamouflage);
+PREP(setTrenchPlacement);
