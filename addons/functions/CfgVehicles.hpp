@@ -47,6 +47,11 @@ class CfgVehicles {
                     // icon = "z\ace\addons\trenches\UI\w_entrchtool_ca.paa";
                     exceptions[] = {"notOnMap", "isNotInside", "isNotSitting"};
 
+                    class grad_trenches_digEnvelopeShort: ace_trenches_digEnvelopeBig {
+                        displayName = CSTRING(DigEnvelopeShort);
+                        statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'GRAD_envelope_short')])] call CBA_fnc_execNextFrame);
+                        condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call ace_trenches_fnc_canContinueDiggingTrench) && GVAR(allowShortEnvelope));
+                    };
                     class ace_trenches_digEnvelopeSmall {
                         displayName = "$STR_ace_trenches_DigEnvelopeSmall";
                         exceptions[] = {};
@@ -69,11 +74,6 @@ class CfgVehicles {
                         displayName = CSTRING(DigEnvelopeVehicle);
                         statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'GRAD_envelope_vehicle')])] call CBA_fnc_execNextFrame);
                         condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call ace_trenches_fnc_canContinueDiggingTrench) && GVAR(allowVehicleEnvelope));
-                    };
-                    class grad_trenches_digEnvelopeShort: ace_trenches_digEnvelopeBig {
-                        displayName = CSTRING(DigEnvelopeShort);
-                        statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'GRAD_envelope_short')])] call CBA_fnc_execNextFrame);
-                        condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call ace_trenches_fnc_canContinueDiggingTrench) && GVAR(allowShortEnvelope));
                     };
                 };
             };
