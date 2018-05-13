@@ -139,6 +139,12 @@ class CfgWorldsTextures {
         camouflageObjects[] = {"ca\plants\clutter_grass_flowers.p3d"};
     };
 
+    //Ruha
+    class ruha {
+        surfaceTextureBasePath = "ruha\ruha\data\";
+        filePrefix = "co.paa";
+    };
+
     //Panovo
     class Panovo {
         surfaceTextureBasePath = "WW2\TerrainsIF_t\Worlds\IF_Surfaces_t\staszow\";
