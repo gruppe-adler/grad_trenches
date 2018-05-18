@@ -120,6 +120,13 @@ class CfgWorldsTextures {
         };
     };
 
+    //Napf
+    class Napf {
+        surfaceTextureBasePath = "momo\Napf\data\";
+        filePrefix = "co.paa";
+        camouflageObjects[] = {/*"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d" ,*/ "A3\plants_f\Clutter\c_Thistle_Thorn_Green.p3d"};
+    };
+
     //Montherme
     class SWU_Ardennes_1940 {
         surfaceTextureBasePath = "WW2\TerrainsWW2_swurvin\Surfaces_t\";
