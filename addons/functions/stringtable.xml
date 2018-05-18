@@ -169,7 +169,7 @@
         <Key ID="STR_GRAD_Trenches_functions_settingBuildFatigueFactor_tooltip">
             <English>The fatigue factor when building trenches (0 to deactive fatigue use)</English>
             <German>Der Ausdauerkoeffizient beim Bauen von Gräben (0 zum Deaktivieren)</German>
-            <Russian>Как сильно снижается стамина от компания (0 чтобы не снижалась)</Russian>
+            <Russian>Как сильно снижается стамина от копания (0 чтобы не снижалась)</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_ShortEnvelopeDigTime">
             <English>Dig time (in seconds) for short envelope trenches</English>
