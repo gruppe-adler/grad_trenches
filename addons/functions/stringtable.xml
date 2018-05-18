@@ -164,30 +164,37 @@
         <Key ID="STR_GRAD_Trenches_functions_settingBuildFatigueFactor_displayName">
             <English>Fatigue factor</English>
             <German>Ausdauerkoeffizient</German>
+            <Russian>Коэффициент усталости</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_settingBuildFatigueFactor_tooltip">
             <English>The fatigue factor when building trenches (0 to deactive fatigue use)</English>
             <German>Der Ausdauerkoeffizient beim Bauen von Gräben (0 zum Deaktivieren)</German>
+            <Russian>Как сильно снижается стамина от компания (0 чтобы не снижалась)</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_ShortEnvelopeDigTime">
             <English>Dig time (in seconds) for short envelope trenches</English>
             <German>Zeit (in Sekunden) um kurze runde Gräben zu graben</German>
+            <Russian>Время (в секундах) копания короткого окопа</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_SmallEnvelopeDigTime">
             <English>Dig time (in seconds) for small envelope trenches</English>
             <German>Zeit (in Sekunden) um kleine runde Gräben zu graben</German>
+            <Russian>Время (в секундах) копания малого окопа</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_BigEnvelopeDigTime">
             <English>Dig time (in seconds) for big envelope trenches</English>
             <German>Zeit (in Sekunden) um große runde Gräben zu graben</German>
+            <Russian>Время (в секундах) копания большого окопа</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_GigantEnvelopeDigTime">
             <English>Dig time (in seconds) for gigant envelope trenches</English>
             <German>Zeit (in Sekunden) um riesige runde Gräben zu graben</German>
+            <Russian>Время (в секундах) копания гигантского окопа</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_VehicleEnvelopeDigTime">
             <English>Dig time (in seconds) for vehicle envelope trenches</English>
             <German>Zeit (in Sekunden) um runde Fahrzeuggräben zu graben</German>
+            <Russian>Время (в секундах) копания окопа для техники</Russian>
         </Key>
     </Package>
 </Project>
