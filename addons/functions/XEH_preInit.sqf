@@ -18,9 +18,9 @@ PREP_RECOMPILE_END;
 [QGVAR(allowVehicleEnvelope), "CHECKBOX", [localize LSTRING(allowVehicleEnvelope_displayName), localize LSTRING(allowVehicleEnvelope_tooltip)], localize LSTRING(settingCategory), true] call CBA_Settings_fnc_init;
 
 [QGVAR(shortEnvelopeDigTime), "SLIDER", localize LSTRING(ShortEnvelopeDigTime), localize LSTRING(settingCategory), [5, 300, 20, 0]] call CBA_Settings_fnc_init;
-[QGVAR(smallEnvelopeDigTime), "SLIDER", localize LSTRING(SmallEnvelopeDigTime), localize LSTRING(settingCategory), [5, 300, 30, 0]] call CBA_Settings_fnc_init;
-[QGVAR(bigEnvelopeDigTime), "SLIDER", localize LSTRING(BigEnvelopeDigTime), localize LSTRING(settingCategory), [5, 300, 40, 0]] call CBA_Settings_fnc_init;
-[QGVAR(gigantEnvelopeDigTime), "SLIDER", localize LSTRING(GigantEnvelopeDigTime), localize LSTRING(settingCategory), [5, 300, 90, 0]] call CBA_Settings_fnc_init;
-[QGVAR(vehicleEnvelopeDigTime), "SLIDER", localize LSTRING(VehicleEnvelopeDigTime), localize LSTRING(settingCategory), [5, 300, 120, 0]] call CBA_Settings_fnc_init;
+[QGVAR(smallEnvelopeDigTime), "SLIDER", localize LSTRING(SmallEnvelopeDigTime), localize LSTRING(settingCategory), [5, 450, 30, 0]] call CBA_Settings_fnc_init;
+[QGVAR(bigEnvelopeDigTime), "SLIDER", localize LSTRING(BigEnvelopeDigTime), localize LSTRING(settingCategory), [5, 600, 40, 0]] call CBA_Settings_fnc_init;
+[QGVAR(gigantEnvelopeDigTime), "SLIDER", localize LSTRING(GigantEnvelopeDigTime), localize LSTRING(settingCategory), [5, 900, 90, 0]] call CBA_Settings_fnc_init;
+[QGVAR(vehicleEnvelopeDigTime), "SLIDER", localize LSTRING(VehicleEnvelopeDigTime), localize LSTRING(settingCategory), [5, 1200, 120, 0]] call CBA_Settings_fnc_init;
 
 ADDON = true;
