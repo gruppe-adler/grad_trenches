@@ -28,7 +28,11 @@ if (_unit getVariable ["ace_trenches_isDiggingId", -1] != _trenchId) exitWith {}
 
 _trench setPosASL _pos;
 _trench setVectorDirAndUp _vecDirAndUp;
-ace_advanced_fatigue_anReserve = ace_advanced_fatigue_anReserve - (_digTime * GVAR(buildFatigueFactor));
+if (GVAR(buildFatigueFactorOverload)) then {
+    ace_advanced_fatigue_anReserve = ace_advanced_fatigue_anReserve - (_digTime * GVAR(buildFatigueFactor));
+}else{
+    ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (_digTime * GVAR(buildFatigueFactor))) max 0;
+};
 
 // Save progress local
 _trench setVariable ["ace_trenches_progress", _progress];

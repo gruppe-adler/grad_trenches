@@ -84,6 +84,9 @@ for "_i" from _progressLeft to 10 do {
     private _vectorDiffZ = 1 - (_i / 10);
     private _delay = _digTime * ((_i / 10) - _actualProgress);
     private _progress = _i / 10;
+    if ((_trench getVariable ["ace_trenches_diggerCount", 1]) > 1) then {
+        _progress = _i / (10 * (_trench getVariable ["ace_trenches_diggerCount", 1]));
+    };
     [FUNC(setTrenchPlacement), [_unit, _trench, _trenchId, _basePos vectorDiff [0, 0, _vectorDiffZ], _vecDirAndUp, _progress, _digTime], _delay] call CBA_fnc_waitAndExecute;
 };
 

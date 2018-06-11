@@ -3,6 +3,12 @@
             class ACE_ContinueDiggingTrench { \
                 statement = QUOTE([ARR_2(_target,_player)] call FUNC(continueDiggingTrench);); \
             }; \
+            class GVAR(helpDigging) { \
+                displayName = CSTRING(HelpDigging); \
+                condition = QUOTE([ARR_2(_target,_player)] call FUNC(canHelpDiggingTrench)); \
+                statement = QUOTE([ARR_2(_target,_player)] call FUNC(addDigger)); \
+                priority = -1; \
+            }; \
             class GVAR(placeCamouflage) { \
                 displayName = CSTRING(placeCamouflage); \
                 condition = QUOTE([ARR_2(_target,_player)] call FUNC(canPlaceCamouflage)); \

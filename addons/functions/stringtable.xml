@@ -171,6 +171,14 @@
             <German>Der Ausdauerkoeffizient beim Bauen von Gräben (0 zum Deaktivieren)</German>
             <Russian>Как сильно снижается стамина от копания (0 чтобы не снижалась)</Russian>
         </Key>
+        <Key ID="STR_GRAD_Trenches_functions_settingBuildFatigueFactorOverload_displayName">
+            <English>Fatigue factor overload</English>
+            <German>Ausdauerkoeffizient überlastung</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_settingBuildFatigueFactorOverload_tooltip">
+            <English>Allows the fatigue factor to be overloaded. This means that digging alot of trenches or big ones can lead to the stamina of the person digging beeing in the low are for quite a bit.</English>
+            <German>Ermöglicht es dass der Ausdauerkoeffizient überlastet wird. Das bedeutet dass das Graben vieler oder großer Trenches dazuführen kann das die Stamina des Grabenden sich für eine weihle im niedrigen bereich befindet</German>
+        </Key>
         <Key ID="STR_GRAD_Trenches_functions_ShortEnvelopeDigTime">
             <English>Dig time (in seconds) for short envelope trenches</English>
             <German>Zeit (in Sekunden) um kurze runde Gräben zu graben</German>
@@ -195,6 +203,10 @@
             <English>Dig time (in seconds) for vehicle envelope trenches</English>
             <German>Zeit (in Sekunden) um runde Fahrzeuggräben zu graben</German>
             <Russian>Время (в секундах) копания окопа для техники</Russian>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_HelpDigging">
+            <English>Help digging</English>
+            <German>Mit graben</German>
         </Key>
     </Package>
 </Project>
