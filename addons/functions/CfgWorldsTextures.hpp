@@ -254,6 +254,11 @@ class CfgWorldsTextures {
         surfaceTextureBasePath = "WW2\TerrainsWW2_Hyde\Surfaces_t\";
         filePrefix = "co.paa";
         camouflageObjects[] = {};
+        class Surfaces {
+            class default {
+                texturePath = "WW2\TerrainsWW2_Hyde\Surfaces_t\Hyde_SA_beach_co.paa";
+            };
+        };
     };
 
   //Shapur
