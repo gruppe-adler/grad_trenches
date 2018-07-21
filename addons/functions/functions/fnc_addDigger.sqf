@@ -14,13 +14,13 @@
 params ["_unit", "_trench"];
 
 private _delay = ((missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeof _trench) >>"ace_trenches_diggingDuration"), 20]) * (_trench getVariable ["ace_trenches_progress", 0] / 10));
-_trench setVariable ["ace_trenches_diggerCount", ((_trench getVariable "ace_trenches_diggerCount")+1)];
+_trench setVariable [QGVAR(diggerCount), ((_trench getVariable QGVAR(diggerCount))+1)];
 
 [{
     params ["_args", "_handle"];
     _args params ["_unit", "_trench"];
 
-    if ((_trench getVariable ["ace_trenches_diggerCount", 1]) == 1) exitWith {
+    if ((_trench getVariable [QGVAR(diggerCount), 1]) == 1) exitWith {
         [_handle] call CBA_fnc_removePerFrameHandler;
         [_trench, _unit] call FUNC(continueDiggingTrench);
     };
@@ -49,7 +49,7 @@ _trench setVariable ["ace_trenches_diggerCount", ((_trench getVariable "ace_tren
         (_this select 0) params ["_unit", "_trench", "_handle"];
 
         [_handle] call CBA_fnc_removePerFrameHandler;
-        _trench setVariable ["ace_trenches_diggerCount", 0,true];
+        _trench setVariable [QGVAR(diggerCount), 0,true];
 
         // Reset animation
         [_unit, "", 1] call ace_common_fnc_doAnimation;
@@ -58,8 +58,8 @@ _trench setVariable ["ace_trenches_diggerCount", ((_trench getVariable "ace_tren
         (_this select 0) params ["_unit", "_trench", "_handle"];
 
         [_handle] call CBA_fnc_removePerFrameHandler;
-        private _count = (_trench getVariable "ace_trenches_diggerCount");
-        _trench setVariable ["ace_trenches_diggerCount", (_count-1),true];
+        private _count = (_trench getVariable QGVAR(diggerCount));
+        _trench setVariable [QGVAR(diggerCount), (_count-1),true];
 
         // Reset animation
         [_unit, "", 1] call ace_common_fnc_doAnimation;

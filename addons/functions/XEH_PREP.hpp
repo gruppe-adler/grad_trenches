@@ -12,4 +12,3 @@ PREP(placeCamouflage);
 PREP(placeConfirm);
 PREP(placeTrench);
 PREP(removeCamouflage);
-PREP(setTrenchPlacement);

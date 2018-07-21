@@ -66,9 +66,7 @@ private _fnc_onFailure = {
 [(_digTimeLeft + 0.5), [_unit, _trench], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_DiggingTrench"] call ace_common_fnc_progressBar;
 
 if(_actualProgress == 0) then {
-    [_unit, _trench, _trenchId, _basePos vectorDiff [0, 0, 1.0], _vecDirAndUp, _actualProgress] call ace_trenches_fnc_setTrenchPlacement;
-
-    //Remove grass
+      //Remove grass
     {
         private _trenchGrassCutter = createVehicle ["Land_ClutterCutter_medium_F", [0, 0, 0], [], 0, "NONE"];
         private _cutterPos = AGLToASL (_trench modelToWorld _x);
@@ -78,17 +76,39 @@ if(_actualProgress == 0) then {
     } foreach getArray (configFile >> "CfgVehicles" >> (typeof _trench) >> "ace_trenches_grassCuttingPoints");
 };
 
-private _progressLeft = (_actualProgress * 10) + 1;
+[{
+  params ["_args", "_handle"];
+  _args params ["_trench", "_unit", "_digTime", "_trenchId"];
+  private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
+  private _diggerCount = _trench getVariable [QGVAR(diggerCount), 0];
 
-for "_i" from _progressLeft to 10 do {
-    private _vectorDiffZ = 1 - (_i / 10);
-    private _delay = _digTime * ((_i / 10) - _actualProgress);
-    private _progress = _i / 10;
-    if ((_trench getVariable ["ace_trenches_diggerCount", 1]) > 1) then {
-        _progress = _i / (10 * (_trench getVariable ["ace_trenches_diggerCount", 1]));
-    };
-    [FUNC(setTrenchPlacement), [_unit, _trench, _trenchId, _basePos vectorDiff [0, 0, _vectorDiffZ], _vecDirAndUp, _progress, _digTime], _delay] call CBA_fnc_waitAndExecute;
-};
+  if (
+        (_unit getVariable ["ace_trenches_isDiggingId", -1] != _trenchId) ||
+        (_trench getVariable ["ace_trenches_digging", false]) ||
+        (_diggerCount <= 0) ||
+        (_actualProgress >= 1)
+     ) exitWith {
+    [_handle] call CBA_fnc_removePerFrameHandler;
+  };
+
+  private _pos = getPos _trench;
+  _pos set [2,((_pos select 2) + (((_trench getVariable [QGVAR(diggingSteps), 0]) * _digTime) * _diggerCount))];
+
+  _trench setPos _pos;
+  _trench setVectorDirAndUp _vecDirAndUp;
+
+  //Fatigue impact
+  if (GVAR(buildFatigueFactorOverload)) then {
+      ace_advanced_fatigue_anReserve = ace_advanced_fatigue_anReserve - (_digTime * GVAR(buildFatigueFactor));
+  }else{
+      ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (_digTime * GVAR(buildFatigueFactor))) max 0;
+  };
+
+  // Save progress
+  _trench setVariable ["ace_trenches_progress", (_actualProgress + ((1/_digTime) * _diggerCount)), true];
+
+},1,[_trench, _unit, _digTime, _trenchId]] call CBA_fnc_addPerFrameHandler;
+
 
 // Play animation
 [_unit, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation;

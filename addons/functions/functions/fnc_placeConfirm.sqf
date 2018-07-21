@@ -36,42 +36,31 @@ params ["_unit"];
 if (isNull ace_trenches_trench) exitWith {};
 
 private _trenchTexture = (getObjectTextures ace_trenches_trench) select 0;
+private _vecDirAndUp = [(vectorDir ace_trenches_trench), (vectorUp ace_trenches_trench)];
 deleteVehicle ace_trenches_trench;
-private _trench = createVehicle [ace_trenches_trenchClass, position _unit, [], 0, "NONE"];
+
+private _trench = createVehicle [ace_trenches_trenchClass, ace_trenches_trenchPos, [], 0, "NONE"];
 _trench setObjectTextureGlobal [0,_trenchTexture];
+_trench setVectorDirAndUp _vecDirAndUp;
 
-ace_trenches_trenchPlacementData params ["_dx", "_dy", "_offset"];
-private _basePos = ace_trenches_trenchPos;
-private _angle = (ace_trenches_digDirection + getDir _unit);
+private _boundingBox = boundingBoxReal _trench;
+_boundingBox params ["_lbfc", "_rtbc"];                                         //_lbfc(Left Bottom Front Corner) _rtbc (Right Top Back Corner)
+_lbfc params ["", "", "_lbfcZ"];
+_rtbc params ["", "", "_rtbcZ"];
 
-// _v1 forward from the player, _v2 to the right, _v3 points away from the ground
-private _v3 = surfaceNormal _basePos;
-private _v2 = [sin _angle, +cos _angle, 0] vectorCrossProduct _v3;
-private _v1 = _v3 vectorCrossProduct _v2;
+private _centerBox = boundingCenter _trench;
+_centerBox params ["", "", "_centerBoxZ"];
 
-// Stick the trench to the ground
-_basePos set [2, getTerrainHeightASL _basePos];
-private _minzoffset = 0;
-private ["_ix","_iy"];
-for [{_ix = -_dx/2},{_ix <= _dx/2},{_ix = _ix + _dx/3}] do {
-    for [{_iy = -_dy/2},{_iy <= _dy/2},{_iy = _iy + _dy/3}] do {
-        private _pos = _basePos vectorAdd (_v2 vectorMultiply _ix)
-                                vectorAdd (_v1 vectorMultiply _iy);
-        _minzoffset = _minzoffset min ((getTerrainHeightASL _pos) - (_pos select 2));
-        #ifdef DEBUG_MODE_FULL
-            _pos set [2, getTerrainHeightASL _pos];
-            _pos2 = +_pos;
-            _pos2 set [2, getTerrainHeightASL _pos + 1];
-            drawLine3D [ASLtoAGL _pos, ASLtoAGL _pos2, [1,1,0,1]];
-        #endif
-    };
-};
-_basePos set [2, (_basePos select 2) + _minzoffset + _offset];
-private _vecDirAndUp = [_v1, _v3];
-ace_trenches_trench = objNull;
+private _heightFromCenter = _centerBoxZ - _lbfcZ;
+private _heightFromCenterDiff = _centerBoxZ - _rtbcZ;
 
-diag_log str([_basePos, _vecDirAndUp]);
+diag_log format ["Trench: BoundingBox: LBFCZ: %1, RTBCZ: %2, HFC: %3, HFCD: %4", _lbfcZ, _rtbcZ, _heightFromCenter, _heightFromCenterDiff];
 
-_trench setVariable ["ace_trenches_placeData", [_basePos, _vecDirAndUp], true];
+private _newPos = _trench modelToWorld [0,0,_heightFromCenterDiff];
+private _posDiff = ((getPos _trench) select 2) - (_newPos select 2);
+_trench setVariable [QGVAR(diggingSteps), (_posDiff /100)];
+_trench setPos _newPos;
+
+_trench setVariable ["ace_trenches_placeData", [_newPos, _vecDirAndUp], true];
 
 [_trench, _unit] call FUNC(continueDiggingTrench);

@@ -37,7 +37,7 @@ ace_trenches_trench = _trench;
 ["ace_common_enableSimulationGlobal", [_trench, false]] call CBA_fnc_serverEvent;
 
 ace_trenches_digDirection = 0;
-_trench setVariable ["ace_trenches_diggerCount", 1,true];
+_trench setVariable [QGVAR(diggerCount), 1,true];
 GVAR(currentSurface) = "";
 
 // pfh that runs while the dig is in progress
