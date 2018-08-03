@@ -78,7 +78,7 @@ if(_actualProgress == 0) then {
 
 [{
   params ["_args", "_handle"];
-  _args params ["_trench", "_unit", "_digTime", "_trenchId"];
+  _args params ["_trench", "_unit", "_digTime", "_trenchId", "_vecDirAndUp"];
   private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
   private _diggerCount = _trench getVariable [QGVAR(diggerCount), 0];
 
@@ -107,7 +107,7 @@ if(_actualProgress == 0) then {
   // Save progress
   _trench setVariable ["ace_trenches_progress", (_actualProgress + ((1/_digTime) * _diggerCount)), true];
 
-},1,[_trench, _unit, _digTime, _trenchId]] call CBA_fnc_addPerFrameHandler;
+},1,[_trench, _unit, _digTime, _trenchId, _vecDirAndUp]] call CBA_fnc_addPerFrameHandler;
 
 
 // Play animation
