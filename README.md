@@ -90,7 +90,7 @@ Contributions and bug reports are well appreciated. Feel free to fork this proje
 When encountering an error message when placing a trench please atatch your RPT-File so we can directly analyze the problem.
 
 ## Add own map
-It is not possible to automaticially get the path to the ground texture. Therefore maps have to be included in a config to work with GRAD trenches. This config is located [here](addons/trenches/CfgWorldsTextures.hpp).
+It is not possible to automaticially get the path to the ground texture. Therefore maps have to be included in a config to work with GRAD trenches. This config is located [here](https://github.com/gruppe-adler/grad_trenches/blob/master/addons/functions/CfgWorldsTextures.hpp).
 
 
 **We will take Altis as an example:**  
