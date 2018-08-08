@@ -94,7 +94,7 @@ It is not possible to automaticially get the path to the ground texture. Therefo
 
 
 **We will take Altis as an example:**  
-Adding a map by your own can be done by any additional mod. You don't have to edit the source. Just create a mod and add `grad_trenches` to `requiredAddons` in your `CfgPatches`.
+Adding a map by your own can be done by any additional mod. You don't have to edit the source. Just create a mod and add `grad_trenches_functions` to `requiredAddons` in your `CfgPatches`.
 
 Then create a config and add this skeleton to it
 
