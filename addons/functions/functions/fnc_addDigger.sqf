@@ -16,13 +16,13 @@ if ((_trench getVariable [QGVAR(diggerCount), 1]) < 1) exitWith {[_trench, _unit
 _trench setVariable [QGVAR(diggerCount), ((_trench getVariable QGVAR(diggerCount))+1), true];
 
 [{
-    params ["_args", "_handle"];
+   params ["_args", "_handle"];
     _args params ["_unit", "_trench"];
 
     if ((_trench getVariable [QGVAR(diggerCount), 1]) <= 1) exitWith {
-        [_handle] call CBA_fnc_removePerFrameHandler;
-        [_trench, _unit] call FUNC(continueDiggingTrench);
-    };	
+      [_handle] call CBA_fnc_removePerFrameHandler;
+      [_trench, _unit] call FUNC(continueDiggingTrench);
+   };
 },1,_this] call CBA_fnc_addPerFrameHandler;
 
 private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
@@ -38,18 +38,18 @@ private _fnc_onFinish = {
     // Reset animation
     [_unit, "", 1] call ace_common_fnc_doAnimation;
 };
-	
+
 private _fnc_onFailure = {
     (_this select 0) params ["_unit", "_trench", "_handle"];
 
-	[_handle] call CBA_fnc_removePerFrameHandler;
+    [_handle] call CBA_fnc_removePerFrameHandler;
     private _count = (_trench getVariable QGVAR(diggerCount));
     _trench setVariable [QGVAR(diggerCount), (_count-1),true];
 
     // Reset animation
     [_unit, "", 1] call ace_common_fnc_doAnimation;
 };
-	
+
 [(_digTimeLeft + 0.5), [_unit, _trench, _handle], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_DiggingTrench"] call ace_common_fnc_progressBar;
-    
+
 [_unit, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation;
