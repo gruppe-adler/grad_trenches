@@ -50,7 +50,15 @@ ace_trenches_digPFH = [{
     };
 
     // Cancel if the place is no longer suitable
-    if !([_unit] call ace_trenches_fnc_canDigTrench) exitWith {
+    private _checkVar = [_unit] call ace_trenches_fnc_canDigTrench;
+    if ((typeName _checkVar) == "Number") then {
+      if (_checkVar > 0) then {
+         _checkVar = true;
+      }else{
+         _checkVar = false;
+      };
+    };
+    if (_checkVar) exitWith {
         [_unit] call ace_trenches_fnc_placeCancel;
     };
 

@@ -10,7 +10,6 @@ PREP_RECOMPILE_END;
 [QGVAR(allowCamouflage), "CHECKBOX", [localize LSTRING(settingAllowCamouflage_displayName), localize LSTRING(settingAllowCamouflage_tooltip)], localize LSTRING(settingCategory), true] call CBA_Settings_fnc_init;
 [QGVAR(camouflageRequireEntrenchmentTool), "CHECKBOX", [localize LSTRING(settingCamouflageRequireEntrenchmentTool_displayName), localize LSTRING(settingCamouflageRequireEntrenchmentTool_tooltip)], localize LSTRING(settingCategory), false] call CBA_Settings_fnc_init;
 [QGVAR(buildFatigueFactor), "SLIDER", [localize LSTRING(settingBuildFatigueFactor_displayName), localize LSTRING(settingBuildFatigueFactor_tooltip)], localize LSTRING(settingCategory), [0, 5, 1, 1]] call CBA_Settings_fnc_init;
-[QGVAR(buildFatigueFactorOverload), "CHECKBOX", [localize LSTRING(settingBuildFatigueFactorOverload_displayName), localize LSTRING(settingBuildFatigueFactorOverload_tooltip)], localize LSTRING(settingCategory), true] call CBA_Settings_fnc_init;
 
 [QGVAR(allowShortEnvelope), "CHECKBOX", [localize LSTRING(allowShortEnvelope_displayName), localize LSTRING(allowShortEnvelope_tooltip)], localize LSTRING(settingCategory), true] call CBA_Settings_fnc_init;
 [QGVAR(allowSmallEnvelope), "CHECKBOX", [localize LSTRING(allowSmallEnvelope_displayName), localize LSTRING(allowSmallEnvelope_tooltip)], localize LSTRING(settingCategory), true] call CBA_Settings_fnc_init;

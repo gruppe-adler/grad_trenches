@@ -98,11 +98,8 @@ if(_actualProgress == 0) then {
   _trench setVectorDirAndUp _vecDirAndUp;
 
   //Fatigue impact
-  if (GVAR(buildFatigueFactorOverload)) then {
-      ace_advanced_fatigue_anReserve = ace_advanced_fatigue_anReserve - (_digTime * GVAR(buildFatigueFactor));
-  }else{
-      ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (_digTime * GVAR(buildFatigueFactor))) max 0;
-  };
+  ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (_digTime * GVAR(buildFatigueFactor))) max 0;
+  ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + ((_digTime * GVAR(buildFatigueFactor))/600)) min 1;
 
   // Save progress
   _trench setVariable ["ace_trenches_progress", (_actualProgress + ((1/_digTime) * _diggerCount)), true];
