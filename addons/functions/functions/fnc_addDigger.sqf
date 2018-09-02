@@ -15,7 +15,7 @@ params ["_unit", "_trench"];
 if ((_trench getVariable [QGVAR(diggerCount), 1]) < 1) exitWith {[_trench, _unit] call FUNC(continueDiggingTrench);};
 _trench setVariable [QGVAR(diggerCount), ((_trench getVariable QGVAR(diggerCount))+1), true];
 
-[{
+private _handle = [{
    params ["_args", "_handle"];
     _args params ["_unit", "_trench"];
 
