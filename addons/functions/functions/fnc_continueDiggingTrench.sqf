@@ -25,7 +25,7 @@ if(_actualProgress == 1) exitWith {};
 // Mark trench as being worked on
 _trench setVariable ["ace_trenches_digging", true, true];
 
-private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeof _trench) >>"ace_trenches_diggingDuration"), 20];
+private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >>"ace_trenches_diggingDuration"), 20];
 private _digTimeLeft = _digTime * (1 - _actualProgress);
 
 private _placeData = _trench getVariable ["ace_trenches_placeData", [[], []]];
@@ -73,7 +73,7 @@ if(_actualProgress == 0) then {
         _cutterPos set [2, getTerrainHeightASL _cutterPos];
         _trenchGrassCutter setPosASL _cutterPos;
         deleteVehicle _trenchGrassCutter;
-    } foreach getArray (configFile >> "CfgVehicles" >> (typeof _trench) >> "ace_trenches_grassCuttingPoints");
+    } foreach getArray (configFile >> "CfgVehicles" >> (typeOf _trench) >> "ace_trenches_grassCuttingPoints");
 };
 
 [{

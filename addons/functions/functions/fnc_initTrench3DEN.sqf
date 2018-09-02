@@ -10,10 +10,10 @@
 */
 #include "script_component.hpp"
 params [
-    ["_object", objnull, [objNull]]
+    ["_object", objNull, [objNull]]
 ];
 
-_initTrench = {
+private _initTrench = {
     params["_object"];
     _object addEventHandler ["Dragged3DEN", {
         params["_object"];
