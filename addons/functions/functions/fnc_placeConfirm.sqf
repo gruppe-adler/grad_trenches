@@ -61,6 +61,8 @@ private _posDiff = ((getPos _trench) select 2) - (_newPos select 2);
 _trench setVariable [QGVAR(diggingSteps), (_posDiff /100)];
 _trench setPos _newPos;
 
+diag_log format ["GRAD TRENCHES New Pos: %1, Vector: %2", _newPos, _vecDirAndUp];
+
 _trench setVariable ["ace_trenches_placeData", [_newPos, _vecDirAndUp], true];
 
 [_trench, _unit] call FUNC(continueDiggingTrench);

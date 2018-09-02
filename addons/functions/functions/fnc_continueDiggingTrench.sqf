@@ -97,6 +97,8 @@ if(_actualProgress == 0) then {
   _trench setPos _pos;
   _trench setVectorDirAndUp _vecDirAndUp;
 
+  diag_log format ["GRAD_Trench Calc: Pos: %1, Vector: %2", _pos, _vecDirAndUp];
+
   //Fatigue impact
   ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (_digTime * GVAR(buildFatigueFactor))) max 0;
   ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + ((_digTime * GVAR(buildFatigueFactor))/600)) min 1;
