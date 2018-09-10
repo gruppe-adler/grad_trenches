@@ -84,15 +84,18 @@ if(_actualProgress == 0) then {
 
   if (
         (_unit getVariable ["ace_trenches_isDiggingId", -1] != _trenchId) ||
-        (_trench getVariable ["ace_trenches_digging", false]) ||
+        !(_trench getVariable ["ace_trenches_digging", false]) ||
         (_diggerCount <= 0) ||
         (_actualProgress >= 1)
      ) exitWith {
     [_handle] call CBA_fnc_removePerFrameHandler;
   };
 
-  private _pos = getPos _trench;
-  _pos set [2,((_pos select 2) + (((_trench getVariable [QGVAR(diggingSteps), 0]) * _digTime) * _diggerCount))];
+  diag_log format ["GRAD_Trench Pos %1", getPosATL _trench];
+  diag_log format ["GRAD_Trench DigTime: %1, DigCount: %2", _digTime, _diggerCount];
+  diag_log format ["GRAD_Trench Up %1", ((_trench getVariable [QGVAR(diggingSteps), 0]) * _diggerCount)];
+
+  private _pos = _trench modelToWorld [0,0,((_trench getVariable [QGVAR(diggingSteps), 0]) * _diggerCount)];
 
   _trench setPos _pos;
   _trench setVectorDirAndUp _vecDirAndUp;
