@@ -41,7 +41,6 @@ deleteVehicle ace_trenches_trench;
 
 ace_trenches_trenchPos set [2, 0];
 private _trench = createVehicle [ace_trenches_trenchClass, ace_trenches_trenchPos, [], 0, "CAN_COLLIDE"];
-_trench setVariable [QGVAR(diggerCount), 1,true];
 _trench setObjectTextureGlobal [0,_trenchTexture];
 
 private _boundingBox = boundingBoxReal _trench;
@@ -51,7 +50,7 @@ _rtbc params ["", "", "_rtbcZ"];
 
 private _posDiff = (abs(_lbfcZ) + abs(_rtbcZ));
 private _newPos = (_trench modelToWorldWorld [0,0, -(_posDiff)]);
-_trench setVariable [QGVAR(diggingSteps), (_posDiff /100)];
+_trench setVariable [QGVAR(diggingSteps), (_posDiff /1000)];
 _trench setPosWorld _newPos;
 _trench setVectorDirAndUp _vecDirAndUp;
 

@@ -12,22 +12,19 @@
 
 params ["_unit", "_trench"];
 
-if ((_trench getVariable [QGVAR(diggerCount), 1]) < 1) exitWith {[_trench, _unit] call FUNC(continueDiggingTrench);};
+if ((_trench getVariable [QGVAR(diggerCount), 0]) < 1) exitWith {[_trench, _unit] call FUNC(continueDiggingTrench);};
 _trench setVariable [QGVAR(diggerCount), ((_trench getVariable QGVAR(diggerCount))+1), true];
+if (_trench getVariable [QGVAR(diggerCount), 0] == 1) then {_trench setVariable [QGVAR(nextDigger), player, true]};
 
 private _handle = [{
    params ["_args", "_handle"];
     _args params ["_unit", "_trench"];
 
-    if ((_trench getVariable [QGVAR(diggerCount), 1]) <= 1) exitWith {
+    if ((_trench getVariable [QGVAR(nextDigger), player]) == player && ((_trench getVariable [QGVAR(diggerCount), 1]) <= 1 || _trench getVariable ["ace_trenches_digging", false])) exitWith {
       [_handle] call CBA_fnc_removePerFrameHandler;
       [_trench, _unit] call FUNC(continueDiggingTrench);
    };
 },1,_this] call CBA_fnc_addPerFrameHandler;
-
-private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
-private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeof _trench) >>"ace_trenches_diggingDuration"), 20];
-private _digTimeLeft = _digTime * (1 - _actualProgress);
 
 // Create progress bar
 private _fnc_onFinish = {
@@ -49,7 +46,14 @@ private _fnc_onFailure = {
     // Reset animation
     [_unit, "", 1] call ace_common_fnc_doAnimation;
 };
+private _fnc_condition = {
+   (_this select 0) params ["_unit", "_trench"];
 
-[(_digTimeLeft + 0.5), [_unit, _trench, _handle], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_DiggingTrench"] call ace_common_fnc_progressBar;
+   if (_trench getVariable [QGVAR(diggerCount), 0] <= 0) exitWith {false};
+   if (GVAR(stopBuildingAtFatigueMax) && (ace_advanced_fatigue_anReserve <= 0))  exitWith {false};
+   true
+};
+
+[[_unit, _trench, _handle], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_DiggingTrench", _fnc_condition] call ace_common_fnc_progressBar;
 
 [_unit, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation;
