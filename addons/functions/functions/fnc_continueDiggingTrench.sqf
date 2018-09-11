@@ -25,7 +25,7 @@ if(_actualProgress == 1) exitWith {};
 // Mark trench as being worked on
 _trench setVariable ["ace_trenches_digging", true, true];
 
-private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeof _trench) >>"ace_trenches_diggingDuration"), 20];
+private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >>"ace_trenches_diggingDuration"), 20];
 private _digTimeLeft = _digTime * (1 - _actualProgress);
 
 private _placeData = _trench getVariable ["ace_trenches_placeData", [[], []]];
@@ -73,10 +73,10 @@ if(_actualProgress == 0) then {
         _cutterPos set [2, getTerrainHeightASL _cutterPos];
         _trenchGrassCutter setPosASL _cutterPos;
         deleteVehicle _trenchGrassCutter;
-    } foreach getArray (configFile >> "CfgVehicles" >> (typeof _trench) >> "ace_trenches_grassCuttingPoints");
+    } foreach getArray (configFile >> "CfgVehicles" >> (typeOf _trench) >> "ace_trenches_grassCuttingPoints");
 };
 
-[{
+_handle = [{
   params ["_args", "_handle"];
   _args params ["_trench", "_unit", "_digTime", "_trenchId", "_vecDirAndUp"];
   private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
@@ -91,23 +91,30 @@ if(_actualProgress == 0) then {
     [_handle] call CBA_fnc_removePerFrameHandler;
   };
 
-  diag_log format ["GRAD_Trench Pos %1", getPosATL _trench];
-  diag_log format ["GRAD_Trench DigTime: %1, DigCount: %2", _digTime, _diggerCount];
-  diag_log format ["GRAD_Trench Up %1", ((_trench getVariable [QGVAR(diggingSteps), 0]) * _diggerCount)];
+  private _boundingBox = boundingBoxReal _trench;
+  _boundingBox params ["_lbfc"];                                         //_lbfc(Left Bottom Front Corner) _rtbc (Right Top Back Corner)
+  _lbfc params ["_lbfcX", "_lbfcY", "_lbfcZ"];
 
-  private _pos = _trench modelToWorld [0,0,((_trench getVariable [QGVAR(diggingSteps), 0]) * _diggerCount)];
+  diag_log " ";
 
-  _trench setPos _pos;
+  private _pos = (getPosASL _trench);
+  private _posDiff = (abs(((_trench getVariable [QGVAR(diggingSteps), 0]) * _diggerCount) + _lbfcZ))/(_digTime/2);
+  _pos set [2,((_pos select 2) + _posDiff)];
+
+  _trench setPosASL _pos;
   _trench setVectorDirAndUp _vecDirAndUp;
 
-  diag_log format ["GRAD_Trench Calc: Pos: %1, Vector: %2", _pos, _vecDirAndUp];
+  diag_log format ["GRAD_Trench Calc: Pos: %1", _pos];
 
   //Fatigue impact
   ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (_digTime * GVAR(buildFatigueFactor))) max 0;
-  ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + ((_digTime * GVAR(buildFatigueFactor))/600)) min 1;
+  ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + ((_digTime * GVAR(buildFatigueFactor))/1200)) min 1;
 
   // Save progress
   _trench setVariable ["ace_trenches_progress", (_actualProgress + ((1/_digTime) * _diggerCount)), true];
+
+  hint format ["Fatigue Reserve: %1, Fatigue: %2", ace_advanced_fatigue_anReserve, ace_advanced_fatigue_anFatigue];
+  if (GVAR(stopBuildingAtFatigueMax) && (ace_advanced_fatigue_anReserve <= 0)) exitWith {[_handle] call CBA_fnc_removePerFrameHandler;};
 
 },1,[_trench, _unit, _digTime, _trenchId, _vecDirAndUp]] call CBA_fnc_addPerFrameHandler;
 

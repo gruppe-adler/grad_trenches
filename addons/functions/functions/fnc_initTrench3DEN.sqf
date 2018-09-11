@@ -13,7 +13,7 @@ params [
     ["_object", objnull, [objNull]]
 ];
 
-_initTrench = {
+private _initTrench = {
     params["_object"];
     _object addEventHandler ["Dragged3DEN", {
         params["_object"];
