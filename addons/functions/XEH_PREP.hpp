@@ -11,4 +11,5 @@ PREP(initTrench3DEN);
 PREP(placeCamouflage);
 PREP(placeConfirm);
 PREP(placeTrench);
+PREP(progressBar);
 PREP(removeCamouflage);
