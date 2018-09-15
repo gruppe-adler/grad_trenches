@@ -1,4 +1,4 @@
-[![Logo](data/logo.png)](https://github.com/gruppe-adler/grad_trenches)
+[![Logo](data/logo.jpg)](https://github.com/gruppe-adler/grad_trenches)
 
 <p align="center">
     <a href="https://github.com/gruppe-adler/grad_trenches/releases/latest">
