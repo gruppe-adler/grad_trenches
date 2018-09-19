@@ -66,14 +66,14 @@ private _fnc_onFailure = {
 private _fnc_condition = {
    (_this select 0) params ["_unit", "_trench"];
 
-   if (_unit getVariable ["ace_trenches_isDiggingId", -1] != _trenchId) exitWith {false};
+   if (_unit getVariable ["ace_trenches_isDiggingId", -1] != ace_trenches_trenchId) exitWith {false};
    if !(_trench getVariable ["ace_trenches_digging", false]) exitWith {false};
    if (_trench getVariable [QGVAR(diggerCount), 0] <= 0) exitWith {false};
    if (GVAR(stopBuildingAtFatigueMax) && (ace_advanced_fatigue_anReserve <= 0))  exitWith {false};
    true
 };
 
-[ [_unit, _trench], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_DiggingTrench", _fnc_condition] call FUNC(progressBar);
+[[_unit, _trench], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_DiggingTrench", _fnc_condition] call FUNC(progressBar);
 
 if(_actualProgress == 0) then {
       //Remove grass
@@ -86,7 +86,7 @@ if(_actualProgress == 0) then {
     } foreach getArray (configFile >> "CfgVehicles" >> (typeOf _trench) >> "ace_trenches_grassCuttingPoints");
 };
 
-_handle = [{
+[{
   params ["_args", "_handle"];
   _args params ["_trench", "_unit", "_digTime", "_trenchId", "_vecDirAndUp", "_pbHandle"];
   private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
