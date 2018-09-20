@@ -28,6 +28,7 @@ _trench setVariable [QGVAR(diggerCount), 1,true];
 
 private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >>"ace_trenches_diggingDuration"), 20];
 
+
 private _placeData = _trench getVariable ["ace_trenches_placeData", [[], []]];
 _placeData params ["_basePos", "_vecDirAndUp"];
 

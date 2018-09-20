@@ -10,7 +10,7 @@
 */
 #include "script_component.hpp"
 params [
-    ["_object", objnull, [objNull]]
+    ["_object", objNull, [objNull]]
 ];
 
 private _initTrench = {
