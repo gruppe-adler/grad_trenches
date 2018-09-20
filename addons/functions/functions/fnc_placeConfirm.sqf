@@ -39,27 +39,20 @@ private _trenchTexture = (getObjectTextures ace_trenches_trench) select 0;
 private _vecDirAndUp = [(vectorDir ace_trenches_trench), (vectorUp ace_trenches_trench)];
 deleteVehicle ace_trenches_trench;
 
-private _trench = createVehicle [ace_trenches_trenchClass, ace_trenches_trenchPos, [], 0, "NONE"];
+ace_trenches_trenchPos set [2, 0];
+private _trench = createVehicle [ace_trenches_trenchClass, ace_trenches_trenchPos, [], 0, "CAN_COLLIDE"];
 _trench setObjectTextureGlobal [0,_trenchTexture];
-_trench setVectorDirAndUp _vecDirAndUp;
 
 private _boundingBox = boundingBoxReal _trench;
 _boundingBox params ["_lbfc", "_rtbc"];                                         //_lbfc(Left Bottom Front Corner) _rtbc (Right Top Back Corner)
-_lbfc params ["", "", "_lbfcZ"];
+_lbfc params ["_lbfcX", "_lbfcY", "_lbfcZ"];
 _rtbc params ["", "", "_rtbcZ"];
 
-private _centerBox = boundingCenter _trench;
-_centerBox params ["", "", "_centerBoxZ"];
-
-private _heightFromCenter = _centerBoxZ - _lbfcZ;
-private _heightFromCenterDiff = _centerBoxZ - _rtbcZ;
-
-diag_log format ["Trench: BoundingBox: LBFCZ: %1, RTBCZ: %2, HFC: %3, HFCD: %4", _lbfcZ, _rtbcZ, _heightFromCenter, _heightFromCenterDiff];
-
-private _newPos = _trench modelToWorld [0,0,_heightFromCenterDiff];
-private _posDiff = ((getPos _trench) select 2) - (_newPos select 2);
-_trench setVariable [QGVAR(diggingSteps), (_posDiff /100)];
-_trench setPos _newPos;
+private _posDiff = (abs(_lbfcZ) + abs(_rtbcZ));
+private _newPos = (_trench modelToWorldWorld [0,0, -(_posDiff)]);
+_trench setVariable [QGVAR(diggingSteps), (_posDiff /1000)];
+_trench setPosWorld _newPos;
+_trench setVectorDirAndUp _vecDirAndUp;
 
 _trench setVariable ["ace_trenches_placeData", [_newPos, _vecDirAndUp], true];
 
