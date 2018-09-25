@@ -12,7 +12,11 @@
 
 params ["_trench"];
 
+private _camouflageObjects = _trench getVariable [QGVAR(camouflageObjects), []];
+
 {
     deleteVehicle _x;
-} forEach (_trench getVariable [QGVAR(camouflageObjects), []]);
-_trench setVariable [QGVAR(camouflageObjects), nil, true];
+} forEach (_camouflageObjects select 0);
+
+_camouflageObjects deleteAt 0;
+_trench setVariable [QGVAR(camouflageObjects), _camouflageObjects, true];

@@ -42,7 +42,7 @@ _ctrlPos set [1, ((0 + 29 * ace_common_settingProgressBarLocation) * ((((safezon
 
 [{
     (_this select 0) params ["_args", "_onFinish", "_onFail", "_condition", "_player", "_exceptions"];
-    _args params ["_unit", "_trench"];
+    _args params ["_unit", "_trench", ["_finishCondition", true]];
     private _progress = _trench getVariable ["ace_trenches_progress", 0];
 
     private _errorCode = -1;
@@ -60,8 +60,12 @@ _ctrlPos set [1, ((0 + 29 * ace_common_settingProgressBarLocation) * ((((safezon
                 if !([_player, objNull, _exceptions] call ace_common_fnc_canInteractWith) then {
                     _errorCode = 4;
                 } else {
-                    if (_progress >= 1) then {
+                    if (_finishCondition && _progress >= 1) then {
                         _errorCode = 0;
+                    }else{
+                       if (!(_finishCondition) && _progress <= 0) then {
+                          _errorCode = 0;
+                       };
                     };
                 };
             };

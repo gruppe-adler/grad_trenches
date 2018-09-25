@@ -25,18 +25,17 @@ if(_actualProgress == 1) exitWith {};
 // Mark trench as being worked on
 _trench setVariable ["ace_trenches_digging", true, true];
 _trench setVariable [QGVAR(diggerCount), 1,true];
+_trench setVariable [QGVAR(diggingType), "UP", true];
 
 private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >>"ace_trenches_diggingDuration"), 20];
-
-
 private _placeData = _trench getVariable ["ace_trenches_placeData", [[], []]];
 _placeData params ["_basePos", "_vecDirAndUp"];
 
 private _trenchId = _unit getVariable ["ace_trenches_isDiggingId", -1];
 if(_trenchId < 0) then {
+    ace_trenches_trenchId = ace_trenches_trenchId + 1;
     _trenchId = ace_trenches_trenchId;
     _unit setVariable ["ace_trenches_isDiggingId", _trenchId, true];
-    ace_trenches_trenchId = ace_trenches_trenchId + 1;
 };
 
 // Create progress bar
@@ -44,10 +43,10 @@ private _fnc_onFinish = {
     (_this select 0) params ["_unit", "_trench"];
     _unit setVariable ["ace_trenches_isDiggingId", -1, true];
     _trench setVariable ["ace_trenches_digging", false, true];
+    _trench setVariable [QGVAR(diggingType), nil, true];
 
     // Save progress global
-    private _progress = _trench getVariable ["ace_trenches_progress", 0];
-    _trench setVariable ["ace_trenches_progress", _progress, true];
+    _trench setVariable ["ace_trenches_progress", 1, true];
 
     // Reset animation
     [_unit, "", 1] call ace_common_fnc_doAnimation;
@@ -56,6 +55,7 @@ private _fnc_onFailure = {
     (_this select 0) params ["_unit", "_trench"];
     _unit setVariable ["ace_trenches_isDiggingId", -1, true];
     _trench setVariable ["ace_trenches_digging", false, true];
+    _trench setVariable [QGVAR(diggingType), nil, true];
 
     // Save progress global
     private _progress = _trench getVariable ["ace_trenches_progress", 0];
