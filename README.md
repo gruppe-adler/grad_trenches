@@ -1,4 +1,4 @@
-[![Logo](data/logo.png)](https://github.com/gruppe-adler/grad_trenches)
+[![Logo](data/logo.jpg)](https://github.com/gruppe-adler/grad_trenches)
 
 <p align="center">
     <a href="https://github.com/gruppe-adler/grad_trenches/releases/latest">
@@ -38,7 +38,10 @@ More images can be found [here](https://github.com/gruppe-adler/grad_trenches#mo
 - Custom map config, add your own map if it is not supported
 - Camouflage your trench with small bushes
 - Place trenches in 3DEN and camouflage them directly
-- New trenches to place: Giant trench where soldiers can stand behind and vehicle trenches to cover vulnerable parts
+- New trenches to place
+    - Giant trench where soldiers can stand behind
+    - Vehicle trench to cover vulnerable parts of tanks
+    - Short trench to quickly provide cover for 1-2 soldiers
 
 ### Supported maps
 - [Altis](https://arma3.com/features/terrain)
@@ -74,7 +77,7 @@ More images can be found [here](https://github.com/gruppe-adler/grad_trenches#mo
 Downloads can be found under [Releases](https://github.com/gruppe-adler/grad_trenches/releases).  
 
 #### Steam Workshop
-Support for Steam Workshop is currently in progress, sorry for that.
+Subscribe to GRAD Trenches on [Steam Workshop](http://steamcommunity.com/sharedfiles/filedetails/?id=1224892496) and automaticially get the latest releases.
 
 ## License
 This project is licensed under **GPLv2**.  
@@ -87,11 +90,11 @@ Contributions and bug reports are well appreciated. Feel free to fork this proje
 When encountering an error message when placing a trench please atatch your RPT-File so we can directly analyze the problem.
 
 ## Add own map
-It is not possible to automaticially get the path to the ground texture. Therefore maps have to be included in a config to work with GRAD trenches. This config is located [here](addons/trenches/CfgWorldsTextures.hpp).
+It is not possible to automaticially get the path to the ground texture. Therefore maps have to be included in a config to work with GRAD trenches. This config is located [here](https://github.com/gruppe-adler/grad_trenches/blob/master/addons/functions/CfgWorldsTextures.hpp).
 
 
 **We will take Altis as an example:**  
-Adding a map by your own can be done by any additional mod. You don't have to edit the source. Just create a mod and add `grad_trenches` to `requiredAddons` in your `CfgPatches`.
+Adding a map by your own can be done by any additional mod. You don't have to edit the source. Just create a mod and add `grad_trenches_functions` to `requiredAddons` in your `CfgPatches`.
 
 Then create a config and add this skeleton to it
 

@@ -2,6 +2,10 @@ class CBA_Extended_EventHandlers;
 
 class CfgVehicles {
     class BagFence_base_F;
+    class GRAD_envelope_short: BagFence_base_F {
+        model = QPATHTOF(data\trench_short.p3d);
+        hiddenSelections[] = {"velka"};
+    };
     class ACE_envelope_small: BagFence_base_F {
         model = QPATHTOF(data\trench_small.p3d);
         hiddenSelections[] = {"velka"};
@@ -19,6 +23,11 @@ class CfgVehicles {
         hiddenSelections[] = {"velka"};
     };
 
+    class GRAD_envelope_short_noGeo: BagFence_base_F {
+        scope = 1;
+        model = QPATHTOF(data\trench_short_nogeo.p3d);
+        hiddenSelections[] = {"velka"};
+    };
     class ACE_envelope_small_noGeo: BagFence_base_F {
         model = QPATHTOF(data\trench_small_nogeo.p3d);
         hiddenSelections[] = {"velka"};
