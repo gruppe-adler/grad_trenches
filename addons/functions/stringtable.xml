@@ -196,17 +196,5 @@
             <German>Zeit (in Sekunden) um runde Fahrzeuggräben zu graben</German>
             <Russian>Время (в секундах) копания окопа для техники</Russian>
         </Key>
-        <Key ID="STR_GRAD_Trenches_functions_HelpDigging">
-            <English>Help digging</English>
-            <German>Mit graben</German>
-        </Key>
-        <Key ID="STR_GRAD_Trenches_functions_stopBuildingAtFatigueMax_displayName">
-            <English>Enable Stop on Fatigue</English>
-            <German>Aktiviere Ausdauerbedingter grabe stop</German>
-        </Key>
-        <Key ID="STR_GRAD_Trenches_functions_stopBuildingAtFatigueMax_tooltip">
-            <English>If enabled the digger will stop digging if his fatigue reaches 0.</English>
-            <German>Wenn aktiviert hören die Spieler auf zu graben wenn ihre Ausdauer 0 erreicht.</German>
-        </Key>
     </Package>
 </Project>

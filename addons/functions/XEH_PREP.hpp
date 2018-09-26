@@ -1,6 +1,4 @@
-PREP(addDigger);
 PREP(applyCamouflageAttribute);
-PREP(canHelpDiggingTrench);
 PREP(canPlaceCamouflage);
 PREP(canRemoveCamouflage);
 PREP(continueDiggingTrench);
@@ -11,6 +9,5 @@ PREP(initTrench3DEN);
 PREP(placeCamouflage);
 PREP(placeConfirm);
 PREP(placeTrench);
-PREP(progressBar);
 PREP(removeCamouflage);
-PREP(removeTrench);
+PREP(setTrenchPlacement);

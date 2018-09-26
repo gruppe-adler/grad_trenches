@@ -10,7 +10,7 @@
 */
 #include "script_component.hpp"
 params [
-    ["_object", objNull, [objNull]]
+    ["_object", objnull, [objNull]]
 ];
 
 if (is3DEN) exitWith {

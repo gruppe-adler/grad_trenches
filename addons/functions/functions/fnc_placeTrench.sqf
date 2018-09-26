@@ -37,6 +37,7 @@ ace_trenches_trench = _trench;
 ["ace_common_enableSimulationGlobal", [_trench, false]] call CBA_fnc_serverEvent;
 
 ace_trenches_digDirection = 0;
+
 GVAR(currentSurface) = "";
 
 // pfh that runs while the dig is in progress
@@ -60,7 +61,7 @@ ace_trenches_digPFH = [{
 
     if !(_checkVar) exitWith {
         [_unit] call ace_trenches_fnc_placeCancel;
-    };
+};
 
     // Update trench position
     ace_trenches_trenchPlacementData params ["_dx", "_dy", "_offset"];
@@ -76,8 +77,7 @@ ace_trenches_digPFH = [{
     // Stick the trench to the ground
     _basePos set [2, getTerrainHeightASL _basePos];
     private _minzoffset = 0;
-    private _ix = 0;
-    private _iy = 0;
+    private ["_ix","_iy"];
     for [{_ix = -_dx/2},{_ix <= _dx/2},{_ix = _ix + _dx/3}] do {
         for [{_iy = -_dy/2},{_iy <= _dy/2},{_iy = _iy + _dy/3}] do {
             private _pos = _basePos vectorAdd (_v2 vectorMultiply _ix)
@@ -85,7 +85,7 @@ ace_trenches_digPFH = [{
             _minzoffset = _minzoffset min ((getTerrainHeightASL _pos) - (_pos select 2));
             #ifdef DEBUG_MODE_FULL
                 _pos set [2, getTerrainHeightASL _pos];
-                private _pos2 = +_pos;
+                _pos2 = +_pos;
                 _pos2 set [2, getTerrainHeightASL _pos + 1];
                 drawLine3D [ASLtoAGL _pos, ASLtoAGL _pos2, [1,1,0,1]];
             #endif

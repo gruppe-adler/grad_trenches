@@ -51,7 +51,8 @@ private _result = [_surfaceType, _basePath, getText(configFile >> "CfgWorldsText
 
 if(isNil {_result}) then {
     _result = _defaultTexture;
-    diag_log format ["GRAD_Trenches: Type: %1, Position: %2, WorldName: %3, SurfaceType: %4, Texture: %5", (typeof _object), (position _object), worldName, _surfaceType, _result];
 };
+
+diag_log format ["GRAD_Trenches: Type: %1, Position: %2, WorldName: %3, SurfaceType: %4, Texture: %5", (typeof _object), (position _object), worldName, _surfaceType, _result];
 
 _result;

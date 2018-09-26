@@ -3,15 +3,6 @@
             class ACE_ContinueDiggingTrench { \
                 statement = QUOTE([ARR_2(_target,_player)] call FUNC(continueDiggingTrench);); \
             }; \
-            class ACE_RemoveTrench { \
-                statement = QUOTE([ARR_2(_target,_player)] call FUNC(removeTrench);); \
-             };  \
-            class GVAR(helpDigging) { \
-                displayName = CSTRING(HelpDigging); \
-                condition = QUOTE([ARR_2(_target,_player)] call FUNC(canHelpDiggingTrench)); \
-                statement = QUOTE([ARR_2(_target,_player)] call FUNC(addDigger)); \
-                priority = -1; \
-            }; \
             class GVAR(placeCamouflage) { \
                 displayName = CSTRING(placeCamouflage); \
                 condition = QUOTE([ARR_2(_target,_player)] call FUNC(canPlaceCamouflage)); \
@@ -98,7 +89,7 @@ class CfgVehicles {
         GVAR(isTrench) = 1;
         ace_trenches_diggingDuration = QGVAR(smallEnvelopeDigTime);
 
-        class CamouflagePositions01 {
+        class CamouflagePositions {
             center[] = {0, 1.3, 0};
             left[] = {1.3, -0.8, 0.4};
             right[] = {-1.3,-0.8,0.4};
@@ -114,7 +105,7 @@ class CfgVehicles {
         GVAR(isTrench) = 1;
         ace_trenches_diggingDuration = QGVAR(bigEnvelopeDigTime);
 
-        class CamouflagePositions01 {
+        class CamouflagePositions {
             center[] = {-0.4, 0.4, 0.2};
             left[] = {-1.75, 0.2, 0.2};
             right[] = {1.75, 0.2, 0.2};
@@ -138,7 +129,7 @@ class CfgVehicles {
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";
 
-        class CamouflagePositions01 {
+        class CamouflagePositions {
             left1[] = {-0.5, 0.3, 0.5};
             left2[] = {-2.7, 0.3, 0.5};
             right1[] = {2.7, 0.15, 0.35};
@@ -160,7 +151,7 @@ class CfgVehicles {
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";
 
-        class CamouflagePositions01 {};
+        class CamouflagePositions {};
         class Attributes {};
     };
 
@@ -178,7 +169,7 @@ class CfgVehicles {
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";
 
-        class CamouflagePositions01 {
+        class CamouflagePositions {
             right[] = {1.1,0.2,0.2};
             left[] = {-1.1,0.1,0.2};
         };
