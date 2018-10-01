@@ -104,11 +104,11 @@ private _fnc_condition = {
   _boundingBox params ["_lbfc"];                                         //_lbfc(Left Bottom Front Corner) _rtbc (Right Top Back Corner)
   _lbfc params ["_lbfcX", "_lbfcY", "_lbfcZ"];
 
-  private _pos = (getPosASL _trench);
+  private _pos = (getPosWorld _trench);
   private _posDiff = (abs(((_trench getVariable [QGVAR(diggingSteps), 0]) * _diggerCount) + _lbfcZ))/(_removeTime*5);
   _pos set [2,((_pos select 2) - _posDiff)];
 
-  _trench setPosASL _pos;
+  _trench setPosWorld _pos;
   _trench setVectorDirAndUp _vecDirAndUp;
 
   //Fatigue impact

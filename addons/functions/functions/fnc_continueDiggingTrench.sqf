@@ -29,7 +29,7 @@ _trench setVariable [QGVAR(diggingType), "UP", true];
 
 private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >>"ace_trenches_diggingDuration"), 20];
 private _placeData = _trench getVariable ["ace_trenches_placeData", [[], []]];
-_placeData params ["_basePos", "_vecDirAndUp"];
+_placeData params ["", "_vecDirAndUp"];
 
 private _trenchId = _unit getVariable ["ace_trenches_isDiggingId", -1];
 if(_trenchId < 0) then {
@@ -109,11 +109,11 @@ if(_actualProgress == 0) then {
   _boundingBox params ["_lbfc"];                                         //_lbfc(Left Bottom Front Corner) _rtbc (Right Top Back Corner)
   _lbfc params ["_lbfcX", "_lbfcY", "_lbfcZ"];
 
-  private _pos = (getPosASL _trench);
+  private _pos = (getPosWorld _trench);
   private _posDiff = (abs(((_trench getVariable [QGVAR(diggingSteps), 0]) * _diggerCount) + _lbfcZ))/(_digTime*5);
   _pos set [2,((_pos select 2) + _posDiff)];
 
-  _trench setPosASL _pos;
+  _trench setPosWorld _pos;
   _trench setVectorDirAndUp _vecDirAndUp;
 
   //Fatigue impact
