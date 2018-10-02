@@ -30,11 +30,11 @@ private _handle = [{
       if (_type) exitWith {
          [_trench, _unit] call FUNC(continueDiggingTrench);
       }else{
-         [_trench, _unit] call FUNC(continueDiggingTrench);
+         [_trench, _unit] call FUNC(removeTrench);
       };
    };
 
-   if (isNil ((_trench getVariable [QGVAR(nextDigger), nil])) then {
+   if (isNil (_trench getVariable [QGVAR(nextDigger), nil])) then {
       _trench setVariable [QGVAR(nextDigger), player, true];
    };
 },0.1, [_trench, _unit, _type]] call CBA_fnc_addPerFrameHandler;
@@ -67,7 +67,7 @@ private _fnc_condition = {
 
    if (_trench getVariable [QGVAR(diggerCount), 0] <= 0) exitWith {false};
    if (isNil "_handle") exitWith {false};
-   if (GVAR(stopBuildingAtFatigueMax) && (ace_advanced_fatigue_anReserve <= 0))  exitWith {false};
+   if (GVAR(stopBuildingAtFatigueMax) && (ace_advanced_fatigue_anReserve <= 0)) exitWith {false};
    true
 };
 
