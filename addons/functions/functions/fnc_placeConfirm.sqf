@@ -45,7 +45,7 @@ _trench setObjectTextureGlobal [0,_trenchTexture];
 
 private _boundingBox = boundingBoxReal _trench;
 _boundingBox params ["_lbfc", "_rtbc"];                                         //_lbfc(Left Bottom Front Corner) _rtbc (Right Top Back Corner)
-_lbfc params ["_lbfcX", "_lbfcY", "_lbfcZ"];
+_lbfc params ["", "", "_lbfcZ"];
 _rtbc params ["", "", "_rtbcZ"];
 
 private _posDiff = (abs(_lbfcZ) + abs(_rtbcZ));

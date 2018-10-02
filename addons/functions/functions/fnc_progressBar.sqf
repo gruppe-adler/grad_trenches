@@ -90,7 +90,7 @@ _ctrlPos set [1, ((0 + 29 * ace_common_settingProgressBarLocation) * ((((safezon
             };
         } else {
             if (_onFail isEqualType "") then {
-                [_onFail, [_args, _totalTime, _errorCode]] call CBA_fnc_localEvent;
+                [_onFail, [_args, _errorCode]] call CBA_fnc_localEvent;
             } else {
                 [_args, _errorCode] call _onFail;
             };

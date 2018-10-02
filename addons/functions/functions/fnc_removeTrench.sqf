@@ -30,7 +30,7 @@ _trench setVariable [QGVAR(diggingType), "DOWN", true];
 private _removeTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >>"ace_trenches_removalDuration"), 20];
 
 private _placeData = _trench getVariable ["ace_trenches_placeData", [[], []]];
-_placeData params ["_basePos", "_vecDirAndUp"];
+_placeData params ["", "_vecDirAndUp"];
 
 private _trenchId = _unit getVariable ["ace_trenches_isDiggingId", -1];
 if(_trenchId < 0) then {
