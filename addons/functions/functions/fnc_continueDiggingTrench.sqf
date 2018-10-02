@@ -89,7 +89,7 @@ if(_actualProgress == 0) then {
 
 [{
   params ["_args", "_handle"];
-  _args params ["_trench", "_unit", "_digTime", "_trenchId", "_vecDirAndUp", "_pbHandle"];
+  _args params ["_trench", "_unit", "_digTime", "_trenchId", "_vecDirAndUp"];
   private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
   private _diggerCount = _trench getVariable [QGVAR(diggerCount), 0];
 
@@ -107,7 +107,7 @@ if(_actualProgress == 0) then {
 
   private _boundingBox = boundingBoxReal _trench;
   _boundingBox params ["_lbfc"];                                         //_lbfc(Left Bottom Front Corner) _rtbc (Right Top Back Corner)
-  _lbfc params ["_lbfcX", "_lbfcY", "_lbfcZ"];
+  _lbfc params ["", "", "_lbfcZ"];
 
   private _pos = (getPosWorld _trench);
   private _posDiff = (abs(((_trench getVariable [QGVAR(diggingSteps), 0]) * _diggerCount) + _lbfcZ))/(_digTime*5);
@@ -130,7 +130,7 @@ if(_actualProgress == 0) then {
      _trench setVariable [QGVAR(diggerCount), 0, true];
   };
 
-},0.1,[_trench, _unit, _digTime, _trenchId, _vecDirAndUp, _pbHandle]] call CBA_fnc_addPerFrameHandler;
+},0.1,[_trench, _unit, _digTime, _trenchId, _vecDirAndUp]] call CBA_fnc_addPerFrameHandler;
 
 
 // Play animation

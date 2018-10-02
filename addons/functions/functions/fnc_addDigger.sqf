@@ -27,7 +27,7 @@ private _handle = [{
 
     if ((_trench getVariable [QGVAR(nextDigger), player]) == player && ((_trench getVariable [QGVAR(diggerCount), 1]) <= 1 || _trench getVariable ["ace_trenches_digging", false])) exitWith {
       [_handle] call CBA_fnc_removePerFrameHandler;
-      if (_type) exitWith {
+      if (_type) then {
          [_trench, _unit] call FUNC(continueDiggingTrench);
       }else{
          [_trench, _unit] call FUNC(removeTrench);
