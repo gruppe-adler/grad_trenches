@@ -12,6 +12,9 @@
 params [
     ["_object", objNull, [objNull]]
 ];
+if (isServer) then {
+   _object setVariable ["ace_trenches_progress", 1, true];
+};
 
 if (is3DEN) exitWith {
     [_object] call FUNC(initTrench3DEN);

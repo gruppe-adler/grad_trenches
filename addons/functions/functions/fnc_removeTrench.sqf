@@ -35,7 +35,7 @@ private _removeTime = missionNamespace getVariable [getText (configFile >> "CfgV
 private _placeData = _trench getVariable ["ace_trenches_placeData", [[], []]];
 _placeData params ["", "_vecDirAndUp"];
 
-if (isNil "_vecDirAndUp") then {
+if (count _vecDirAndUp == 0) then {
    _vecDirAndUp = [vectorDir _trench, vectorUp _trench];
 };
 
@@ -131,7 +131,6 @@ private _fnc_condition = {
      _trench setVariable ["ace_trenches_digging", false, true];
      _trench setVariable [QGVAR(diggerCount), 0, true];
   };
-
 },0.1,[_trench, _unit, _removeTime, _trenchId, _vecDirAndUp]] call CBA_fnc_addPerFrameHandler;
 
 // Play animation

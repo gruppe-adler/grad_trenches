@@ -55,5 +55,6 @@ _trench setPosWorld _newPos;
 _trench setVectorDirAndUp _vecDirAndUp;
 
 _trench setVariable ["ace_trenches_placeData", [_newPos, _vecDirAndUp], true];
+_trench setVariable ["ace_trenches_progress", 0, true];
 
 [_trench, _unit] call FUNC(continueDiggingTrench);
