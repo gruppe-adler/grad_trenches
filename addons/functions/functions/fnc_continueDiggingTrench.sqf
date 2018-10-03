@@ -24,15 +24,22 @@ if(_actualProgress == 1) exitWith {};
 
 // Mark trench as being worked on
 _trench setVariable ["ace_trenches_digging", true, true];
-_trench setVariable [QGVAR(diggerCount), 1,true];
 _trench setVariable [QGVAR(diggingType), "UP", true];
+
+if (_trench getVariable [QGVAR(diggerCount), 0] <= 1) then {
+   _trench setVariable [QGVAR(diggerCount), 1,true];
+};
 
 private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >>"ace_trenches_diggingDuration"), 20];
 private _placeData = _trench getVariable ["ace_trenches_placeData", [[], []]];
 _placeData params ["", "_vecDirAndUp"];
 
+if (isNil "_vecDirAndUp") then {
+   _vecDirAndUp = [vectorDir _trench, vectorUp _trench];
+};
+
 private _trenchId = _unit getVariable ["ace_trenches_isDiggingId", -1];
-if(_trenchId < 0) then {
+if(_trenchId < 0 || _trenchId != ace_trenches_trenchId) then {
     ace_trenches_trenchId = ace_trenches_trenchId + 1;
     _trenchId = ace_trenches_trenchId;
     _unit setVariable ["ace_trenches_isDiggingId", _trenchId, true];

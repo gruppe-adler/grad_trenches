@@ -41,7 +41,7 @@ private _handle = [{
 
 // Create progress bar
 private _fnc_onFinish = {
-    (_this select 0) params ["_unit", "_trench", "_handle"];
+    (_this select 0) params ["_unit", "_trench", "", "_handle"];
     [_handle] call CBA_fnc_removePerFrameHandler;
     _trench setVariable [QGVAR(diggerCount), 0,true];
 
@@ -50,7 +50,7 @@ private _fnc_onFinish = {
 };
 
 private _fnc_onFailure = {
-    (_this select 0) params ["_unit", "_trench", "_handle"];
+    (_this select 0) params ["_unit", "_trench", "", "_handle"];
 
     [_handle] call CBA_fnc_removePerFrameHandler;
     private _count = (_trench getVariable QGVAR(diggerCount));
@@ -63,7 +63,7 @@ private _fnc_onFailure = {
     [_unit, "", 1] call ace_common_fnc_doAnimation;
 };
 private _fnc_condition = {
-   (_this select 0) params ["_unit", "_trench", "_handle"];
+   (_this select 0) params ["", "_trench", "", "_handle"];
 
    if (_trench getVariable [QGVAR(diggerCount), 0] <= 0) exitWith {false};
    if (isNil "_handle") exitWith {false};
@@ -71,6 +71,6 @@ private _fnc_condition = {
    true
 };
 
-[[_unit, _trench, _handle], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_DiggingTrench", _fnc_condition] call FUNC(progressBar);
+[[_unit, _trench, _type, _handle], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_DiggingTrench", _fnc_condition] call FUNC(progressBar);
 
 [_unit, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation;

@@ -38,8 +38,10 @@ if (isNull _object) then {
     {
         if(getNumber(configFile >> "CfgVehicles" >> typeOf _x >> QGVAR(isTrench)) == 1) then {
             [_x] call _initTrench;
+            _x setVariable ["ace_trenches_progress", 1, true];
         };
     } forEach (all3DENEntities select 0);
 } else {
     [_object] call _initTrench;
+    _object setVariable ["ace_trenches_progress", 1, true];
 }
