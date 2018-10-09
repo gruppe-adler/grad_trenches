@@ -134,4 +134,4 @@ private _fnc_condition = {
 },0.1,[_trench, _unit, _removeTime, _trenchId, _vecDirAndUp]] call CBA_fnc_addPerFrameHandler;
 
 // Play animation
-[_unit, "AinvPknlMstpSnonWnonDnon_medic4"] call EFUNC(common,doAnimation);
+[_unit, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation;
