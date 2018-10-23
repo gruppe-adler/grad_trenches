@@ -36,13 +36,12 @@ params ["_unit"];
 if (isNull ace_trenches_trench) exitWith {};
 
 private _trenchClass = typeOf ace_trenches_trench;
-private _trenchTexture = (getObjectTextures ace_trenches_trench) select 0;
 private _vecDirAndUp = [(vectorDir ace_trenches_trench), (vectorUp ace_trenches_trench)];
 deleteVehicle ace_trenches_trench;
 
 ace_trenches_trenchPos set [2, 0];
 private _trench = createVehicle [_trenchClass, ace_trenches_trenchPos, [], 0, "CAN_COLLIDE"];
-_trench setObjectTextureGlobal [0,_trenchTexture];
+_trench setObjectTextureGlobal [0,[_trench] call FUNC(getSurfaceTexturePath)];
 
 private _boundingBox = boundingBoxReal _trench;
 _boundingBox params ["_lbfc", "_rtbc"];                                         //_lbfc(Left Bottom Front Corner) _rtbc (Right Top Back Corner)
