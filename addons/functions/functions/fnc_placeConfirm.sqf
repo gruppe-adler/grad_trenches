@@ -35,12 +35,13 @@ _unit setVariable ["ace_trenches_isPlacing", false, true];
 params ["_unit"];
 if (isNull ace_trenches_trench) exitWith {};
 
+private _trenchClass = typeOf ace_trenches_trench;
 private _trenchTexture = (getObjectTextures ace_trenches_trench) select 0;
 private _vecDirAndUp = [(vectorDir ace_trenches_trench), (vectorUp ace_trenches_trench)];
 deleteVehicle ace_trenches_trench;
 
 ace_trenches_trenchPos set [2, 0];
-private _trench = createVehicle [ace_trenches_trenchClass, ace_trenches_trenchPos, [], 0, "CAN_COLLIDE"];
+private _trench = createVehicle [_trenchClass, ace_trenches_trenchPos, [], 0, "CAN_COLLIDE"];
 _trench setObjectTextureGlobal [0,_trenchTexture];
 
 private _boundingBox = boundingBoxReal _trench;
