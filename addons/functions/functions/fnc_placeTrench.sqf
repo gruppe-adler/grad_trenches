@@ -33,7 +33,7 @@ ace_trenches_trench = _trench;
 // prevent collisions with trench
 ["ace_common_enableSimulationGlobal", [_trench, false]] call CBA_fnc_serverEvent;
 
-ace_trenches_digDirection = 0;
+GVAR(digDirection) = 0;
 GVAR(currentSurface) = "";
 
 // pfh that runs while the dig is in progress
@@ -63,7 +63,7 @@ ace_trenches_digPFH = [{
     ace_trenches_trenchPlacementData params ["_dx", "_dy", "_offset"];
     private _basePos = eyePos _unit vectorAdd ([sin getDir _unit, +cos getDir _unit, 0] vectorMultiply 1.0);
 
-    private _angle = (ace_trenches_digDirection + getDir _unit);
+    private _angle = (GVAR(digDirection) + getDir _unit);
 
     // _v1 forward from the player, _v2 to the right, _v3 points away from the ground
     private _v3 = surfaceNormal _basePos;
@@ -101,7 +101,7 @@ ace_trenches_digPFH = [{
 }, 0, [_unit, _trench]] call CBA_fnc_addPerFrameHandler;
 
 // add mouse button action and hint
-[localize "STR_ace_trenches_ConfirmDig", localize "STR_ace_trenches_CancelDig", localize "STR_ace_trenches_ScrollAction"] call ace_interaction_fnc_showMouseHint;
+[localize "STR_ace_trenches_ConfirmDig", localize "STR_ace_trenches_CancelDig"] call ace_interaction_fnc_showMouseHint;
 
 _unit setVariable ["ace_trenches_Dig", [
     _unit, "DefaultAction",

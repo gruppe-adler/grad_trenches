@@ -50,7 +50,7 @@ _rtbc params ["", "", "_rtbcZ"];
 
 private _posDiff = (abs(_lbfcZ) + abs(_rtbcZ));
 private _newPos = (_trench modelToWorldWorld [0,0, -(_posDiff)]);
-_trench setVariable [QGVAR(diggingSteps), (_posDiff /1000)];
+_trench setVariable [QGVAR(diggingSteps), (_posDiff /1000),true];
 _trench setPosWorld _newPos;
 _trench setVectorDirAndUp _vecDirAndUp;
 

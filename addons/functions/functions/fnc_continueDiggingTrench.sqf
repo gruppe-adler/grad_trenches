@@ -136,9 +136,7 @@ if(_actualProgress == 0) then {
      _trench setVariable ["ace_trenches_digging", false, true];
      _trench setVariable [QGVAR(diggerCount), 0, true];
   };
-
 },0.1,[_trench, _unit, _digTime, _trenchId, _vecDirAndUp]] call CBA_fnc_addPerFrameHandler;
-
 
 // Play animation
 [_unit, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation;
