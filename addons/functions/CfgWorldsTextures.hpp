@@ -334,7 +334,7 @@ class CfgWorldsTextures {
     //Ihantala Winter
     class tem_ihantalaw {
         surfaceTextureBasePath = "tem\tem_ihantalaw\data\";
-        filePrefix = "_co.paa";
+        filePrefix = "co.paa";
         camouflageObjects[] = {};
     };
 
