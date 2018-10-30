@@ -45,7 +45,7 @@ private _getTexturePath = {
 private _result = [];
 
 if (!isNil QGVAR(automaticFileSetup)) then {
-   QGVAR(automaticFileSetup) params ["_basePath", "_filePrefix"]
+   GVAR(automaticFileSetup) params ["_basePath", "_filePrefix"]
    _result = [_surfaceType, _basePath, _filePrefix] call _getTexturePath;
 }else{
    private _basePath = getText (configFile >> "CfgWorldsTextures" >> "Altis" >> "surfaceTextureBasePath");
