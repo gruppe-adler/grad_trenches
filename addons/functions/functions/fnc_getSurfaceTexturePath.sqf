@@ -17,7 +17,7 @@ if (isNull _object) exitWith {};
 
 private _defaultTexture = "z\ace\addons\apl\data\zr_plevel_co.paa";
 
-if (!isNil QGVAR(automaticFileSetup) && !isText (configFile >> "CfgWorldsTextures" >> worldName >> "surfaceTextureBasePath")) exitWith {_defaultTexture};
+if !(isNil QGVAR(automaticFileSetup) && isText (configFile >> "CfgWorldsTextures" >> worldName >> "surfaceTextureBasePath")) exitWith {_defaultTexture};
 
 private _surfaceType = surfaceType (position _object);
 
@@ -44,15 +44,14 @@ private _getTexturePath = {
 
 private _result = [];
 
-if (!isNil QGVAR(automaticFileSetup)) then {
-   GVAR(automaticFileSetup) params ["_basePath", "_filePrefix"]
+if !(isNil QGVAR(automaticFileSetup)) then {
+   GVAR(automaticFileSetup) params ["_basePath", "_filePrefix"];
    _result = [_surfaceType, _basePath, _filePrefix] call _getTexturePath;
 }else{
    private _basePath = getText (configFile >> "CfgWorldsTextures" >> "Altis" >> "surfaceTextureBasePath");
    if ((_surfaceType find "#Gdt" == -1) || {worldName == "Tanoa"}) then {
        _basePath = getText (configFile >> "CfgWorldsTextures" >> worldName >> "surfaceTextureBasePath")
    };
-
     _result = [_surfaceType, _basePath, getText(configFile >> "CfgWorldsTextures" >> worldName >> "filePrefix")] call _getTexturePath;
 };
 

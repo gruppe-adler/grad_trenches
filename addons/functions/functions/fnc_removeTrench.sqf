@@ -120,7 +120,7 @@ private _fnc_condition = {
 
   //Fatigue impact
   ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - ((_removeTime /10) * GVAR(buildFatigueFactor))) max 0;
-  ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + (((_removeTime/10) * GVAR(buildFatigueFactor))/1200)) min 1;
+  ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + (((_removeTime /10) * GVAR(buildFatigueFactor))/1200)) min 1;
 
   // Save progress
   _trench setVariable ["ace_trenches_progress", (_actualProgress - ((1/(_removeTime *10)) * _diggerCount)), true];
