@@ -1,5 +1,6 @@
 PREP(addDigger);
 PREP(applyCamouflageAttribute);
+PREP(automaticFilePath);
 PREP(canHelpDiggingTrench);
 PREP(canPlaceCamouflage);
 PREP(canRemoveCamouflage);

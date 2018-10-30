@@ -94,7 +94,7 @@ ace_trenches_digPFH = [{
     _trench setVectorDirAndUp [_v1, _v3];
     ace_trenches_trenchPos = _basePos;
 
-    if(surfaceType (position _trench) != GVAR(currentSurface)) then {
+    if (surfaceType (position _trench) != GVAR(currentSurface)) then {
         GVAR(currentSurface) = surfaceType (position _trench);
         _trench setObjectTextureGlobal [0, [_trench] call FUNC(getSurfaceTexturePath)];
     };

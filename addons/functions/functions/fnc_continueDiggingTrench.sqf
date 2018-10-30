@@ -20,7 +20,7 @@ params ["_trench", "_unit"];
 TRACE_2("continueDiggingTrench",_trench,_unit);
 
 private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
-if(_actualProgress == 1) exitWith {};
+if (_actualProgress == 1) exitWith {};
 
 // Mark trench as being worked on
 _trench setVariable ["ace_trenches_digging", true, true];
@@ -39,7 +39,7 @@ if (isNil "_vecDirAndUp") then {
 };
 
 private _trenchId = _unit getVariable ["ace_trenches_isDiggingId", -1];
-if(_trenchId < 0 || _trenchId != ace_trenches_trenchId) then {
+if (_trenchId < 0 || _trenchId != ace_trenches_trenchId) then {
     ace_trenches_trenchId = ace_trenches_trenchId + 1;
     _trenchId = ace_trenches_trenchId;
     _unit setVariable ["ace_trenches_isDiggingId", _trenchId, true];
@@ -83,7 +83,7 @@ private _fnc_condition = {
 
 [[_unit, _trench], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_DiggingTrench", _fnc_condition] call FUNC(progressBar);
 
-if(_actualProgress == 0) then {
+if (_actualProgress == 0) then {
       //Remove grass
     {
         private _trenchGrassCutter = createVehicle ["Land_ClutterCutter_medium_F", [0, 0, 0], [], 0, "NONE"];

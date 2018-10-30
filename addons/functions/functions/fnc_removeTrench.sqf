@@ -20,7 +20,7 @@ params ["_trench", "_unit"];
 TRACE_2("removeTrench",_trench,_unit);
 
 private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
-if(_actualProgress <= 0) exitWith {};
+if (_actualProgress <= 0) exitWith {};
 
 // Mark trench as being worked on
 _trench setVariable ["ace_trenches_digging", true, true];
@@ -40,7 +40,7 @@ if (count _vecDirAndUp == 0) then {
 };
 
 private _trenchId = _unit getVariable ["ace_trenches_isDiggingId", -1];
-if(_trenchId < 0 || _trenchId != ace_trenches_trenchId) then {
+if (_trenchId < 0 || _trenchId != ace_trenches_trenchId) then {
     ace_trenches_trenchId = ace_trenches_trenchId + 1;
     _trenchId = ace_trenches_trenchId;
     _unit setVariable ["ace_trenches_isDiggingId", _trenchId, true];
@@ -88,7 +88,7 @@ private _fnc_condition = {
   private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
   private _diggerCount = _trench getVariable [QGVAR(diggerCount), 0];
 
-  if(_actualProgress <= 0) exitWith {
+  if (_actualProgress <= 0) exitWith {
      [_handle] call CBA_fnc_removePerFrameHandler;
      _unit setVariable ["ace_trenches_isDiggingId", -1, true];
      _trench setVariable ["ace_trenches_digging", false, true];
