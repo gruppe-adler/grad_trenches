@@ -1,8 +1,8 @@
-if !(GVAR(enableAutomaticFilePath)) exitWith {};
-
 if (isText (configFile >> "CfgWorldsTextures" >> worldName >> "surfaceTextureBasePath")) exitWith {};
 
-if !(isText (configfile >> "CfgWorlds" >> worldName >> "OutsideTerrain" >> "Layers" >> "Layer0" >> "texture")) exitWith {};
+if !(isText (configfile >> "CfgWorlds" >> worldName >> "OutsideTerrain" >> "Layers" >> "Layer0" >> "texture")) exitWith {
+   diag_log ["GRAD Trenches: Found no OutsideTerrain texture for Map %1, automatic file path not possible!", worldName];
+};
 private _path = getText (configfile >> "CfgWorlds" >> worldName >> "OutsideTerrain" >> "Layers" >> "Layer0" >> "texture");
 
 private _split = _path splitString "\";
