@@ -25,8 +25,6 @@ PREP_RECOMPILE_END;
 [QGVAR(gigantEnvelopeDigTime), "SLIDER", localize LSTRING(GigantEnvelopeDigTime), localize LSTRING(settingCategory), [5, 900, 90, 0]] call CBA_Settings_fnc_init;
 [QGVAR(vehicleEnvelopeDigTime), "SLIDER", localize LSTRING(VehicleEnvelopeDigTime), localize LSTRING(settingCategory), [5, 1200, 120, 0]] call CBA_Settings_fnc_init;
 
-if (GVAR(enableAutomaticFilePath)) exitWith {
-   	[] call FUNC(automaticFilePath);
-};
+if (GVAR(enableAutomaticFilePath)) exitWith {[] call FUNC(automaticFilePath);};
 
 ADDON = true;
