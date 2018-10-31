@@ -340,7 +340,7 @@ class CfgWorldsTextures {
 
     //Rosche
     class WL_Rosche {
-        surfaceTextureBasePath = "WL\WL_Rosche\data\imagery\";
+        surfaceTextureBasePath = "WL\WL_Rosche\data\";
         filePrefix = "_co.paa";
         camouflageObjects[] = {};
     };
