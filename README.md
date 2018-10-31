@@ -52,6 +52,8 @@ More images can be found [here](https://github.com/gruppe-adler/grad_trenches#mo
 - [Bukovina](http://cup-arma3.org/terrains)
 - [Bystrica](http://cup-arma3.org/terrains)
 - [Chernarus](http://cup-arma3.org/terrains)
+- [Chernarus Summer](http://cup-arma3.org/terrains)
+- Chernarus Winter
 - [Celle](http://www.armaholic.com/page.php?id=16585)
 - [Porto](http://cup-arma3.org/terrains)
 - [Desert](http://cup-arma3.org/terrains)
@@ -66,6 +68,31 @@ More images can be found [here](https://github.com/gruppe-adler/grad_trenches#mo
 - [Takistan Mountains](http://cup-arma3.org/terrains)
 - [Utes](http://cup-arma3.org/terrains)
 - [Zargabad](http://cup-arma3.org/terrains)
+- [Baranow](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
+- [Baranow Winter](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
+- [Bray-Dunes](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
+- [Colleville](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
+- [Colleville Winter](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
+- [G.O.S Al Rayak](https://steamcommunity.com/sharedfiles/filedetails/?id=648172507)
+- [G.O.S Leskovets](https://steamcommunity.com/sharedfiles/filedetails/?id=855464203)
+- [Ivachev](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
+- [Ivachev Winter](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
+- [Panovo](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
+- [Panovo Winter](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
+- [Kerama](https://steamcommunity.com/sharedfiles/filedetails/?id=682140680)
+- [Napf](https://steamcommunity.com/sharedfiles/filedetails/?id=1425442364)
+- [Montherme](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
+- [Montherme Winter](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
+- [Pella Region Greece](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
+- [Volkhov Forest](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
+- [Ruha](https://forums.bohemia.net/forums/topic/215659-ruha-terrain/)
+- [Sark](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
+- [Staszow](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
+- [Staszow Winter](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
+- [Rosche](https://forums.bohemia.net/forums/topic/219592-rosche-germany/)
+- [Abramia](https://forums.bohemia.net/forums/topic/187287-icebreakribis-isla-abramia-for-a3/)
+- [Isla Duala](https://forums.bohemia.net/forums/topic/176233-icebreakribis-isla-duala-for-a3/)
+- [Tembelan](https://forums.bohemia.net/forums/topic/212761-tembelan-island/)
 
 ## Requirements
 - Arma 3 1.76 or later
@@ -88,6 +115,9 @@ Plus, we ask you to not create mirrors in Steam Workshop.
 Contributions and bug reports are well appreciated. Feel free to fork this project or to create issues.
 #### Bugreports
 When encountering an error message when placing a trench please atatch your RPT-File so we can directly analyze the problem.
+
+## Automatic Terrain Texture path (disabled by default)
+This feature will try to gather the right path from the game data. This does not always work.
 
 ## Add own map
 It is not possible to automaticially get the path to the ground texture. Therefore maps have to be included in a config to work with GRAD trenches. This config is located [here](https://github.com/gruppe-adler/grad_trenches/blob/master/addons/functions/CfgWorldsTextures.hpp).
