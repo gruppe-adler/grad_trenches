@@ -344,4 +344,25 @@ class CfgWorldsTextures {
         filePrefix = "_co.paa";
         camouflageObjects[] = {};
     };
+
+    //Abramia
+    class abramia {
+        surfaceTextureBasePath = "ibr\abramia\data\";
+        filePrefix = "detail_co.paa";
+        camouflageObjects[] = {};
+    };
+
+    //Isla Duala
+    class isladuala3 {
+        surfaceTextureBasePath = "ibr\isladuala3\data\";
+        filePrefix = "detail_co.paa";
+        camouflageObjects[] = {};
+    };
+
+    //Tembelan
+    class tembelan {
+        surfaceTextureBasePath = "ZI\Tembelan\data\";
+        filePrefix = "_co.paa";
+        camouflageObjects[] = {};
+    };
 };

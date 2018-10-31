@@ -52,8 +52,7 @@ private _boundingBoxOffset = if (isNumber (configFile >> "CfgVehicles" >> _trenc
 private _posDiff = (abs(_lbfcZ) + abs(_rtbcZ)) - _boundingBoxOffset;
 private _newPos = (_trench modelToWorldWorld [0,0, -(_posDiff)]);
 _trench setPosWorld _newPos;
-systemChat str(_newPos);
-diag_log str(_newPos);
+
 _trench setVariable [QGVAR(diggingSteps), (((getPosWorld _trench)select 2)/1000),true];
 _trench setVectorDirAndUp _vecDirAndUp;
 
