@@ -54,7 +54,7 @@ private _fnc_onFailure = {
 
     [_handle] call CBA_fnc_removePerFrameHandler;
     private _count = (_trench getVariable QGVAR(diggerCount));
-    _trench setVariable [QGVAR(diggerCount), (_count-1),true];
+    _trench setVariable [QGVAR(diggerCount), ((_diggerCount -1) max 0), true];
     if ((_trench getVariable [QGVAR(nextDigger), player]) == player) then {
       _trench setVariable [QGVAR(nextDigger), nil,true];
    };

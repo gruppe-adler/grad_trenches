@@ -39,17 +39,9 @@ if (count _vecDirAndUp == 0) then {
    _vecDirAndUp = [vectorDir _trench, vectorUp _trench];
 };
 
-private _trenchId = _unit getVariable ["ace_trenches_isDiggingId", -1];
-if (_trenchId < 0 || _trenchId != ace_trenches_trenchId) then {
-    ace_trenches_trenchId = ace_trenches_trenchId + 1;
-    _trenchId = ace_trenches_trenchId;
-    _unit setVariable ["ace_trenches_isDiggingId", _trenchId, true];
-};
-
 // Create progress bar
 private _fnc_onFinish = {
    (_this select 0) params ["_unit", "_trench"];
-   _unit setVariable ["ace_trenches_isDiggingId", -1, true];
    _trench setVariable [QGVAR(diggingType), nil, true];
 
     // Remove trench
@@ -60,7 +52,6 @@ private _fnc_onFinish = {
 };
 private _fnc_onFailure = {
    (_this select 0) params ["_unit", "_trench"];
-   _unit setVariable ["ace_trenches_isDiggingId", -1, true];
    _trench setVariable ["ace_trenches_digging", false, true];
    _trench setVariable [QGVAR(diggingType), nil, true];
 
@@ -74,7 +65,6 @@ private _fnc_onFailure = {
 private _fnc_condition = {
    (_this select 0) params ["_unit", "_trench"];
 
-   if (_unit getVariable ["ace_trenches_isDiggingId", -1] != ace_trenches_trenchId) exitWith {false};
    if !(_trench getVariable ["ace_trenches_digging", false]) exitWith {false};
    if (_trench getVariable [QGVAR(diggerCount), 0] <= 0) exitWith {false};
    if (GVAR(stopBuildingAtFatigueMax) && (ace_advanced_fatigue_anReserve <= 0))  exitWith {false};
@@ -90,21 +80,18 @@ private _fnc_condition = {
 
   if (_actualProgress <= 0) exitWith {
      [_handle] call CBA_fnc_removePerFrameHandler;
-     _unit setVariable ["ace_trenches_isDiggingId", -1, true];
      _trench setVariable ["ace_trenches_digging", false, true];
      _trench setVariable [QGVAR(diggerCount), 0, true];
      deleteVehicle _trench;
  };
 
   if (
-        (_unit getVariable ["ace_trenches_isDiggingId", -1] != _trenchId) ||
         !(_trench getVariable ["ace_trenches_digging", false]) ||
         (_diggerCount <= 0)
      ) exitWith {
     [_handle] call CBA_fnc_removePerFrameHandler;
-    _unit setVariable ["ace_trenches_isDiggingId", -1, true];
     _trench setVariable ["ace_trenches_digging", false, true];
-    _trench setVariable [QGVAR(diggerCount), 0, true];
+    _trench setVariable [QGVAR(diggerCount), ((_diggerCount -1) max 0), true];
   };
 
   private _boundingBox = boundingBoxReal _trench;
@@ -119,17 +106,16 @@ private _fnc_condition = {
   _trench setVectorDirAndUp _vecDirAndUp;
 
   //Fatigue impact
-  ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - ((_removeTime /10) * GVAR(buildFatigueFactor))) max 0;
-  ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + (((_removeTime /10) * GVAR(buildFatigueFactor))/1200)) min 1;
+  ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - ((_removeTime /12) * GVAR(buildFatigueFactor))) max 0;
+  ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + (((_removeTime /12) * GVAR(buildFatigueFactor))/1200)) min 1;
 
   // Save progress
   _trench setVariable ["ace_trenches_progress", (_actualProgress - ((1/(_removeTime *10)) * _diggerCount)), true];
 
   if (GVAR(stopBuildingAtFatigueMax) && (ace_advanced_fatigue_anReserve <= 0)) exitWith {
      [_handle] call CBA_fnc_removePerFrameHandler;
-     _unit setVariable ["ace_trenches_isDiggingId", -1, true];
      _trench setVariable ["ace_trenches_digging", false, true];
-     _trench setVariable [QGVAR(diggerCount), 0, true];
+     _trench setVariable [QGVAR(diggerCount), ((_diggerCount -1) max 0), true];
   };
 },0.1,[_trench, _unit, _removeTime, _trenchId, _vecDirAndUp]] call CBA_fnc_addPerFrameHandler;
 

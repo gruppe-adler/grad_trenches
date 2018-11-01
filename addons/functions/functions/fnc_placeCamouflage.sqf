@@ -40,7 +40,7 @@ private _fnc_onFinish = {
         _object attachTo [_trench, getArray(_x)];
 
         if (is3DEN) then {
-            _object setVariable [QGVAR(positionData), getArray(_x)];
+            _object setVariable [QGVAR(positionData), getArray(_x),true];
         };
 
         _placedObjects pushBack _object;
