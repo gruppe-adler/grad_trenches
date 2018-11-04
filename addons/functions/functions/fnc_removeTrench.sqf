@@ -74,7 +74,7 @@ private _fnc_condition = {
 
 [{
   params ["_args", "_handle"];
-  _args params ["_trench", "_unit", "_removeTime", "_trenchId", "_vecDirAndUp"];
+  _args params ["_trench", "_unit", "_removeTime", "_vecDirAndUp"];
   private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
   private _diggerCount = _trench getVariable [QGVAR(diggerCount), 0];
 
@@ -117,7 +117,7 @@ private _fnc_condition = {
      _trench setVariable ["ace_trenches_digging", false, true];
      _trench setVariable [QGVAR(diggerCount), ((_diggerCount -1) max 0), true];
   };
-},0.1,[_trench, _unit, _removeTime, _trenchId, _vecDirAndUp]] call CBA_fnc_addPerFrameHandler;
+},0.1,[_trench, _unit, _removeTime, _vecDirAndUp]] call CBA_fnc_addPerFrameHandler;
 
 // Play animation
 [_unit, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation;
