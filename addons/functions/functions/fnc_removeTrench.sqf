@@ -63,7 +63,7 @@ private _fnc_onFailure = {
    [_unit, "", 1] call ace_common_fnc_doAnimation;
 };
 private _fnc_condition = {
-   (_this select 0) params ["_unit", "_trench"];
+   (_this select 0) params ["", "_trench"];
 
    if !(_trench getVariable ["ace_trenches_digging", false]) exitWith {false};
    if (_trench getVariable [QGVAR(diggerCount), 0] <= 0) exitWith {false};

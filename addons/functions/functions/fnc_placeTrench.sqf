@@ -61,7 +61,7 @@ ace_trenches_digPFH = [{
 
     // Update trench position
     ace_trenches_trenchPlacementData params ["_dx", "_dy", "_offset"];
-    private _basePos = eyePos _unit vectorAdd ([sin getDir _unit, +cos getDir _unit, 0] vectorMultiply 1.0);
+    private _basePos = _unit ModelToWorld [0,2,0];
 
     private _angle = (GVAR(digDirection) + getDir _unit);
 
