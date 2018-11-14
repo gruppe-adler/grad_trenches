@@ -26,7 +26,7 @@ if (_actualProgress <= 0) exitWith {};
 _trench setVariable ["ace_trenches_digging", true, true];
 _trench setVariable [QGVAR(diggingType), "DOWN", true];
 
-if (_trench getVariable [QGVAR(diggerCount), 0] <= 1) then {
+if (_trench getVariable [QGVAR(diggerCount), 0] < 1) then {
    _trench setVariable [QGVAR(diggerCount), 1,true];
 };
 
