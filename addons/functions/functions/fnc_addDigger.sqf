@@ -19,6 +19,7 @@ if (_trench getVariable [QGVAR(diggerCount), 0] == 1) then {_trench setVariable 
 private _type = switch (_trench getVariable [QGVAR(diggingType), nil]) do {
    case "UP" : {true};
    case "Down" : {false};
+   default : {diag_log format ["GRAD_Trenches: addDigger.sqf: No value for _type, %1!", _type]};
 };
 
 private _handle = [{
