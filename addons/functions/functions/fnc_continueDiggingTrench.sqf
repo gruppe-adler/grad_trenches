@@ -16,7 +16,7 @@
  */
 #include "script_component.hpp"
 
-params ["_trench", "_unit"];
+params ["_trench", "_unit",["_switchingDigger", false]];
 TRACE_2("continueDiggingTrench",_trench,_unit);
 
 private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
@@ -25,9 +25,12 @@ if (_actualProgress == 1) exitWith {};
 // Mark trench as being worked on
 _trench setVariable ["ace_trenches_digging", true, true];
 _trench setVariable [QGVAR(diggingType), "UP", true];
+private _diggerCount = _trench getVariable [QGVAR(diggerCount), 0];
 
-if (_trench getVariable [QGVAR(diggerCount), 0] > 0) then {
-   [_trench, _unit] call FUNC(addDigger);
+if (_diggerCount > 0) then {
+   if !(_switchingDigger) then {
+      [_trench, _unit] call FUNC(addDigger);
+   };
 }else{
    _trench setVariable [QGVAR(diggerCount), 1,true];
 };

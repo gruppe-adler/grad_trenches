@@ -25,8 +25,13 @@ if (_actualProgress <= 0) exitWith {};
 // Mark trench as being worked on
 _trench setVariable ["ace_trenches_digging", true, true];
 _trench setVariable [QGVAR(diggingType), "DOWN", true];
+private _diggerCount = _trench getVariable [QGVAR(diggerCount), 0];
 
-if (_trench getVariable [QGVAR(diggerCount), 0] < 1) then {
+if (_diggerCount > 0) then {
+   if !(_switchingDigger) then {
+      [_trench, _unit] call FUNC(addDigger);
+   };
+}else{
    _trench setVariable [QGVAR(diggerCount), 1,true];
 };
 

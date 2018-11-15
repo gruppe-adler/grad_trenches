@@ -25,13 +25,16 @@ private _handle = [{
    params ["_args", "_handle"];
     _args params ["_trench", "_unit", "_type"];
 
-    if ((_trench getVariable [QGVAR(nextDigger), player]) == player && ((_trench getVariable [QGVAR(diggerCount), 1]) < 1 || !(_trench getVariable ["ace_trenches_digging", false]))) exitWith {
+    if (
+      (_trench getVariable [QGVAR(nextDigger), player]) == player &&
+      ((_trench getVariable [QGVAR(diggerCount), 1]) < 1 ||
+      !(_trench getVariable ["ace_trenches_digging", false]))
+    ) exitWith {
       [_handle] call CBA_fnc_removePerFrameHandler;
-      systemChat str (_type);
       if (_type) then {
-         [_trench, _unit] call FUNC(continueDiggingTrench);
+         [_trench, _unit, true] call FUNC(continueDiggingTrench);
       }else{
-         [_trench, _unit] call FUNC(removeTrench);
+         [_trench, _unit, true] call FUNC(removeTrench);
       };
    };
 
@@ -42,8 +45,7 @@ private _handle = [{
 
 // Create progress bar
 private _fnc_onFinish = {
-    (_this select 0) params ["_unit", "_trench", "", "_handle"];
-    [_handle] call CBA_fnc_removePerFrameHandler;
+    (_this select 0) params ["_unit", "_trench"];
     _trench setVariable [QGVAR(diggerCount), 0,true];
 
     // Reset animation
@@ -51,9 +53,8 @@ private _fnc_onFinish = {
 };
 
 private _fnc_onFailure = {
-    (_this select 0) params ["_unit", "_trench", "", "_handle"];
+    (_this select 0) params ["_unit", "_trench"];
 
-    [_handle] call CBA_fnc_removePerFrameHandler;
     _trench setVariable [QGVAR(diggerCount), (((_trench getVariable [QGVAR(diggerCount), 0]) -1) max 0), true];
     if ((_trench getVariable [QGVAR(nextDigger), player]) == player) then {
       _trench setVariable [QGVAR(nextDigger), nil,true];
