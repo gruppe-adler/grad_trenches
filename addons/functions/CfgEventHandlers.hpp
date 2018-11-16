@@ -18,6 +18,12 @@ class Extended_PreInit_EventHandlers {
     };
 };
 
+class Extended_PostInit_EventHandlers {
+    class ADDON {
+        init = QUOTE(call COMPILE_FILE(XEH_postInit));
+    };
+};
+
 class Extended_Deleted_EventHandlers {
     class ACE_envelope_small {
         CAMOUFLAGE_DELETE;

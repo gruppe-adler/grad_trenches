@@ -21,20 +21,38 @@ private _fnc_onFinish = {
     (_this select 0) params ["_unit", "_trench"];
 
     private _camouflageObjects = getArray (configFile >> "CfgWorldsTextures" >> worldName >> "camouflageObjects");
+    private _statusNumber = _trench getVariable [QGVAR(trenchCamouflageStatus), 0];
+    private _statusString = "";
+    _statusNumber = _statusNumber +1;
+
+    if (_statusNumber <10) then {
+      _statusString = ("0" + str(_statusNumber));
+   }else{
+      _statusString = str(_statusNumber);
+   };
+
+
     private _placedObjects = [];
+    private _camouflageObjectsArray = _trench getVariable [QGVAR(camouflageObjects), []];
 
     {
         private _object = createSimpleObject [selectRandom _camouflageObjects, [0,0,0]];
         _object attachTo [_trench, getArray(_x)];
 
         if (is3DEN) then {
-            _object setVariable [QGVAR(positionData), getArray(_x)];
+            _object setVariable [QGVAR(positionData), getArray(_x),true];
         };
 
         _placedObjects pushBack _object;
-    } forEach (configProperties [configFile >> "CfgVehicles" >> (typeof _trench) >> "CamouflagePositions"]);
+    } forEach (configProperties [configFile >> "CfgVehicles" >> (typeof _trench) >> ("CamouflagePositions" + _statusString)]);
 
-    _trench setVariable [QGVAR(camouflageObjects), _placedObjects, true];
+    reverse _camouflageObjectsArray;
+    _camouflageObjectsArray pushBack _placedObjects;
+    reverse _camouflageObjectsArray;
+
+
+    _trench setVariable [QGVAR(camouflageObjects), _camouflageObjectsArray, true];
+    _trench setVariable [QGVAR(trenchCamouflageStatus), _statusNumber];
 
     // Reset animation
     [_unit, "", 1] call ace_common_fnc_doAnimation;

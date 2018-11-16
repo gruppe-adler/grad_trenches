@@ -18,11 +18,8 @@
 
 params ["_unit", "_trenchClass"];
 
-//Load trench data
-private _noGeoModel = getText (configFile >> "CfgVehicles" >> _trenchClass >> "ace_trenches_noGeoClass");
-if(_noGeoModel == "") then {_noGeoModel = _trenchClass;};
 
-ace_trenches_trenchClass = _trenchClass;
+//Load trench data
 ace_trenches_trenchPlacementData = getArray (configFile >> "CfgVehicles" >> _trenchClass >> "ace_trenches_placementData");
 TRACE_1("",ace_trenches_trenchPlacementData);
 
@@ -30,14 +27,13 @@ TRACE_1("",ace_trenches_trenchPlacementData);
 [_unit, "forceWalk", "ACE_Trenches", true] call ace_common_fnc_statusEffect_set;
 
 // create the trench
-private _trench = createVehicle [_noGeoModel, [0, 0, 0], [], 0, "NONE"];
+private _trench = createSimpleObject [_trenchClass, [0, 0, 0]];
 ace_trenches_trench = _trench;
 
 // prevent collisions with trench
 ["ace_common_enableSimulationGlobal", [_trench, false]] call CBA_fnc_serverEvent;
 
-ace_trenches_digDirection = 0;
-
+GVAR(digDirection) = 0;
 GVAR(currentSurface) = "";
 
 // pfh that runs while the dig is in progress
@@ -61,13 +57,13 @@ ace_trenches_digPFH = [{
 
     if !(_checkVar) exitWith {
         [_unit] call ace_trenches_fnc_placeCancel;
-};
+    };
 
     // Update trench position
     ace_trenches_trenchPlacementData params ["_dx", "_dy", "_offset"];
-    private _basePos = eyePos _unit vectorAdd ([sin getDir _unit, +cos getDir _unit, 0] vectorMultiply 1.0);
+    private _basePos = _unit ModelToWorld [0,2,0];
 
-    private _angle = (ace_trenches_digDirection + getDir _unit);
+    private _angle = (GVAR(digDirection) + getDir _unit);
 
     // _v1 forward from the player, _v2 to the right, _v3 points away from the ground
     private _v3 = surfaceNormal _basePos;
@@ -77,7 +73,8 @@ ace_trenches_digPFH = [{
     // Stick the trench to the ground
     _basePos set [2, getTerrainHeightASL _basePos];
     private _minzoffset = 0;
-    private ["_ix","_iy"];
+    private _ix = 0;
+    private _iy = 0;
     for [{_ix = -_dx/2},{_ix <= _dx/2},{_ix = _ix + _dx/3}] do {
         for [{_iy = -_dy/2},{_iy <= _dy/2},{_iy = _iy + _dy/3}] do {
             private _pos = _basePos vectorAdd (_v2 vectorMultiply _ix)
@@ -85,7 +82,7 @@ ace_trenches_digPFH = [{
             _minzoffset = _minzoffset min ((getTerrainHeightASL _pos) - (_pos select 2));
             #ifdef DEBUG_MODE_FULL
                 _pos set [2, getTerrainHeightASL _pos];
-                _pos2 = +_pos;
+                private _pos2 = +_pos;
                 _pos2 set [2, getTerrainHeightASL _pos + 1];
                 drawLine3D [ASLtoAGL _pos, ASLtoAGL _pos2, [1,1,0,1]];
             #endif
@@ -97,14 +94,14 @@ ace_trenches_digPFH = [{
     _trench setVectorDirAndUp [_v1, _v3];
     ace_trenches_trenchPos = _basePos;
 
-    if(surfaceType (position _trench) != GVAR(currentSurface)) then {
+    if (surfaceType (position _trench) != GVAR(currentSurface)) then {
         GVAR(currentSurface) = surfaceType (position _trench);
         _trench setObjectTextureGlobal [0, [_trench] call FUNC(getSurfaceTexturePath)];
     };
 }, 0, [_unit, _trench]] call CBA_fnc_addPerFrameHandler;
 
 // add mouse button action and hint
-[localize "STR_ace_trenches_ConfirmDig", localize "STR_ace_trenches_CancelDig", localize "STR_ace_trenches_ScrollAction"] call ace_interaction_fnc_showMouseHint;
+[localize "STR_ace_trenches_ConfirmDig", localize "STR_ace_trenches_CancelDig"] call ace_interaction_fnc_showMouseHint;
 
 _unit setVariable ["ace_trenches_Dig", [
     _unit, "DefaultAction",
