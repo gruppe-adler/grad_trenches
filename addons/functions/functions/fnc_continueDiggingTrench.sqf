@@ -110,12 +110,8 @@ if (_actualProgress == 0) then {
   _lbfc params ["", "", "_lbfcZ"];
 
   private _pos = (getPosWorld _trench);
-  systemChat format ["OldPos: %1", _pos];
-  private _posDiff = (abs(((_trench getVariable [QGVAR(diggingSteps), 0]) * _diggerCount) + _lbfcZ))/(_digTime*5);
+  private _posDiff = ((abs((_trench getVariable [QGVAR(diggingSteps), 0]) + _lbfcZ)) * _diggerCount)/(_digTime*5);
   _pos set [2,((_pos select 2) + _posDiff)];
-  systemChat format ["NewPos: %1", _pos];
-
-  diag_log format ["Grad POS: %1, diff: %2, diggerCount: %3", _pos, _posDiff, _diggerCount];
 
   _trench setPosWorld _pos;
   _trench setVectorDirAndUp _vecDirAndUp;

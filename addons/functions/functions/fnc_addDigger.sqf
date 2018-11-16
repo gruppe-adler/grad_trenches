@@ -19,7 +19,7 @@ if (_trench getVariable [QGVAR(diggerCount), 0] == 1) then {_trench setVariable 
 private _type = switch (_trench getVariable [QGVAR(diggingType), nil]) do {
    case "UP" : {true};
    case "Down" : {false};
-   default : {diag_log format ["GRAD_Trenches: addDigger.sqf: No value for _type, %1!", _type]};
+   default {diag_log format ["GRAD_Trenches: addDigger.sqf: No value for _type, %1!", _type];};
 };
 
 private _handle = [{
@@ -32,11 +32,14 @@ private _handle = [{
       !(_trench getVariable ["ace_trenches_digging", false]))
     ) exitWith {
       [_handle] call CBA_fnc_removePerFrameHandler;
+      /*
+      _trench setVariable [QGVAR(nextDigger), nil, true];
       if (_type) then {
          [_trench, _unit, true] call FUNC(continueDiggingTrench);
       }else{
          [_trench, _unit, true] call FUNC(removeTrench);
       };
+      */
    };
 
    if (isNil (_trench getVariable [QGVAR(nextDigger), nil])) then {
