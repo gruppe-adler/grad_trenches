@@ -16,7 +16,7 @@
  */
  #include "script_component.hpp"
 
-params ["_trench", "_unit"];
+params ["_trench", "_unit",["_switchingDigger", false]];
 TRACE_2("removeTrench",_trench,_unit);
 
 private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
