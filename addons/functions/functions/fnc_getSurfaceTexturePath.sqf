@@ -1,7 +1,7 @@
 /*
     @Authors
         Christian 'chris5790' Klemm
-		Marc 'Salbei' Heinze
+		Salbei
     @Arguments
         ?
     @Return Value
@@ -22,7 +22,7 @@ if !(isNil QGVAR(automaticFileSetup) && isText (configFile >> "CfgWorldsTextures
 private _surfaceType = surfaceType (position _object);
 
 private _getTexturePath = {
-    params["_surfaceType", "_basePath", "_filePrefix"];
+    params["_surfaceType", "_basePath", "_suffix"];
 
     // remove leading #
     private _parsedSurfaceType = _surfaceType select [1, count _surfaceType];
@@ -39,20 +39,20 @@ private _getTexturePath = {
         _fileNameArr deleteAt (_fileNameArr find "*");
     };
 
-    format["%1%2%3", _basePath, (_fileNameArr joinString ""), _filePrefix];
+    format["%1%2%3", _basePath, (_fileNameArr joinString ""), _suffix];
 };
 
 private _result = [];
 
 if !(isNil QGVAR(automaticFileSetup)) then {
-   GVAR(automaticFileSetup) params ["_basePath", "_filePrefix"];
-   _result = [_surfaceType, _basePath, _filePrefix] call _getTexturePath;
+   GVAR(automaticFileSetup) params ["_basePath", "_suffix"];
+   _result = [_surfaceType, _basePath, _suffix] call _getTexturePath;
 }else{
    private _basePath = getText (configFile >> "CfgWorldsTextures" >> "Altis" >> "surfaceTextureBasePath");
    if ((_surfaceType find "#Gdt" == -1) || {worldName == "Tanoa"}) then {
        _basePath = getText (configFile >> "CfgWorldsTextures" >> worldName >> "surfaceTextureBasePath")
    };
-    _result = [_surfaceType, _basePath, getText(configFile >> "CfgWorldsTextures" >> worldName >> "filePrefix")] call _getTexturePath;
+    _result = [_surfaceType, _basePath, getText(configFile >> "CfgWorldsTextures" >> worldName >> "suffix")] call _getTexturePath;
 };
 
 if (isNil {_result} || _result isEqualTo []) then {

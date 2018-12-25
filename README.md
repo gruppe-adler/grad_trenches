@@ -132,7 +132,7 @@ Then create a config and add this skeleton to it
 class CfgWorldsTextures {
     class Altis {
         surfaceTextureBasePath = "";
-        filePrefix = "";
+        suffix = "";
     };
 };
 ```
@@ -147,7 +147,7 @@ On Altis the result is `A3\Map_Data\gdt_seabed_co.paa`. We will strip out the fi
 class CfgWorldsTextures {
     class Altis {
         surfaceTextureBasePath = "A3\Map_Data\";
-        filePrefix = "";
+        suffix = "";
     };
 };
 ```
@@ -158,7 +158,7 @@ The texture name for `gdt seabed` is missing the extension `_co.paa`. Therefore 
 class CfgWorldsTextures {
     class Altis {
         surfaceTextureBasePath = "A3\Map_Data\";
-        filePrefix = "co.paa";
+        suffix = "co.paa";
     };
 };
 ```
@@ -168,7 +168,7 @@ Some maps like Utes just have one texture name that is different to the file nam
 ```cpp
 class utes {
     surfaceTextureBasePath = "ca\utes\Data\";
-    filePrefix = "detail_co.paa";
+    suffix = "detail_co.paa";
 
     class Surfaces {
         class Default {

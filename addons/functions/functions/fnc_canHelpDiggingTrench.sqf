@@ -1,6 +1,6 @@
 /*
     @Authors
-        Marc 'Salbei' Heinze
+        Salbei
     @Arguments
         ?
     @Return Value

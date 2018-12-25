@@ -18,11 +18,11 @@ private _texture = _split select _count;
 _split deleteAt _count;
 _path = _split joinString "\";
 
-private _filePrefix = ".paa";
+private _suffix = ".paa";
 if ((_texture find "co.paa" >= -1)|| _texture find "ca.paa" >= -1) then {
    _split = _texture splitString "_";
-   _filePrefix = _split select ((count _split) -1);
+   _suffix = _split select ((count _split) -1);
 };
 
-GVAR(automaticFileSetup) = [_path, _filePrefix];
+GVAR(automaticFileSetup) = [_path, _suffix];
 publicVariable QGVAR(automaticFileSetup);

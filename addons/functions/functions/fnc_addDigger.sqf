@@ -1,6 +1,6 @@
 /*
     @Authors
-        Marc 'Salbei' Heinze
+        Salbei
     @Arguments
         - _unit, is the unit that helps digging
 		- _trench, the trench that is beeing dug
