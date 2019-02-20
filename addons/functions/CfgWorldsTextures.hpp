@@ -376,4 +376,11 @@ class CfgWorldsTextures {
       suffix = "co.paa";
       camouflageObjects[] = {};
     };
+
+    //Chernarus Redux
+    class chernarusredux {
+        surfaceTextureBasePath = "CHR\chernarusredux_data\data\";
+        suffix = "_co.paa";
+        camouflageObjects[] = {};
+    };
 };
