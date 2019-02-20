@@ -199,22 +199,27 @@
         <Key ID="STR_GRAD_Trenches_functions_HelpDigging">
             <English>Help digging</English>
             <German>Mit graben</German>
+           <Russian>Помочь вырыть окоп</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_stopBuildingAtFatigueMax_displayName">
             <English>Enable Stop on Fatigue</English>
             <German>Aktiviere Ausdauerbedingter grabe stop</German>
+            <Russian>Прекратить копать при полной усталости</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_stopBuildingAtFatigueMax_tooltip">
             <English>If enabled the digger will stop digging if his fatigue reaches 0.</English>
             <German>Wenn aktiviert hören die Spieler auf zu graben wenn ihre Ausdauer 0 erreicht.</German>
+           <Russian>При наступлении полной усталости откапывание окопа прекращается</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_enableAutomaticFilePath_displayName">
             <English>Enable automatic file path for textures</English>
             <German>Aktiviert automatische textur ausfüllung</German>
+           <Russian>Включить автоматический путь к текстурам</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_enableAutomaticFilePath_tooltip">
             <English>If enabled the mod will try to fill in an automatic path and prefix for the texture files. (WARNING!!!) This can cause errors!</English>
             <German>Wenn es aktiviert ist, versucht die Mod automatisch einen Pfad und preFix für die Map zu finden. (WARNUNG!!!) Kann zu Fehlern führen!</German>
+           <Russian>При активации мод будет пытаться автоматически ввести путь и префикс для текстур. (ВНИМАНИЕ !!!) Это может привести к ошибкам! </Russian>
         </Key>
     </Package>
 </Project>
