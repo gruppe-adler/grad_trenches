@@ -2,7 +2,7 @@
 ### CONFIG ###
 zip_path="zip.exe"
 modname="@grad_trenches"
-pboprefix="grad_trenches"
+pboprefix="grad_trenches_"
 
 ### AS AS USER, DONT EDIT BELOW THIS LINE ###
 
