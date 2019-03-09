@@ -1,4 +1,5 @@
 release/**
+build_keys/**
 
 *.pbo
 *.cache

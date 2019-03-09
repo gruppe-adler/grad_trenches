@@ -3,6 +3,7 @@
 zip_path="zip.exe"
 modname="@grad_trenches"
 pboprefix="grad_trenches_"
+RAW_VERSION="1.5.5"
 
 ### AS AS USER, DONT EDIT BELOW THIS LINE ###
 
@@ -23,15 +24,37 @@ if [[ ! -f ${armakePath} ]]; then
 	exit 1
 fi
 
-bash "${toolsDir}/update-versionfile.sh"
-
 #copy to release directory
 releaseDir="$baseDir/release/$modname"
 mkdir -p "$releaseDir"
-cp -r "${baseDir}/addons" "${releaseDir}/"
-cp -r "${baseDir}/optionals" "${releaseDir}/"
+cp -r "${baseDir}/addons/" "${releaseDir}/"
+cp -r "${baseDir}/optionals/" "${releaseDir}/"
 cp "${baseDir}"/*.paa "${baseDir}"/*.cpp "${baseDir}/README.md" "${releaseDir}/"
 
+#get release version
+version=$RAW_VERSION
+pushd "$baseDir" # get into git directory - elsewise we will not be able to get version info
+	if [[ ${version} == "" ]]; then
+		version=$(git describe --tag --always)
+	fi
+popd
+
+echo "current version: $version"
+if [[ ${version} == "" ]]; then
+	echo "cant find version. are you sure we're having a .git directory here?"
+	exit 2
+fi
+
+#make a key
+mkdir -p "$baseDir/build_keys"
+keyFileName="${pboprefix}${version}"
+keyFilePath="$baseDir/build_keys/$keyFileName"
+"${armakePath}" keygen -f "$keyFilePath"
+
+#copy public key into key directory
+rm -r "${releaseDir}/keys/" # remove all existing keys in directory
+mkdir -p "${releaseDir}/keys"
+cp "${keyFilePath}.bikey" "${releaseDir}/keys/$keyFileName.bikey" # copy bikey to release directory
 
 build_pbo() {
 	componentname=`basename "${1}"`
@@ -41,7 +64,7 @@ build_pbo() {
 	pbofilename="${pboprefix}${componentname}.pbo"
 	pbofilepath="${componentpath}/$pbofilename"
 
-	"${armakePath}" build -f -p "${1}" "$pbofilepath" || exit 2
+	"${armakePath}" build -f -p -s "$pbofilepath.$keyFileName.bisign" -k "$keyFilePath.biprivatekey" "${1}" "$pbofilepath" || exit 2
 
 	if [[ ! -f "$pbofilepath" ]]; then
 		echo "failed"
@@ -49,18 +72,8 @@ build_pbo() {
 	fi
 }
 
-merge_readme() {
-	componentname=`basename "${1}"`
-	componentpath=`dirname "${1}"`
-	echo "merging $componentname readme"
-
-	sed -i '$a ***' "${releaseDir}/README.md"
-	cat "$componentpath/$componentname/README.md" >> "$releaseDir/README.md"
-}
-
 pack_directory() {
 	find "$1" -maxdepth 1 ! -path "$1" -type d | while read component; do
-		merge_readme "${component}"
 		build_pbo "${component}"
 		rm -r "${component}"
 	done
@@ -70,39 +83,8 @@ if [[ $module != "" ]]; then
     echo "building only $module"
     build_pbo $module
 else
-
-    #format readme
-    readmeFile="${releaseDir}/README.md"
-
-    sed -i '4d' "${readmeFile}"
-    sed -i '7,$d' "${readmeFile}"
-    sed -i '$a ***\n***' "${readmeFile}"
-    sed -i '$a ## Components' "${readmeFile}"
-    sed -i '$a These components are part of Gruppe Adler Mod.' "${readmeFile}"
     pack_directory "$releaseDir/addons"
-
-    sed -i '$a ***\n***' "${readmeFile}"
-    sed -i '$a ## Optional Components' "${readmeFile}"
-    sed -i '$a These components are are whitelisted on our servers. You can activate a component by moving its *.pbo file from *the optionals* to the *addons* directory.' "${readmeFile}"
     pack_directory "$releaseDir/optionals"
-
-    npm install -g markdown-pdf
-    markdown-pdf "${readmeFile}"
-    rm "${readmeFile}"
-fi
-
-version=$RAW_VERSION
-pushd "$baseDir" # get into git directory - elsewise we will not be able to get version info
-	if [[ ${version} == "" ]]; then
-		version=$(git describe --tag --always)
-	fi
-popd
-
-
-echo "current version: $version"
-if [[ ${version} == "" ]]; then
-	echo "cant find version. are you sure we're having a .git directory here?"
-	exit 2
 fi
 
 zipname="${modname}-$version"
