@@ -11,7 +11,7 @@
             <English>Placing camouflage...</English>
             <German>Platziere Tarnung...</German>
             <Russian>Камуфлирую окоп...</Russian>
-            <French>Installation du camouflage ...</French>
+            <French>Installation du camouflage...</French>
         </Key>
         <Key ID="STR_grad_trenches_functions_RemoveCamouflage">
             <English>Remove camouflage</English>
@@ -23,13 +23,13 @@
             <English>Removing camouflage...</English>
             <German>Entferne Tarnung...</German>
             <Russian>Убираю камуфляж окопа...</Russian>
-            <French>Suppression du camouflage ...</French>
+            <French>Suppression du camouflage...</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeGigantName">
             <English>Envelope - Gigant</English>
             <German>Rund - Sehr groß</German>
             <Russian>Огромный окоп</Russian>
-            <French>Tranchée - géante</French>
+            <French>Tranchée - Géante</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnevlopeGigantDescription">
             <English>Giant Personal Trench</English>
@@ -59,25 +59,25 @@
             <English>Envelope - Vehicle</English>
             <German>Rund - Fahrzeug</German>
             <Russian>Окоп для техники</Russian>
-            <French>Tranchée - véhicule</French>
+            <French>Tranchée - Véhicule</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnevlopeVehicleDescription">
             <English>Vehicle Trench</English>
             <German>Fahrzeug Schützengraben</German>
             <Russian>Окоп для техники</Russian>
-            <French>Tranchée de véhicule</French>
+            <French>Tranchée pour véhicule</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_DigEnvelopeVehicle">
             <English>Dig Vehicle Trench</English>
             <German>Grabe Fahrzeug Schützengraben</German>
             <Russian>Выкопать окоп для техники</Russian>
-            <French>Creuser une tranchée de véhicule</French>
+            <French>Creuser une tranchée pour véhicule</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeShortName">
             <English>Envelope - Short</English>
             <German>Rund - Kurz</German>
             <Russian>Короткий окоп</Russian>
-            <French>Tranchée - petite</French>
+            <French>Tranchée - Petite</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnevlopeShortDescription">
             <English>Short Trench</English>
@@ -107,7 +107,7 @@
             <English>Allow digging trenches with an entrenchment tool</English>
             <German>Erlaube den Bau von Gräben mit dem Klappspaten</German>
             <Russian>Разрешить копать окопы лопатой</Russian>
-            <French>Permettre de creuser des tranchées avec un outil de retranchement</French>
+            <French>Permettre de creuser des tranchées avec un outil de tranchées</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_settingAllowCamouflage_displayName">
             <English>Allow camouflage</English>
@@ -125,13 +125,13 @@
             <English>Require entrenchment tool for camouflaging</English>
             <German>Klappspaten für Tarnen benötigt</German>
             <Russian>Нужна лопата чтобы камуфлировать окопы</Russian>
-            <French>Nécessite un outil de retranchement pour camoufler</French>
+            <French>Nécessite un outil de tranchées pour camoufler</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_settingCamouflageRequireEntrenchmentTool_tooltip">
             <English>Require entrenchment tool for camouflaging</English>
             <German>Fordere Klappspaten für das Tarnen von Gräben</German>
             <Russian>Нужна лопата чтобы камуфлировать окопы</Russian>
-            <French>Nécessite un outil de retranchement pour camoufler</French>
+            <French>Nécessite un outil de tranchées pour camoufler</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowShortEnvelope_displayName">
             <English>Allow short envelope trenches</English>
@@ -161,19 +161,19 @@
             <English>Allow big envelope trenches</English>
             <German>Erlaube große runde Gräben</German>
             <Russian>Разрешить большие окопы</Russian>
-            <French>Permettre de grandes tranchées</French>
+            <French>Permettre de creuser de grandes tranchées</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowBigEnvelope_tooltip">
             <English>Allow digging of big envelope trenches</English>
             <German>Erlaube das Graben von großen runden Gräben</German>
             <Russian>Разрешить копать большие окопы</Russian>
-            <French>Permettre le creusage de grandes tranchées</French>
+            <French>Permettre de creuser de grandes tranchées</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowGigantEnvelope_displayName">
             <English>Allow giant envelope trenches</English>
             <German>Erlaube riesige runde Gräben</German>
             <Russian>Разрешить огромные окопы</Russian>
-            <French>Permettre des tranchées géantes</French>
+            <French>Permettre de creuser des tranchées géantes</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowGigantEnvelope_tooltip">
             <English>Allow digging of giant envelope trenches</English>
@@ -185,13 +185,13 @@
             <English>Allow vehicle envelope trenches</English>
             <German>Erlaube runde Fahrzeuggräben</German>
             <Russian>Разрешить окопы для техники</Russian>
-            <French>Autoriser les tranchées de véhicule</French>
+            <French>Autoriser les tranchées pour véhicule</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowVehicleEnvelope_tooltip">
             <English>Allow digging of envelope vehicle trenches</English>
             <German>Erlaube das Graben von runden Fahrzeuggräben</German>
             <Russian>Разрешить копать окопы для техники</Russian>
-            <French>Permettre le creusement des tranchées de véhicule</French>
+            <French>Permettre le creusement des tranchées pour véhicule</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_settingBuildFatigueFactor_displayName">
             <English>Fatigue factor</English>
@@ -233,7 +233,7 @@
             <English>Dig time (in seconds) for vehicle envelope trenches</English>
             <German>Zeit (in Sekunden) um runde Fahrzeuggräben zu graben</German>
             <Russian>Время (в секундах) копания окопа для техники</Russian>
-            <French>Temps de creusage (en secondes) pour les tranchées de véhicule</French>
+            <French>Temps de creusage (en secondes) pour les tranchées pour véhicule</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_HelpDigging">
             <English>Help digging</English>
