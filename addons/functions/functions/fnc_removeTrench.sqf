@@ -99,7 +99,7 @@ private _fnc_condition = {
     _trench setVariable [QGVAR(diggerCount), ((_diggerCount -1) max 0), true];
   };
 
-  private _boundingBox = boundingBoxReal _trench;
+  private _boundingBox = 0 boundingBoxReal _trench;
   _boundingBox params ["_lbfc"];                                         //_lbfc(Left Bottom Front Corner) _rtbc (Right Top Back Corner)
   _lbfc params ["", "", "_lbfcZ"];
 

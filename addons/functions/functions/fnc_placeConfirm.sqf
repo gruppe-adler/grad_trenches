@@ -36,22 +36,21 @@ params ["_unit"];
 if (isNull ace_trenches_trench) exitWith {};
 
 private _trenchClass = typeOf ace_trenches_trench;
+private _pos = ace_trenches_trench modelToWorldWorld [0,0,0];
 private _vecDirAndUp = [(vectorDir ace_trenches_trench), (vectorUp ace_trenches_trench)];
 deleteVehicle ace_trenches_trench;
 
-ace_trenches_trenchPos set [2, -0.2];
-private _trench = createVehicle [_trenchClass, ace_trenches_trenchPos, [], 0, "CAN_COLLIDE"];
+private _trench = createVehicle [_trenchClass, _pos, [], 0, "CAN_COLLIDE"];
 _trench setObjectTextureGlobal [0,[_trench] call FUNC(getSurfaceTexturePath)];
 test_trench = _tench;
 publicVariable "test_trench";
 
-private _boundingBox = boundingBoxReal _trench;
+private _boundingBox = 0 boundingBoxReal _trench;
 _boundingBox params ["_lbfc", "_rtbc"];                                         //_lbfc(Left Bottom Front Corner) _rtbc (Right Top Back Corner)
 _lbfc params ["", "", "_lbfcZ"];
 _rtbc params ["", "", "_rtbcZ"];
 
-private _boundingBoxOffset =  missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> _trenchClass >> "ace_trenches_boundingBoxOffset"),0];
-private _posDiff = (abs(_lbfcZ) + abs(_rtbcZ)) - _boundingBoxOffset;
+private _posDiff = (abs(_lbfcZ) + abs(_rtbcZ));
 private _newPos = (_trench modelToWorldWorld [0,0, -(_posDiff)]);
 _trench setPosWorld _newPos;
 

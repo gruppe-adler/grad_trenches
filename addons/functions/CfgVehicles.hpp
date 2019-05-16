@@ -97,7 +97,6 @@ class CfgVehicles {
         editorSubcategory = "EdSubcat_Military";
         GVAR(isTrench) = 1;
         ace_trenches_diggingDuration = QGVAR(smallEnvelopeDigTime);
-        ace_trenches_boundingBoxOffset = "0.16";
 
         class CamouflagePositions01 {
             center[] = {0, 1.3, 0};
@@ -114,7 +113,6 @@ class CfgVehicles {
         editorSubcategory = "EdSubcat_Military";
         GVAR(isTrench) = 1;
         ace_trenches_diggingDuration = QGVAR(bigEnvelopeDigTime);
-        ace_trenches_boundingBoxOffset = "0.197";
 
         class CamouflagePositions01 {
             center[] = {-0.4, 0.4, 0.2};
@@ -136,7 +134,6 @@ class CfgVehicles {
         ace_trenches_noGeoClass = QUOTE(GRAD_envelope_gigant_noGeo);
         ace_trenches_placementData[] = {8,1.1,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
-        ace_trenches_boundingBoxOffset = 0.557;
 
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";
@@ -159,7 +156,6 @@ class CfgVehicles {
         ace_trenches_noGeoClass = QUOTE(GRAD_envelope_vehicle_noGeo);
         ace_trenches_placementData[] = {10,1.1,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
-        ace_trenches_boundingBoxOffset = "0.34";
 
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";
@@ -178,7 +174,6 @@ class CfgVehicles {
         ace_trenches_noGeoClass = QUOTE(GRAD_envelope_short_noGeo);
         ace_trenches_placementData[] = {10,1.1,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
-        ace_trenches_boundingBoxOffset = "0.16";
 
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";
