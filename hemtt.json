@@ -8,13 +8,14 @@
         "LICENSE",
         "README.md"
     ],
-    "keyname": "{{prefix}}-{{version}}",
-    "signame": "{{prefix}}-{{version}}",
-    "releasebuild": [
-        "@zip"
-    ],
-	"include": [
-		"P:\\"
-
-	]
+    "exclude": [
+      "*.psd",
+      "*.png",
+      "*.tga"
+  ],
+  "keyname": "{{prefix}}-{{version}}",
+  "signame": "{{prefix}}-{{version}}",
+  "releasebuild": [
+      "@zip"
+  ]
 }
