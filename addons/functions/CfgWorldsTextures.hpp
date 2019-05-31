@@ -387,14 +387,14 @@ class CfgWorldsTextures {
     //Weferlingen Summer
     class gm_weferlingen_summer {
         surfaceTextureBasePath = "gm\gm_worlds\gm_weferlingen_summer\data\";
-        suffix = "_co.paa";
+        suffix = "co.paa";
         camouflageObjects[] = {};
     };
 
     //Weferlingen Winter
     class gm_weferlingen_winter {
-        surfaceTextureBasePath = "gm\gm_worlds\gm_weferlingen_winterr\data\";
-        suffix = "_co.paa";
+        surfaceTextureBasePath = "gm\gm_worlds\gm_weferlingen_winter\data\";
+        suffix = "co.paa";
         camouflageObjects[] = {};
     };
 };

@@ -1,4 +1,4 @@
-release/**
+releases/**
 build_keys/**
 
 *.pbo

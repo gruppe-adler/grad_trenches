@@ -20,29 +20,20 @@ params ["_unit", "_trenchClass"];
 
 
 //Load trench data
-private _trenchPlacementData = getArray (configFile >> "CfgVehicles" >> _trenchClass >> "ace_trenches_placementData");
-TRACE_1("", _trenchPlacementData);
+ace_trenches_trenchPlacementData = getArray (configFile >> "CfgVehicles" >> _trenchClass >> "ace_trenches_placementData");
+TRACE_1("",ace_trenches_trenchPlacementData);
 
 // prevent the placing unit from running
 [_unit, "forceWalk", "ACE_Trenches", true] call ace_common_fnc_statusEffect_set;
 
 // create the trench
-//private _trench = createSimpleObject [_trenchClass, [0, 0, 0]];
-private _trench = [
-    [
-        _trenchClass,
-        getText (configFile >> "CfgVehicles" >> _trenchClass >> "model")
-    ],
-    ace_player modelToWorldWorld [0,2,0],
-    getDir ace_player,
-    true,
-    true
-] call BIS_fnc_createSimpleObject;
+private _trench = createSimpleObject [_trenchClass, [0, 0, 0]];
 ace_trenches_trench = _trench;
 
 // prevent collisions with trench
 ["ace_common_enableSimulationGlobal", [_trench, false]] call CBA_fnc_serverEvent;
 
+GVAR(digDirection) = 0;
 GVAR(currentSurface) = "";
 
 // pfh that runs while the dig is in progress
@@ -69,9 +60,39 @@ ace_trenches_digPFH = [{
     };
 
     // Update trench position
-    _trenchPlacementData params ["_dx", "_dy", "_offset"];
-    private _basePos = _unit modelToWorldWorld [0,2,0];
-    private _angle = getDir _unit;
+    ace_trenches_trenchPlacementData params ["_dx", "_dy", "_offset"];
+    private _basePos = _unit ModelToWorld [0,2,0];
+
+    private _angle = (GVAR(digDirection) + getDir _unit);
+
+    // _v1 forward from the player, _v2 to the right, _v3 points away from the ground
+    private _v3 = surfaceNormal _basePos;
+    private _v2 = [sin _angle, +cos _angle, 0] vectorCrossProduct _v3;
+    private _v1 = _v3 vectorCrossProduct _v2;
+
+    // Stick the trench to the ground
+    _basePos set [2, getTerrainHeightASL _basePos];
+    private _minzoffset = 0;
+    private _ix = 0;
+    private _iy = 0;
+    for [{_ix = -_dx/2},{_ix <= _dx/2},{_ix = _ix + _dx/3}] do {
+        for [{_iy = -_dy/2},{_iy <= _dy/2},{_iy = _iy + _dy/3}] do {
+            private _pos = _basePos vectorAdd (_v2 vectorMultiply _ix)
+                                    vectorAdd (_v1 vectorMultiply _iy);
+            _minzoffset = _minzoffset min ((getTerrainHeightASL _pos) - (_pos select 2));
+            #ifdef DEBUG_MODE_FULL
+                _pos set [2, getTerrainHeightASL _pos];
+                private _pos2 = +_pos;
+                _pos2 set [2, getTerrainHeightASL _pos + 1];
+                drawLine3D [ASLtoAGL _pos, ASLtoAGL _pos2, [1,1,0,1]];
+            #endif
+        };
+    };
+    _basePos set [2, (_basePos select 2) + _minzoffset + _offset - 0.1];
+    TRACE_2("", _minzoffset, _offset);
+    _trench setPosASL _basePos;
+    _trench setVectorDirAndUp [_v1, _v3];
+    ace_trenches_trenchPos = _basePos;
 
     if (surfaceType (position _trench) != GVAR(currentSurface)) then {
         GVAR(currentSurface) = surfaceType (position _trench);

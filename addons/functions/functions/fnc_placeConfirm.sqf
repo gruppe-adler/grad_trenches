@@ -28,7 +28,6 @@ ace_trenches_digPFH = -1;
 call ace_interaction_fnc_hideMouseHint;
 
 [_unit, "DefaultAction", _unit getVariable ["ace_trenches_Dig", -1]] call ace_common_fnc_removeActionEventHandler;
-
 _unit setVariable ["ace_trenches_isPlacing", false, true];
 
 // Delete placement dummy and create real trench
@@ -41,9 +40,9 @@ private _vecDirAndUp = [(vectorDir ace_trenches_trench), (vectorUp ace_trenches_
 deleteVehicle ace_trenches_trench;
 
 private _trench = createVehicle [_trenchClass, _pos, [], 0, "CAN_COLLIDE"];
+
 _trench setObjectTextureGlobal [0,[_trench] call FUNC(getSurfaceTexturePath)];
-test_trench = _tench;
-publicVariable "test_trench";
+_trench setPosWorld _pos;
 
 private _boundingBox = 0 boundingBoxReal _trench;
 _boundingBox params ["_lbfc", "_rtbc"];                                         //_lbfc(Left Bottom Front Corner) _rtbc (Right Top Back Corner)

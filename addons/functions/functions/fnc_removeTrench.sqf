@@ -104,7 +104,7 @@ private _fnc_condition = {
   _lbfc params ["", "", "_lbfcZ"];
 
   private _pos = (getPosWorld _trench);
-  private _posDiff = (abs(((_trench getVariable [QGVAR(diggingSteps), 0]) * _diggerCount) + _lbfcZ))/(_removeTime*5);
+  private _posDiff = ((abs(((_trench getVariable [QGVAR(diggingSteps), 0]) * _diggerCount) + _lbfcZ))/(_removeTime*5))/1.8;
   _pos set [2,((_pos select 2) - _posDiff)];
 
   _trench setPosWorld _pos;

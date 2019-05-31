@@ -33,7 +33,7 @@ class Extended_Deleted_EventHandlers {
         CAMOUFLAGE_DELETE;
     };
 
-    class GRAD_envelope_gigant {
+    class GRAD_envelope_giant {
         CAMOUFLAGE_DELETE;
     };
 
@@ -51,7 +51,7 @@ class Extended_Init_EventHandlers {
         TRENCH_INIT;
     };
 
-    class GRAD_envelope_gigant {
+    class GRAD_envelope_giant {
         TRENCH_INIT;
     };
 

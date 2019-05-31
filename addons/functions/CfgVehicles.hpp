@@ -74,10 +74,10 @@ class CfgVehicles {
                         statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'GRAD_envelope_short')])] call CBA_fnc_execNextFrame);
                         condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call ace_trenches_fnc_canContinueDiggingTrench) && GVAR(allowShortEnvelope));
                     };
-                    class grad_trenches_digEnvelopeGigant: ace_trenches_digEnvelopeBig {
-                        displayName = CSTRING(DigEnvelopeGigant);
-                        statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'GRAD_envelope_gigant')])] call CBA_fnc_execNextFrame);
-                        condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call ace_trenches_fnc_canContinueDiggingTrench) && GVAR(allowGigantEnvelope));
+                    class grad_trenches_digEnvelopeGiant: ace_trenches_digEnvelopeBig {
+                        displayName = CSTRING(DigEnvelopeGiant);
+                        statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'GRAD_envelope_giant')])] call CBA_fnc_execNextFrame);
+                        condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call ace_trenches_fnc_canContinueDiggingTrench) && GVAR(allowGiantEnvelope));
                     };
                     class grad_trenches_digEnvelopeVehicle: ace_trenches_digEnvelopeBig {
                         displayName = CSTRING(DigEnvelopeVehicle);
@@ -124,14 +124,14 @@ class CfgVehicles {
         TRENCHES_ATTRIBUTES;
     };
 
-    class GRAD_envelope_gigant: ACE_envelope_big {
+    class GRAD_envelope_giant: ACE_envelope_big {
         author = QAUTHOR;
-        displayName = CSTRING(EnvelopeGigantName);
-        descriptionShort = CSTRING(EnevlopeGigantDescription);
+        displayName = CSTRING(EnvelopeGiantName);
+        descriptionShort = CSTRING(EnevlopeGiantDescription);
         scope = 2;
-        ace_trenches_diggingDuration = QGVAR(gigantEnvelopeDigTime);
+        ace_trenches_diggingDuration = QGVAR(giantEnvelopeDigTime);
         ace_trenches_removalDuration = 30;
-        ace_trenches_noGeoClass = QUOTE(GRAD_envelope_gigant_noGeo);
+        ace_trenches_noGeoClass = QUOTE(GRAD_envelope_giant_noGeo);
         ace_trenches_placementData[] = {8,1.1,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
 
