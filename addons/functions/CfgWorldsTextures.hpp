@@ -359,7 +359,7 @@ class CfgWorldsTextures {
     //Isla Duala
     class isladuala3 {
         surfaceTextureBasePath = "ibr\isladuala3\data\";
-        suffix = "detail_co.paa";
+        suffix = "_co.paa";
         camouflageObjects[] = {};
     };
 
