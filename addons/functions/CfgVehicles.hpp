@@ -1,5 +1,6 @@
 #define TRENCHES_ACTIONS class ACE_Actions { \
         class ACE_MainActions { \
+            distance = 5; \
             class ACE_ContinueDiggingTrench { \
                 statement = QUOTE([ARR_2(_target,_player)] call FUNC(continueDiggingTrench);); \
             }; \

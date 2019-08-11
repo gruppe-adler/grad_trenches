@@ -49,7 +49,7 @@ if !(isNil QGVAR(automaticFileSetup)) then {
    _result = [_surfaceType, _basePath, _suffix] call _getTexturePath;
 }else{
    private _basePath = getText (configFile >> "CfgWorldsTextures" >> "Altis" >> "surfaceTextureBasePath");
-   if ((_surfaceType find "#Gdt" == -1) || {worldName == "Tanoa"}) then {
+   if ((_surfaceType find "#Gdt" == -1) || {worldName == "Tanoa"} || {worldName == "Enoch"}) then {
        _basePath = getText (configFile >> "CfgWorldsTextures" >> worldName >> "surfaceTextureBasePath")
    };
     _result = [_surfaceType, _basePath, getText(configFile >> "CfgWorldsTextures" >> worldName >> "suffix")] call _getTexturePath;
