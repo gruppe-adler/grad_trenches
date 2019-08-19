@@ -49,6 +49,7 @@ More images can be found [here](https://github.com/gruppe-adler/grad_trenches#mo
 - [Malden](https://arma3.com/dlc/malden)
 - [Tanoa](https://arma3.com/apex)
 - [Lythium](https://forums.bistudio.com/forums/topic/144930-wip-ffaa-v6-spanish-army-mod/)
+- Enoch
 - [Bukovina](http://cup-arma3.org/terrains)
 - [Bystrica](http://cup-arma3.org/terrains)
 - [Chernarus](http://cup-arma3.org/terrains)
@@ -93,6 +94,12 @@ More images can be found [here](https://github.com/gruppe-adler/grad_trenches#mo
 - [Abramia](https://forums.bohemia.net/forums/topic/187287-icebreakribis-isla-abramia-for-a3/)
 - [Isla Duala](https://forums.bohemia.net/forums/topic/176233-icebreakribis-isla-duala-for-a3/)
 - [Tembelan](https://forums.bohemia.net/forums/topic/212761-tembelan-island/)
+- Anizay
+- Cham
+- Vinjesvingenc
+- Weferlingen Summer
+- Weferlingen Winter
+- Chernarus Redux
 
 ## Requirements
 - Arma 3 1.76 or later

@@ -9,6 +9,13 @@ class CfgWorldsTextures {
       camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d"};
     };
 
+    //Anizay
+    class tem_anizay {
+        surfaceTextureBasePath = "tem\tem_anizay\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
+    };
+
     //Baranow
     class Baranow {
         surfaceTextureBasePath = "WW2\TerrainsIF_t\Worlds\IF_Surfaces_t\staszow\";
@@ -39,20 +46,26 @@ class CfgWorldsTextures {
         };
     };
 
-    // Bukovina
+    //Bukovina
     class Bootcamp_ACR {
         surfaceTextureBasePath = "ca\Bootcamp_ACR\data\";
         suffix = "detail_co.paa";
         camouflageObjects[] = {"ca\plants2\clutter\c_GrassBunch.p3d"};
     };
 
-    // Bystrica
+    //Bystrica
     class Woodland_ACR {
         surfaceTextureBasePath = "ca\Bohemia\data\";
         suffix = "detail_co.paa";
         camouflageObjects[] = {"ca\plants2\clutter\c_weed3.p3d"};
     };
 
+	//Cham
+	class tem_cham {
+		surfaceTextureBasePath = "tem\tem_cham\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
+    };
     //Chernarus
     class Chernarus {
         surfaceTextureBasePath = "ca\CHERNARUS\data\";
@@ -103,6 +116,7 @@ class CfgWorldsTextures {
     class Enoch {
         surfaceTextureBasePath = "A3\Map_Enoch\Data\";
         suffix = "_co.paa";
+        camouflageObjects[] = {};
     };
 
     //G.O.S Al Rayak
@@ -217,6 +231,7 @@ class CfgWorldsTextures {
     class ruha {
         surfaceTextureBasePath = "ruha\ruha\data\";
         suffix = "co.paa";
+        camouflageObjects[] = {};
     };
 
     //Panovo
@@ -400,6 +415,20 @@ class CfgWorldsTextures {
     //Weferlingen Winter
     class gm_weferlingen_winter {
         surfaceTextureBasePath = "gm\gm_worlds\gm_weferlingen_winter\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
+    };
+
+	//Weferlingen Winter
+    class vinjesvigen {
+        surfaceTextureBasePath = "gm\gm_worlds\gm_weferlingen_winter\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
+    };
+
+    //Vinjesvingenc
+    class tem_vinjesvingenc {
+        surfaceTextureBasePath = "tem\tem_vinjesvingenc\data\";
         suffix = "co.paa";
         camouflageObjects[] = {};
     };
