@@ -184,7 +184,12 @@ class CfgWorldsTextures {
             };
         };
     };
-
+    //Namalsk
+    class namalsk {
+        surfaceTextureBasePath = "nst\namalsk\data\";
+        suffix = "detail_co.paa";
+        camouflageObjects[] = {};
+    };
     //Napf
     class Napf {
         surfaceTextureBasePath = "momo\Napf\data\";
