@@ -66,10 +66,18 @@ class CfgWorldsTextures {
         suffix = "co.paa";
         camouflageObjects[] = {};
     };
+
     //Chernarus
     class Chernarus {
         surfaceTextureBasePath = "ca\CHERNARUS\data\";
         suffix = "co.paa";
+        camouflageObjects[] = {"ca\plants2\clutter\c_weed3.p3d"};
+    };
+
+    //Chernarus 2020
+    class cup_chernarus_A3 {
+        surfaceTextureBasePath = "cup\terrains_a3\cup_chernarus_s\data\";
+        suffix = "detail_co.paa";
         camouflageObjects[] = {"ca\plants2\clutter\c_weed3.p3d"};
     };
 
@@ -434,6 +442,12 @@ class CfgWorldsTextures {
     //Vinjesvingenc
     class tem_vinjesvingenc {
         surfaceTextureBasePath = "tem\tem_vinjesvingenc\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
+    };
+
+    class vt7 {
+        surfaceTextureBasePath = "vt7\data\";
         suffix = "co.paa";
         camouflageObjects[] = {};
     };
