@@ -141,6 +141,20 @@ class CfgWorldsTextures {
         camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Green.p3d"};
     };
 
+    //Hellanmaa
+    class hellanmaa {
+        surfaceTextureBasePath = "hellanmaa\hellanmaa\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
+    };
+
+    //Hellanmaa Winter
+    class hellanmaaw {
+        surfaceTextureBasePath = "hellanmaaw\hellanmaaw\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
+    };
+
     //Ivachev
     class Ivachev {
         surfaceTextureBasePath = "WW2\TerrainsIF_t\Worlds\IF_Surfaces_t\staszow\";

@@ -100,6 +100,7 @@ More images can be found [here](https://github.com/gruppe-adler/grad_trenches#mo
 - Weferlingen Summer
 - Weferlingen Winter
 - Chernarus Redux
+- [Hellanmaa](https://steamcommunity.com/sharedfiles/filedetails/?id=1291778160)
 
 ## Requirements
 - Arma 3 1.76 or later
