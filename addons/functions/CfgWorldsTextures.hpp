@@ -325,6 +325,20 @@ class CfgWorldsTextures {
         camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d"};
     };
 
+    //Summa
+    class tem_summa {
+        surfaceTextureBasePath = "tem\tem_summa\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
+    };
+
+    //Summa Winter CUP
+    class tem_summawcup {
+        surfaceTextureBasePath = "tem\tem_summawcup\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
+    };
+
     //Takistan
     class Takistan {
         surfaceTextureBasePath = "ca\takistan\Data\";
