@@ -275,6 +275,13 @@ class CfgWorldsTextures {
         camouflageObjects[] = {};
     };
 
+    //Pulau
+    class pulau {
+        surfaceTextureBasePath = "pulau\pulau\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
+    };
+
     //Sahrani
     class Sara {
         surfaceTextureBasePath = "ca\sara\Data\";
