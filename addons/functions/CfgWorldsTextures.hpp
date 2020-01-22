@@ -197,6 +197,13 @@ class CfgWorldsTextures {
         camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d"};
     };
 
+    //Kujari
+    class tem_kujari {
+        surfaceTextureBasePath = "tem\tem_kujari\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
+    };
+
     //Malden
     class Malden: Altis {
         camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d"};
@@ -285,6 +292,13 @@ class CfgWorldsTextures {
     //Proving Grounds
     class ProvingGrounds_PMC {
         surfaceTextureBasePath = "ca\provinggrounds_pmc\Data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
+    };
+
+    //Pulau
+    class pulau {
+        surfaceTextureBasePath = "pulau\pulau\data\";
         suffix = "co.paa";
         camouflageObjects[] = {};
     };
@@ -381,6 +395,13 @@ class CfgWorldsTextures {
         surfaceTextureBasePath = "ca\zargabad\Data\";
         suffix = "co.paa";
         camouflageObjects[] = {"ca\plants_E\Clutter\c_Brush_Soft_EP1.p3d"};
+    };
+
+    //Ihantala
+    class tem_ihantala {
+        surfaceTextureBasePath = "tem\tem_ihantala\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
     };
 
     //Ihantala Winter
