@@ -376,6 +376,13 @@ class CfgWorldsTextures {
         camouflageObjects[] = {"ca\plants_E\Clutter\c_Brush_Soft_EP1.p3d"};
     };
 
+    //Ihantala
+    class tem_ihantala {
+        surfaceTextureBasePath = "tem\tem_ihantala\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
+    };
+
     //Ihantala Winter
     class tem_ihantalaw {
         surfaceTextureBasePath = "tem\tem_ihantalaw\data\";
