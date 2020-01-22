@@ -507,4 +507,25 @@ class CfgWorldsTextures {
         suffix = "co.paa";
         camouflageObjects[] = {};
     };
+
+    //Rosö
+    class sfp_roso {
+        surfaceTextureBasePath = "sfp_roso_t_detail\data\";
+        suffix = "_co.paa";
+        camouflageObjects[] = {};
+    };
+
+    //Sturkö
+    class sfp_sturko {
+        surfaceTextureBasePath = "sfp_sturko\data\";
+        suffix = "_detail_co.paa";
+        camouflageObjects[] = {};
+    };
+
+    //Wamako
+    class sfp_wamako {
+        surfaceTextureBasePath = "sfp_wamako_t\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
+    };
 };

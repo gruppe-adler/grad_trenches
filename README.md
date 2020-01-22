@@ -107,6 +107,8 @@ More images can be found [here](https://github.com/gruppe-adler/grad_trenches#mo
 - [Ihantala](https://steamcommunity.com/sharedfiles/filedetails/?id=1494115712)
 - [Ihantala Winter](https://steamcommunity.com/sharedfiles/filedetails/?id=1494127420)
 - [Kujari](https://steamcommunity.com/sharedfiles/filedetails/?id=1726494027)
+- [Sturkö](https://steamcommunity.com/sharedfiles/filedetails/?id=914229902)
+- [Wamako](https://steamcommunity.com/sharedfiles/filedetails/?id=850767937)
 
 ## Requirements
 - Arma 3 1.76 or later
