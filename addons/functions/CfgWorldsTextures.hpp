@@ -183,6 +183,13 @@ class CfgWorldsTextures {
         camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d"};
     };
 
+    //Kujari
+    class tem_kujari {
+        surfaceTextureBasePath = "tem\tem_kujari\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
+    };
+
     //Malden
     class Malden: Altis {
         camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d"};
