@@ -101,6 +101,12 @@ More images can be found [here](https://github.com/gruppe-adler/grad_trenches#mo
 - Weferlingen Winter
 - Chernarus Redux
 - [Suursaari](https://steamcommunity.com/sharedfiles/filedetails/?id=1680294609)
+- [Summa](https://steamcommunity.com/sharedfiles/filedetails/?id=1598087521)
+- [Hellanmaa](https://steamcommunity.com/sharedfiles/filedetails/?id=1291778160)
+- [Pulau](https://steamcommunity.com/sharedfiles/filedetails/?id=1423583812)
+- [Ihantala](https://steamcommunity.com/sharedfiles/filedetails/?id=1494115712)
+- [Ihantala Winter](https://steamcommunity.com/sharedfiles/filedetails/?id=1494127420)
+- [Kujari](https://steamcommunity.com/sharedfiles/filedetails/?id=1726494027)
 
 ## Requirements
 - Arma 3 1.76 or later

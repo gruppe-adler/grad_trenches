@@ -141,6 +141,20 @@ class CfgWorldsTextures {
         camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Green.p3d"};
     };
 
+    //Hellanmaa
+    class hellanmaa {
+        surfaceTextureBasePath = "hellanmaa\hellanmaa\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
+    };
+
+    //Hellanmaa Winter
+    class hellanmaaw {
+        surfaceTextureBasePath = "hellanmaaw\hellanmaaw\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
+    };
+
     //Ivachev
     class Ivachev {
         surfaceTextureBasePath = "WW2\TerrainsIF_t\Worlds\IF_Surfaces_t\staszow\";
@@ -181,6 +195,13 @@ class CfgWorldsTextures {
         surfaceTextureBasePath = "GBR\lythium\data\";
         suffix = "co.paa";
         camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d"};
+    };
+
+    //Kujari
+    class tem_kujari {
+        surfaceTextureBasePath = "tem\tem_kujari\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
     };
 
     //Malden
@@ -275,6 +296,13 @@ class CfgWorldsTextures {
         camouflageObjects[] = {};
     };
 
+    //Pulau
+    class pulau {
+        surfaceTextureBasePath = "pulau\pulau\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
+    };
+
     //Sahrani
     class Sara {
         surfaceTextureBasePath = "ca\sara\Data\";
@@ -331,6 +359,20 @@ class CfgWorldsTextures {
         suffix = "co.paa";
         camouflageObjects[] = {};
     };
+  
+    //Summa
+    class tem_summa {
+        surfaceTextureBasePath = "tem\tem_summa\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
+    };
+
+    //Summa Winter CUP
+    class tem_summawcup {
+        surfaceTextureBasePath = "tem\tem_summawcup\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
+    };
 
     //Takistan
     class Takistan {
@@ -374,6 +416,13 @@ class CfgWorldsTextures {
         surfaceTextureBasePath = "ca\zargabad\Data\";
         suffix = "co.paa";
         camouflageObjects[] = {"ca\plants_E\Clutter\c_Brush_Soft_EP1.p3d"};
+    };
+
+    //Ihantala
+    class tem_ihantala {
+        surfaceTextureBasePath = "tem\tem_ihantala\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
     };
 
     //Ihantala Winter
