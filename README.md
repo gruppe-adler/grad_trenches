@@ -100,6 +100,7 @@ More images can be found [here](https://github.com/gruppe-adler/grad_trenches#mo
 - Weferlingen Summer
 - Weferlingen Winter
 - Chernarus Redux
+- [Suursaari](https://steamcommunity.com/sharedfiles/filedetails/?id=1680294609)
 - [Summa](https://steamcommunity.com/sharedfiles/filedetails/?id=1598087521)
 - [Hellanmaa](https://steamcommunity.com/sharedfiles/filedetails/?id=1291778160)
 - [Pulau](https://steamcommunity.com/sharedfiles/filedetails/?id=1423583812)

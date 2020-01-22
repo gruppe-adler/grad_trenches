@@ -353,6 +353,13 @@ class CfgWorldsTextures {
         camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d"};
     };
 
+    //Suursaari
+    class tem_suursaariv {
+        surfaceTextureBasePath = "tem\tem_suursaariv\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
+    };
+  
     //Summa
     class tem_summa {
         surfaceTextureBasePath = "tem\tem_summa\data\";
