@@ -306,7 +306,7 @@ class CfgWorldsTextures {
     //Sahrani
     class Sara {
         surfaceTextureBasePath = "ca\sara\Data\";
-        suffix = "detail_co.paa";
+        suffix = "_detail_co.paa";
         camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d"};
         class Surfaces {
             class mesto {
@@ -395,8 +395,15 @@ class CfgWorldsTextures {
     };
 
     //United Sahrani
-    class Sara_dbe1 : Sara {
+    class Sara_dbe1 {
+        surfaceTextureBasePath = "dbe1\sara_dbe1\data\";
+        suffix = "_detail_co.paa";
         camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d"};
+        class Surfaces {
+            class mesto {
+                texturePath = "ca\sara\Data\mesto_co.paa";
+            };
+        };
     };
 
     //Utes
