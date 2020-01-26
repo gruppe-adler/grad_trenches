@@ -59,7 +59,7 @@ More images can be found [here](https://github.com/gruppe-adler/grad_trenches#mo
 - [Porto](http://cup-arma3.org/terrains)
 - [Desert](http://cup-arma3.org/terrains)
 - [Rahmadi](http://cup-arma3.org/terrains)
-- [Prei Khmaoch Luong](https://forums.bistudio.com/forums/topic/206159-prei-khmaoch-luong/)
+- [Prei Khmaoch Luong](https://steamcommunity.com/sharedfiles/filedetails/?id=1978754337)
 - [Proving Grounds](http://cup-arma3.org/terrains)
 - [Sahrani](http://cup-arma3.org/terrains)
 - [United Sahrani](http://cup-arma3.org/terrains)
