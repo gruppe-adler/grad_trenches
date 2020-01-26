@@ -289,6 +289,13 @@ class CfgWorldsTextures {
         camouflageObjects[] = {"a3\vegetation_f_exp\clutter\grass\c_Grass_Tropic.p3d"};
     };
 
+    //Prei Khmaoch Luong
+    class rhspkl {
+        surfaceTextureBasePath = "rhspkl\addons\rhspkl_art\data\ground\";
+        suffix = "co.paa";
+        camouflageObjects[] = {"a3\vegetation_f_exp\clutter\grass\c_Grass_Tropic.p3d"};
+    };
+
     //Proving Grounds
     class ProvingGrounds_PMC {
         surfaceTextureBasePath = "ca\provinggrounds_pmc\Data\";
