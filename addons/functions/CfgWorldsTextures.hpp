@@ -190,6 +190,13 @@ class CfgWorldsTextures {
         camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Green.p3d"};
     };
 
+    // Kunduz
+    class Kunduz {
+        surfaceTextureBasePath = "pra3\pra3_kz\data\";
+        suffix = "co.paa";
+        camouflageObjects[] = {};
+    };
+
     //Lythium
     class lythium: Default {
         surfaceTextureBasePath = "GBR\lythium\data\";
