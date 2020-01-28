@@ -25,6 +25,8 @@ if (_actualProgress == 1) exitWith {};
 // Mark trench as being worked on
 _trench setVariable ["ace_trenches_digging", true, true];
 _trench setVariable [QGVAR(diggingType), "UP", true];
+_unit setVariable [QGVAR(diggingTrench), true];
+
 private _diggerCount = _trench getVariable [QGVAR(diggerCount), 0];
 
 if (_diggerCount > 0) then {
@@ -48,6 +50,7 @@ private _fnc_onFinish = {
     (_this select 0) params ["_unit", "_trench"];
     _trench setVariable ["ace_trenches_digging", false, true];
     _trench setVariable [QGVAR(diggingType), nil, true];
+    _unit setVariable [QGVAR(diggingTrench), false];
 
     // Save progress global
     _trench setVariable ["ace_trenches_progress", 1, true];
@@ -59,6 +62,7 @@ private _fnc_onFailure = {
     (_this select 0) params ["_unit", "_trench"];
     _trench setVariable ["ace_trenches_digging", false, true];
     _trench setVariable [QGVAR(diggingType), nil, true];
+    _unit setVariable [QGVAR(diggingTrench), false];
 
     // Save progress global
     private _progress = _trench getVariable ["ace_trenches_progress", 0];
@@ -127,8 +131,9 @@ if (_actualProgress == 0) then {
      [_handle] call CBA_fnc_removePerFrameHandler;
      _trench setVariable ["ace_trenches_digging", false, true];
      _trench setVariable [QGVAR(diggerCount), ((_diggerCount -1) max 0), true];
+     _unit setVariable [QGVAR(diggingTrench), false];
   };
 },0.1,[_trench, _unit, _digTime, _vecDirAndUp]] call CBA_fnc_addPerFrameHandler;
 
 // Play animation
-[_unit, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation;
+[_unit] call FUNC(loopanimation);

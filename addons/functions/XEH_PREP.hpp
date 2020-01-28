@@ -14,6 +14,7 @@ PREP(placeTrench);
 PREP(progressBar);
 PREP(removeCamouflage);
 PREP(removeTrench);
+PREP(loopAnimation);
 
 if ("surfaceTexture" in (uiNamespace getVariable ["Intercept_cba_capabilities",[]])) then {
     #ifdef DISABLE_COMPILE_CACHE

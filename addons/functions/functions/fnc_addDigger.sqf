@@ -51,16 +51,19 @@ private _handle = [{
 private _fnc_onFinish = {
     (_this select 0) params ["_unit", "_trench"];
     _trench setVariable [QGVAR(diggerCount), 0,true];
+    _unit setVariable [QGVAR(diggingTrench), false];
 
     // Reset animation
     [_unit, "", 1] call ace_common_fnc_doAnimation;
 };
 
 private _fnc_onFailure = {
-    (_this select 0) params ["_unit", "_trench"];
+   (_this select 0) params ["_unit", "_trench"];
 
-    _trench setVariable [QGVAR(diggerCount), (((_trench getVariable [QGVAR(diggerCount), 0]) -1) max 0), true];
-    if ((_trench getVariable [QGVAR(nextDigger), player]) == player) then {
+   _trench setVariable [QGVAR(diggerCount), (((_trench getVariable [QGVAR(diggerCount), 0]) -1) max 0), true];
+   _unit setVariable [QGVAR(diggingTrench), false];
+
+   if ((_trench getVariable [QGVAR(nextDigger), player]) == player) then {
       _trench setVariable [QGVAR(nextDigger), nil,true];
    };
 
@@ -78,4 +81,4 @@ private _fnc_condition = {
 
 [[_unit, _trench, _type, _handle], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_DiggingTrench", _fnc_condition] call FUNC(progressBar);
 
-[_unit, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation;
+[_unit] call FUNC(loopanimation);
