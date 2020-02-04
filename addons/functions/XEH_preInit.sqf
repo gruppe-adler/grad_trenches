@@ -6,23 +6,23 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-[QGVAR(allowDigging), "CHECKBOX", [localize LSTRING(settingAllowDigging_displayName), localize LSTRING(settingAllowDigging_tooltip)], localize LSTRING(settingCategory), true, true] call CBA_Settings_fnc_init;
-[QGVAR(allowCamouflage), "CHECKBOX", [localize LSTRING(settingAllowCamouflage_displayName), localize LSTRING(settingAllowCamouflage_tooltip)], localize LSTRING(settingCategory), true, true] call CBA_Settings_fnc_init;
-[QGVAR(camouflageRequireEntrenchmentTool), "CHECKBOX", [localize LSTRING(settingCamouflageRequireEntrenchmentTool_displayName), localize LSTRING(settingCamouflageRequireEntrenchmentTool_tooltip), true], localize LSTRING(settingCategory), false] call CBA_Settings_fnc_init;
-[QGVAR(buildFatigueFactor), "SLIDER", [localize LSTRING(settingBuildFatigueFactor_displayName), localize LSTRING(settingBuildFatigueFactor_tooltip)], localize LSTRING(settingCategory), [0, 5, 1, 1], true] call CBA_Settings_fnc_init;
-[QGVAR(stopBuildingAtFatigueMax), "CHECKBOX", [localize LSTRING(stopBuildingAtFatigueMax_displayName), localize LSTRING(stopBuildingAtFatigueMax_tooltip)], localize LSTRING(settingCategory), false, true] call CBA_Settings_fnc_init;
-[QGVAR(enableAutomaticFilePath), "CHECKBOX", [localize LSTRING(enableAutomaticFilePath_displayName), localize LSTRING(enableAutomaticFilePath_tooltip)], localize LSTRING(settingCategory), false, true] call CBA_Settings_fnc_init;
+[QGVAR(allowDigging), "CHECKBOX", [localize LSTRING(settingAllowDigging_displayName), localize LSTRING(settingAllowDigging_tooltip)], localize LSTRING(settingCategory), true, 1] call CBA_Settings_fnc_init;
+[QGVAR(allowCamouflage), "CHECKBOX", [localize LSTRING(settingAllowCamouflage_displayName), localize LSTRING(settingAllowCamouflage_tooltip)], localize LSTRING(settingCategory), true, 1] call CBA_Settings_fnc_init;
+[QGVAR(camouflageRequireEntrenchmentTool), "CHECKBOX", [localize LSTRING(settingCamouflageRequireEntrenchmentTool_displayName), localize LSTRING(settingCamouflageRequireEntrenchmentTool_tooltip), 1], localize LSTRING(settingCategory), false] call CBA_Settings_fnc_init;
+[QGVAR(buildFatigueFactor), "SLIDER", [localize LSTRING(settingBuildFatigueFactor_displayName), localize LSTRING(settingBuildFatigueFactor_tooltip)], localize LSTRING(settingCategory), [0, 5, 1, 1], 1] call CBA_Settings_fnc_init;
+[QGVAR(stopBuildingAtFatigueMax), "CHECKBOX", [localize LSTRING(stopBuildingAtFatigueMax_displayName), localize LSTRING(stopBuildingAtFatigueMax_tooltip)], localize LSTRING(settingCategory), false, 1] call CBA_Settings_fnc_init;
+[QGVAR(enableAutomaticFilePath), "CHECKBOX", [localize LSTRING(enableAutomaticFilePath_displayName), localize LSTRING(enableAutomaticFilePath_tooltip)], localize LSTRING(settingCategory), false, 1] call CBA_Settings_fnc_init;
 
-[QGVAR(allowShortEnvelope), "CHECKBOX", [localize LSTRING(allowShortEnvelope_displayName), localize LSTRING(allowShortEnvelope_tooltip)], localize LSTRING(settingCategory), true, true] call CBA_Settings_fnc_init;
-[QGVAR(allowSmallEnvelope), "CHECKBOX", [localize LSTRING(allowSmallEnvelope_displayName), localize LSTRING(allowSmallEnvelope_tooltip)], localize LSTRING(settingCategory), true, true] call CBA_Settings_fnc_init;
-[QGVAR(allowBigEnvelope), "CHECKBOX", [localize LSTRING(allowBigEnvelope_displayName), localize LSTRING(allowBigEnvelope_tooltip)], localize LSTRING(settingCategory), true, true] call CBA_Settings_fnc_init;
-[QGVAR(allowGiantEnvelope), "CHECKBOX", [localize LSTRING(allowGiantEnvelope_displayName), localize LSTRING(allowGiantEnvelope_tooltip)], localize LSTRING(settingCategory), true, true] call CBA_Settings_fnc_init;
-[QGVAR(allowVehicleEnvelope), "CHECKBOX", [localize LSTRING(allowVehicleEnvelope_displayName), localize LSTRING(allowVehicleEnvelope_tooltip)], localize LSTRING(settingCategory), true, true] call CBA_Settings_fnc_init;
+[QGVAR(allowShortEnvelope), "CHECKBOX", [localize LSTRING(allowShortEnvelope_displayName), localize LSTRING(allowShortEnvelope_tooltip)], localize LSTRING(settingCategory), true, 1] call CBA_Settings_fnc_init;
+[QGVAR(allowSmallEnvelope), "CHECKBOX", [localize LSTRING(allowSmallEnvelope_displayName), localize LSTRING(allowSmallEnvelope_tooltip)], localize LSTRING(settingCategory), true, 1] call CBA_Settings_fnc_init;
+[QGVAR(allowBigEnvelope), "CHECKBOX", [localize LSTRING(allowBigEnvelope_displayName), localize LSTRING(allowBigEnvelope_tooltip)], localize LSTRING(settingCategory), true, 1] call CBA_Settings_fnc_init;
+[QGVAR(allowGiantEnvelope), "CHECKBOX", [localize LSTRING(allowGiantEnvelope_displayName), localize LSTRING(allowGiantEnvelope_tooltip)], localize LSTRING(settingCategory), true, 1] call CBA_Settings_fnc_init;
+[QGVAR(allowVehicleEnvelope), "CHECKBOX", [localize LSTRING(allowVehicleEnvelope_displayName), localize LSTRING(allowVehicleEnvelope_tooltip)], localize LSTRING(settingCategory), true, 1] call CBA_Settings_fnc_init;
 
-[QGVAR(shortEnvelopeDigTime), "SLIDER", localize LSTRING(ShortEnvelopeDigTime), localize LSTRING(settingCategory), [5, 300, 20, 0], true] call CBA_Settings_fnc_init;
-[QGVAR(smallEnvelopeDigTime), "SLIDER", localize LSTRING(SmallEnvelopeDigTime), localize LSTRING(settingCategory), [5, 450, 30, 0], true] call CBA_Settings_fnc_init;
-[QGVAR(bigEnvelopeDigTime), "SLIDER", localize LSTRING(BigEnvelopeDigTime), localize LSTRING(settingCategory), [5, 600, 40, 0], true] call CBA_Settings_fnc_init;
-[QGVAR(giantEnvelopeDigTime), "SLIDER", localize LSTRING(GiantEnvelopeDigTime), localize LSTRING(settingCategory), [5, 900, 90, 0], true] call CBA_Settings_fnc_init;
-[QGVAR(vehicleEnvelopeDigTime), "SLIDER", localize LSTRING(VehicleEnvelopeDigTime), localize LSTRING(settingCategory), [5, 1200, 120, 0], true] call CBA_Settings_fnc_init;
+[QGVAR(shortEnvelopeDigTime), "SLIDER", localize LSTRING(ShortEnvelopeDigTime), localize LSTRING(settingCategory), [5, 300, 20, 0], 1] call CBA_Settings_fnc_init;
+[QGVAR(smallEnvelopeDigTime), "SLIDER", localize LSTRING(SmallEnvelopeDigTime), localize LSTRING(settingCategory), [5, 450, 30, 0], 1] call CBA_Settings_fnc_init;
+[QGVAR(bigEnvelopeDigTime), "SLIDER", localize LSTRING(BigEnvelopeDigTime), localize LSTRING(settingCategory), [5, 600, 40, 0], 1] call CBA_Settings_fnc_init;
+[QGVAR(giantEnvelopeDigTime), "SLIDER", localize LSTRING(GiantEnvelopeDigTime), localize LSTRING(settingCategory), [5, 900, 90, 0], 1] call CBA_Settings_fnc_init;
+[QGVAR(vehicleEnvelopeDigTime), "SLIDER", localize LSTRING(VehicleEnvelopeDigTime), localize LSTRING(settingCategory), [5, 1200, 120, 0], 1] call CBA_Settings_fnc_init;
 
 ADDON = true;
