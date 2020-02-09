@@ -9,7 +9,7 @@ VertexShaderID="Super";
 
 class Stage1
 {
-	texture="grad_trenches_assets\textures\zemlia_nohq.paa";
+	texture="x\grad_trenches\addons\assets\data\zemlia_nohq.paa";
 	uvSource="tex";
 	class uvTransform
 	{
@@ -46,7 +46,7 @@ class Stage3
 };
 class Stage4
 {
-	texture="grad_trenches_assets\textures\zemlia_AS.paa";
+	texture="x\grad_trenches\addons\assets\data\zemlia_AS.paa";
 	uvSource="tex";
 	class uvTransform
 	{
@@ -58,7 +58,7 @@ class Stage4
 };
 class Stage5
 {
-	texture="grad_trenches_assets\textures\zemlia_SMDI.paa";
+	texture="x\grad_trenches\addons\assets\data\zemlia_SMDI.paa";
 	uvSource="tex";
 	class uvTransform
 	{

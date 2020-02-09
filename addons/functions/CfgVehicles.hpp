@@ -184,4 +184,23 @@ class CfgVehicles {
             left[] = {-1.1,0.1,0.2};
         };
     };
+
+    class GRAD_envelope_gunEmplacment:  ACE_envelope_big {
+        author = QAUTHOR;
+        displayName = CSTRING(EnvelopeGunEmplacmentName);
+        descriptionShort = CSTRING(EnevlopeGunEmplacmentDescription);
+        scope = 2;
+        ace_trenches_diggingDuration = QGVAR(gunEmplacmentEnvelopeDigTime);
+        ace_trenches_removalDuration = 10;
+        ace_trenches_placementData[] = {10,1.1,0.20};
+        ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
+
+        editorCategory = "EdCat_Things";
+        editorSubcategory = "EdSubcat_Military";
+
+        class CamouflagePositions01 {
+            right[] = {1.1,0.2,0.2};
+            left[] = {-1.1,0.1,0.2};
+        };
+    };
 };

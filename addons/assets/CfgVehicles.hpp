@@ -27,4 +27,9 @@ class CfgVehicles {
         hiddenSelections[] = {"velka"};
         editorPreview = QPATHTOF(data\trench_vehicle.paa);
     };
+    class GRAD_envelope_gunEmplacment: BagFence_base_F {
+        model = QPATHTOF(data\trench_gunEmplacment.p3d);
+        hiddenSelections[] = {"velka"};
+        //editorPreview = QPATHTOF(data\trench_gunEmplacment.paa);
+    };
 };
