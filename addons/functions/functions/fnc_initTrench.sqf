@@ -25,5 +25,6 @@ if (local _object) then {
     _object spawn {
         private _texture = [_this] call FUNC(getSurfaceTexturePath);
         _this setObjectTextureGlobal [0, _texture];
+        _this setObjectMaterialGlobal [0, "x\grad_trenches\addons\assets\data\zemlia.rvmat"];
     };
 };

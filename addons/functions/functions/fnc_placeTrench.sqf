@@ -97,6 +97,7 @@ ace_trenches_digPFH = [{
     if (surfaceType (position _trench) != GVAR(currentSurface)) then {
         GVAR(currentSurface) = surfaceType (position _trench);
         _trench setObjectTextureGlobal [0, [_trench] call FUNC(getSurfaceTexturePath)];
+        _trench setObjectMaterialGlobal [0, "x\grad_trenches\addons\assets\data\zemlia.rvmat"];
     };
 }, 0, [_unit, _trench]] call CBA_fnc_addPerFrameHandler;
 
