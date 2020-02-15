@@ -29,6 +29,7 @@ private _initTrench = {
 
     private _texture = [_object] call FUNC(getSurfaceTexturePath);
     _object setObjectTexture [0, _texture];
+    diag_log format ["Trench: %1, Texture: %2", _object, _texture];
 
     if (((_object get3DENAttribute QUOTE(grad_trenches_camouflageTrench)) select 0) isEqualTo 1) then {
         [_object] call FUNC(placeCamouflage);

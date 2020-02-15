@@ -2,8 +2,8 @@ ambient[]={1,1,1,1};
 diffuse[]={1,1,1,1};
 forcedDiffuse[]={0,0,0,0};
 emmisive[]={0,0,0,1};
-specular[]={0.37,0.37,0.37,1.0};
-specularPower=1;
+specular[]={0.650000,0.650000,0.650000,1.000000};
+specularPower=4.000000;
 PixelShaderID="Super";
 VertexShaderID="Super";
 
@@ -46,7 +46,7 @@ class Stage3
 };
 class Stage4
 {
-	texture="x\grad_trenches\addons\assets\data\zemlia_AS.paa";
+	texture="#(argb,8,8,3)color(0,1,1,1)";
 	uvSource="tex";
 	class uvTransform
 	{
@@ -70,7 +70,7 @@ class Stage5
 };
 class Stage6
 {
-	texture="#(ai,32,128,1)fresnel(0.99,0.18)";
+	texture="#(ai,64,64,1)fresnel(1.3,7)";
     uvSource="none";
 	class uvTransform
 	{
