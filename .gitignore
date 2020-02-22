@@ -1,5 +1,6 @@
-releases/**
-build_keys/**
+releases/*
+build_keys/*
+keys/*
 
 *.pbo
 *.cache

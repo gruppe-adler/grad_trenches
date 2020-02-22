@@ -24,7 +24,8 @@ ace_trenches_trenchPlacementData = getArray (configFile >> "CfgVehicles" >> _tre
 TRACE_1("",ace_trenches_trenchPlacementData);
 
 // prevent the placing unit from running
-[_unit, "forceWalk", "ACE_Trenches", true] call ace_common_fnc_statusEffect_set;
+[_unit, "forceWalk", "ACE_Trenches", true] call EFUNC(common,statusEffect_set);
+[_unit, "blockThrow", "ACE_Trenches", true] call EFUNC(common,statusEffect_set);
 
 // create the trench
 private _trench = createSimpleObject [_trenchClass, [0, 0, 0]];
@@ -47,12 +48,8 @@ ace_trenches_digPFH = [{
 
     // Cancel if the place is no longer suitable
     private _checkVar = [_unit] call ace_trenches_fnc_canDigTrench;
-    if ((typeName _checkVar) == "Number") then {
-      if (_checkVar > 0) then {
-         _checkVar = true;
-      }else{
-         _checkVar = false;
-      };
+    if (_checkVar isEqualType 0) then {
+      _checkVar = _checkVar > 0;
     };
 
     if !(_checkVar) exitWith {
@@ -62,7 +59,6 @@ ace_trenches_digPFH = [{
     // Update trench position
     ace_trenches_trenchPlacementData params ["_dx", "_dy", "_offset"];
     private _basePos = _unit ModelToWorld [0,2,0];
-
     private _angle = (GVAR(digDirection) + getDir _unit);
 
     // _v1 forward from the player, _v2 to the right, _v3 points away from the ground
@@ -97,7 +93,6 @@ ace_trenches_digPFH = [{
     if (surfaceType (position _trench) != GVAR(currentSurface)) then {
         GVAR(currentSurface) = surfaceType (position _trench);
         _trench setObjectTextureGlobal [0, [_trench] call FUNC(getSurfaceTexturePath)];
-        _trench setObjectMaterialGlobal [0, "x\grad_trenches\addons\assets\data\zemlia.rvmat"];
     };
 }, 0, [_unit, _trench]] call CBA_fnc_addPerFrameHandler;
 

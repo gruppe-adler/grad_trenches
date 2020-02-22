@@ -1,26 +1,30 @@
-/*
-    @Authors
-        Christian 'chris5790' Klemm
-    @Arguments
-        ?
-    @Return Value
-        ?
-    @Example
-        ?
-*/
 #include "script_component.hpp"
+/*
+ * Author: chris579
+ * Initializes a trench placed in 3DEN.
+ *
+ * Arguments:
+ * 0: Trench <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [TrenchObj] call ace_trenches_fnc_initTrench3DEN
+ *
+ * Public: No
+ */
+
 params [
-    ["_object", objNull, [objNull]]
+    ["_object", objnull, [objNull]]
 ];
 
 private _initTrench = {
-    params["_object"];
-
+    params ["_object"];
     _object addEventHandler ["Dragged3DEN", {
-        params["_object"];
+        params ["_object"];
         private _texture = [_object] call FUNC(getSurfaceTexturePath);
         _object setObjectTexture [0, _texture];
-
         {
             private _pos = _x getVariable [QGVAR(positionData), [0,0,0]];
             _x attachTo [_object, _pos];
@@ -29,9 +33,8 @@ private _initTrench = {
 
     private _texture = [_object] call FUNC(getSurfaceTexturePath);
     _object setObjectTexture [0, _texture];
-    diag_log format ["Trench: %1, Texture: %2", _object, _texture];
 
-    if (((_object get3DENAttribute QUOTE(grad_trenches_camouflageTrench)) select 0) isEqualTo 1) then {
+    if (((_object get3DENAttribute CAMOUFLAGE_3DEN_ATTRIBUTE) select 0) isEqualTo 1) then {
         [_object] call FUNC(placeCamouflage);
     };
 };
@@ -39,10 +42,10 @@ private _initTrench = {
 // If no object is given apply this to all trenches in 3den
 if (isNull _object) then {
     {
-        if (getNumber(configFile >> "CfgVehicles" >> typeOf _x >> QGVAR(isTrench)) == 1) then {
-            [_x] call _initTrench;
+        if (IS_TRENCH(_x)) then {
+            _x call _initTrench;
         };
     } forEach (all3DENEntities select 0);
 } else {
     [_object] call _initTrench;
-};
+}

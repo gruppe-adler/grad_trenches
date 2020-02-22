@@ -1,14 +1,20 @@
-/*
-    @Authors
-        Christian 'chris5790' Klemm
-    @Arguments
-        ?
-    @Return Value
-        ?
-    @Example
-        ?
-*/
 #include "script_component.hpp"
+/*
+ * Author: chris579, Salbei
+ * Inititializes a trench.
+ *
+ * Arguments:
+ * 0: Trench <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [TrenchObj] call grad_trenches_fnc_initTrench
+ *
+ * Public: No
+ */
+
 params [
     ["_object", objNull, [objNull]]
 ];
@@ -21,10 +27,10 @@ if (is3DEN) exitWith {
 };
 
 if (local _object) then {
-    // Has to be spawned to ensure MP compatibility
-    _object spawn {
-        private _texture = [_this] call FUNC(getSurfaceTexturePath);
-        _this setObjectTextureGlobal [0, _texture];
-        _this setObjectMaterialGlobal [0, "x\grad_trenches\addons\assets\data\zemlia.rvmat"];
-    };
+    // Has to be delayed to ensure MP compatibility (vehicle spawned in same frame as texture is applied)
+    [{
+        params ["_obj"];
+        private _texture = [_obj] call FUNC(getSurfaceTexturePath);
+        _object setObjectTextureGlobal [0, _texture];
+    }, _object] call CBA_fnc_execNextFrame;
 };

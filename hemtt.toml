@@ -1,0 +1,19 @@
+name = "GRAD Trenches"
+prefix = "grad_trenches"
+author = "Salbei"
+files = [
+    "mod.cpp",
+    "logo_grad_ca.paa",
+    "LICENSE",
+    "README.md"
+]
+
+keyname = "{{prefix}}_{{version}}"
+signame = "{{prefix}}_{{version}}-{{git \"id 8\"}}"
+
+releasebuild = [
+    "@zip grad_trenches_{{semver.major}}.{{semver.minor}}.{{semver.patch}}"
+]
+
+[header_exts]
+version= "{{git \"id 8\"}}"

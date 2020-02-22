@@ -1,14 +1,19 @@
-/*
-    @Authors
-        Christian 'chris5790' Klemm
-    @Arguments
-        ?
-    @Return Value
-        ?
-    @Example
-        ?
-*/
 #include "script_component.hpp"
+/*
+* Author: chris579
+* Removes camouflage from trench.
+*
+* Arguments:
+* 0: Trench <OBJECT>
+*
+* Return Value:
+* None
+*
+* Example:
+* [TrenchObj] call ace_trenches_fnc_deleteCamouflage
+*
+* Public: No
+*/
 
 params ["_trench"];
 
@@ -20,3 +25,4 @@ private _camouflageObjects = _trench getVariable [QGVAR(camouflageObjects), []];
 
 _camouflageObjects deleteAt 0;
 _trench setVariable [QGVAR(camouflageObjects), _camouflageObjects, true];
+

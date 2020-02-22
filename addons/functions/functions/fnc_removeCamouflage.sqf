@@ -1,14 +1,20 @@
-/*
-    @Authors
-        Christian 'chris5790' Klemm
-    @Arguments
-        ?
-    @Return Value
-        ?
-    @Example
-        ?
-*/
 #include "script_component.hpp"
+/*
+ * Author: chris579
+ * Removes camouflage from a trench.
+ *
+ * Arguments:
+ * 0: Trench <OBJECT>
+ * 1: Unit <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [TrenchObj, Unit] call ace_trenches_fnc_removeCamouflage
+ *
+ * Public: No
+ */
 
 params ["_trench", "_unit"];
 

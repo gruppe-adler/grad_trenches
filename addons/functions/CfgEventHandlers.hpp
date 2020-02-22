@@ -65,3 +65,11 @@ class Extended_Init_EventHandlers {
         TRENCH_INIT;
     };
 };
+
+class Extended_InitPost_EventHandlers {
+    class ModuleCurator_F {
+        class ADDON {
+            init = QUOTE(_this call FUNC(initCurator));
+        };
+    };
+};

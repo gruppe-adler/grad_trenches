@@ -1,14 +1,21 @@
-/*
-    @Authors
-        Christian 'chris5790' Klemm
-    @Arguments
-        ?
-    @Return Value
-        ?
-    @Example
-        ?
-*/
 #include "script_component.hpp"
+/*
+ * Author:  Christian 'chris5790' Klemm
+ * Apply camouflage attribute to trench.
+ *
+ * Arguments:
+ * 0: Object <OBJECT>
+ * 1: Value <NUMBER>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [TrenchObj, ACE_player] call grad_trenches_fnc_applyCamouflageAttribute
+ *
+ * Public: No
+ */
+
 params ["_object", "_value"];
 
 if (_value isEqualTo 1) then {

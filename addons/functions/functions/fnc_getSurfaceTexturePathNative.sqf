@@ -12,7 +12,7 @@
  * Surface path <STRING>
  *
  * Example:
- * [TrenchObj] call ace_trenches_fnc_getSurfaceTexturePath
+ * [TrenchObj] call grad_trenches_fnc_getSurfaceTexturePath
  *
  * Public: No
  */
@@ -27,3 +27,4 @@ private _result = surfaceTexture (getPos _object);
 
 if (isNil {_result}) exitWith {DEFAULT_TEXTURE};
 _result
+

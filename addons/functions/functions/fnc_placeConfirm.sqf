@@ -1,9 +1,10 @@
+#include "script_component.hpp"
 /*
  * Author: Garth 'L-H' de Wet, Ruthberg, edited by commy2 for better MP and eventual AI support and esteldunedain
  * Confirms trench dig
  *
  * Arguments:
- * 0: unit <OBJECT>
+ * 0: Unit <OBJECT>
  *
  * Return Value:
  * None
@@ -13,12 +14,12 @@
  *
  * Public: No
  */
-#include "script_component.hpp"
 
 params ["_unit"];
 
 // enable running again
-[_unit, "forceWalk", "ACE_Trenches", false] call ace_common_fnc_statusEffect_set;
+[_unit, "forceWalk", "ACE_Trenches", false] call EFUNC(common,statusEffect_set);
+[_unit, "blockThrow", "ACE_Trenches", false] call EFUNC(common,statusEffect_set);
 
 // remove dig pfh
 [ace_trenches_digPFH] call CBA_fnc_removePerFrameHandler;
@@ -42,7 +43,6 @@ deleteVehicle ace_trenches_trench;
 private _trench = createVehicle [_trenchClass, _pos, [], 0, "CAN_COLLIDE"];
 
 _trench setObjectTextureGlobal [0,[_trench] call FUNC(getSurfaceTexturePath)];
-_tench setObjectMaterialGlobal [0, "x\grad_trenches\addons\assets\data\zemlia.rvmat"];
 _trench setPosWorld _pos;
 
 private _boundingBox = 0 boundingBoxReal _trench;

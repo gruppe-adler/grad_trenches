@@ -1,23 +1,26 @@
-/*
-    @Authors
-        Christian 'chris5790' Klemm
-		Salbei
-    @Arguments
-        ?
-    @Return Value
-        ?
-    @Example
-        ?
-*/
 #include "script_component.hpp"
+/*
+* Author: chris579, Salbei
+* Gets the path to the ground texture under the object.
+*
+* Arguments:
+* 0: Trench <OBJECT>
+*
+* Return Value:
+* Surface path <STRING>
+*
+* Example:
+* [TrenchObj] call ace_trenches_fnc_getSurfaceTexturePath
+*
+* Public: No
+*/
+
 params [
     ["_object", objnull, [objNull]]
 ];
+
 if (isNull _object) exitWith {};
-
-private _defaultTexture = "x\grad_trenches\addons\assets\data\zemlia.paa";
-
-if !(isText (configFile >> "CfgWorldsTextures" >> worldName >> "surfaceTextureBasePath")) exitWith {_defaultTexture};
+if !(isText (configFile >> "CfgWorldsTextures" >> worldName >> "surfaceTextureBasePath")) exitWith {DEFAULT_TEXTURE};
 
 private _surfaceType = surfaceType (position _object);
 
@@ -52,7 +55,7 @@ _result = [_surfaceType, _basePath, getText(configFile >> "CfgWorldsTextures" >>
 
 
 if (isNil {_result} || _result isEqualTo []) then {
-    _result = _defaultTexture;
+    _result = DEFAULT_TEXTURE;
     diag_log format ["GRAD_Trenches: Type: %1, Position: %2, WorldName: %3, SurfaceType: %4, Texture: %5", (typeof _object), (position _object), worldName, _surfaceType, _result];
 };
 
