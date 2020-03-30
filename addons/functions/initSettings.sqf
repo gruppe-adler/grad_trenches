@@ -9,11 +9,11 @@
 [QGVAR(allowBigEnvelope), "CHECKBOX", [localize LSTRING(allowBigEnvelope_displayName), localize LSTRING(allowBigEnvelope_tooltip)], localize LSTRING(settingCategory), true] call CBA_Settings_fnc_init;
 [QGVAR(allowGiantEnvelope), "CHECKBOX", [localize LSTRING(allowGiantEnvelope_displayName), localize LSTRING(allowGiantEnvelope_tooltip)], localize LSTRING(settingCategory), true] call CBA_Settings_fnc_init;
 [QGVAR(allowVehicleEnvelope), "CHECKBOX", [localize LSTRING(allowVehicleEnvelope_displayName), localize LSTRING(allowVehicleEnvelope_tooltip)], localize LSTRING(settingCategory), true] call CBA_Settings_fnc_init;
-[QGVAR(allowGunEmplacmentEnvelope), "CHECKBOX", [localize LSTRING(allowGunEmplacmentEnvelope_displayName), localize LSTRING(allowGunEmplacmentEnvelope_tooltip)], localize LSTRING(settingCategory), true] call CBA_Settings_fnc_init;
+[QGVAR(allowLongEnvelope), "CHECKBOX", [localize LSTRING(allowLongEnvelope_displayName), localize LSTRING(allowLongEnvelope_tooltip)], localize LSTRING(settingCategory), true] call CBA_Settings_fnc_init;
 
 [QGVAR(shortEnvelopeDigTime), "SLIDER", localize LSTRING(ShortEnvelopeDigTime), localize LSTRING(settingCategory), [5, 300, 20, 0], true] call CBA_Settings_fnc_init;
 [QGVAR(smallEnvelopeDigTime), "SLIDER", localize LSTRING(SmallEnvelopeDigTime), localize LSTRING(settingCategory), [5, 450, 30, 0], true] call CBA_Settings_fnc_init;
 [QGVAR(bigEnvelopeDigTime), "SLIDER", localize LSTRING(BigEnvelopeDigTime), localize LSTRING(settingCategory), [5, 600, 40, 0], true] call CBA_Settings_fnc_init;
 [QGVAR(giantEnvelopeDigTime), "SLIDER", localize LSTRING(GiantEnvelopeDigTime), localize LSTRING(settingCategory), [5, 900, 90, 0], true] call CBA_Settings_fnc_init;
 [QGVAR(vehicleEnvelopeDigTime), "SLIDER", localize LSTRING(VehicleEnvelopeDigTime), localize LSTRING(settingCategory), [5, 1200, 120, 0], true] call CBA_Settings_fnc_init;
-[QGVAR(gunEmplacmentEnvelopeDigTime), "SLIDER", localize LSTRING(GunEmplacmentEnvelopeDigTime), localize LSTRING(settingCategory), [5, 450, 35, 0], true] call CBA_Settings_fnc_init;
+[QGVAR(LongEnvelopeDigTime), "SLIDER", localize LSTRING(LongEnvelopeDigTime), localize LSTRING(settingCategory), [5, 450, 35, 0], true] call CBA_Settings_fnc_init;

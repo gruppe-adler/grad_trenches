@@ -27,7 +27,7 @@
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeGiantName">
             <English>Envelope - Giant</English>
-            <German>Rund - Sehr groß</German>
+            <German>Graben - Sehr groß</German>
             <Russian>Огромный окоп</Russian>
             <French>Tranchée - Géante</French>
         </Key>
@@ -57,7 +57,7 @@
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeVehicleName">
             <English>Envelope - Vehicle</English>
-            <German>Rund - Fahrzeug</German>
+            <German>Graben - Fahrzeug</German>
             <Russian>Окоп для техники</Russian>
             <French>Tranchée - Véhicule</French>
         </Key>
@@ -75,7 +75,7 @@
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeShortName">
             <English>Envelope - Short</English>
-            <German>Rund - Kurz</German>
+            <German>Graben - Kurz</German>
             <Russian>Короткий окоп</Russian>
             <French>Tranchée - Petite</French>
         </Key>
@@ -235,8 +235,8 @@
             <Russian>Время (в секундах) копания окопа для техники</Russian>
             <French>Temps de creusage (en secondes) pour les tranchées pour véhicule</French>
         </Key>
-        <Key ID="STR_GRAD_Trenches_functions_GunEmplacmentEnvelopeDigTime">
-            <English>Dig time (in seconds) for gun emplacment envelope trenches</English>
+        <Key ID="STR_GRAD_Trenches_functions_LongEnvelopeDigTime">
+            <English>Dig time (in seconds) for Long envelope trenches</English>
             <German>Zeit (in Sekunden) um runde Waffen Stellungs Gräben zu graben</German>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_HelpDigging">
@@ -257,21 +257,21 @@
             <Russian>При наступлении полной усталости откапывание окопа прекращается</Russian>
             <French>Si activé, la pelle cessera de creuser si sa fatigue atteint 0.</French>
         </Key>
-         <Key ID="STR_GRAD_Trenches_functions_EnvelopeGunEmplacmentName">
-            <English>Envelope - Gun Emplacment</English>
-            <German>Rund - Waffen Stellung</German>
+         <Key ID="STR_GRAD_Trenches_functions_EnvelopeLongName">
+            <English>Envelope - Long</English>
+            <German>Graben - Lang</German>
         </Key>
-        <Key ID="STR_GRAD_Trenches_functions_EnevlopeGunEmplacmentDescription">
-            <English>Gun Emplacment Trench</English>
-            <German>Waffen Stellungsgraben</German>
+        <Key ID="STR_GRAD_Trenches_functions_EnevlopeLongDescription">
+            <English>Long Trench</English>
+            <German>Langergraben</German>
         </Key>
-        <Key ID="STR_GRAD_Trenches_functions_DigEnvelopeGunEmplacment">
-            <English>Dig Gun Emplacment Trench</English>
-            <German>Grabe Waffen Stellungsgraben</German>
+        <Key ID="STR_GRAD_Trenches_functions_DigEnvelopeLong">
+            <English>Dig Long Trench</English>
+            <German>Grabe Langengraben</German>
         </Key>
-        <Key ID="STR_GRAD_Trenches_functions_allowGunEmplacmentEnvelope_displayName">
-            <English>Allow gun emplacment trenches</English>
-            <German>Erlaube affen Stellungsgraben</German>
+        <Key ID="STR_GRAD_Trenches_functions_allowLongEnvelope_displayName">
+            <English>Allow long trenches</English>
+            <German>Erlaube Langegräben</German>
         </Key>
     </Package>
 </Project>

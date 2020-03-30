@@ -1,6 +1,6 @@
 #define TRENCHES_ACTIONS class ACE_Actions { \
         class ACE_MainActions { \
-            distance = 5; \
+            distance = 10; \
             class ACE_ContinueDiggingTrench { \
                 statement = QUOTE([ARR_2(_target,_player)] call FUNC(continueDiggingTrench);); \
             }; \
@@ -189,12 +189,23 @@ class CfgVehicles {
             left[] = {-1.1,0.1,0.2};
         };
     };
-
-    class GRAD_envelope_gunEmplacment: ACE_envelope_small {
+    class GRAD_envelope_long: ACE_envelope_big {
         author = QAUTHOR;
-        displayName = CSTRING(EnvelopeGunEmplacmentName);
-        descriptionShort = CSTRING(EnevlopeGunEmplacmentDescription);
+        displayName = CSTRING(EnvelopeLongName);
+        descriptionShort = CSTRING(EnevlopeLongDescription);
         scope = 2;
-        ace_trenches_diggingDuration = QGVAR(gunEmplacmentEnvelopeDigTime);
+        ace_trenches_diggingDuration = QGVAR(longEnvelopeDigTime);
+        ace_trenches_removalDuration = 10;
+        ace_trenches_noGeoClass = QUOTE(GRAD_envelope_long_noGeo);
+        ace_trenches_placementData[] = {10,1.1,0.20};
+        ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
+
+        editorCategory = "EdCat_Things";
+        editorSubcategory = "EdSubcat_Military";
+
+        class CamouflagePositions01 {
+            right[] = {1.1,0.2,0.2};
+            left[] = {-1.1,0.1,0.2};
+        };
     };
 };
