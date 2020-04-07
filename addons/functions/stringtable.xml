@@ -4,61 +4,61 @@
         <Key ID="STR_grad_trenches_functions_PlaceCamouflage">
             <English>Place camouflage</English>
             <German>Tarnung platzieren</German>
-            <Russian>Камуфлировать окоп</Russian>
+            <Russian>Маскировать окоп</Russian>
             <French>Placer le camouflage</French>
         </Key>
         <Key ID="STR_grad_trenches_functions_PlaceCamouflageProgress">
             <English>Placing camouflage...</English>
             <German>Platziere Tarnung...</German>
-            <Russian>Камуфлирую окоп...</Russian>
+            <Russian>Маскирую окоп...</Russian>
             <French>Installation du camouflage...</French>
         </Key>
         <Key ID="STR_grad_trenches_functions_RemoveCamouflage">
             <English>Remove camouflage</English>
             <German>Tarnung entfernen</German>
-            <Russian>Убрать камуфляж</Russian>
+            <Russian>Убрать маскировку</Russian>
             <French>Enlevez le camouflage</French>
         </Key>
         <Key ID="STR_grad_trenches_functions_RemoveCamouflageProgress">
             <English>Removing camouflage...</English>
             <German>Entferne Tarnung...</German>
-            <Russian>Убираю камуфляж окопа...</Russian>
+            <Russian>Убираю маскировку окопа...</Russian>
             <French>Suppression du camouflage...</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeGiantName">
             <English>Envelope - Giant</English>
             <German>Graben - Sehr groß</German>
-            <Russian>Огромный окоп</Russian>
+            <Russian>Окоп - Большой</Russian>
             <French>Tranchée - Géante</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnevlopeGiantDescription">
             <English>Giant Personal Trench</English>
             <German>Sehr großer Schützengraben</German>
-            <Russian>Огромный окоп для пехоты</Russian>
+            <Russian>Большой окоп</Russian>
             <French>Tranchée personnelle géante</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_DigEnvelopeGiant">
             <English>Dig Giant Trench</English>
             <German>Grabe sehr großen Schützengraben</German>
-            <Russian>Вырыть огромный окоп</Russian>
+            <Russian>Отрыть большой окоп</Russian>
             <French>Creuser une tranchée géante</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_CamouflageAttribute">
             <English>Apply camouflage</English>
             <German>Tarnung anbringen</German>
-            <Russian>Применить камуфляж</Russian>
+            <Russian>Маскировать</Russian>
             <French>Appliquer le camouflage</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_CamouflageAttributeTooltip">
             <English>Apply camouflage to this trench</English>
             <German>Tarnung an diesen Graben anbringen</German>
-            <Russian>Применить камуфляж к этому окопу</Russian>
+            <Russian>Маскировать окоп</Russian>
             <French>Appliquez un camouflage à cette tranchée</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeVehicleName">
             <English>Envelope - Vehicle</English>
             <German>Graben - Fahrzeug</German>
-            <Russian>Окоп для техники</Russian>
+            <Russian>Окоп - Для техники</Russian>
             <French>Tranchée - Véhicule</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnevlopeVehicleDescription">
@@ -70,13 +70,13 @@
         <Key ID="STR_GRAD_Trenches_functions_DigEnvelopeVehicle">
             <English>Dig Vehicle Trench</English>
             <German>Grabe Fahrzeug Schützengraben</German>
-            <Russian>Выкопать окоп для техники</Russian>
+            <Russian>Отрыть окоп для техники</Russian>
             <French>Creuser une tranchée pour véhicule</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeShortName">
             <English>Envelope - Short</English>
             <German>Graben - Kurz</German>
-            <Russian>Короткий окоп</Russian>
+            <Russian>Окоп - Короткий</Russian>
             <French>Tranchée - Petite</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnevlopeShortDescription">
@@ -88,14 +88,15 @@
         <Key ID="STR_GRAD_Trenches_functions_DigEnvelopeShort">
             <English>Dig Short Trench</English>
             <German>Grabe kurzen Schützengraben</German>
-            <Russian>Вырыть короткий окоп</Russian>
+            <Russian>Отрыть короткий окоп</Russian>
             <French>Creuser une petite tranchée</French>
         </Key>
 
         <Key ID="STR_GRAD_Trenches_functions_settingCategory">
             <English>GRAD Trenches</English>
             <German>GRAD Trenches</German>
-            <French>GRAD Tranchées</French>
+            <Russian>GRAD окопы</Russian> 
+			<French>GRAD Tranchées</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_settingAllowDigging_displayName">
             <English>Allow digging</English>
@@ -112,84 +113,84 @@
         <Key ID="STR_GRAD_Trenches_functions_settingAllowCamouflage_displayName">
             <English>Allow camouflage</English>
             <German>Erlaube Tarnung</German>
-            <Russian>Разрешить камуфляж</Russian>
+            <Russian>Разрешить маскировку</Russian>
             <French>Autoriser le camouflage</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_settingAllowCamouflage_tooltip">
             <English>Allow camouflaging trenches</English>
             <German>Erlaube das Tarnen von Gräben</German>
-            <Russian>Разрешить камуфлировать окопы</Russian>
+            <Russian>Разрешить маскировать окопы</Russian>
             <French>Permettre le camouflage des tranchées</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_settingCamouflageRequireEntrenchmentTool_displayName">
             <English>Require entrenchment tool for camouflaging</English>
             <German>Klappspaten für Tarnen benötigt</German>
-            <Russian>Нужна лопата чтобы камуфлировать окопы</Russian>
+            <Russian>Нужна лопата чтобы маскировать окопы</Russian>
             <French>Nécessite un outil de tranchées pour camoufler</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_settingCamouflageRequireEntrenchmentTool_tooltip">
             <English>Require entrenchment tool for camouflaging</English>
             <German>Fordere Klappspaten für das Tarnen von Gräben</German>
-            <Russian>Нужна лопата чтобы камуфлировать окопы</Russian>
+            <Russian>Нужна лопата чтобы маскировать окопы</Russian>
             <French>Nécessite un outil de tranchées pour camoufler</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowShortEnvelope_displayName">
             <English>Allow short envelope trenches</English>
-            <German>Erlaube kurze runde Gräben</German>
+            <German>Erlaube kurze Grabene Gräben</German>
             <Russian>Разрешить короткие окопы</Russian>
             <French>Autoriser de petites tranchées</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowShortEnvelope_tooltip">
             <English>Allow digging of short envelope trenches</English>
-            <German>Erlaube das Graben von kurzen runden Gräben</German>
+            <German>Erlaube das Graben von kurzen Grabenen Gräben</German>
             <Russian>Разрешить копать короткие окопы</Russian>
             <French>Permettre de creuser de petites tranchées</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowSmallEnvelope_displayName">
             <English>Allow small envelope trenches</English>
-            <German>Erlaube kleine runde Gräben</German>
+            <German>Erlaube kleine Grabene Gräben</German>
             <Russian>Разрешить малые окопы</Russian>
             <French>Permettre les petites tranchées</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowSmallEnvelope_tooltip">
             <English>Allow digging of small envelope trenches</English>
-            <German>Erlaube das Graben von kleinen runden Gräben</German>
+            <German>Erlaube das Graben von kleinen Grabenen Gräben</German>
             <Russian>Разрешить копать малые окопы</Russian>
             <French>Permettre de creuser de petites tranchées</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowBigEnvelope_displayName">
             <English>Allow big envelope trenches</English>
-            <German>Erlaube große runde Gräben</German>
-            <Russian>Разрешить большие окопы</Russian>
+            <German>Erlaube große Grabene Gräben</German>
+            <Russian>Разрешить средние окопы</Russian>
             <French>Permettre de creuser de grandes tranchées</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowBigEnvelope_tooltip">
             <English>Allow digging of big envelope trenches</English>
-            <German>Erlaube das Graben von großen runden Gräben</German>
-            <Russian>Разрешить копать большие окопы</Russian>
+            <German>Erlaube das Graben von großen Grabenen Gräben</German>
+            <Russian>Разрешить копать средние окопы</Russian>
             <French>Permettre de creuser de grandes tranchées</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowGiantEnvelope_displayName">
             <English>Allow giant envelope trenches</English>
-            <German>Erlaube riesige runde Gräben</German>
-            <Russian>Разрешить огромные окопы</Russian>
+            <German>Erlaube riesige Grabene Gräben</German>
+            <Russian>Разрешить большие окопы</Russian>
             <French>Permettre de creuser des tranchées géantes</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowGiantEnvelope_tooltip">
             <English>Allow digging of giant envelope trenches</English>
-            <German>Erlaube das Graben von riesigen runden Gräben</German>
-            <Russian>Разрешить копать огромные окопы</Russian>
+            <German>Erlaube das Graben von riesigen Grabenen Gräben</German>
+            <Russian>Разрешить копать большие окопы</Russian>
             <French>Permettre de creuser des tranchées géantes</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowVehicleEnvelope_displayName">
             <English>Allow vehicle envelope trenches</English>
-            <German>Erlaube runde Fahrzeuggräben</German>
+            <German>Erlaube Grabene Fahrzeuggräben</German>
             <Russian>Разрешить окопы для техники</Russian>
             <French>Autoriser les tranchées pour véhicule</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowVehicleEnvelope_tooltip">
             <English>Allow digging of envelope vehicle trenches</English>
-            <German>Erlaube das Graben von runden Fahrzeuggräben</German>
+            <German>Erlaube das Graben von Grabenen Fahrzeuggräben</German>
             <Russian>Разрешить копать окопы для техники</Russian>
             <French>Permettre le creusement des tranchées pour véhicule</French>
         </Key>
@@ -202,47 +203,48 @@
         <Key ID="STR_GRAD_Trenches_functions_settingBuildFatigueFactor_tooltip">
             <English>The fatigue factor when building trenches (0 to deactive fatigue use)</English>
             <German>Der Ausdauerkoeffizient beim Bauen von Gräben (0 zum Deaktivieren)</German>
-            <Russian>Как сильно снижается стамина от копания (0 чтобы не снижалась)</Russian>
+            <Russian>Как сильно повышается усталость от копания (0 чтобы не повышалась)</Russian>
             <French>Le facteur de fatigue lors de la construction de tranchées (si 0 fatigue désactivée)</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_ShortEnvelopeDigTime">
             <English>Dig time (in seconds) for short envelope trenches</English>
-            <German>Zeit (in Sekunden) um kurze runde Gräben zu graben</German>
+            <German>Zeit (in Sekunden) um kurze Grabene Gräben zu graben</German>
             <Russian>Время (в секундах) копания короткого окопа</Russian>
             <French>Temps de creusage (en secondes) pour les tranchées courtes</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_SmallEnvelopeDigTime">
             <English>Dig time (in seconds) for small envelope trenches</English>
-            <German>Zeit (in Sekunden) um kleine runde Gräben zu graben</German>
+            <German>Zeit (in Sekunden) um kleine Grabene Gräben zu graben</German>
             <Russian>Время (в секундах) копания малого окопа</Russian>
             <French>Temps de creusage (en secondes) pour les petites tranchées</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_BigEnvelopeDigTime">
             <English>Dig time (in seconds) for big envelope trenches</English>
-            <German>Zeit (in Sekunden) um große runde Gräben zu graben</German>
-            <Russian>Время (в секундах) копания большого окопа</Russian>
+            <German>Zeit (in Sekunden) um große Grabene Gräben zu graben</German>
+            <Russian>Время (в секундах) копания среднего окопа</Russian>
             <French>Temps de creusage (en secondes) pour les grandes tranchées</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_GiantEnvelopeDigTime">
             <English>Dig time (in seconds) for giant envelope trenches</English>
-            <German>Zeit (in Sekunden) um riesige runde Gräben zu graben</German>
-            <Russian>Время (в секундах) копания гигантского окопа</Russian>
+            <German>Zeit (in Sekunden) um riesige Grabene Gräben zu graben</German>
+            <Russian>Время (в секундах) копания большого окопа</Russian>
             <French>Temps de creusage (en secondes) pour les tranchées géantes</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_VehicleEnvelopeDigTime">
             <English>Dig time (in seconds) for vehicle envelope trenches</English>
-            <German>Zeit (in Sekunden) um runde Fahrzeuggräben zu graben</German>
+            <German>Zeit (in Sekunden) um Grabene Fahrzeuggräben zu graben</German>
             <Russian>Время (в секундах) копания окопа для техники</Russian>
             <French>Temps de creusage (en secondes) pour les tranchées pour véhicule</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_LongEnvelopeDigTime">
             <English>Dig time (in seconds) for Long envelope trenches</English>
-            <German>Zeit (in Sekunden) um runde Waffen Stellungs Gräben zu graben</German>
+            <German>Zeit (in Sekunden) um Grabene Waffen Stellungs Gräben zu graben</German>
+            <Russian>Время (в секундах) копания длинного окопа</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_HelpDigging">
             <English>Help digging</English>
             <German>Mit graben</German>
-            <Russian>Помочь вырыть окоп</Russian>
+            <Russian>Помочь отрыть окоп</Russian>
             <French>Aide pour creuser</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_stopBuildingAtFatigueMax_displayName">
@@ -260,18 +262,150 @@
          <Key ID="STR_GRAD_Trenches_functions_EnvelopeLongName">
             <English>Envelope - Long</English>
             <German>Graben - Lang</German>
+			<Russian>Окоп - длинный</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnevlopeLongDescription">
             <English>Long Trench</English>
             <German>Langergraben</German>
+			<Russian>Длинный окоп</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_DigEnvelopeLong">
             <English>Dig Long Trench</English>
             <German>Grabe Langengraben</German>
+			<Russian>Отрыть длинный окоп</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowLongEnvelope_displayName">
             <English>Allow long trenches</English>
             <German>Erlaube Langegräben</German>
+			<Russian>Разрешить длинные окопы</Russian>
+        </Key>
+        <Key ID="STR_ACE_Trenches_EntrenchingToolName">
+            <English>Entrenching Tool</English>
+            <German>Klappspaten</German>
+            <Polish>Saperka</Polish>
+            <Italian>Pala da Trincea</Italian>
+            <Spanish>Pala para trincheras</Spanish>
+            <French>Outil de tranchée</French>
+            <Czech>Polní lopatka</Czech>
+            <Portuguese>Ferramenta de trincheira</Portuguese>
+            <Russian>Малая пехотная лопата</Russian>
+            <Japanese>シャベル</Japanese>
+            <Korean>야전삽</Korean>
+            <Chinesesimp>战备锹</Chinesesimp>
+            <Chinese>戰備鍬</Chinese>
+            <Turkish>Kürek</Turkish>
+        </Key>
+        <Key ID="STR_ACE_Trenches_EntrenchingToolDescription">
+            <English>Entrenching Tool</English>
+            <Polish>Saperka, używana do budowy wnęk</Polish>
+            <German>Mit dem Klappspaten können Erdwälle oder Gräben ausgehoben werden. </German>
+            <Italian>Pala da Trincea</Italian>
+            <Spanish>Pala para trincheras</Spanish>
+            <French>Outil de tranchée</French>
+            <Czech>Polní lopatky se používají k zákopovým a jiným pracem.</Czech>
+            <Portuguese>Ferramenta de trincheira</Portuguese>
+            <Russian>Малая пехотная лопата</Russian>
+            <Japanese>シャベル</Japanese>
+            <Korean>야전용 삽. 군인들의 영원한 친구</Korean>
+            <Chinesesimp>战备锹</Chinesesimp>
+            <Chinese>戰備鍬</Chinese>
+            <Turkish>Kürek</Turkish>
+        </Key>
+        <Key ID="STR_ACE_Trenches_EnvelopeSmallName">
+            <English>Envelope - Small</English>
+            <German>Graben - Klein</German>
+            <Polish>Wnęka - mała</Polish>
+            <Italian>Fascia - Piccola</Italian>
+            <Spanish>Trinchera pequeña</Spanish>
+            <French>Enveloppe - Petite</French>
+            <Portuguese>Trincheira - Pequena</Portuguese>
+            <Russian>Окоп - Малый</Russian>
+            <Japanese>塹壕 - 小型</Japanese>
+            <Korean>참호 - 소형</Korean>
+            <Chinesesimp>掩体 - 小</Chinesesimp>
+            <Chinese>掩體 - 小</Chinese>
+            <Czech>Obálka - Malá</Czech>
+            <Turkish>Zarf - Küçük</Turkish>
+        </Key>
+        <Key ID="STR_ACE_Trenches_EnevlopeSmallDescription">
+            <English>Small Personal Trench</English>
+            <German>Kleiner Schützengraben</German>
+            <Polish>Mała jednoosobowa wnęka</Polish>
+            <Italian>Piccola Trincea Personale</Italian>
+            <Spanish>Trinchera personal pequeña</Spanish>
+            <French>Petite tranchée personnelle</French>
+            <Czech>Malý zákop pro jednoho</Czech>
+            <Portuguese>Trincheira pessoal pequena</Portuguese>
+            <Russian>Малый окоп</Russian>
+            <Japanese>小型の個人用塹壕</Japanese>
+            <Korean>소형 개인참호</Korean>
+            <Chinesesimp>小型个人掩体</Chinesesimp>
+            <Chinese>小型個人掩體</Chinese>
+            <Turkish>Küçük Kişisel Siper</Turkish>
+        </Key>
+        <Key ID="STR_ACE_Trenches_DigEnvelopeSmall">
+            <English>Dig Small Trench</English>
+            <German>Grabe kleinen Schützengraben</German>
+            <Polish>Kop małą wnękę</Polish>
+            <Italian>Scava Trincea Piccola</Italian>
+            <Spanish>Cavar trinchera pequeña</Spanish>
+            <French>Creuser une petite tranchée</French>
+            <Czech>Vykopat malý zákop</Czech>
+            <Portuguese>Cavar trincheira pequena</Portuguese>
+            <Russian>Отрыть малый окоп</Russian>
+            <Japanese>小型塹壕を掘る</Japanese>
+            <Korean>소형참호 파기</Korean>
+            <Chinesesimp>盖小掩体</Chinesesimp>
+            <Chinese>蓋小掩體</Chinese>
+            <Turkish>Küçük Siper</Turkish>
+        </Key>
+        <Key ID="STR_ACE_Trenches_EnvelopeBigName">
+            <English>Envelope - Big</English>
+            <German>Graben - Groß</German>
+            <Polish>Wnęka - duża</Polish>
+            <Italian>Fascia - Grande</Italian>
+            <Spanish>Trinchera grande</Spanish>
+            <French>Enveloppe - Grande</French>
+            <Portuguese>Trincheira - Grande</Portuguese>
+            <Russian>Окоп - Средний</Russian>
+            <Japanese>塹壕 - 大型</Japanese>
+            <Korean>참호 -  대형</Korean>
+            <Chinesesimp>掩体 - 大</Chinesesimp>
+            <Chinese>掩體 - 大</Chinese>
+            <Czech>Obálka - Velká</Czech>
+            <Turkish>Zarf - Büyük</Turkish>
+        </Key>
+        <Key ID="STR_ACE_Trenches_EnevlopeBigDescription">
+            <English>Large Personal Trench</English>
+            <German>Großer Schützengraben</German>
+            <Polish>Duża jednoosobowa wnęka</Polish>
+            <Italian>Grande Trincea Personale</Italian>
+            <Spanish>Trinchera personal grande</Spanish>
+            <French>Grande tranchée personnelle</French>
+            <Czech>Velký zákop pro jednoho</Czech>
+            <Portuguese>Trincheira pessoal grande</Portuguese>
+            <Russian>Средний окоп</Russian>
+            <Japanese>大型の塹壕を掘る</Japanese>
+            <Korean>대형 참호</Korean>
+            <Chinesesimp>大型个人掩体</Chinesesimp>
+            <Chinese>大型個人掩體</Chinese>
+            <Turkish>Geniş Kişisel Siper</Turkish>
+        </Key>
+        <Key ID="STR_ACE_Trenches_DigEnvelopeBig">
+            <English>Dig Big Trench</English>
+            <German>Grabe großen Schützengraben</German>
+            <Polish>Kop dużą wnękę</Polish>
+            <Italian>Scava Trincea Grande</Italian>
+            <Spanish>Cavar trinchera grande</Spanish>
+            <French>Creuser une grande tranchée</French>
+            <Czech>Vykopat velký zákop</Czech>
+            <Portuguese>Cavar trincheira grande</Portuguese>
+            <Russian>Отрыть средний окоп</Russian>
+            <Japanese>大型の塹壕を掘る</Japanese>
+            <Korean>대형참호 파기</Korean>
+            <Chinesesimp>盖大掩体</Chinesesimp>
+            <Chinese>蓋大掩體</Chinese>
+            <Turkish>Büyük Siper</Turkish>
         </Key>
     </Package>
 </Project>

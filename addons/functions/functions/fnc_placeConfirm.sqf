@@ -44,13 +44,14 @@ private _trench = createVehicle [_trenchClass, _pos, [], 0, "CAN_COLLIDE"];
 
 _trench setObjectTextureGlobal [0,[_trench] call FUNC(getSurfaceTexturePath)];
 _trench setPosWorld _pos;
+systemChat str(_pos);
 
 private _boundingBox = 0 boundingBoxReal _trench;
 _boundingBox params ["_lbfc", "_rtbc"];                                         //_lbfc(Left Bottom Front Corner) _rtbc (Right Top Back Corner)
 _lbfc params ["", "", "_lbfcZ"];
 _rtbc params ["", "", "_rtbcZ"];
 
-private _posDiff = (abs(_lbfcZ) + abs(_rtbcZ));
+private _posDiff = (abs(_lbfcZ) + abs(_rtbcZ)) - 2;
 private _newPos = (_trench modelToWorldWorld [0,0, -(_posDiff)]);
 _trench setPosWorld _newPos;
 

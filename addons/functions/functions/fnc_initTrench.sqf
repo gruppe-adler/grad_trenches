@@ -31,6 +31,6 @@ if (local _object) then {
     [{
         params ["_obj"];
         private _texture = [_obj] call FUNC(getSurfaceTexturePath);
-        _object setObjectTextureGlobal [0, _texture];
+        _obj setObjectTextureGlobal [0, _texture];
     }, _object] call CBA_fnc_execNextFrame;
 };

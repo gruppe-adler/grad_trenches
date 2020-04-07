@@ -19,7 +19,6 @@
  */
 
 if !(isServer) exitWith {};
-
 params ["_trench", "_unit", ["_state", false], ["_initiator", false]];
 
 if (_initiator) then {
@@ -27,7 +26,7 @@ if (_initiator) then {
         private _handle = [
             {
                 params ["_args", "_handle"];
-                _args params ["_trench", "_digTime"];
+                _args params ["_trench", "_unit", "_digTime"];
 
                 private _diggingPlayers = _trench getVariable [QGVAR(diggers), []];
                 _diggingPlayers = _diggingPlayers - [objNull];
@@ -43,12 +42,13 @@ if (_initiator) then {
                     [_handle] call CBA_fnc_removePerFrameHandler;
                 };
 
-                _trench setVariable [QGVAR(progress), (_trench getVariable [QGVAR(progress), 0]) + (1/_digTime) * count _diggingPlayers, true];
+                _trench setVariable ["ace_trenches_progress", (_trench getVariable ["ace_trenches_progress", 0]) + (1/_digTime) * count _diggingPlayers, true];
             },
             1,
             [
                 _trench,
-                missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >> QGVAR(diggingDuration)), 20]
+                _unit,
+                missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >> "ace_trenches_diggingDuration"), 20]
             ]
         ] call CBA_fnc_addPerFrameHandler;
 
@@ -56,8 +56,4 @@ if (_initiator) then {
     }else{
         [_trench getVariable QGVAR(pfh)] call CBA_fnc_removePerFrameHandler;
     };
-} else {
-    if (isNull (_trench getVariable [QGVAR(mainDigger), objNull])) exitWith {};
-
-    [_trench, _unit, _trench getVariable [QGVAR(progress), 0]] remoteExecCall [FUNC(addDigger), _unit, false];
 };

@@ -29,6 +29,8 @@ if (
 [QGVAR(addDigger), [_trench, _unit, false]] call CBA_fnc_serverEvent;
 
 private _finishCondition = {false};
+_unit setVariable [QGVAR(diggingTrench), true];
+
 private _digTime = 0;
 switch (_trench getVariable [QGVAR(diggingType), nil]) do {
     case "UP" : {

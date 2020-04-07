@@ -85,10 +85,10 @@ class CfgVehicles {
                         statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'GRAD_envelope_vehicle')])] call CBA_fnc_execNextFrame);
                         condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call ace_trenches_fnc_canContinueDiggingTrench) && GVAR(allowVehicleEnvelope));
                     };
-                    class grad_trenches_digEnvelopeGunEmplacment: ace_trenches_digEnvelopeBig {
-                        displayName = CSTRING(DigEnvelopeGunEmplacment);
-                        statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'GRAD_envelope_gunEmplacment')])] call CBA_fnc_execNextFrame);
-                        condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call ace_trenches_fnc_canContinueDiggingTrench) && GVAR(allowGunEmplacmentEnvelope));
+                    class grad_trenches_digEnvelopeLongNameEmplacment: ace_trenches_digEnvelopeBig {
+                        displayName = CSTRING(DigEnvelopeLong);
+                        statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'GRAD_envelope_long')])] call CBA_fnc_execNextFrame);
+                        condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call ace_trenches_fnc_canContinueDiggingTrench) && GVAR(allowLongEnvelope));
                     };
                 };
             };
@@ -197,7 +197,7 @@ class CfgVehicles {
         ace_trenches_diggingDuration = QGVAR(longEnvelopeDigTime);
         ace_trenches_removalDuration = 10;
         ace_trenches_noGeoClass = QUOTE(GRAD_envelope_long_noGeo);
-        ace_trenches_placementData[] = {10,1.1,0.20};
+        ace_trenches_placementData[] = {10,2,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
 
         editorCategory = "EdCat_Things";

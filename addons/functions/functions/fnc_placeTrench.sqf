@@ -18,7 +18,6 @@
 
 params ["_unit", "_trenchClass"];
 
-
 //Load trench data
 ace_trenches_trenchPlacementData = getArray (configFile >> "CfgVehicles" >> _trenchClass >> "ace_trenches_placementData");
 TRACE_1("",ace_trenches_trenchPlacementData);
@@ -58,7 +57,7 @@ ace_trenches_digPFH = [{
 
     // Update trench position
     ace_trenches_trenchPlacementData params ["_dx", "_dy", "_offset"];
-    private _basePos = _unit ModelToWorld [0,2,0];
+    private _basePos = _unit ModelToWorld [0,3.5,0];
     private _angle = (GVAR(digDirection) + getDir _unit);
 
     // _v1 forward from the player, _v2 to the right, _v3 points away from the ground
