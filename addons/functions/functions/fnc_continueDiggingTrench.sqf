@@ -54,8 +54,6 @@ private _fnc_onFinish = {
     [QGVAR(addDigger), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
     [QGVAR(handleDiggingServer), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
 
-    systemChat "Finish";
-
     // Save progress global
     _trench setVariable ["ace_trenches_progress", 1, true];
 
@@ -68,8 +66,6 @@ private _fnc_onFailure = {
     _trench setVariable [QGVAR(diggingType), nil, true];
     _unit setVariable [QGVAR(diggingTrench), false];
     [QGVAR(addDigger), [_trench, _unit, true]] call CBA_fnc_serverEvent;
-
-        systemChat "Fail";
 
     // Save progress global
     private _progress = _trench getVariable ["ace_trenches_progress", 0];
@@ -124,22 +120,14 @@ if (_actualProgress == 0) then {
         [_handle] call CBA_fnc_removePerFrameHandler;
     };
 
-    private _boundingBox = 0 boundingBoxReal _trench;
-    _boundingBox params ["_lbfc"];                                                                                 //_lbfc(Left Bottom Front Corner) _rtbc (Right Top Back Corner)
-    _lbfc params ["", "", "_lbfcZ"];
-
     private _pos = (getPosWorld _trench);
-    private _posDiff = ((abs((_trench getVariable [QGVAR(diggingSteps), 0]) + _lbfcZ)) * _diggerCount)/(_digTime*5);
-    systemChat format ["PosDiff: %1 = (abs: %2 ( getVar: %3 + _lbfcZ %4 ) *diggerCount %5 / _digtime %6 * 5", 
-        _posDiff,  
-        abs((_trench getVariable [QGVAR(diggingSteps), 0]) + _lbfcZ),
-        _trench getVariable [QGVAR(diggingSteps), 0],
-        _lbfcZ,
-        _diggerCount,
-        _digTime
-    ];
+    private _posDiff = (_trench getVariable [QGVAR(diggingSteps), 0]) * _diggerCount;
 
+    systemChat format ["Diff: %1, Steps: %2", (_trench getVariable [QGVAR(diggingSteps), 0]) * _diggerCount, _trench getVariable [QGVAR(diggingSteps), 0]];
+ 
     _pos set [2,((_pos select 2) + _posDiff)];
+
+    systemChat format ["%1", _pos];
 
     _trench setPosWorld _pos;
     _trench setVectorDirAndUp _vecDirAndUp;

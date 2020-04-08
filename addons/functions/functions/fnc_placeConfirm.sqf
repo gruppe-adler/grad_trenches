@@ -41,24 +41,22 @@ private _vecDirAndUp = [(vectorDir ace_trenches_trench), (vectorUp ace_trenches_
 deleteVehicle ace_trenches_trench;
 
 private _trench = createVehicle [_trenchClass, _pos, [], 0, "CAN_COLLIDE"];
+private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> _trenchClass >>"ace_trenches_diggingDuration"), 20];
 
 _trench setObjectTextureGlobal [0,[_trench] call FUNC(getSurfaceTexturePath)];
 _trench setPosWorld _pos;
 systemChat str(_pos);
 
-private _boundingBox = 0 boundingBoxReal _trench;
-_boundingBox params ["_lbfc", "_rtbc"];                                         //_lbfc(Left Bottom Front Corner) _rtbc (Right Top Back Corner)
-_lbfc params ["", "", "_lbfcZ"];
-_rtbc params ["", "", "_rtbcZ"];
+private _posDiff = _pos select 2;
+_pos set [2, - (_posDiff)];
+_trench setPosWorld _pos;
 
-private _posDiff = (abs(_lbfcZ) + abs(_rtbcZ)) - 2;
-private _newPos = (_trench modelToWorldWorld [0,0, -(_posDiff)]);
-_trench setPosWorld _newPos;
+systemChat format ["posDiff: %1, DigTime: %2, R: %3", _posDiff, _digTime, (_posDiff/(_digTime*10))];
 
-_trench setVariable [QGVAR(diggingSteps), (_posDiff/1000),true];
+_trench setVariable [QGVAR(diggingSteps), (_posDiff/(_digTime*10)),true];
 _trench setVectorDirAndUp _vecDirAndUp;
 
-_trench setVariable ["ace_trenches_placeData", [_newPos, _vecDirAndUp], true];
+_trench setVariable ["ace_trenches_placeData", [_pos, _vecDirAndUp], true];
 _trench setVariable ["ace_trenches_progress", 0, true];
 
 [_trench, _unit, false] call FUNC(continueDiggingTrench);

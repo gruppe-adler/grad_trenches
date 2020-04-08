@@ -23,36 +23,45 @@ params ["_trench", "_unit", ["_state", false], ["_initiator", false]];
 
 if (_initiator) then {
     if (_state) then {
-        private _handle = [
+        [
             {
-                params ["_args", "_handle"];
-                _args params ["_trench", "_unit", "_digTime"];
+                params ["_trench"];
 
-                private _diggingPlayers = _trench getVariable [QGVAR(diggers), []];
-                _diggingPlayers = _diggingPlayers - [objNull];
+                private _handle = [
+                    {
+                        params ["_args", "_handle"];
+                        _args params ["_trench", "_unit", "_digTime"];
 
-                if !(_diggingPlayers isEqualTo (_trench getVariable [QGVAR(diggers), []])) then {
-                    [QGVAR(addDigger), [_trench, _unit, true]] call CBA_fnc_serverEvent;
-                };
+                        private _diggingPlayers = _trench getVariable [QGVAR(diggers), []];
+                        _diggingPlayers = _diggingPlayers - [objNull];
 
-                if (
-                    !(_trench getVariable ["ace_trenches_digging", false])
-                    || {(count _diggingPlayers) < 1}
-                ) exitWith {
-                    [_handle] call CBA_fnc_removePerFrameHandler;
-                };
+                        if !(_diggingPlayers isEqualTo (_trench getVariable [QGVAR(diggers), []])) then {
+                            [QGVAR(addDigger), [_trench, _unit, true]] call CBA_fnc_serverEvent;
+                        };
 
-                _trench setVariable ["ace_trenches_progress", (_trench getVariable ["ace_trenches_progress", 0]) + (1/_digTime) * count _diggingPlayers, true];
-            },
-            1,
-            [
+                        if (
+                            !(_trench getVariable ["ace_trenches_digging", false])
+                            || {(count _diggingPlayers) < 1}
+                        ) exitWith {
+                            [_handle] call CBA_fnc_removePerFrameHandler;
+                        };
+
+                        systemChat format ["Tick: %1, Time: %2", (_trench getVariable ["ace_trenches_progress", 0]) + ((1/_digTime)/10) * count _diggingPlayers, time];
+
+                        _trench setVariable ["ace_trenches_progress", (_trench getVariable ["ace_trenches_progress", 0]) + ((1/_digTime)/10) * count _diggingPlayers, true];
+                    },
+                    0.1,
+                    _this
+                ] call CBA_fnc_addPerFrameHandler;
+
+                _trench setVariable [QGVAR(pfh), _handle];
+            },[
                 _trench,
                 _unit,
                 missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >> "ace_trenches_diggingDuration"), 20]
-            ]
-        ] call CBA_fnc_addPerFrameHandler;
-
-        _trench setVariable [QGVAR(pfh), _handle];
+            ],
+            0.1,
+        ] call CBA_fnc_waitAndExecute;
     }else{
         [_trench getVariable QGVAR(pfh)] call CBA_fnc_removePerFrameHandler;
     };

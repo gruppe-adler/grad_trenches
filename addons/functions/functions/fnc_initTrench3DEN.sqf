@@ -34,7 +34,7 @@ private _initTrench = {
     private _texture = [_object] call FUNC(getSurfaceTexturePath);
     _object setObjectTexture [0, _texture];
 
-    if (((_object get3DENAttribute CAMOUFLAGE_3DEN_ATTRIBUTE) select 0) isEqualTo 1) then {
+    if (((_object get3DENAttribute QUOTE(grad_trenches_camouflageTrench)) select 0) isEqualTo 1) then {
         [_object] call FUNC(placeCamouflage);
     };
 };
@@ -42,8 +42,8 @@ private _initTrench = {
 // If no object is given apply this to all trenches in 3den
 if (isNull _object) then {
     {
-        if (IS_TRENCH(_x)) then {
-            _x call _initTrench;
+        if (isClass (configFile >> "CfgVehicles" >> typeOf _x >> "CamouflagePositions01")) then {
+            [_x] call _initTrench;
         };
     } forEach (all3DENEntities select 0);
 } else {
