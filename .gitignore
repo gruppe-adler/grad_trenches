@@ -1,6 +1,7 @@
 releases/*
 build_keys/*
 keys/*
+.hemtt/local
 
 *.pbo
 *.cache

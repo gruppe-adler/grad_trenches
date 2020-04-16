@@ -121,14 +121,14 @@ class CfgVehicles {
         ace_trenches_diggingDuration = QGVAR(bigEnvelopeDigTime);
 
         class CamouflagePositions1 {
-            {0, 0.9, 3.4},
-            {3, -1, 3.3},
-            {-3, -1, 3.1}
+            a[] = {0, 0.9, 3.4};
+            b[] = {3, -1, 3.3};
+            c[] = {-3, -1, 3.1};
         };
 
         class CamouflagePositions2 {
-            {1.5, -0.5, 4},
-            {-1.5, -0.5, 4}
+            a[] = {1.5, -0.5, 4};
+            b[] = {-1.5, -0.5, 4};
         };
 
         TRENCHES_ACTIONS;
@@ -150,10 +150,10 @@ class CfgVehicles {
         editorSubcategory = "EdSubcat_Military";
 
         class CamouflagePositions1 {
-            {4.4, 0, 3},
-            {1.5, 0.5, 3.9},
-            {-2.1, 0.9, 3.4},
-            {-4.6, 0, 3}
+            a[] = {4.4, 0, 3};
+            b[] = {1.5, 0.5, 3.9};
+            c[] = {-2.1, 0.9, 3.4};
+            d[] = {-4.6, 0, 3};
         };
     };
 
@@ -172,10 +172,10 @@ class CfgVehicles {
         editorSubcategory = "EdSubcat_Military";
 
         class CamouflagePositions1 {
-            {3.9, 2.5, 3.5},
-            {3.9, -2.5, 4.3},
-            {-3.5, -2.5, 4.3},
-            {-3, 2.5, 3.5}
+            a[] = {3.9, 2.5, 3.5};
+            b[] = {3.9, -2.5, 4.3};
+            c[] = {-3.5, -2.5, 4.3};
+            d[] = {-3, 2.5, 3.5};
         };
         class Attributes {};
     };
@@ -195,8 +195,8 @@ class CfgVehicles {
         editorSubcategory = "EdSubcat_Military";
 
         class CamouflagePositions1 {
-            {1.7, 0.7, 3.1},
-            {-1.4, 0.8, 3.2}
+            a[] = {1.7, 0.7, 3.1};
+            b[] = {-1.4, 0.8, 3.2};
         };
     };
     class GRAD_envelope_long: ACE_envelope_big {
@@ -214,11 +214,11 @@ class CfgVehicles {
         editorSubcategory = "EdSubcat_Military";
 
         class CamouflagePositions1 {
-            {6.7, 0, 3.2},
-            {3, 0.5, 3.1},
-            {-2.2, -0.9, 4},
-            {-3, 0.5, 3.1},
-            {-6.9, -0.1, 3.1}
+            a[] = {6.7, 0, 3.2};
+            b[] = {3, 0.5, 3.1};
+            c[] = {-2.2, -0.9, 4};
+            d[] = {-3, 0.5, 3.1};
+            e[] = {-6.9, -0.1, 3.1};
         };
     };
 };

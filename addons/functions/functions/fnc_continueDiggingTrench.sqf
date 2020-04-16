@@ -55,6 +55,7 @@ private _fnc_onFinish = {
 
     // Save progress global
     _trench setVariable ["ace_trenches_progress", 1, true];
+    systemChat format ["%1 | %2", getPosWorld _trench, trench_oldPos];
 
     // Reset animation
     [_unit, "", 1] call ace_common_fnc_doAnimation;
@@ -113,7 +114,6 @@ if (_actualProgress == 0) then {
     };
 
     if (_actualProgress >= 1) exitWith {
-        systemChat format ["%1 | %2", getPosWorld _trench, trench_oldPos];
         [_handle] call CBA_fnc_removePerFrameHandler;
     };
 
@@ -123,8 +123,6 @@ if (_actualProgress == 0) then {
     _pos set [2,((_pos select 2) + _posDiff)];
     _trench setPosWorld _pos;
     _trench setVectorDirAndUp _vecDirAndUp;
-
-    systemChat format ["Diff: %1, Pos: %2", (_trench getVariable [QGVAR(diggingSteps), 0]) * _diggerCount, _pos];
 
     //Fatigue impact
     ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - ((_digTime /12) * GVAR(buildFatigueFactor))) max 0;
@@ -136,7 +134,7 @@ if (_actualProgress == 0) then {
         [QGVAR(addDigger), [_trench, _unit, true]] call CBA_fnc_serverEvent;
         _unit setVariable [QGVAR(diggingTrench), false];
     };
-},0.1,[_trench, _unit, _digTime, _vecDirAndUp]] call CBA_fnc_addPerFrameHandler;
+}, 0.1, [_trench, _unit, _digTime, _vecDirAndUp]] call CBA_fnc_addPerFrameHandler;
 
 // Play animation
 [_unit] call FUNC(loopanimation);

@@ -50,7 +50,7 @@ class CfgWorldsTextures {
     class Bootcamp_ACR {
         surfaceTextureBasePath = "ca\Bootcamp_ACR\data\";
         suffix = "detail_co.paa";
-        camouflageObjects[] = {"ca\plants2\clutter\c_GrassBunch.p3d"};
+        camouflageObjects[] = {};
     };
 
     //Bystrica
