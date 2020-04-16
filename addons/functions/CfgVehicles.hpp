@@ -127,8 +127,8 @@ class CfgVehicles {
         };
 
         class CamouflagePositions2 {
-            {1.5, -0.5, 3.9},
-            {-1.5, -0.5, 3.9}
+            {1.5, -0.5, 4},
+            {-1.5, -0.5, 4}
         };
 
         TRENCHES_ACTIONS;
