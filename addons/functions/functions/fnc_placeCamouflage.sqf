@@ -21,12 +21,13 @@ params [
     ["_unit", objnull, [objnull]]
 ];
 
-if (isNull _trench || {count getArray (configFile >> "CfgWorldsTextures" >> worldName >> "camouflageObjects") == 0}) exitWith {};
+private _camouflageObjects = [configFile >> "CfgWorldsTextures" >> worldName >> "camouflageObjects", "ARRAY", []] call CBA_fnc_getConfigEntry;
+
+if (isNull _trench || {_camouflageObjects isEqualTo []}) exitWith {};
 
 private _fnc_onFinish = {
-    (_this select 0) params ["_unit", "_trench"];
+    (_this select 0) params ["_unit", "_trench", "_camouflageObjects"];
 
-    private _camouflageObjects = getArray (configFile >> "CfgWorldTexture" >> worldName >> "camouflageObjects");
     private _statusNumber = _trench getVariable [QGVAR(trenchCamouflageStatus), 0];
     _statusNumber = _statusNumber +1;
     private _statusString = str _statusNumber;
@@ -67,6 +68,6 @@ if (isNull _unit) exitWith {
     [[objnull, _trench]] call _fnc_onFinish;
 };
 
-[CAMOUFLAGE_DURATION, [_unit, _trench], _fnc_onFinish, _fnc_onFailure, localize LSTRING(placeCamouflageProgress)] call ace_common_fnc_progressBar;
+[CAMOUFLAGE_DURATION, [_unit, _trench, _camouflageObjects], _fnc_onFinish, _fnc_onFailure, localize LSTRING(placeCamouflageProgress)] call ace_common_fnc_progressBar;
 
 [_unit, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation;

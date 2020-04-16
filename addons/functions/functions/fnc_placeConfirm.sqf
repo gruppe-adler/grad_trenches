@@ -46,6 +46,7 @@ private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehi
 _trench setObjectTextureGlobal [0,[_trench] call FUNC(getSurfaceTexturePath)];
 _trench setPosWorld _pos;
 systemChat str(_pos);
+trench_oldPos = _pos;
 
 private _posDiff = _pos select 2;
 _pos set [2, - (_posDiff)];

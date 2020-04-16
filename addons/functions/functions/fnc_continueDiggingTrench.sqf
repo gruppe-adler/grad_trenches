@@ -44,7 +44,6 @@ if (isNil "_vecDirAndUp") then {
 
 _trench setVariable [QGVAR(diggers), [_unit]];
 
-
 // Create progress bar
 private _fnc_onFinish = {
     (_this select 0) params ["_unit", "_trench"];
@@ -104,8 +103,6 @@ if (_actualProgress == 0) then {
     private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
     private _diggerCount = count (_trench getVariable [QGVAR(diggers),[]]);
 
-    //systemChat format ["Dig: %1, Count: %2, Progress: %3", _trench getVariable ["ace_trenches_digging", false], _diggerCount , _actualProgress];
-
     if (
         !(_trench getVariable ["ace_trenches_digging", false]) ||
         {_diggerCount <= 0}
@@ -116,21 +113,18 @@ if (_actualProgress == 0) then {
     };
 
     if (_actualProgress >= 1) exitWith {
-        systemChat str(getPosWorld _trench);
+        systemChat format ["%1 | %2", getPosWorld _trench, trench_oldPos];
         [_handle] call CBA_fnc_removePerFrameHandler;
     };
 
     private _pos = (getPosWorld _trench);
     private _posDiff = (_trench getVariable [QGVAR(diggingSteps), 0]) * _diggerCount;
-
-    systemChat format ["Diff: %1, Steps: %2", (_trench getVariable [QGVAR(diggingSteps), 0]) * _diggerCount, _trench getVariable [QGVAR(diggingSteps), 0]];
  
     _pos set [2,((_pos select 2) + _posDiff)];
-
-    systemChat format ["%1", _pos];
-
     _trench setPosWorld _pos;
     _trench setVectorDirAndUp _vecDirAndUp;
+
+    systemChat format ["Diff: %1, Pos: %2", (_trench getVariable [QGVAR(diggingSteps), 0]) * _diggerCount, _pos];
 
     //Fatigue impact
     ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - ((_digTime /12) * GVAR(buildFatigueFactor))) max 0;

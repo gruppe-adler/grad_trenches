@@ -46,7 +46,7 @@ if (_initiator) then {
                             [_handle] call CBA_fnc_removePerFrameHandler;
                         };
 
-                        systemChat format ["Tick: %1, Time: %2", (_trench getVariable ["ace_trenches_progress", 0]) + ((1/_digTime)/10) * count _diggingPlayers, time];
+                        systemChat format ["Tick: %1, Time: %2, Progress: %3", ((1/_digTime)/10) * count _diggingPlayers, time, _trench getVariable ["ace_trenches_progress", 0]];
 
                         _trench setVariable ["ace_trenches_progress", (_trench getVariable ["ace_trenches_progress", 0]) + ((1/_digTime)/10) * count _diggingPlayers, true];
                     },
@@ -60,7 +60,7 @@ if (_initiator) then {
                 _unit,
                 missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >> "ace_trenches_diggingDuration"), 20]
             ],
-            0.1,
+            0.1
         ] call CBA_fnc_waitAndExecute;
     }else{
         [_trench getVariable QGVAR(pfh)] call CBA_fnc_removePerFrameHandler;

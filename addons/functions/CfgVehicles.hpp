@@ -1,29 +1,33 @@
 #define TRENCHES_ACTIONS class ACE_Actions { \
         class ACE_MainActions { \
-            distance = 10; \
             class ACE_ContinueDiggingTrench { \
                 statement = QUOTE([ARR_2(_target,_player)] call FUNC(continueDiggingTrench);); \
+                distance = 10; \
             }; \
             class ACE_RemoveTrench { \
                 statement = QUOTE([ARR_2(_target,_player)] call FUNC(removeTrench);); \
+                distance = 10; \
              };  \
             class GVAR(helpDigging) { \
                 displayName = CSTRING(HelpDigging); \
                 condition = QUOTE([ARR_2(_target,_player)] call FUNC(canHelpDiggingTrench)); \
                 statement = QUOTE([ARR_2(_target,_player)] call FUNC(addDigger)); \
                 priority = -1; \
+                distance = 10; \
             }; \
             class GVAR(placeCamouflage) { \
                 displayName = CSTRING(placeCamouflage); \
                 condition = QUOTE([ARR_2(_target,_player)] call FUNC(canPlaceCamouflage)); \
                 statement = QUOTE([ARR_2(_target,_player)] call FUNC(placeCamouflage)); \
                 priority = -1; \
+                distance = 10; \
             }; \
             class GVAR(removeCamouflage) { \
                 displayName = CSTRING(removeCamouflage); \
                 condition = QUOTE([_target] call FUNC(canRemoveCamouflage)); \
                 statement = QUOTE([ARR_2(_target,_player)] call FUNC(removeCamouflage)); \
                 priority = -1; \
+                distance = 10; \
             }; \
         }; \
     }
@@ -104,11 +108,7 @@ class CfgVehicles {
         GVAR(isTrench) = 1;
         ace_trenches_diggingDuration = QGVAR(smallEnvelopeDigTime);
 
-        class CamouflagePositions01 {
-            center[] = {0, 1.3, 0};
-            left[] = {1.3, -0.8, 0.4};
-            right[] = {-1.3,-0.8,0.4};
-        };
+        class CamouflagePositions1 {};
 
         TRENCHES_ACTIONS;
         TRENCHES_ATTRIBUTES;
@@ -120,10 +120,15 @@ class CfgVehicles {
         GVAR(isTrench) = 1;
         ace_trenches_diggingDuration = QGVAR(bigEnvelopeDigTime);
 
-        class CamouflagePositions01 {
-            center[] = {-0.4, 0.4, 0.2};
-            left[] = {-1.75, 0.2, 0.2};
-            right[] = {1.75, 0.2, 0.2};
+        class CamouflagePositions1 {
+            {0, 0.9, 3.4},
+            {3, -1, 3.3},
+            {-3, -1, 3.1}
+        };
+
+        class CamouflagePositions2 {
+            {1.5, -0.5, 3.9},
+            {-1.5, -0.5, 3.9}
         };
 
         TRENCHES_ACTIONS;
@@ -144,11 +149,11 @@ class CfgVehicles {
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";
 
-        class CamouflagePositions01 {
-            left1[] = {-0.5, 0.3, 0.5};
-            left2[] = {-2.7, 0.3, 0.5};
-            right1[] = {2.7, 0.15, 0.35};
-            right2[] = {4.9, -0.5, -0.15};
+        class CamouflagePositions1 {
+            {4.4, 0, 3},
+            {1.5, 0.5, 3.9},
+            {-2.1, 0.9, 3.4},
+            {-4.6, 0, 3}
         };
     };
 
@@ -166,7 +171,12 @@ class CfgVehicles {
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";
 
-        class CamouflagePositions01 {};
+        class CamouflagePositions1 {
+            {3.9, 2.5, 3.5},
+            {3.9, -2.5, 4.3},
+            {-3.5, -2.5, 4.3},
+            {-3, 2.5, 3.5}
+        };
         class Attributes {};
     };
 
@@ -184,9 +194,9 @@ class CfgVehicles {
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";
 
-        class CamouflagePositions01 {
-            right[] = {1.1,0.2,0.2};
-            left[] = {-1.1,0.1,0.2};
+        class CamouflagePositions1 {
+            {1.7, 0.7, 3.1},
+            {-1.4, 0.8, 3.2}
         };
     };
     class GRAD_envelope_long: ACE_envelope_big {
@@ -203,9 +213,12 @@ class CfgVehicles {
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";
 
-        class CamouflagePositions01 {
-            right[] = {1.1,0.2,0.2};
-            left[] = {-1.1,0.1,0.2};
+        class CamouflagePositions1 {
+            {6.7, 0, 3.2},
+            {3, 0.5, 3.1},
+            {-2.2, -0.9, 4},
+            {-3, 0.5, 3.1},
+            {-6.9, -0.1, 3.1}
         };
     };
 };
