@@ -55,7 +55,6 @@ private _fnc_onFinish = {
 
     // Save progress global
     _trench setVariable ["ace_trenches_progress", 1, true];
-    systemChat format ["%1 | %2", getPosWorld _trench, trench_oldPos];
 
     // Reset animation
     [_unit, "", 1] call ace_common_fnc_doAnimation;
@@ -81,6 +80,7 @@ private _fnc_condition = {
     if !(_trench getVariable ["ace_trenches_digging", false]) exitWith {false};
     if (count (_trench getVariable [QGVAR(diggers),[]]) <= 0) exitWith {false};
     if (GVAR(stopBuildingAtFatigueMax) && (ace_advanced_fatigue_anReserve <= 0)) exitWith {false};
+
     true
 };
 
@@ -95,12 +95,13 @@ if (_actualProgress == 0) then {
         _cutterPos set [2, getTerrainHeightASL _cutterPos];
         _trenchGrassCutter setPosASL _cutterPos;
         deleteVehicle _trenchGrassCutter;
-    } foreach getArray (configFile >> "CfgVehicles" >> (typeOf _trench) >> "ace_trenches_grassCuttingPoints");
+    } forEach getArray (configFile >> "CfgVehicles" >> (typeOf _trench) >> "ace_trenches_grassCuttingPoints");
 };
 
 [{
     params ["_args", "_handle"];
     _args params ["_trench", "_unit", "_digTime", "_vecDirAndUp"];
+    
     private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
     private _diggerCount = count (_trench getVariable [QGVAR(diggers),[]]);
 
@@ -120,7 +121,7 @@ if (_actualProgress == 0) then {
     private _pos = (getPosWorld _trench);
     private _posDiff = (_trench getVariable [QGVAR(diggingSteps), 0]) * _diggerCount;
  
-    _pos set [2,((_pos select 2) + _posDiff)];
+    _pos set [2, ((_pos select 2) + _posDiff)];
     _trench setPosWorld _pos;
     _trench setVectorDirAndUp _vecDirAndUp;
 

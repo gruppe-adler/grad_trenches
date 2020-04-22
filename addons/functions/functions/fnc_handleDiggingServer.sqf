@@ -46,8 +46,6 @@ if (_initiator) then {
                             [_handle] call CBA_fnc_removePerFrameHandler;
                         };
 
-                        systemChat format ["Tick: %1, Time: %2, Progress: %3", ((1/_digTime)/10) * count _diggingPlayers, time, _trench getVariable ["ace_trenches_progress", 0]];
-
                         _trench setVariable ["ace_trenches_progress", (_trench getVariable ["ace_trenches_progress", 0]) + ((1/_digTime)/10) * count _diggingPlayers, true];
                     },
                     0.1,
