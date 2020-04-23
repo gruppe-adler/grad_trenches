@@ -77,7 +77,7 @@ class CfgWorldsTextures {
     //Chernarus 2020
     class cup_chernarus_A3 {
         surfaceTextureBasePath = "cup\terrains_a3\cup_chernarus_s\data\";
-        suffix = "detail_co.paa";
+        suffix = "co.paa";
         camouflageObjects[] = {"ca\plants2\clutter\c_weed3.p3d"};
     };
 
@@ -320,7 +320,7 @@ class CfgWorldsTextures {
     //Sahrani
     class Sara {
         surfaceTextureBasePath = "ca\sara\Data\";
-        suffix = "_detail_co.paa";
+        suffix = "detail_co.paa";
         camouflageObjects[] = {"A3\plants_f\Clutter\c_Thistle_Thorn_Brown.p3d"};
         class Surfaces {
             class mesto {

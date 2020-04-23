@@ -1,5 +1,6 @@
 #define TRENCHES_ACTIONS class ACE_Actions { \
         class ACE_MainActions { \
+            distance = 10; \
             class ACE_ContinueDiggingTrench { \
                 statement = QUOTE([ARR_2(_target,_player)] call FUNC(continueDiggingTrench);); \
                 distance = 10; \
@@ -111,7 +112,8 @@ class CfgVehicles {
         class CamouflagePositions1 {};
 
         TRENCHES_ACTIONS;
-        TRENCHES_ATTRIBUTES;
+
+        class Attributes {};
     };
     class ACE_envelope_big: BagFence_base_F {
         ace_trenches_noGeoClass = QUOTE(ACE_envelope_big_noGeo);
@@ -177,7 +179,6 @@ class CfgVehicles {
             c[] = {-3.5, -2.5, 4.3};
             d[] = {-3, 2.5, 3.5};
         };
-        class Attributes {};
     };
 
     class GRAD_envelope_short: ACE_envelope_big {

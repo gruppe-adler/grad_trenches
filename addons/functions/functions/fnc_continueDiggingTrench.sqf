@@ -129,7 +129,7 @@ if (_actualProgress == 0) then {
     ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - ((_digTime /12) * GVAR(buildFatigueFactor))) max 0;
     ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + (((_digTime/12) * GVAR(buildFatigueFactor))/1200)) min 1;
 
-    if (GVAR(stopBuildingAtFatigueMax) && (ace_advanced_fatigue_anReserve <= 0)) exitWith {
+    if (GVAR(stopBuildingAtFatigueMax) && {ace_advanced_fatigue_anReserve <= 0}) exitWith {
         [_handle] call CBA_fnc_removePerFrameHandler;
         _trench setVariable ["ace_trenches_digging", false, true];
         [QGVAR(addDigger), [_trench, _unit, true]] call CBA_fnc_serverEvent;

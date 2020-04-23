@@ -16,10 +16,32 @@
  * Public: No
  */
 
-params ["_object", "_value"];
+params ["_trench", "_value"];
 
 if (_value isEqualTo 1) then {
-    [_object] call FUNC(placeCamouflage);
+    private _camouflageObjects = [configFile >> "CfgWorldsTextures" >> worldName >> "camouflageObjects", "ARRAY", []] call CBA_fnc_getConfigEntry;
+    private _statusNumber = _trench getVariable [QGVAR(trenchCamouflageStatus), 0];
+    _statusNumber = _statusNumber +1;
+
+    private _placedObjects = [];
+    private _camouflageObjectsArray = _trench getVariable [QGVAR(camouflageObjects), []];
+
+    {
+        private _obj = createSimpleObject [selectRandom _camouflageObjects, [0,0,0]];
+        private _array = getArray _x;
+        _obj attachTo [_trench, _array];
+        _obj setVariable [QGVAR(positionData), _array, true];
+
+        _placedObjects pushBack _obj;
+    } forEach (configProperties [configFile >> "CfgVehicles" >> (typeof _trench) >> ("CamouflagePositions" + str _statusNumber)]);
+
+    // pushFront
+    reverse _camouflageObjectsArray;
+    _camouflageObjectsArray pushBack _placedObjects;
+    reverse _camouflageObjectsArray;
+
+    _trench setVariable [QGVAR(camouflageObjects), _camouflageObjectsArray, true];
+    _trench setVariable [QGVAR(trenchCamouflageStatus), _statusNumber];
 } else {
-    [_object] call FUNC(deleteCamouflage);
+    [_trench] call FUNC(deleteCamouflage);
 };

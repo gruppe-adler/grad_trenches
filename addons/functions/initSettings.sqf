@@ -16,4 +16,4 @@
 [QGVAR(bigEnvelopeDigTime), "SLIDER", localize LSTRING(BigEnvelopeDigTime), localize LSTRING(settingCategory), [5, 600, 40, 0], true] call CBA_Settings_fnc_init;
 [QGVAR(giantEnvelopeDigTime), "SLIDER", localize LSTRING(GiantEnvelopeDigTime), localize LSTRING(settingCategory), [5, 900, 90, 0], true] call CBA_Settings_fnc_init;
 [QGVAR(vehicleEnvelopeDigTime), "SLIDER", localize LSTRING(VehicleEnvelopeDigTime), localize LSTRING(settingCategory), [5, 1200, 120, 0], true] call CBA_Settings_fnc_init;
-[QGVAR(LongEnvelopeDigTime), "SLIDER", localize LSTRING(LongEnvelopeDigTime), localize LSTRING(settingCategory), [5, 450, 35, 0], true] call CBA_Settings_fnc_init;
+[QGVAR(LongEnvelopeDigTime), "SLIDER", localize LSTRING(LongEnvelopeDigTime), localize LSTRING(settingCategory), [5, 1200, 100, 0], true] call CBA_Settings_fnc_init;
