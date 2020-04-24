@@ -19,8 +19,6 @@ params [
     ["_object", objnull, [objNull]]
 ];
 
-systemChat format ['mission load, %1', _object];
-
 private _initTrench = {
     params ["_object"];
     _object addEventHandler ["Dragged3DEN", {
@@ -36,7 +34,6 @@ private _initTrench = {
     }];
 
     private _texture = [_object] call FUNC(getSurfaceTexturePath);
-    systemChat format ["Text: %1", _texture];
     _object setObjectTexture [0, _texture];
 
     if (((_object get3DENAttribute QUOTE(grad_trenches_camouflageTrench)) select 0) isEqualTo 1) then {
@@ -45,13 +42,17 @@ private _initTrench = {
 };
 
 // If no object is given apply this to all trenches in 3den
+
 if (isNull _object) then {
-    {
-        systemChat format ["Trench: %1", _x];
-        if (isClass (configFile >> "CfgVehicles" >> typeOf _x >> "CamouflagePositions01")) then {
-            [_x] call _initTrench;
-        };
-    } forEach (all3DENEntities select 0);
+    [_initTrench] spawn {
+        params ["_initTrench"];
+
+        {
+            if (isNumber (configFile >> "CfgVehicles" >> (typeOf _x) >> QGVAR(isTrench))) then {
+                [_x] call _initTrench;
+            };
+        } forEach (all3DENEntities select 0);
+    };
 } else {
     [_object] call _initTrench;
-}
+};

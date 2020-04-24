@@ -157,6 +157,8 @@ class CfgVehicles {
             c[] = {-2.1, 0.9, 3.4};
             d[] = {-4.6, 0, 3};
         };
+
+        class CamouflagePositions2 {};
     };
 
     class GRAD_envelope_vehicle: ACE_envelope_big {
@@ -179,6 +181,8 @@ class CfgVehicles {
             c[] = {-3.5, -2.5, 4.3};
             d[] = {-3, 2.5, 3.5};
         };
+
+        class CamouflagePositions2 {};
     };
 
     class GRAD_envelope_short: ACE_envelope_big {
@@ -199,6 +203,8 @@ class CfgVehicles {
             a[] = {1.7, 0.7, 3.1};
             b[] = {-1.4, 0.8, 3.2};
         };
+
+        class CamouflagePositions2 {};
     };
     class GRAD_envelope_long: ACE_envelope_big {
         author = QAUTHOR;
@@ -221,5 +227,7 @@ class CfgVehicles {
             d[] = {-3, 0.5, 3.1};
             e[] = {-6.9, -0.1, 3.1};
         };
+
+        class CamouflagePositions2 {};
     };
 };
