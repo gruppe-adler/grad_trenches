@@ -23,6 +23,9 @@ params ["_trench", "_unit", ["_state", false], ["_initiator", false]];
 
 if (_initiator) then {
     if (_state) then {
+
+        [QGVAR(addDigger), [_trench, _unit, false]] call CBA_fnc_serverEvent;
+
         [
             {
                 params ["_trench"];
@@ -35,6 +38,8 @@ if (_initiator) then {
                         private _diggingPlayers = _trench getVariable [QGVAR(diggers), []];
                         _diggingPlayers = _diggingPlayers - [objNull];
 
+                        systemChat format ["Handle: %1, Diggers: %2", !(_diggingPlayers isEqualTo (_trench getVariable [QGVAR(diggers), []])), _diggingPlayers];
+
                         if !(_diggingPlayers isEqualTo (_trench getVariable [QGVAR(diggers), []])) then {
                             [QGVAR(addDigger), [_trench, _unit, true]] call CBA_fnc_serverEvent;
                         };
@@ -46,7 +51,12 @@ if (_initiator) then {
                             [_handle] call CBA_fnc_removePerFrameHandler;
                         };
 
-                        _trench setVariable ["ace_trenches_progress", (_trench getVariable ["ace_trenches_progress", 0]) + ((1/_digTime)/10) * count _diggingPlayers, true];
+                        private _direction = _trench getVariable [QGVAR(diggingType), "UP"];
+                        if (_direction isEqualTo "UP") then {
+                            _trench setVariable ["ace_trenches_progress", (_trench getVariable ["ace_trenches_progress", 0]) + ((1/_digTime)/10) * count _diggingPlayers, true];
+                        } else {
+                            _trench setVariable ["ace_trenches_progress", (_trench getVariable ["ace_trenches_progress", 0]) - ((1/_digTime)/10) * count _diggingPlayers, true];
+                        };
                     },
                     0.1,
                     _this

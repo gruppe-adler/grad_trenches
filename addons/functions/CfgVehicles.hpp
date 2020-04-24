@@ -6,7 +6,7 @@
                 distance = 10; \
             }; \
             class ACE_RemoveTrench { \
-                statement = QUOTE([ARR_2(_target,_player)] call FUNC(removeTrench);); \
+                statement = QUOTE([ARR_3(_target,_player,true)] call FUNC(removeTrench);); \
                 distance = 10; \
              };  \
             class GVAR(helpDigging) { \

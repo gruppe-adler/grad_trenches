@@ -17,7 +17,7 @@
  * Public: No
  */
 
-params ["_trench", "_unit", ["_switchingDigger", false]];
+params ["_trench", "_unit", ["_switchingDigger", false, [true]]];
 TRACE_2("removeTrench",_trench,_unit,_switchingDigger);
 
 private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
@@ -47,6 +47,7 @@ _trench setVariable [QGVAR(diggers), [_unit]];
 // Create progress bar
 private _fnc_onFinish = {
     (_this select 0) params ["_unit", "_trench"];
+
     _trench setVariable ["ace_trenches_digging", false, true];
     _trench setVariable [QGVAR(diggingType), nil, true];
     _unit setVariable [QGVAR(diggingTrench), false];
@@ -61,6 +62,7 @@ private _fnc_onFinish = {
 };
 private _fnc_onFailure = {
     (_this select 0) params ["_unit", "_trench"];
+
     _trench setVariable ["ace_trenches_digging", false, true];
     _trench setVariable [QGVAR(diggingType), nil, true];
     _unit setVariable [QGVAR(diggingTrench), false];
@@ -84,7 +86,7 @@ private _fnc_condition = {
     true
 };
 
-[[_unit, _trench], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_RemovingTrench", _fnc_condition] call FUNC(progressBar);
+[[_unit, _trench, false], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_RemovingTrench", _fnc_condition] call FUNC(progressBar);
 [QGVAR(handleDiggingServer), [_trench, _unit, true, true]] call CBA_fnc_serverEvent;
 
 [{

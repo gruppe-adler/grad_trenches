@@ -43,8 +43,8 @@ _ctrlPos set [1, ((0 + 29 * ace_common_settingProgressBarLocation) * ((((safezon
 [{
     (_this select 0) params ["_args", "_onFinish", "_onFail", "_condition", "_player", "_exceptions"];
     _args params ["", "_trench", ["_finishCondition", true]];
+    
     private _progress = _trench getVariable ["ace_trenches_progress", 0];
-
     private _errorCode = -1;
 
     // this does not check: target fell unconscious, target died, target moved inside vehicle / left vehicle, target moved outside of players range, target moves at all.

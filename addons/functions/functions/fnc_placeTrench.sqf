@@ -18,8 +18,6 @@
 
 params ["_unit", "_trenchClass"];
 
-systemChat "placing trench";
-
 //Load trench data
 ace_trenches_trenchPlacementData = getArray (configFile >> "CfgVehicles" >> _trenchClass >> "ace_trenches_placementData");
 TRACE_1("",ace_trenches_trenchPlacementData);
