@@ -38,8 +38,6 @@ if (_initiator) then {
                         private _diggingPlayers = _trench getVariable [QGVAR(diggers), []];
                         _diggingPlayers = _diggingPlayers - [objNull];
 
-                        systemChat format ["Handle: %1, Diggers: %2", !(_diggingPlayers isEqualTo (_trench getVariable [QGVAR(diggers), []])), _diggingPlayers];
-
                         if !(_diggingPlayers isEqualTo (_trench getVariable [QGVAR(diggers), []])) then {
                             [QGVAR(addDigger), [_trench, _unit, true]] call CBA_fnc_serverEvent;
                         };

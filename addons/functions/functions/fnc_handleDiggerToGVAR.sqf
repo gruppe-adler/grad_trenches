@@ -20,8 +20,6 @@
 
 params ["_trench", "_unit", ["_isRemoveMode", false], ["_removeAll", false]];
 
-systemChat "Removing Player";
-
 if (_removeAll) exitWith {
     _trench setVariable [QGVAR(diggers), [], true];
 };
