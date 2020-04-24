@@ -18,13 +18,15 @@
 
 params ["_unit", "_trenchClass"];
 
+systemChat "placing trench";
+
 //Load trench data
 ace_trenches_trenchPlacementData = getArray (configFile >> "CfgVehicles" >> _trenchClass >> "ace_trenches_placementData");
 TRACE_1("",ace_trenches_trenchPlacementData);
 
 // prevent the placing unit from running
-[_unit, "forceWalk", "ACE_Trenches", true] call EFUNC(common,statusEffect_set);
-[_unit, "blockThrow", "ACE_Trenches", true] call EFUNC(common,statusEffect_set);
+[_unit, "forceWalk", "ACE_Trenches", true] call ace_common_fnc_statusEffect_set;
+[_unit, "blockThrow", "ACE_Trenches", true] call ace_common_fnc_statusEffect_set;
 
 // create the trench
 private _trench = createSimpleObject [_trenchClass, [0, 0, 0]];
