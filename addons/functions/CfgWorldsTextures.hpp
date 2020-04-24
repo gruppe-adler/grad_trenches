@@ -549,4 +549,11 @@ class CfgWorldsTextures {
         suffix = "co.paa";
         camouflageObjects[] = {};
     };
+
+    //Reshmaan
+    class reshmaan {
+	surfaceTextureBasePath = "fogu\reshmaan\data\";
+	suffix = "co.paa";
+	camouflageObjects[] = {};
+};	
 };
