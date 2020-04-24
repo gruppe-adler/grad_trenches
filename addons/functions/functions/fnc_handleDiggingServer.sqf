@@ -35,6 +35,14 @@ if (_initiator) then {
                         params ["_args", "_handle"];
                         _args params ["_trench", "_unit", "_digTime"];
 
+                        private _direction = _trench getVariable [QGVAR(diggingType), "UP"];
+                        private _progress = _trench getVariable ["ace_trenches_progress", 0];
+                        private _condition = if (_direction isEqualTo "UP") then {
+                            (_progress >= 1)
+                        } else {
+                            (_progress <= 0)
+                        };
+
                         private _diggingPlayers = _trench getVariable [QGVAR(diggers), []];
                         _diggingPlayers = _diggingPlayers - [objNull];
 
@@ -43,17 +51,18 @@ if (_initiator) then {
                         };
 
                         if (
-                            !(_trench getVariable ["ace_trenches_digging", false])
-                            || {(count _diggingPlayers) < 1}
+                            !(_trench getVariable ["ace_trenches_digging", false]) ||
+                            {(count _diggingPlayers) < 1} ||
+                            {_condition}
                         ) exitWith {
                             [_handle] call CBA_fnc_removePerFrameHandler;
                         };
 
-                        private _direction = _trench getVariable [QGVAR(diggingType), "UP"];
+                        
                         if (_direction isEqualTo "UP") then {
-                            _trench setVariable ["ace_trenches_progress", (_trench getVariable ["ace_trenches_progress", 0]) + ((1/_digTime)/10) * count _diggingPlayers, true];
+                            _trench setVariable ["ace_trenches_progress", _progress + ((1/_digTime)/10) * count _diggingPlayers, true];
                         } else {
-                            _trench setVariable ["ace_trenches_progress", (_trench getVariable ["ace_trenches_progress", 0]) - ((1/_digTime)/10) * count _diggingPlayers, true];
+                            _trench setVariable ["ace_trenches_progress", _progress - ((1/_digTime)/10) * count _diggingPlayers, true];
                         };
                     },
                     0.1,
