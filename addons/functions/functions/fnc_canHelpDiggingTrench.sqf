@@ -11,7 +11,7 @@
  * Can Help Digging Trench <BOOL>
  *
  * Example:
- * [TrenchObj, ACE_player] call grad_trenches_fnc_canHelpDiggingTrench
+ * [TrenchObj, ACE_player] call grad_trenches_functions_fnc_canHelpDiggingTrench
  *
  * Public: No
  */

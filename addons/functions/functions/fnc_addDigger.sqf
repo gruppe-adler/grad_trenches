@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [TrenchObj, ACE_player] call grad_trenches_fnc_addDigger
+ * [TrenchObj, ACE_player] call grad_trenches_functions_fnc_addDigger
  *
  * Public: No
  */

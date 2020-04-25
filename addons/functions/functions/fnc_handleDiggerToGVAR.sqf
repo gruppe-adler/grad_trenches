@@ -13,7 +13,7 @@
  * None
  *
  * Example:
- * [TrenchObj, ACE_player, true, false] call grad_trenches_fnc_handleDiggerToGVAR
+ * [TrenchObj, ACE_player, true, false] call grad_trenches_functions_fnc_handleDiggerToGVAR
  *
  * Public: No
  */

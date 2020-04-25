@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [Logic] call grad_trenches_fnc_initCurator
+ * [Logic] call grad_trenches_functions_fnc_initCurator
  *
  * Public: No
  */

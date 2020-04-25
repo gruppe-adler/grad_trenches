@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [TrenchObj, Unit] call ace_trenches_fnc_removeCamouflage
+ * [TrenchObj, Unit] call grad_trenches_functions_fnc_removeCamouflage
  *
  * Public: No
  */

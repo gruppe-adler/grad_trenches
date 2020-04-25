@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [TrenchObj, ACE_player] call ace_trenches_fnc_continueDiggingTrench
+ * [TrenchObj, ACE_player] call grad_trenches_functions_fnc_continueDiggingTrench
  *
  * Public: No
  */
@@ -38,7 +38,9 @@ private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehi
 private _placeData = _trench getVariable ["ace_trenches_placeData", [[], []]];
 _placeData params ["", "_vecDirAndUp"];
 
-if (isNil "_vecDirAndUp") then {
+systemChat str(_digTime);
+
+if (isNil "_vecDirAndUp" && {_vecDirAndUp isEqualTo []}) then {
     _vecDirAndUp = [vectorDir _trench, vectorUp _trench];
 };
 
@@ -51,7 +53,6 @@ private _fnc_onFinish = {
     _trench setVariable [QGVAR(diggingType), nil, true];
     _unit setVariable [QGVAR(diggingTrench), false];
     [QGVAR(addDigger), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
-    [QGVAR(handleDiggingServer), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
 
     // Save progress global
     _trench setVariable ["ace_trenches_progress", 1, true];
@@ -69,7 +70,6 @@ private _fnc_onFailure = {
     // Save progress global
     private _progress = _trench getVariable ["ace_trenches_progress", 0];
     _trench setVariable ["ace_trenches_progress", _progress, true];
-    [QGVAR(handleDiggingServer), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
 
     // Reset animation
     [_unit, "", 1] call ace_common_fnc_doAnimation;
@@ -85,7 +85,6 @@ private _fnc_condition = {
 };
 
 [[_unit, _trench], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_DiggingTrench", _fnc_condition] call FUNC(progressBar);
-[QGVAR(handleDiggingServer), [_trench, _unit, true, true]] call CBA_fnc_serverEvent;
 
 if (_actualProgress == 0) then {
     //Remove grass
@@ -124,6 +123,8 @@ if (_actualProgress == 0) then {
     _pos set [2, ((_pos select 2) + _posDiff)];
     _trench setPosWorld _pos;
     _trench setVectorDirAndUp _vecDirAndUp;
+
+    _trench setVariable ["ace_trenches_progress", _actualProgress + ((1/_digTime)/10) * _diggerCount, true];
 
     //Fatigue impact
     ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - ((_digTime /12) * GVAR(buildFatigueFactor))) max 0;

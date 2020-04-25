@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [ACE_player] call ace_trenches_fnc_placeConfirm
+ * [ACE_player] call grad_trenches_functions_fnc_placeConfirm
  *
  * Public: No
  */

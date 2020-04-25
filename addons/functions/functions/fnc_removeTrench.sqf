@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [TrenchObj, ACE_player] call ace_trenches_fnc_removeTrench
+ * [TrenchObj, ACE_player] call grad_trenches_functions_fnc_removeTrench
  *
  * Public: No
  */
@@ -34,11 +34,11 @@ if (_diggerCount > 0 && {!(_switchingDigger)}) exitWith {
     [_trench, _unit] call FUNC(addDigger);
 };
 
-private _removeTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >>"ace_trenches_removalDuration"), 20];
+private _removeTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >>"ace_trenches_diggingDuration"), 20];
 private _placeData = _trench getVariable ["ace_trenches_placeData", [[], []]];
 _placeData params ["", "_vecDirAndUp"];
 
-if (isNil "_vecDirAndUp") then {
+if (isNil "_vecDirAndUp" || {_vecDirAndUp isEqualTo []}) then {
     _vecDirAndUp = [vectorDir _trench, vectorUp _trench];
 };
 
@@ -52,7 +52,6 @@ private _fnc_onFinish = {
     _trench setVariable [QGVAR(diggingType), nil, true];
     _unit setVariable [QGVAR(diggingTrench), false];
     [QGVAR(addDigger), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
-    [QGVAR(handleDiggingServer), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
 
     // Remove trench
     deleteVehicle _trench;
@@ -71,7 +70,6 @@ private _fnc_onFailure = {
     // Save progress global
     private _progress = _trench getVariable ["ace_trenches_progress", 0];
     _trench setVariable ["ace_trenches_progress", _progress, true];
-    [QGVAR(handleDiggingServer), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
 
     // Reset animation
     [_unit, "", 1] call ace_common_fnc_doAnimation;
@@ -87,7 +85,6 @@ private _fnc_condition = {
 };
 
 [[_unit, _trench, false], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_RemovingTrench", _fnc_condition] call FUNC(progressBar);
-[QGVAR(handleDiggingServer), [_trench, _unit, true, true]] call CBA_fnc_serverEvent;
 
 [{
     params ["_args", "_handle"];
@@ -115,6 +112,8 @@ private _fnc_condition = {
     _pos set [2, ((_pos select 2) - _posDiff)];
     _trench setPosWorld _pos;
     _trench setVectorDirAndUp _vecDirAndUp;
+
+    _trench setVariable ["ace_trenches_progress", _actualProgress - ((1/_removeTime)/10) * _diggerCount, true];
 
     //Fatigue impact
     ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - ((_removeTime /12) * GVAR(buildFatigueFactor))) max 0;

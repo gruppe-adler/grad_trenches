@@ -6,7 +6,6 @@ PREP(canRemoveCamouflage);
 PREP(continueDiggingTrench);
 PREP(deleteCamouflage);
 PREP(handleDiggerToGVAR);
-PREP(handleDiggingServer);
 PREP(initCurator);
 PREP(initTrench);
 PREP(initTrench3DEN);

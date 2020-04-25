@@ -11,7 +11,7 @@
 * Can place <BOOL>
 *
 * Example:
-* [TrenchObj] call grad_trenches_fnc_canPlaceCamouflage
+* [TrenchObj] call grad_trenches_functions_fnc_canPlaceCamouflage
 *
 * Public: No
 */

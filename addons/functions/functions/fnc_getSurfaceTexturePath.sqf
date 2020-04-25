@@ -10,7 +10,7 @@
 * Surface path <STRING>
 *
 * Example:
-* [TrenchObj] call ace_trenches_fnc_getSurfaceTexturePath
+* [TrenchObj] call grad_trenches_functions_fnc_getSurfaceTexturePath
 *
 * Public: No
 */

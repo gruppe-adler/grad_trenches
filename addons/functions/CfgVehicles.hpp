@@ -1,6 +1,7 @@
 #define TRENCHES_ACTIONS class ACE_Actions { \
         class ACE_MainActions { \
             distance = 10; \
+            position = "[0,0,3.3]"; \
             class ACE_ContinueDiggingTrench { \
                 statement = QUOTE([ARR_2(_target,_player)] call FUNC(continueDiggingTrench);); \
                 distance = 10; \
@@ -159,6 +160,11 @@ class CfgVehicles {
         };
 
         class CamouflagePositions2 {};
+
+        class ACE_MainActions {
+            position = "[0,0,3.1]";
+        };
+
     };
 
     class GRAD_envelope_vehicle: ACE_envelope_big {
@@ -183,6 +189,10 @@ class CfgVehicles {
         };
 
         class CamouflagePositions2 {};
+
+        class ACE_MainActions {
+            position = "[0,0,3.1]";
+        };
     };
 
     class GRAD_envelope_short: ACE_envelope_big {
@@ -205,6 +215,10 @@ class CfgVehicles {
         };
 
         class CamouflagePositions2 {};
+
+        class ACE_MainActions {
+            position = "[0,0,3.5]";
+        };
     };
     class GRAD_envelope_long: ACE_envelope_big {
         author = QAUTHOR;
@@ -229,5 +243,9 @@ class CfgVehicles {
         };
 
         class CamouflagePositions2 {};
+
+        class ACE_MainActions {
+            position = "[0,-2,3.5]";
+        };
     };
 };

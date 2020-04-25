@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [TrenchObj] call ace_trenches_fnc_initTrench3DEN
+ * [TrenchObj] call grad_trenches_functions_fnc_initTrench3DEN
  *
  * Public: No
  */
