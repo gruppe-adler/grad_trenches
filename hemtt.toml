@@ -12,7 +12,7 @@ key_name = "{{prefix}}_{{version}}"
 authority = "{{prefix}}_{{version}}-{{git \"id 8\"}}"
 
 releasebuild = [
-    "@zip grad_trenches_{{semver.major}}.{{semver.minor}}.{{semver.patch}}"
+    "@zip grad_trenches_{{semver.major}}.{{semver.minor}}.{{semver.patch}}.{{semver.build}}"
 ]
 
 [header_exts]
