@@ -18,49 +18,47 @@
 
 params ["_trench", "_unit"];
 
-private _diggingPlayers = _trench getVariable [QGVAR(diggers), []];
+private _diggersCount = count (_trench getVariable [QGVAR(diggers), []]);
 
-if (
-    (count _diggingPlayers) < 1
-) exitWith {
-    [_trench, _unit] call FUNC(continueDiggingTrench);
+if (_diggersCount < 1) exitWith {
+    [_trench, _unit, true] call FUNC(continueDiggingTrench);
 };
 
 [QGVAR(addDigger), [_trench, _unit, false]] call CBA_fnc_serverEvent;
 
-private _finishCondition = {false};
+private _type = true;
+private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >> "ace_trenches_diggingDuration"), 20];
+private _condition = {(_trench getVariable ["ace_trenches_progress", 0]) >= 1};
 _unit setVariable [QGVAR(diggingTrench), true];
 
-private _digTime = 0;
-switch (_trench getVariable [QGVAR(diggingType), nil]) do {
-    case "UP" : {
-        _finishCondition = ((_trench getVariable [QGVAR(progress), 0]) >= 1);
-        _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >> "ace_trenches_diggingDuration"), 20];
-    };
-    case "Down" : {
-        _finishCondition = ((_trench getVariable [QGVAR(progress), 1]) <= 0);
-        _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >> "ace_trenches_removalDuration"), 20];
-    };
-    default {ERROR(format ["No value for _type, %1!", _type]);};
+if ((_trench getVariable [QGVAR(diggingType), nil]) isEqualTo "Down") then {
+    _type = false;
+    _condition = {(_trench getVariable ["ace_trenches_progress", 0]) <= 0};
 };
 
-private _handle = [{
-    params ["_args", "_handle"];
-    _args params ["_trench", "_unit"];
+[
+    {
+        params ["_args", "_handle"];
+        _args params ["_unit", "_trench", "_condition"];
 
-    if (
-        (_trench getVariable [QGVAR(nextDigger), ACE_player]) == ACE_player &&
-        {count (_trench getVariable [QGVAR(diggers), []]) < 1} ||
-        {!(_trench getVariable ["ace_trenches_digging", false])}
-    ) exitWith {
-        [_handle] call CBA_fnc_removePerFrameHandler;
-    };
+        if (_condition) then {
+            [_handle] call CBA_fnc_removePerFrameHandler;
+        };
 
-}, 0.1, [_trench, _unit]] call CBA_fnc_addPerFrameHandler;
+        if (_unit getVariable [QGVAR(diggingTrench), false] && {(_trench getVariable [QGVAR(diggers),[]]) isEqualTo ace_player}) then {
+            [_handle] call CBA_fnc_removePerFrameHandler;
+            [_trench, _unit, true] call FUNC(continueDiggingTrench);
+        };
+    }, 
+    1, 
+    [_unit, _trench, _condition]
+] call CBA_fnc_addPerFrameHandler;
 
 // Create progress bar
 private _fnc_onFinish = {
     (_this select 0) params ["_unit"];
+
+    _unit setVariable [QGVAR(diggingTrench), false];
 
     // Reset animation
     [_unit, "", 1] call ace_common_fnc_doAnimation;
@@ -70,17 +68,21 @@ private _fnc_onFailure = {
     (_this select 0) params ["_unit", "_trench"];
 
     [QGVAR(addDigger), [_trench, _unit, true]] call CBA_fnc_serverEvent;
+    _unit setVariable [QGVAR(diggingTrench), false];
 
     // Reset animation
     [_unit, "", 1] call ace_common_fnc_doAnimation;
 };
 private _fnc_condition = {
-    (_this select 0) params ["", "_trench", "_handle"];
+    (_this select 0) params ["_unit", "_trench"];
 
     if (count (_trench getVariable [QGVAR(diggers),[]]) <= 1) exitWith {false};
+    if (!(_trench getVariable ["ace_trenches_digging", false])) exitWith {false};
     if (GVAR(stopBuildingAtFatigueMax) && {ace_advanced_fatigue_anReserve <= 0}) exitWith {false};
+    if (_unit getVariable [QGVAR(diggingTrench), false]) exitWith {false};
+
     true
 };
 
-[[_unit, _trench, _type, _handle], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_DiggingTrench", _fnc_condition] call FUNC(progressBar);
+[[_unit, _trench, _type], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_DiggingTrench", _fnc_condition] call FUNC(progressBar);
 [_unit] call FUNC(loopanimation);

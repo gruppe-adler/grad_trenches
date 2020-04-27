@@ -3,7 +3,7 @@
             distance = 10; \
             position = "[0,0,3.3]"; \
             class ACE_ContinueDiggingTrench { \
-                statement = QUOTE([ARR_2(_target,_player)] call FUNC(continueDiggingTrench);); \
+                statement = QUOTE([ARR_3(_target,_player,true)] call FUNC(continueDiggingTrench);); \
                 distance = 10; \
             }; \
             class ACE_RemoveTrench { \
