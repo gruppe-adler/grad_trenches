@@ -48,7 +48,7 @@ ace_trenches_digPFH = [{
     // Cancel if the place is no longer suitable
     private _checkVar = [_unit] call ace_trenches_fnc_canDigTrench;
     if (_checkVar isEqualType 0) then {
-      _checkVar = _checkVar > 0;
+        _checkVar = _checkVar > 0;
     };
 
     if !(_checkVar) exitWith {
@@ -57,7 +57,7 @@ ace_trenches_digPFH = [{
 
     // Update trench position
     ace_trenches_trenchPlacementData params ["_dx", "_dy", "_offset"];
-    private _basePos = _unit ModelToWorld [0,3.5,0];
+    private _basePos = _unit modelToWorld [0, 4, 0];
     private _angle = (GVAR(digDirection) + getDir _unit);
 
     // _v1 forward from the player, _v2 to the right, _v3 points away from the ground
