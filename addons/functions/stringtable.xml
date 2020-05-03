@@ -96,7 +96,7 @@
             <English>GRAD Trenches</English>
             <German>GRAD Trenches</German>
             <Russian>GRAD окопы</Russian> 
-			<French>GRAD Tranchées</French>
+            <French>GRAD Tranchées</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_settingAllowDigging_displayName">
             <English>Allow digging</English>
@@ -262,22 +262,22 @@
          <Key ID="STR_GRAD_Trenches_functions_EnvelopeLongName">
             <English>Envelope - Long</English>
             <German>Graben - Lang</German>
-			<Russian>Окоп - Длинный</Russian>
+            <Russian>Окоп - Длинный</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnevlopeLongDescription">
             <English>Long Trench</English>
             <German>Langergraben</German>
-			<Russian>Длинный окоп</Russian>
+            <Russian>Длинный окоп</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_DigEnvelopeLong">
             <English>Dig Long Trench</English>
             <German>Grabe Langengraben</German>
-			<Russian>Отрыть длинный окоп</Russian>
+            <Russian>Отрыть длинный окоп</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowLongEnvelope_displayName">
             <English>Allow long trenches</English>
             <German>Erlaube Langegräben</German>
-			<Russian>Разрешить длинные окопы</Russian>
+            <Russian>Разрешить длинные окопы</Russian>
         </Key>
         <Key ID="STR_ACE_Trenches_EntrenchingToolName">
             <English>Entrenching Tool</English>

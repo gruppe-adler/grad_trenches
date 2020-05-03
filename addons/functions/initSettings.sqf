@@ -15,7 +15,7 @@
 [QGVAR(allowLongEnvelope), "CHECKBOX", [localize LSTRING(allowLongEnvelope_displayName), localize LSTRING(allowLongEnvelope_tooltip)], localize LSTRING(settingCategory), true] call CBA_Settings_fnc_init;
 
 //Time Slider
-[QGVAR(shortEnvelopeDigTime), "SLIDER", localize LSTRING(ShortEnvelopeDigTime), localize LSTRING(settingCategory), [5, 300, 20, 0], true] call CBA_Settings_fnc_init;
+[QGVAR(shortEnvelopeDigTime), "SLIDER", localize LSTRING(ShortEnvelopeDigTime), localize LSTRING(settingCategory), [5, 300, 15, 0], true] call CBA_Settings_fnc_init;
 [QGVAR(smallEnvelopeDigTime), "SLIDER", localize LSTRING(SmallEnvelopeDigTime), localize LSTRING(settingCategory), [5, 450, 30, 0], true] call CBA_Settings_fnc_init;
 [QGVAR(bigEnvelopeDigTime), "SLIDER", localize LSTRING(BigEnvelopeDigTime), localize LSTRING(settingCategory), [5, 600, 40, 0], true] call CBA_Settings_fnc_init;
 [QGVAR(giantEnvelopeDigTime), "SLIDER", localize LSTRING(GiantEnvelopeDigTime), localize LSTRING(settingCategory), [5, 900, 90, 0], true] call CBA_Settings_fnc_init;

@@ -60,9 +60,9 @@ class CfgWorldsTextures {
         camouflageObjects[] = {"ca\plants2\clutter\c_weed3.p3d"};
     };
 
-	//Cham
-	class tem_cham {
-		surfaceTextureBasePath = "tem\tem_cham\data\";
+    //Cham
+    class tem_cham {
+        surfaceTextureBasePath = "tem\tem_cham\data\";
         suffix = "co.paa";
         camouflageObjects[] = {};
     };
@@ -509,7 +509,7 @@ class CfgWorldsTextures {
         camouflageObjects[] = {};
     };
 
-	//Weferlingen Winter
+    //Weferlingen Winter
     class vinjesvigen {
         surfaceTextureBasePath = "gm\gm_worlds\gm_weferlingen_winter\data\";
         suffix = "co.paa";
@@ -555,5 +555,5 @@ class CfgWorldsTextures {
         surfaceTextureBasePath = "fogu\reshmaan\data\";
         suffix = "co.paa";
         camouflageObjects[] = {};
-    };	
+    };    
 };

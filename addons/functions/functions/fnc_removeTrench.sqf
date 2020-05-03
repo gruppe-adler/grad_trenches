@@ -26,7 +26,7 @@ if (_actualProgress <= 0) exitWith {};
 // Mark trench as being worked on
 _trench setVariable ["ace_trenches_digging", true, true];
 _trench setVariable [QGVAR(diggingType), "DOWN", true];
-_unit setVariable [QGVAR(diggingTrench), true];
+_unit setVariable [QGVAR(diggingTrench), true, true];
 
 private _diggerCount = count (_trench getVariable [QGVAR(diggers), []]);
 
@@ -42,7 +42,7 @@ if (isNil "_vecDirAndUp" || {_vecDirAndUp isEqualTo []}) then {
     _vecDirAndUp = [vectorDir _trench, vectorUp _trench];
 };
 
-_trench setVariable [QGVAR(diggers), [_unit]];
+_trench setVariable [QGVAR(diggers), [_unit], true];
 
 // Create progress bar
 private _fnc_onFinish = {
@@ -50,7 +50,7 @@ private _fnc_onFinish = {
 
     _trench setVariable ["ace_trenches_digging", false, true];
     _trench setVariable [QGVAR(diggingType), nil, true];
-    _unit setVariable [QGVAR(diggingTrench), false];
+    _unit setVariable [QGVAR(diggingTrench), false, true];
     [QGVAR(addDigger), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
 
     // Remove trench
@@ -64,7 +64,7 @@ private _fnc_onFailure = {
 
     _trench setVariable ["ace_trenches_digging", false, true];
     _trench setVariable [QGVAR(diggingType), nil, true];
-    _unit setVariable [QGVAR(diggingTrench), false];
+    _unit setVariable [QGVAR(diggingTrench), false, true];
     [QGVAR(addDigger), [_trench, _unit, true]] call CBA_fnc_serverEvent;
 
     // Save progress global
@@ -107,7 +107,7 @@ private _fnc_condition = {
     };
 
     private _pos = (getPosWorld _trench);
-    private _posDiff = (_trench getVariable [QGVAR(diggingSteps), 0]) * _diggerCount;
+    private _posDiff = (_trench getVariable [QGVAR(diggingSteps), (2/(_removeTime*10))]) * _diggerCount;
  
     _pos set [2, ((_pos select 2) - _posDiff)];
     _trench setPosWorld _pos;

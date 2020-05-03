@@ -23,10 +23,13 @@ TRACE_2("continueDiggingTrench",_trench,_unit,_switchingDigger);
 private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
 if (_actualProgress >= 1) exitWith {};
 
+test_trench = _trench;
+publicVariable "test_trench";
+
 // Mark trench as being worked on
 _trench setVariable ["ace_trenches_digging", true, true];
 _trench setVariable [QGVAR(diggingType), "UP", true];
-_unit setVariable [QGVAR(diggingTrench), true];
+_unit setVariable [QGVAR(diggingTrench), true, true];
 
 private _diggerCount = count (_trench getVariable [QGVAR(diggers), []]);
 
@@ -38,20 +41,18 @@ private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehi
 private _placeData = _trench getVariable ["ace_trenches_placeData", [[], []]];
 _placeData params ["", "_vecDirAndUp"];
 
-systemChat str(_digTime);
-
 if (isNil "_vecDirAndUp" && {_vecDirAndUp isEqualTo []}) then {
     _vecDirAndUp = [vectorDir _trench, vectorUp _trench];
 };
 
-_trench setVariable [QGVAR(diggers), [_unit]];
+_trench setVariable [QGVAR(diggers), [_unit], true];
 
 // Create progress bar
 private _fnc_onFinish = {
     (_this select 0) params ["_unit", "_trench"];
     _trench setVariable ["ace_trenches_digging", false, true];
     _trench setVariable [QGVAR(diggingType), nil, true];
-    _unit setVariable [QGVAR(diggingTrench), false];
+    _unit setVariable [QGVAR(diggingTrench), false, true];
     [QGVAR(addDigger), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
 
     // Save progress global
@@ -64,7 +65,7 @@ private _fnc_onFailure = {
     (_this select 0) params ["_unit", "_trench"];
     _trench setVariable ["ace_trenches_digging", false, true];
     _trench setVariable [QGVAR(diggingType), nil, true];
-    _unit setVariable [QGVAR(diggingTrench), false];
+    _unit setVariable [QGVAR(diggingTrench), false, true];
     [QGVAR(addDigger), [_trench, _unit, true]] call CBA_fnc_serverEvent;
 
     // Save progress global
@@ -118,7 +119,7 @@ if (_actualProgress == 0) then {
     };
 
     private _pos = (getPosWorld _trench);
-    private _posDiff = (_trench getVariable [QGVAR(diggingSteps), 0]) * _diggerCount;
+    private _posDiff = (_trench getVariable [QGVAR(diggingSteps), (2/(_digTime*10))]) * _diggerCount;
  
     _pos set [2, ((_pos select 2) + _posDiff)];
     _trench setPosWorld _pos;
