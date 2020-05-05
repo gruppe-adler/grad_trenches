@@ -125,17 +125,19 @@ Downloads can be found under [Releases](https://github.com/gruppe-adler/grad_tre
 Subscribe to GRAD Trenches on [Steam Workshop](http://steamcommunity.com/sharedfiles/filedetails/?id=1224892496) and automaticially get the latest releases.
 
 ## License
-This project is licensed under **GPLv2**.  
-We kindly request to not upload this mod to Armaholic or other mirrors for Arma 3 mods.  
-Plus, we ask you to not create mirrors in Steam Workshop.
+See LICENSE
 
 ## Bugs and Contributions
 Contributions and bug reports are well appreciated. Feel free to fork this project or to create issues.
 #### Bugreports
 When encountering an error message when placing a trench please atatch your RPT-File so we can directly analyze the problem.
 
-## Automatic Terrain Texture path (disabled by default)
-This feature will try to gather the right path from the game data. This does not always work.
+### Build
+In a bash write:
+start build-hemtt.bat
+
+Debugging:
+export BIOUTPUT=1
 
 ## Add own map
 It is not possible to automaticially get the path to the ground texture. Therefore maps have to be included in a config to work with GRAD trenches. This config is located [here](https://github.com/gruppe-adler/grad_trenches/blob/master/addons/functions/CfgWorldsTextures.hpp).
