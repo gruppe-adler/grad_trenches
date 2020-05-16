@@ -17,4 +17,4 @@ PREP(progressBar);
 PREP(removeCamouflage);
 PREP(removeTrench);
 
-PREP_W_INTERCEPT(getSurfaceTexturePath,getSurfaceTexturePathNativ,"surfaceTexture");
+PREP_W_INTERCEPT(getSurfaceTexturePath,getSurfaceTexturePathNative,"surfaceTexture");

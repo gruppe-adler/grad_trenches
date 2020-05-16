@@ -79,6 +79,14 @@ class CfgWorldsTextures {
         surfaceTextureBasePath = "cup\terrains_a3\cup_chernarus_s\data\";
         suffix = "co.paa";
         camouflageObjects[] = {"ca\plants2\clutter\c_weed3.p3d"};
+        class Surfaces {
+            class CRSField1 {
+                texturePath = "cup\terrains_a3\cup_chernarus_s\data\crs_oranice_detail_co.paa";
+            };
+            class CRSHlina {
+                texturePath = "cup\terrains_a3\cup_chernarus_s\data\crs_hlina_detail_co.paa";
+            };
+        };
     };
 
     //Celle

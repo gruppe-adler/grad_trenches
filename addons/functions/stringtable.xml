@@ -279,6 +279,10 @@
             <German>Erlaube Langegräben</German>
             <Russian>Разрешить длинные окопы</Russian>
         </Key>
+        <Key ID="STR_GRAD_Trenches_functions_allowLongEnvelope_tooltip">
+            <English>Allow digging of envelope long trenches</English>
+            <German>Erlaube das Graben von Grabenen Langegräben</German>
+        </Key>
         <Key ID="STR_ACE_Trenches_EntrenchingToolName">
             <English>Entrenching Tool</English>
             <German>Klappspaten</German>
