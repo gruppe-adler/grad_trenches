@@ -83,7 +83,7 @@ ace_trenches_digPFH = [{
             #endif
         };
     };
-    _basePos set [2, (_basePos select 2) + _minzoffset + _offset - 0.1];
+    _basePos set [2, (_basePos select 2) + _minzoffset + _offset];
     TRACE_2("", _minzoffset, _offset);
     _trench setPosASL _basePos;
     _trench setVectorDirAndUp [_v1, _v3];

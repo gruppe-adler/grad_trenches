@@ -55,6 +55,9 @@ private _fnc_onFinish = {
     _unit setVariable [QGVAR(diggingTrench), false, true];
     [QGVAR(addDigger), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
 
+    private _pos = _trench getVariable [QGVAR(endPos), []];
+    _trench setPosWorld _pos;
+
     // Save progress global
     _trench setVariable ["ace_trenches_progress", 1, true];
 

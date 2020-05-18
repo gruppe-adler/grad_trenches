@@ -103,7 +103,7 @@ class CfgVehicles {
 
     class BagFence_base_F;
     class ACE_envelope_small: BagFence_base_F {
-        GVAR(offset) = 0.6;
+        GVAR(offset) = 0.58;
         ace_trenches_placementData[] = {8,1.1,0};
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";

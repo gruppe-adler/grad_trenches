@@ -45,6 +45,7 @@ private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehi
 
 _trench setObjectTextureGlobal [0,[_trench] call FUNC(getSurfaceTexturePath)];
 _trench setPosWorld _pos;
+_trench setVariable [QGVAR(endPos), _pos, true];
 
 private _posDiff = [configFile >> "CfgVehicles" >> _trenchClass >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry;
 private _newPos = (_trench modelToWorldWorld [0,0, -( _posDiff)]);
