@@ -107,7 +107,7 @@ private _fnc_condition = {
     };
 
     private _pos = (getPosWorld _trench);
-    private _posDiff = (_trench getVariable [QGVAR(diggingSteps), (2/(_removeTime*10))]) * _diggerCount;
+    private _posDiff = (_trench getVariable [QGVAR(diggingSteps), (([configFile >> "CfgVehicles" >> typeOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry)/(_removeTime*10))]) * _diggerCount;
  
     _pos set [2, ((_pos select 2) - _posDiff)];
     _trench setPosWorld _pos;

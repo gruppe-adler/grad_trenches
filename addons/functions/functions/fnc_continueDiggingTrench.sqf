@@ -119,7 +119,7 @@ if (_actualProgress == 0) then {
     };
 
     private _pos = (getPosWorld _trench);
-    private _posDiff = (_trench getVariable [QGVAR(diggingSteps), (2/(_digTime*10))]) * _diggerCount;
+    private _posDiff = (_trench getVariable [QGVAR(diggingSteps), (([configFile >> "CfgVehicles" >> typeOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry)/(_digTime*10))]) * _diggerCount;
  
     _pos set [2, ((_pos select 2) + _posDiff)];
     _trench setPosWorld _pos;

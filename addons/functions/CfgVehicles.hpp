@@ -103,7 +103,7 @@ class CfgVehicles {
 
     class BagFence_base_F;
     class ACE_envelope_small: BagFence_base_F {
-        ace_trenches_noGeoClass = QUOTE(ACE_envelope_small_noGeo);
+        GVAR(offset) = 0.6;
         ace_trenches_placementData[] = {8,1.1,0};
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";
@@ -117,7 +117,7 @@ class CfgVehicles {
         class Attributes {};
     };
     class ACE_envelope_big: BagFence_base_F {
-        ace_trenches_noGeoClass = QUOTE(ACE_envelope_big_noGeo);
+        GVAR(offset) = 1.5;
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";
         GVAR(isTrench) = 1;
@@ -145,7 +145,7 @@ class CfgVehicles {
         scope = 2;
         ace_trenches_diggingDuration = QGVAR(giantEnvelopeDigTime);
         ace_trenches_removalDuration = 30;
-        ace_trenches_noGeoClass = QUOTE(GRAD_envelope_giant_noGeo);
+        GVAR(offset) = 1.8;
         ace_trenches_placementData[] = {8,1.1,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
 
@@ -174,7 +174,7 @@ class CfgVehicles {
         scope = 2;
         ace_trenches_diggingDuration = QGVAR(vehicleEnvelopeDigTime);
         ace_trenches_removalDuration = 60;
-        ace_trenches_noGeoClass = QUOTE(GRAD_envelope_vehicle_noGeo);
+        GVAR(offset) = 1.95;
         ace_trenches_placementData[] = {10,1.1,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
 
@@ -202,7 +202,7 @@ class CfgVehicles {
         scope = 2;
         ace_trenches_diggingDuration = QGVAR(shortEnvelopeDigTime);
         ace_trenches_removalDuration = 10;
-        ace_trenches_noGeoClass = QUOTE(GRAD_envelope_short_noGeo);
+        GVAR(offset) = 1.2;
         ace_trenches_placementData[] = {10,1.1,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
 
@@ -227,7 +227,7 @@ class CfgVehicles {
         scope = 2;
         ace_trenches_diggingDuration = QGVAR(longEnvelopeDigTime);
         ace_trenches_removalDuration = 10;
-        ace_trenches_noGeoClass = QUOTE(GRAD_envelope_long_noGeo);
+        GVAR(offset) = 1.63;
         ace_trenches_placementData[] = {10,2,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
 
