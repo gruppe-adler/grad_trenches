@@ -22,16 +22,14 @@ params ["_trench", "_unit", ["_isRemoveMode", false], ["_removeAll", false]];
 
 ["Added Digger"] remoteExecCall ["systemChat", -2];
 
-if (_removeAll) exitWith {
-    _trench setVariable [QGVAR(diggers), [], true];
-};
-
 private _diggingPlayers = _trench getVariable [QGVAR(diggers), []];
 
-if (_isRemoveMode) then {
-    _diggingPlayers - [_unit];
+if (_removeAll) then {
+    _diggingPlayers = [];
+} else { if (_isRemoveMode) then {
+    _diggingPlayers = _diggingPlayers - [_unit];
 } else {
     _diggingPlayers pushBackUnique _unit;
-};
+}};
 
 _trench setVariable [QGVAR(diggers), _diggingPlayers, true];
