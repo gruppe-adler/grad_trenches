@@ -20,7 +20,7 @@ params [
 ];
 
 _logic addEventHandler ["CuratorObjectEdited", {
-    params ["_logic", "_object"];
+    params ["", "_object"];
 
     if (isClass (configFile >> "CfgVehicles" >> typeOf _object >> "CamouflagePositions01")) then {
         private _texture = [_object] call FUNC(getSurfaceTexturePath);
