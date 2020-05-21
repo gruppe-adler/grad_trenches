@@ -29,7 +29,7 @@ if (_removeAll) exitWith {
 private _diggingPlayers = _trench getVariable [QGVAR(diggers), []];
 
 if (_isRemoveMode) then {
-    _diggingPlayers - [_unit];
+    _diggingPlayers = _diggingPlayers - [_unit];
 } else {
     _diggingPlayers pushBackUnique _unit;
 };
