@@ -27,7 +27,6 @@ if (_diggersCount < 1) exitWith {
 [QGVAR(addDigger), [_trench, _unit, false]] call CBA_fnc_serverEvent;
 
 private _type = true;
-private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >> "ace_trenches_diggingDuration"), 20];
 
 private _condition = {
     params ["_trench"];
