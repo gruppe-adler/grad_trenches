@@ -425,6 +425,9 @@ class CfgWorldsTextures {
             class mesto {
                 texturePath = "ca\sara\Data\mesto_co.paa";
             };
+            class Grass {
+                texturePath = "dbe1\sara_dbe1\data\trava_detail_co.paa";
+            };
         };
     };
 
