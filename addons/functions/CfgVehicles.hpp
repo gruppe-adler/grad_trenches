@@ -141,7 +141,7 @@ class CfgVehicles {
     class GRAD_envelope_giant: ACE_envelope_big {
         author = QAUTHOR;
         displayName = CSTRING(EnvelopeGiantName);
-        descriptionShort = CSTRING(EnevlopeGiantDescription);
+        descriptionShort = CSTRING(EnvelopeGiantDescription);
         scope = 2;
         ace_trenches_diggingDuration = QGVAR(giantEnvelopeDigTime);
         ace_trenches_removalDuration = 30;
@@ -170,7 +170,7 @@ class CfgVehicles {
     class GRAD_envelope_vehicle: ACE_envelope_big {
         author = QAUTHOR;
         displayName = CSTRING(EnvelopeVehicleName);
-        descriptionShort = CSTRING(EnevlopeVehicleDescription);
+        descriptionShort = CSTRING(EnvelopeVehicleDescription);
         scope = 2;
         ace_trenches_diggingDuration = QGVAR(vehicleEnvelopeDigTime);
         ace_trenches_removalDuration = 60;
@@ -198,7 +198,7 @@ class CfgVehicles {
     class GRAD_envelope_short: ACE_envelope_big {
         author = QAUTHOR;
         displayName = CSTRING(EnvelopeShortName);
-        descriptionShort = CSTRING(EnevlopeShortDescription);
+        descriptionShort = CSTRING(EnvelopeShortDescription);
         scope = 2;
         ace_trenches_diggingDuration = QGVAR(shortEnvelopeDigTime);
         ace_trenches_removalDuration = 10;
@@ -223,7 +223,7 @@ class CfgVehicles {
     class GRAD_envelope_long: ACE_envelope_big {
         author = QAUTHOR;
         displayName = CSTRING(EnvelopeLongName);
-        descriptionShort = CSTRING(EnevlopeLongDescription);
+        descriptionShort = CSTRING(EnvelopeLongDescription);
         scope = 2;
         ace_trenches_diggingDuration = QGVAR(longEnvelopeDigTime);
         ace_trenches_removalDuration = 10;
