@@ -64,7 +64,7 @@ class CfgVehicles {
                     exceptions[] = {"notOnMap", "isNotInside", "isNotSitting"};
 
                     class ace_trenches_digEnvelopeSmall {
-                        displayName = "$STR_ace_trenches_DigEnvelopeSmall";
+                        displayName = CSTRING(DigEnvelopeSmall);
                         exceptions[] = {};
                         showDisabled = 0;
                         priority = 4;
@@ -72,7 +72,7 @@ class CfgVehicles {
                         condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call ace_trenches_fnc_canContinueDiggingTrench) && GVAR(allowSmallEnvelope));
                     };
                     class ace_trenches_digEnvelopeBig: ace_trenches_digEnvelopeSmall {
-                        displayName = "$STR_ace_trenches_DigEnvelopeBig";
+                        displayName = CSTRING(DigEnvelopeBig);
                         statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'ACE_envelope_big')])] call CBA_fnc_execNextFrame);
                         condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call ace_trenches_fnc_canContinueDiggingTrench) && GVAR(allowBigEnvelope));
                     };
@@ -103,6 +103,8 @@ class CfgVehicles {
 
     class BagFence_base_F;
     class ACE_envelope_small: BagFence_base_F {
+        displayName = CSTRING(EnvelopeSmallName);
+        descriptionShort = CSTRING(EnvelopeSmallDescription);
         GVAR(offset) = 0.58;
         ace_trenches_placementData[] = {8,1.1,0};
         editorCategory = "EdCat_Things";
@@ -117,6 +119,8 @@ class CfgVehicles {
         class Attributes {};
     };
     class ACE_envelope_big: BagFence_base_F {
+        displayName = CSTRING(EnvelopeBigName);
+        descriptionShort = CSTRING(EnvelopeBigDescription);
         GVAR(offset) = 1.5;
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";

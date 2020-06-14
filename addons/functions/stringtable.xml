@@ -289,7 +289,7 @@
             <German>Erlaube das Graben von Grabenen Langegräben</German>
             <French>Autoriser de creuser des grandes tranchées</French>
         </Key>
-        <Key ID="STR_ACE_Trenches_EntrenchingToolName">
+        <Key ID="STR_GRAD_Trenches_functions_EntrenchingToolName">
             <English>Entrenching Tool</English>
             <German>Klappspaten</German>
             <Polish>Saperka</Polish>
@@ -305,7 +305,7 @@
             <Chinese>戰備鍬</Chinese>
             <Turkish>Kürek</Turkish>
         </Key>
-        <Key ID="STR_ACE_Trenches_EntrenchingToolDescription">
+        <Key ID="STR_GRAD_Trenches_functions_EntrenchingToolDescription">
             <English>Entrenching Tool</English>
             <Polish>Saperka, używana do budowy wnęk</Polish>
             <German>Mit dem Klappspaten können Erdwälle oder Gräben ausgehoben werden. </German>
@@ -321,7 +321,7 @@
             <Chinese>戰備鍬</Chinese>
             <Turkish>Kürek</Turkish>
         </Key>
-        <Key ID="STR_ACE_Trenches_EnvelopeSmallName">
+        <Key ID="STR_GRAD_Trenches_functions_EnvelopeSmallName">
             <English>Envelope - Small</English>
             <German>Graben - Klein</German>
             <Polish>Wnęka - mała</Polish>
@@ -337,7 +337,7 @@
             <Czech>Obálka - Malá</Czech>
             <Turkish>Zarf - Küçük</Turkish>
         </Key>
-        <Key ID="STR_ACE_Trenches_EnevlopeSmallDescription">
+        <Key ID="STR_GRAD_Trenches_functions_EnevlopeSmallDescription">
             <English>Small Personal Trench</English>
             <German>Kleiner Schützengraben</German>
             <Polish>Mała jednoosobowa wnęka</Polish>
@@ -353,7 +353,7 @@
             <Chinese>小型個人掩體</Chinese>
             <Turkish>Küçük Kişisel Siper</Turkish>
         </Key>
-        <Key ID="STR_ACE_Trenches_DigEnvelopeSmall">
+        <Key ID="STR_GRAD_Trenches_functions_DigEnvelopeSmall">
             <English>Dig Small Trench</English>
             <German>Grabe kleinen Schützengraben</German>
             <Polish>Kop małą wnękę</Polish>
@@ -369,7 +369,7 @@
             <Chinese>蓋小掩體</Chinese>
             <Turkish>Küçük Siper</Turkish>
         </Key>
-        <Key ID="STR_ACE_Trenches_EnvelopeBigName">
+        <Key ID="STR_GRAD_Trenches_functions_EnvelopeBigName">
             <English>Envelope - Big</English>
             <German>Graben - Groß</German>
             <Polish>Wnęka - duża</Polish>
@@ -385,7 +385,7 @@
             <Czech>Obálka - Velká</Czech>
             <Turkish>Zarf - Büyük</Turkish>
         </Key>
-        <Key ID="STR_ACE_Trenches_EnevlopeBigDescription">
+        <Key ID="STR_GRAD_Trenches_functions_EnevlopeBigDescription">
             <English>Large Personal Trench</English>
             <German>Großer Schützengraben</German>
             <Polish>Duża jednoosobowa wnęka</Polish>
@@ -401,7 +401,7 @@
             <Chinese>大型個人掩體</Chinese>
             <Turkish>Geniş Kişisel Siper</Turkish>
         </Key>
-        <Key ID="STR_ACE_Trenches_DigEnvelopeBig">
+        <Key ID="STR_GRAD_Trenches_functions_DigEnvelopeBig">
             <English>Dig Big Trench</English>
             <German>Grabe großen Schützengraben</German>
             <Polish>Kop dużą wnękę</Polish>

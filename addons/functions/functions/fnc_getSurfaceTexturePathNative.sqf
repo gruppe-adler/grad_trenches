@@ -26,5 +26,6 @@ if (isNull _object) exitWith {DEFAULT_TEXTURE};
 private _result = surfaceTexture (getPos _object);
 
 if (isNil {_result}) exitWith {DEFAULT_TEXTURE};
+
 _result
 
