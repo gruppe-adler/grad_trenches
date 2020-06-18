@@ -85,8 +85,6 @@ private _fnc_onFailure = {
 private _fnc_condition = {
     (_this select 0) params ["_unit", "_trench"];
 
-    systemChat format ["C: %1, D: %2, F: %3, DIG: %4", (count (_trench getVariable [QGVAR(diggers),[]]) < 1), (!(_trench getVariable ["ace_trenches_digging", false])), (GVAR(stopBuildingAtFatigueMax) && {ace_advanced_fatigue_anReserve <= 0}), !(_unit getVariable [QGVAR(diggingTrench), false])];
-    systemChat format ["Count: %1, %2", count (_trench getVariable [QGVAR(diggers),[]]), _trench getVariable [QGVAR(diggers),[]]];
     if !(_trench getVariable ["ace_trenches_digging", false]) exitWith {false};
     if (GVAR(stopBuildingAtFatigueMax) && {ace_advanced_fatigue_anReserve <= 0}) exitWith {false};
     if !(_unit getVariable [QGVAR(diggingTrench), false]) exitWith {false};

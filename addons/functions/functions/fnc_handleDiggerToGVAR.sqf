@@ -20,8 +20,6 @@
 
 params ["_trench", "_unit", ["_isRemoveMode", false], ["_removeAll", false]];
 
-["Added Digger"] remoteExecCall ["systemChat", -2];
-
 private _diggingPlayers = _trench getVariable [QGVAR(diggers), []];
 
 if (_removeAll) then {
