@@ -69,32 +69,32 @@ class CfgVehicles {
                         showDisabled = 0;
                         priority = 4;
                         statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'ACE_envelope_small')])] call CBA_fnc_execNextFrame);
-                        condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call ace_trenches_fnc_canContinueDiggingTrench) && GVAR(allowSmallEnvelope));
+                        condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call FUNC(canContinueDiggingTrench)) && GVAR(allowSmallEnvelope));
                     };
                     class ace_trenches_digEnvelopeBig: ace_trenches_digEnvelopeSmall {
                         displayName = CSTRING(DigEnvelopeBig);
                         statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'ACE_envelope_big')])] call CBA_fnc_execNextFrame);
-                        condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call ace_trenches_fnc_canContinueDiggingTrench) && GVAR(allowBigEnvelope));
+                        condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call FUNC(canContinueDiggingTrench)) && GVAR(allowBigEnvelope));
                     };
                     class grad_trenches_digEnvelopeShort: ace_trenches_digEnvelopeBig {
                         displayName = CSTRING(DigEnvelopeShort);
                         statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'GRAD_envelope_short')])] call CBA_fnc_execNextFrame);
-                        condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call ace_trenches_fnc_canContinueDiggingTrench) && GVAR(allowShortEnvelope));
+                        condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call FUNC(canContinueDiggingTrench)) && GVAR(allowShortEnvelope));
                     };
                     class grad_trenches_digEnvelopeGiant: ace_trenches_digEnvelopeBig {
                         displayName = CSTRING(DigEnvelopeGiant);
                         statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'GRAD_envelope_giant')])] call CBA_fnc_execNextFrame);
-                        condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call ace_trenches_fnc_canContinueDiggingTrench) && GVAR(allowGiantEnvelope));
+                        condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call FUNC(canContinueDiggingTrench)) && GVAR(allowGiantEnvelope));
                     };
                     class grad_trenches_digEnvelopeVehicle: ace_trenches_digEnvelopeBig {
                         displayName = CSTRING(DigEnvelopeVehicle);
                         statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'GRAD_envelope_vehicle')])] call CBA_fnc_execNextFrame);
-                        condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call ace_trenches_fnc_canContinueDiggingTrench) && GVAR(allowVehicleEnvelope));
+                        condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call FUNC(canContinueDiggingTrench)) && GVAR(allowVehicleEnvelope));
                     };
                     class grad_trenches_digEnvelopeLongNameEmplacment: ace_trenches_digEnvelopeBig {
                         displayName = CSTRING(DigEnvelopeLong);
                         statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'GRAD_envelope_long')])] call CBA_fnc_execNextFrame);
-                        condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call ace_trenches_fnc_canContinueDiggingTrench) && GVAR(allowLongEnvelope));
+                        condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call FUNC(canContinueDiggingTrench)) && GVAR(allowLongEnvelope));
                     };
                 };
             };
