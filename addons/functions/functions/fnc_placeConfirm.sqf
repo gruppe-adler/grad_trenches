@@ -43,7 +43,7 @@ deleteVehicle ace_trenches_trench;
 private _trench = createVehicle [_trenchClass, _pos, [], 0, "CAN_COLLIDE"];
 private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> _trenchClass >>"ace_trenches_diggingDuration"), 20];
 
-_trench setObjectTextureGlobal [0,[_trench] call FUNC(getSurfaceTexturePath)];
+_trench setObjectTextureGlobal [0, surfaceTexture (getPos _trench)];
 _trench setPosWorld _pos;
 _trench setVariable [QGVAR(endPos), _pos, true];
 

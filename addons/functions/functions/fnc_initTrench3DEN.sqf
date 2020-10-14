@@ -24,8 +24,7 @@ private _initTrench = {
     _object addEventHandler ["Dragged3DEN", {
         params ["_object"];
 
-        private _texture = [_object] call FUNC(getSurfaceTexturePath);
-        _object setObjectTexture [0, _texture];
+        _object setObjectTexture [0, surfaceTexture (getPos _object)];
 
         {
             private _pos = _x getVariable [QGVAR(positionData), [0,0,0]];
@@ -33,8 +32,7 @@ private _initTrench = {
         } forEach (_object getVariable [QGVAR(camouflageObjects), []]);
     }];
 
-    private _texture = [_object] call FUNC(getSurfaceTexturePath);
-    _object setObjectTexture [0, _texture];
+    _object setObjectTexture [0, surfaceTexture (getPos _object)];
 
     if (((_object get3DENAttribute QUOTE(grad_trenches_camouflageTrench)) select 0) isEqualTo 1) then {
         [_object] call FUNC(placeCamouflage);

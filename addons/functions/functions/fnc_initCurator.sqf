@@ -22,8 +22,17 @@ params [
 _logic addEventHandler ["CuratorObjectEdited", {
     params ["", "_object"];
 
-    if (isClass (configFile >> "CfgVehicles" >> typeOf _object >> "CamouflagePositions01")) then {
-        private _texture = [_object] call FUNC(getSurfaceTexturePath);
-        _object setObjectTextureGlobal [0, _texture];
+    if (isClass (configFile >> "CfgVehicles" >> typeOf _object >> "CamouflagePositions1")) then {
+        _object setObjectTextureGlobal [0, surfaceTexture (getPos _object)];
+    };
+}];
+
+_logic addEventHandler ["CuratorObjectPlaced", {
+	params ["", "_object"];
+
+    systemChat str _object;
+
+    if (isClass (configFile >> "CfgVehicles" >> typeOf _object >> "CamouflagePositions1")) then {
+        _object setObjectTextureGlobal [0, surfaceTexture (getPos _object)];
     };
 }];

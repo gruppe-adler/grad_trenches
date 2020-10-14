@@ -103,6 +103,7 @@ class CfgVehicles {
 
     class BagFence_base_F;
     class ACE_envelope_small: BagFence_base_F {
+        author = QAUTHOR;
         displayName = CSTRING(EnvelopeSmallName);
         descriptionShort = CSTRING(EnvelopeSmallDescription);
         GVAR(offset) = 0.58;
@@ -111,6 +112,7 @@ class CfgVehicles {
         editorSubcategory = "EdSubcat_Military";
         GVAR(isTrench) = 1;
         ace_trenches_diggingDuration = QGVAR(smallEnvelopeDigTime);
+        scopecurator = 2;
 
         class CamouflagePositions1 {};
 
@@ -118,14 +120,11 @@ class CfgVehicles {
 
         class Attributes {};
     };
-    class ACE_envelope_big: BagFence_base_F {
+    class ACE_envelope_big: ACE_envelope_small{
         displayName = CSTRING(EnvelopeBigName);
         descriptionShort = CSTRING(EnvelopeBigDescription);
-        GVAR(offset) = 1.5;
-        editorCategory = "EdCat_Things";
-        editorSubcategory = "EdSubcat_Military";
-        GVAR(isTrench) = 1;
         ace_trenches_diggingDuration = QGVAR(bigEnvelopeDigTime);
+        GVAR(offset) = 1.5;
 
         class CamouflagePositions1 {
             a[] = {0, 0.9, 3.4};
@@ -138,23 +137,17 @@ class CfgVehicles {
             b[] = {-1.5, -0.5, 4};
         };
 
-        TRENCHES_ACTIONS;
         TRENCHES_ATTRIBUTES;
     };
 
     class GRAD_envelope_giant: ACE_envelope_big {
-        author = QAUTHOR;
         displayName = CSTRING(EnvelopeGiantName);
         descriptionShort = CSTRING(EnvelopeGiantDescription);
-        scope = 2;
         ace_trenches_diggingDuration = QGVAR(giantEnvelopeDigTime);
         ace_trenches_removalDuration = 30;
         GVAR(offset) = 1.8;
         ace_trenches_placementData[] = {8,1.1,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
-
-        editorCategory = "EdCat_Things";
-        editorSubcategory = "EdSubcat_Military";
 
         class CamouflagePositions1 {
             a[] = {4.4, 0, 3};
@@ -172,18 +165,13 @@ class CfgVehicles {
     };
 
     class GRAD_envelope_vehicle: ACE_envelope_big {
-        author = QAUTHOR;
         displayName = CSTRING(EnvelopeVehicleName);
         descriptionShort = CSTRING(EnvelopeVehicleDescription);
-        scope = 2;
         ace_trenches_diggingDuration = QGVAR(vehicleEnvelopeDigTime);
         ace_trenches_removalDuration = 60;
         GVAR(offset) = 1.95;
         ace_trenches_placementData[] = {10,1.1,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
-
-        editorCategory = "EdCat_Things";
-        editorSubcategory = "EdSubcat_Military";
 
         class CamouflagePositions1 {
             a[] = {3.9, 2.5, 3.5};
@@ -200,18 +188,13 @@ class CfgVehicles {
     };
 
     class GRAD_envelope_short: ACE_envelope_big {
-        author = QAUTHOR;
         displayName = CSTRING(EnvelopeShortName);
         descriptionShort = CSTRING(EnvelopeShortDescription);
-        scope = 2;
         ace_trenches_diggingDuration = QGVAR(shortEnvelopeDigTime);
         ace_trenches_removalDuration = 10;
         GVAR(offset) = 1.2;
         ace_trenches_placementData[] = {10,1.1,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
-
-        editorCategory = "EdCat_Things";
-        editorSubcategory = "EdSubcat_Military";
 
         class CamouflagePositions1 {
             a[] = {1.7, 0.7, 3.1};
@@ -225,18 +208,13 @@ class CfgVehicles {
         };
     };
     class GRAD_envelope_long: ACE_envelope_big {
-        author = QAUTHOR;
         displayName = CSTRING(EnvelopeLongName);
         descriptionShort = CSTRING(EnvelopeLongDescription);
-        scope = 2;
         ace_trenches_diggingDuration = QGVAR(longEnvelopeDigTime);
         ace_trenches_removalDuration = 10;
         GVAR(offset) = 1.63;
         ace_trenches_placementData[] = {10,2,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
-
-        editorCategory = "EdCat_Things";
-        editorSubcategory = "EdSubcat_Military";
 
         class CamouflagePositions1 {
             a[] = {6.7, 0, 3.2};
