@@ -113,6 +113,7 @@ class CfgVehicles {
         GVAR(isTrench) = 1;
         ace_trenches_diggingDuration = QGVAR(smallEnvelopeDigTime);
         scopecurator = 2;
+        scope = 2;
 
         class CamouflagePositions1 {};
 

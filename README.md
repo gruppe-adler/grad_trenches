@@ -34,8 +34,6 @@ This mod adds textures to ACE trenches based on the current ground texture. When
 More images can be found [here](https://github.com/gruppe-adler/grad_trenches#more-images).
 
 ## Features
-- Supported on 22 Maps (Vanilla, CUP and more)
-- Custom map config, add your own map if it is not supported
 - Camouflage your trench with small bushes
 - Place trenches in 3DEN and camouflage them directly
 - New trenches to place by 0Y0 & max1048
@@ -44,76 +42,8 @@ More images can be found [here](https://github.com/gruppe-adler/grad_trenches#mo
     - Short trench to quickly provide cover for 1-2 soldiers
     - Long Trench to give cover to more people
 
-### Supported maps
-- [Altis](https://arma3.com/features/terrain)
-- [Stratis](https://arma3.com/features/terrain)
-- [Malden](https://arma3.com/dlc/malden)
-- [Tanoa](https://arma3.com/apex)
-- [Lythium](https://forums.bistudio.com/forums/topic/144930-wip-ffaa-v6-spanish-army-mod/)
-- Enoch
-- [Bukovina](http://cup-arma3.org/terrains)
-- [Bystrica](http://cup-arma3.org/terrains)
-- [Chernarus](http://cup-arma3.org/terrains)
-- [Chernarus Summer](http://cup-arma3.org/terrains)
-- Chernarus Winter
-- [Celle](http://www.armaholic.com/page.php?id=16585)
-- [Porto](http://cup-arma3.org/terrains)
-- [Desert](http://cup-arma3.org/terrains)
-- [Rahmadi](http://cup-arma3.org/terrains)
-- [Prei Khmaoch Luong](https://steamcommunity.com/sharedfiles/filedetails/?id=1978754337)
-- [Proving Grounds](http://cup-arma3.org/terrains)
-- [Sahrani](http://cup-arma3.org/terrains)
-- [United Sahrani](http://cup-arma3.org/terrains)
-- [Southern Sahrani](http://cup-arma3.org/terrains)
-- [Shapur](http://cup-arma3.org/terrains)
-- [Takistan](http://cup-arma3.org/terrains)
-- [Takistan Mountains](http://cup-arma3.org/terrains)
-- [Utes](http://cup-arma3.org/terrains)
-- [Zargabad](http://cup-arma3.org/terrains)
-- [Baranow](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
-- [Baranow Winter](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
-- [Bray-Dunes](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
-- [Colleville](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
-- [Colleville Winter](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
-- [G.O.S Al Rayak](https://steamcommunity.com/sharedfiles/filedetails/?id=648172507)
-- [G.O.S Leskovets](https://steamcommunity.com/sharedfiles/filedetails/?id=855464203)
-- [Ivachev](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
-- [Ivachev Winter](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
-- [Panovo](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
-- [Panovo Winter](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
-- [Kerama](https://steamcommunity.com/sharedfiles/filedetails/?id=682140680)
-- [Napf](https://steamcommunity.com/sharedfiles/filedetails/?id=1425442364)
-- [Montherme](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
-- [Montherme Winter](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
-- [Pella Region Greece](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
-- [Volkhov Forest](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
-- [Ruha](https://forums.bohemia.net/forums/topic/215659-ruha-terrain/)
-- [Sark](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
-- [Staszow](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
-- [Staszow Winter](https://steamcommunity.com/sharedfiles/filedetails/?id=867438623)
-- [Rosche](https://forums.bohemia.net/forums/topic/219592-rosche-germany/)
-- [Abramia](https://forums.bohemia.net/forums/topic/187287-icebreakribis-isla-abramia-for-a3/)
-- [Isla Duala](https://forums.bohemia.net/forums/topic/176233-icebreakribis-isla-duala-for-a3/)
-- [Tembelan](https://forums.bohemia.net/forums/topic/212761-tembelan-island/)
-- Anizay
-- Cham
-- Vinjesvingenc
-- Weferlingen Summer
-- Weferlingen Winter
-- Chernarus Redux
-- [Suursaari](https://steamcommunity.com/sharedfiles/filedetails/?id=1680294609)
-- [Summa](https://steamcommunity.com/sharedfiles/filedetails/?id=1598087521)
-- [Hellanmaa](https://steamcommunity.com/sharedfiles/filedetails/?id=1291778160)
-- [Pulau](https://steamcommunity.com/sharedfiles/filedetails/?id=1423583812)
-- [Ihantala](https://steamcommunity.com/sharedfiles/filedetails/?id=1494115712)
-- [Ihantala Winter](https://steamcommunity.com/sharedfiles/filedetails/?id=1494127420)
-- [Kujari](https://steamcommunity.com/sharedfiles/filedetails/?id=1726494027)
-- [Sturkö](https://steamcommunity.com/sharedfiles/filedetails/?id=914229902)
-- [Wamako](https://steamcommunity.com/sharedfiles/filedetails/?id=850767937)
-- [Kunduz](https://steamcommunity.com/sharedfiles/filedetails/?id=421620913)
-
 ## Requirements
-- Arma 3 1.76 or later
+- Arma 3 2.0 or later
 - [ACE3](https://github.com/acemod/ACE3) 3.11.0 or later
 - [CBA_A3](https://github.com/CBATeam/CBA_A3) 3.5.0 or later
 
@@ -138,66 +68,6 @@ start build-hemtt.bat
 
 Debugging:
 export BIOUTPUT=1
-
-## Add own map
-It is not possible to automaticially get the path to the ground texture. Therefore maps have to be included in a config to work with GRAD trenches. This config is located [here](https://github.com/gruppe-adler/grad_trenches/blob/master/addons/functions/CfgWorldsTextures.hpp).
-
-
-**We will take Altis as an example:**  
-Adding a map by your own can be done by any additional mod. You don't have to edit the source. Just create a mod and add `grad_trenches_functions` to `requiredAddons` in your `CfgPatches`.
-
-Then create a config and add this skeleton to it
-
-```cpp
-class CfgWorldsTextures {
-    class Altis {
-        surfaceTextureBasePath = "";
-        suffix = "";
-    };
-};
-```
-
-The class name is the map name that can be found out by using the `worldName` command.
-
-Now you have to fill in `surfaceTextureBasePath`. Usually this path can be found at  
-`configfile >> "CfgWorlds" >> "Altis" >> "OutsideTerrain" >> "Layers" >> "Layer0" >> "texture"`  
-when leaving out the file name of the texture.  
-On Altis the result is `A3\Map_Data\gdt_seabed_co.paa`. We will strip out the file name and will get this config as a result:
-```cpp
-class CfgWorldsTextures {
-    class Altis {
-        surfaceTextureBasePath = "A3\Map_Data\";
-        suffix = "";
-    };
-};
-```
-**Make sure to keep the trailing backslash.**
-
-The texture name for `gdt seabed` is missing the extension `_co.paa`. Therefore we have to set this as the file prefix leaving out the leading underscore.
-```cpp
-class CfgWorldsTextures {
-    class Altis {
-        surfaceTextureBasePath = "A3\Map_Data\";
-        suffix = "co.paa";
-    };
-};
-```
-
-#### Exceptional case: Texture name is different to file name
-Some maps like Utes just have one texture name that is different to the file name. For this purpose it is possible to hardcode single textures along with their absolute file paths.
-```cpp
-class utes {
-    surfaceTextureBasePath = "ca\utes\Data\";
-    suffix = "detail_co.paa";
-
-    class Surfaces {
-        class Default {
-            texturePath = "a3\map_data\gdt_beach_co.paa";
-        };         
-    };
-};
-```
-In this case `Default` is the ground texture name.
 
 ## More images
 *Click on the images to see a high quality version*

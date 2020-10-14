@@ -3,7 +3,7 @@
 class CfgPatches {
     class ADDON {
         name = QUOTE(ADDON);
-        units[] = {};
+        units[] = {"GRAD_envelope_giant", "GRAD_envelope_vehicle", "GRAD_envelope_short", "GRAD_envelope_long"};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = { QMAINPATCH, "ace_trenches" };
