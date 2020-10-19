@@ -40,7 +40,6 @@ private _initTrench = {
 };
 
 // If no object is given apply this to all trenches in 3den
-
 if (isNull _object) then {
     [_initTrench] spawn {
         params ["_initTrench"];

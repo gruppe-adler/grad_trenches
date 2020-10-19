@@ -30,6 +30,6 @@ if (local _object) then {
     // Has to be delayed to ensure MP compatibility (vehicle spawned in same frame as texture is applied)
     [{
         params ["_obj"];
-        _obj setObjectTextureGlobal [0, surfaceTexture (getPos _object)];
+        _obj setObjectTextureGlobal [0, surfaceTexture (getPos _obj)];
     }, _object] call CBA_fnc_execNextFrame;
 };
