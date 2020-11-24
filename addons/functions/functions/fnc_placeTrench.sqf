@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 /*
  * Author: Garth 'L-H' de Wet, Ruthberg, edited by commy2 for better MP and eventual AI support, esteldunedain
  * Starts the place process for trench.
@@ -14,7 +15,6 @@
  *
  * Public: No
  */
-#include "script_component.hpp"
 
 params ["_unit", "_trenchClass"];
 
@@ -46,7 +46,7 @@ ace_trenches_digPFH = [{
     };
 
     // Cancel if the place is no longer suitable
-    private _checkVar = [_unit] call ace_trenches_fnc_canDigTrench;
+    private _checkVar = [_unit, _trench] call FUNC(canDigTrench);
     if (_checkVar isEqualType 0) then {
         _checkVar = _checkVar > 0;
     };

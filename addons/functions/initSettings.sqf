@@ -13,6 +13,7 @@
 [QGVAR(allowGiantEnvelope), "CHECKBOX", [localize LSTRING(allowGiantEnvelope_displayName), localize LSTRING(allowGiantEnvelope_tooltip)], localize LSTRING(settingCategory), true] call CBA_fnc_addSetting;
 [QGVAR(allowVehicleEnvelope), "CHECKBOX", [localize LSTRING(allowVehicleEnvelope_displayName), localize LSTRING(allowVehicleEnvelope_tooltip)], localize LSTRING(settingCategory), true] call CBA_fnc_addSetting;
 [QGVAR(allowLongEnvelope), "CHECKBOX", [localize LSTRING(allowLongEnvelope_displayName), localize LSTRING(allowLongEnvelope_tooltip)], localize LSTRING(settingCategory), true] call CBA_fnc_addSetting;
+[QGVAR(allowTrenchDecay), "CHECKBOX", [localize LSTRING(allowTrenchDecay_displayName), localize LSTRING(allowTrenchDecay_tooltip)], localize LSTRING(settingCategory), true] call CBA_fnc_addSetting;
 
 //Time Slider
 [QGVAR(shortEnvelopeDigTime), "SLIDER", localize LSTRING(ShortEnvelopeDigTime), localize LSTRING(settingCategory), [5, 300, 15, 0], true] call CBA_fnc_addSetting;
@@ -21,3 +22,5 @@
 [QGVAR(giantEnvelopeDigTime), "SLIDER", localize LSTRING(GiantEnvelopeDigTime), localize LSTRING(settingCategory), [5, 900, 90, 0], true] call CBA_fnc_addSetting;
 [QGVAR(vehicleEnvelopeDigTime), "SLIDER", localize LSTRING(VehicleEnvelopeDigTime), localize LSTRING(settingCategory), [5, 1200, 120, 0], true] call CBA_fnc_addSetting;
 [QGVAR(LongEnvelopeDigTime), "SLIDER", localize LSTRING(LongEnvelopeDigTime), localize LSTRING(settingCategory), [5, 1200, 100, 0], true] call CBA_fnc_addSetting;
+[QGVAR(timeoutToDecay), "SLIDER", [localize LSTRING(timeoutToDecay_displayName), localize LSTRING(timeoutToDecay_tooltip)], localize LSTRING(settingCategory), [60, 18000, 7200, 0], true] call CBA_fnc_addSetting;
+[QGVAR(timeToDecay), "SLIDER", [localize LSTRING(timeToDecay_displayName), localize LSTRING(timeToDecay_tooltip)], localize LSTRING(settingCategory), [10, 3600, 1800, 0], true] call CBA_fnc_addSetting;
