@@ -18,13 +18,19 @@
 params [
     ["_object", objNull, [objNull]]
 ];
-if (isServer) then {
-   _object setVariable ["ace_trenches_progress", 1, true];
-};
 
 if (is3DEN) exitWith {
     [_object] call FUNC(initTrench3DEN);
 };
+
+if (isServer) then {
+   _object setVariable ["ace_trenches_progress", 1, true];
+
+    if (GVAR(allowTrenchDecay)) then {
+       [_object, GVAR(timeoutToDecay), GVAR(decayTime)] call FUNC(decayPFH);
+    };
+};
+
 
 if (local _object) then {
     // Has to be delayed to ensure MP compatibility (vehicle spawned in same frame as texture is applied)

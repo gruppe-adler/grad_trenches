@@ -21,8 +21,19 @@ params ["_unit", ["_trench", ""]];
 if !("ACE_EntrenchingTool" in (_unit call ace_common_fnc_uniqueItems)) exitWith {false};
 
 private _return = true;
-if !(_trench isEqualTo "") then {
-	_return = _trench call ace_common_fnc_canDig;
-};
+
+{
+	if !(_x isEqualTo "") then {
+		_return = _x call ace_common_fnc_canDig;
+
+		systemChat str _return;
+
+		if (_return isEqualType 0) then {
+			_return = _return > 0;
+		};
+
+		if !(_return) exitWith {};
+	};
+}forEach [_unit, _trench];
 
 _return

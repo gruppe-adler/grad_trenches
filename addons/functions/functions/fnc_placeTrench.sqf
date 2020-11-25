@@ -46,12 +46,7 @@ ace_trenches_digPFH = [{
     };
 
     // Cancel if the place is no longer suitable
-    private _checkVar = [_unit, _trench] call FUNC(canDigTrench);
-    if (_checkVar isEqualType 0) then {
-        _checkVar = _checkVar > 0;
-    };
-
-    if !(_checkVar) exitWith {
+    if !([_unit, _trench] call FUNC(canDigTrench)) exitWith {
         [_unit] call ace_trenches_fnc_placeCancel;
     };
 

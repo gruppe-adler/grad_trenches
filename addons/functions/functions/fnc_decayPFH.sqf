@@ -1,5 +1,4 @@
-if !(isServer) exitWith {};
-
+#include "script_component.hpp"
 /*
  * Author: Salbei
  * Starts removing trenches after a given time
@@ -20,6 +19,7 @@ if !(isServer) exitWith {};
 
 params ["_trench", ["_timeoutToDecay", 7200], ["_decayTime", 1800]];
 
+if !(isServer) exitWith {};
 if (isNull _trench) exitWith {};
 
 if (isNil QGVAR(decayArray)) then {
@@ -58,6 +58,17 @@ if (isNil QGVAR(decayPFH)) then {
 						} else {
 							_trench setVariable ["ace_trenches_progress", _progress];
 
+							private _removeTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >>"ace_trenches_diggingDuration"), 20];
+							private _placeData = _trench getVariable ["ace_trenches_placeData", [[], []]];
+							_placeData params ["", "_vecDirAndUp"];
+
+							private _pos = (getPosWorld _trench);
+							private _posDiff = (_trench getVariable [QGVAR(diggingSteps), (([configFile >> "CfgVehicles" >> typeOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry)/(_removeTime*10))]) * 1;
+						
+							_pos set [2, ((_pos select 2) - _posDiff)];
+							_trench setPosWorld _pos;
+							_trench setVectorDirAndUp _vecDirAndUp;
+
 							_newArray pushBack [_trench, _timeoutToDecay, _decayTime];
 						};
 					};
@@ -65,7 +76,7 @@ if (isNil QGVAR(decayPFH)) then {
 					_timeoutToDecay = _timeoutToDecay - 10;
 				};
 			};
-		}forEach GVAR(decayPFH);
+		}forEach GVAR(decayArray);
 
 		GVAR(decayArray) = _newArray;
 	}, [], 10] call CBA_fnc_addPerFrameHandler;

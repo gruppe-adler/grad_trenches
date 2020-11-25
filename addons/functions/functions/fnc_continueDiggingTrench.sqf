@@ -131,8 +131,8 @@ if (_actualProgress == 0) then {
     _trench setVariable ["ace_trenches_progress", _actualProgress + ((1/_digTime)/10) * _diggerCount, true];
 
     //Fatigue impact
-    ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - ((_digTime/20) * GVAR(buildFatigueFactor))) max 0;
-    ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + (((_digTime/20) * GVAR(buildFatigueFactor))/1200)) min 1;
+    ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - ((_digTime/16) * GVAR(buildFatigueFactor))) max 0;
+    ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + (((_digTime/16) * GVAR(buildFatigueFactor))/1200)) min 1;
 
     if (GVAR(stopBuildingAtFatigueMax) && {ace_advanced_fatigue_anReserve <= 0}) exitWith {
         [_handle] call CBA_fnc_removePerFrameHandler;

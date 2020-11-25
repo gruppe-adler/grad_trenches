@@ -138,6 +138,7 @@ class CfgVehicles {
             b[] = {-1.5, -0.5, 4};
         };
 
+        TRENCHES_ACTIONS;
         TRENCHES_ATTRIBUTES;
     };
 

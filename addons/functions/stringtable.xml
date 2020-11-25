@@ -465,5 +465,37 @@
             <Chinese>蓋大掩體</Chinese>
             <Turkish>Büyük Siper</Turkish>
         </Key>
+        <Key ID="STR_GRAD_Trenches_functions_allowTrenchDecay_displayName">
+            <English>Allow trench decay</English>
+            <German>Erlaube Gräben zu verfallen</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_allowTrenchDecay_tooltip">
+            <English>Trenches will automatically start to decay after a set time</English>
+            <German>Gräben beginnen automatisch zu verfallen nach einer gegebenen Zeit</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_timeoutToDecay_displayName">
+            <English>Timeout to decay</English>
+            <German>Wartezeit bis zum Verfall</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_timeoutToDecay_tooltip">
+            <English>Time the server waits until it starts to decay the trenche</English>
+            <German>Zeit die der Server wartet bis der Graben verfällt</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_decayTime_displayName">
+            <English>Decay time</English>
+            <German>Verfall Zeit</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_decayTime_tooltip">
+            <English>Time it takes to fully remove the trench</English>
+            <German>Zeit bis der Graben komplett verschwunden ist</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_trenchSubCategory">
+            <English>Trench settings</English>
+            <German>Graben Einstellungen</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_decaySubCategory">
+            <English>Decay Setting</English>
+            <German>Verfall Einstellungen</German>
+        </Key>
     </Package>
 </Project>

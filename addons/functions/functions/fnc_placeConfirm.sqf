@@ -32,7 +32,6 @@ call ace_interaction_fnc_hideMouseHint;
 _unit setVariable ["ace_trenches_isPlacing", false, true];
 
 // Delete placement dummy and create real trench
-params ["_unit"];
 if (isNull ace_trenches_trench) exitWith {};
 
 private _trenchClass = typeOf ace_trenches_trench;
@@ -56,5 +55,7 @@ _trench setVectorDirAndUp _vecDirAndUp;
 
 _trench setVariable ["ace_trenches_placeData", [_pos, _vecDirAndUp], true];
 _trench setVariable ["ace_trenches_progress", 0, true];
+
+[QGVAR(addTrenchToDecay), [_trench, GVAR(timeoutToDecay), GVAR(decayTime)]] call CBA_fnc_serverEvent;
 
 [_trench, _unit, false] call FUNC(continueDiggingTrench);
