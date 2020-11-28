@@ -2,6 +2,7 @@ PREP(addDigger);
 PREP(applyCamouflageAttribute);
 PREP(canHelpDiggingTrench);
 PREP(canContinueDiggingTrench);
+PREP(canDig);
 PREP(canDigTrench);
 PREP(canPlaceCamouflage);
 PREP(canRemoveCamouflage);

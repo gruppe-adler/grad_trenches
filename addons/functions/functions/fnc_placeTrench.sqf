@@ -36,7 +36,10 @@ ace_trenches_trench = _trench;
 GVAR(digDirection) = 0;
 GVAR(currentSurface) = "";
 
+_trench setPos (getPos _unit vectorAdd [0,2,0]);
+
 // pfh that runs while the dig is in progress
+
 ace_trenches_digPFH = [{
     (_this select 0) params ["_unit", "_trench"];
 

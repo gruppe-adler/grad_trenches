@@ -20,20 +20,21 @@ params ["_unit", ["_trench", ""]];
 
 if !("ACE_EntrenchingTool" in (_unit call ace_common_fnc_uniqueItems)) exitWith {false};
 
-private _return = true;
+private _return = _unit call FUNC(canDig);
 
-{
-	if !(_x isEqualTo "") then {
-		_return = _x call ace_common_fnc_canDig;
+if (_return isEqualType 0) then {
+	_return = _return > 0;
+};
 
-		systemChat str _return;
+if !(_return) exitWith {false};
+if ((getPosATL _unit) select 2 > 0.05) exitWith {false};
 
-		if (_return isEqualType 0) then {
-			_return = _return > 0;
-		};
+if !(_trench isEqualTo "") then {
+	_return = _trench call FUNC(canDig);
 
-		if !(_return) exitWith {};
+	if (_return isEqualType 0) then {
+		_return = _return > 0;
 	};
-}forEach [_unit, _trench];
+};
 
 _return
