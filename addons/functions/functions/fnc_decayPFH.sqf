@@ -19,17 +19,22 @@
 
 params ["_trench", ["_timeoutToDecay", 7200], ["_decayTime", 1800]];
 
-if !(isServer) exitWith {};
-if (isNull _trench) exitWith {};
+if (
+	!isServer ||
+	{isNull _trench} ||
+	{!GVAR(allowTrenchDecay)}
+) exitWith {};
 
 if (isNil QGVAR(decayArray)) then {
-	GVAR(decayArray) = [[_trench, _timeoutToDecay, _decayTime]];
+	GVAR(decayArray) = [[_trench, _timeoutToDecay, _decayTime, _decayTime]];
 } else {
-	GVAR(decayArray) pushBack [_trench, _timeoutToDecay, _decayTime];
+	GVAR(decayArray) pushBack [_trench, _timeoutToDecay, _decayTime, _decayTime];
 };
 
 if (isNil QGVAR(decayPFH)) then {
 	GVAR(decayPFH) = [{
+
+		systemChat str GVAR(decayArray);
 
 		if (GVAR(decayArray) isEqualTo []) exitWith {
 			[GVAR(decayPFH)] call CBA_fnc_removePerframeHandler;
@@ -39,45 +44,53 @@ if (isNil QGVAR(decayPFH)) then {
 		private _newArray = [];
 
 		{
-			_x params ["_trench", "_timeoutToDecay", "_decayTime"];
+			_x params ["_trench", "_timeoutToDecay", "_decayTime", "_decayTimeMax"];
 
-			if !(isNull "_trench") then {
-				if (_timeoutToDecay <= 10) then {
-					_timeoutToDecay = 0;
-					if (_decayTime <= 10) then {
-						_decayTime = 0;
-					} else {
-						_decayTime = _decayTime - 10;
+			if (count (_trench getVariable [QGVAR(diggers),[]]) >= 1) then {
+				_newArray pushBack [_trench, _timeoutToDecay, _decayTime, _decayTimeMax];
+			}else {
+				if !(isNull _trench) then {
+					if (_timeoutToDecay <= 10) then {
+						_timeoutToDecay = 0;
+						if (_decayTime <= 10) then {
+							_decayTime = 0;
+						} else {
+							_decayTime = _decayTime - 10;
+						};
 
-						private _progress = _trench getVariable ["ace_trenches_progress", 0];
-						private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >>"ace_trenches_diggingDuration"), 20];
-						
-						_progress = _progress - (100/_digTime) * 100;
+						private _progress = _trench getVariable ["ace_trenches_progress", 0];	
+
+						systemChat format ["%1 - ( 1 / %2 ) * %3 = %4", _progress, _decayTimeMax, _decayTime, (_progress - (1/_decayTimeMax) * _decayTime)];					
+						_progress = _progress - (1/_decayTimeMax) * _decayTime;
+
 						if (_progress <= 0) then {
 							deleteVehicle _trench;
 						} else {
 							_trench setVariable ["ace_trenches_progress", _progress];
 
-							private _removeTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >>"ace_trenches_diggingDuration"), 20];
 							private _placeData = _trench getVariable ["ace_trenches_placeData", [[], []]];
 							_placeData params ["", "_vecDirAndUp"];
 
 							private _pos = (getPosWorld _trench);
-							private _posDiff = (_trench getVariable [QGVAR(diggingSteps), (([configFile >> "CfgVehicles" >> typeOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry)/(_removeTime*10))]) * 1;
-						
+							private _offset = [configFile >> "CfgVehicles" >> typeOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry;
+							private _posDiff = _offset/(_decayTimeMax/10);
+
+							systemChat format ["%1, %2 / %3 = %4", _pos select 2, _offset, (_decayTimeMax/10), _posDiff];
+							
 							_pos set [2, ((_pos select 2) - _posDiff)];
 							_trench setPosWorld _pos;
 							_trench setVectorDirAndUp _vecDirAndUp;
 
-							_newArray pushBack [_trench, _timeoutToDecay, _decayTime];
+							_newArray pushBack [_trench, _timeoutToDecay, _decayTime, _decayTimeMax];
 						};
+					} else {
+						_timeoutToDecay = _timeoutToDecay - 10;
+						_newArray pushBack [_trench, _timeoutToDecay, _decayTime, _decayTimeMax];
 					};
-				} else {
-					_timeoutToDecay = _timeoutToDecay - 10;
 				};
 			};
 		}forEach GVAR(decayArray);
 
 		GVAR(decayArray) = _newArray;
-	}, [], 10] call CBA_fnc_addPerFrameHandler;
+	}, 10, []] call CBA_fnc_addPerFrameHandler;
 };

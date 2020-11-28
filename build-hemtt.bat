@@ -25,4 +25,5 @@ if %BUILD_STATUS% neq 0 (
   exit /b %errorlevel%
 ) else (
   echo Build successful
+  EXIT
 )

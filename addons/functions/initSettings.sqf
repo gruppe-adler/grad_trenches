@@ -22,4 +22,4 @@
 //Trench decay settings
 [QGVAR(allowTrenchDecay), "CHECKBOX", [localize LSTRING(allowTrenchDecay_displayName), localize LSTRING(allowTrenchDecay_tooltip)], [localize LSTRING(settingCategory), localize LSTRING(decaySubCategory)], false, true] call CBA_fnc_addSetting;
 [QGVAR(timeoutToDecay), "SLIDER", [localize LSTRING(timeoutToDecay_displayName), localize LSTRING(timeoutToDecay_tooltip)], [localize LSTRING(settingCategory), localize LSTRING(decaySubCategory)], [60, 18000, 7200, 0], true] call CBA_fnc_addSetting;
-[QGVAR(decayTime), "SLIDER", [localize LSTRING(decayTime_displayName), localize LSTRING(decayTime_tooltip)], [localize LSTRING(settingCategory), localize LSTRING(decaySubCategory)], [10, 3600, 1800, 0], true] call CBA_fnc_addSetting;
+[QGVAR(decayTime), "SLIDER", [localize LSTRING(decayTime_displayName), localize LSTRING(decayTime_tooltip)], [localize LSTRING(settingCategory), localize LSTRING(decaySubCategory)], [30, 3600, 1800, 0], true] call CBA_fnc_addSetting;
