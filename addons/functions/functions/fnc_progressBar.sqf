@@ -21,7 +21,7 @@
 
 params ["_args", "_onFinish", "_onFail", ["_localizedTitle", ""], ["_condition", {true}], ["_exceptions", []]];
 
-private _player = ACE_player;
+private _player = [] call CBA_fnc_currentUnit;
 
 //Open Dialog and set the title
 closeDialog 0;
@@ -51,7 +51,7 @@ _ctrlPos set [1, ((0 + 29 * ace_common_settingProgressBarLocation) * ((((safezon
     if (isNull (uiNamespace getVariable ["ace_common_ctrlProgressBar", controlNull])) then {
         _errorCode = 1;
     } else {
-        if (ACE_player != _player || !alive _player) then {
+        if (([] call CBA_fnc_currentUnit) != _player || !alive _player) then {
             _errorCode = 2;
         } else {
             if !([_args, _errorCode] call _condition) then {

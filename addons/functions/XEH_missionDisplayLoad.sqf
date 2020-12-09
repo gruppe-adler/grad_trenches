@@ -3,4 +3,4 @@
 
 params ["_display"];
 
-_display displayAddEventHandler ["MouseButtonDown", {[ACE_player, _this select 1] call FUNC(placeCancel)}];
+_display displayAddEventHandler ["MouseButtonDown", {[[] call CBA_fnc_currentUnit, _this select 1] call FUNC(placeCancel)}];

@@ -54,7 +54,7 @@ if ((_trench getVariable [QGVAR(diggingType), nil]) isEqualTo "Down") then {
             [_handle] call CBA_fnc_removePerFrameHandler;
         };
 
-        if (_unit getVariable [QGVAR(diggingTrench), false] && {((_trench getVariable [QGVAR(diggers),[]]) select 0) isEqualTo ace_player}) then {
+        if (_unit getVariable [QGVAR(diggingTrench), false] && {((_trench getVariable [QGVAR(diggers),[]]) select 0) isEqualTo ([] call CBA_fnc_currentUnit)}) then {
             [_handle] call CBA_fnc_removePerFrameHandler;
             [_trench, _unit, true] call FUNC(continueDiggingTrench);
         };

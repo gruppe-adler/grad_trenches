@@ -144,3 +144,4 @@ if (_actualProgress == 0) then {
 
 // Play animation
 [_unit] call FUNC(loopanimation);
+[QGVAR(resetDecay), [_trench]] call CBA_fnc_serverEvent;

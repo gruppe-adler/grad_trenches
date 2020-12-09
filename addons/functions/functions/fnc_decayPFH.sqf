@@ -23,7 +23,7 @@ if (
 	!isServer ||
 	{isNull _trench} ||
 	{!GVAR(allowTrenchDecay)}
-) exitWith {};
+) exitWith {systemChat "exit";};
 
 if (isNil QGVAR(decayArray)) then {
 	GVAR(decayArray) = [[_trench, _timeoutToDecay, _decayTime, _decayTime]];
@@ -48,7 +48,7 @@ if (isNil QGVAR(decayPFH)) then {
 
 			if (count (_trench getVariable [QGVAR(diggers),[]]) >= 1) then {
 				_newArray pushBack [_trench, _timeoutToDecay, _decayTime, _decayTimeMax];
-			}else {
+			} else {
 				if !(isNull _trench) then {
 					if (_timeoutToDecay <= 10) then {
 						_timeoutToDecay = 0;
@@ -60,8 +60,8 @@ if (isNil QGVAR(decayPFH)) then {
 
 						private _progress = _trench getVariable ["ace_trenches_progress", 0];	
 
-						systemChat format ["%1 - ( 1 / %2 ) * %3 = %4", _progress, _decayTimeMax, _decayTime, (_progress - (1/_decayTimeMax) * _decayTime)];					
-						_progress = _progress - (1/_decayTimeMax) * _decayTime;
+						systemChat format ["%1 | %2 | %3 = %4 = %5", _progress, _decayTimeMax, _decayTime, (((_decayTimeMax - (_decayTimeMax - _decayTime)) / 10) * _decayTime), (_progress - (1 / ((_decayTimeMax - (_decayTimeMax - _decayTime))) / 10) * _decayTime)];					
+						_progress = _progress - (1 / (((_decayTimeMax - (_decayTimeMax - _decayTime))) / 10)) * _decayTime;
 
 						if (_progress <= 0) then {
 							deleteVehicle _trench;
@@ -73,7 +73,7 @@ if (isNil QGVAR(decayPFH)) then {
 
 							private _pos = (getPosWorld _trench);
 							private _offset = [configFile >> "CfgVehicles" >> typeOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry;
-							private _posDiff = _offset/(_decayTimeMax/10);
+							private _posDiff = _offset / (_decayTimeMax / 10);
 
 							systemChat format ["%1, %2 / %3 = %4", _pos select 2, _offset, (_decayTimeMax/10), _posDiff];
 							
