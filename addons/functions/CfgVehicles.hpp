@@ -112,6 +112,7 @@ class CfgVehicles {
         editorSubcategory = "EdSubcat_Military";
         GVAR(isTrench) = 1;
         ace_trenches_diggingDuration = QGVAR(smallEnvelopeDigTime);
+        ace_trenches_removalDuration = QGVAR(smallEnvelopeRemovalTime);
         scopecurator = 2;
         scope = 2;
 
@@ -125,6 +126,7 @@ class CfgVehicles {
         displayName = CSTRING(EnvelopeBigName);
         descriptionShort = CSTRING(EnvelopeBigDescription);
         ace_trenches_diggingDuration = QGVAR(bigEnvelopeDigTime);
+        ace_trenches_removalDuration = QGVAR(bigEnvelopeRemovalTime);
         GVAR(offset) = 1.5;
 
         class CamouflagePositions1 {
@@ -146,7 +148,7 @@ class CfgVehicles {
         displayName = CSTRING(EnvelopeGiantName);
         descriptionShort = CSTRING(EnvelopeGiantDescription);
         ace_trenches_diggingDuration = QGVAR(giantEnvelopeDigTime);
-        ace_trenches_removalDuration = 30;
+        ace_trenches_removalDuration = QGVAR(giantEnvelopeRemovalTime);
         GVAR(offset) = 1.8;
         ace_trenches_placementData[] = {8,1.1,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
@@ -170,7 +172,7 @@ class CfgVehicles {
         displayName = CSTRING(EnvelopeVehicleName);
         descriptionShort = CSTRING(EnvelopeVehicleDescription);
         ace_trenches_diggingDuration = QGVAR(vehicleEnvelopeDigTime);
-        ace_trenches_removalDuration = 60;
+        ace_trenches_removalDuration = QGVAR(vehicleEnvelopeRemovalTime);
         GVAR(offset) = 1.95;
         ace_trenches_placementData[] = {10,1.1,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
@@ -193,7 +195,7 @@ class CfgVehicles {
         displayName = CSTRING(EnvelopeShortName);
         descriptionShort = CSTRING(EnvelopeShortDescription);
         ace_trenches_diggingDuration = QGVAR(shortEnvelopeDigTime);
-        ace_trenches_removalDuration = 10;
+        ace_trenches_removalDuration = QGVAR(shortEnvelopeRemovalTime);
         GVAR(offset) = 1.2;
         ace_trenches_placementData[] = {10,1.1,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
@@ -213,7 +215,7 @@ class CfgVehicles {
         displayName = CSTRING(EnvelopeLongName);
         descriptionShort = CSTRING(EnvelopeLongDescription);
         ace_trenches_diggingDuration = QGVAR(longEnvelopeDigTime);
-        ace_trenches_removalDuration = 10;
+        ace_trenches_removalDuration = QGVAR(longEnvelopeRemovalTime);
         GVAR(offset) = 1.63;
         ace_trenches_placementData[] = {10,2,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
