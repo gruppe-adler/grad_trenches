@@ -283,33 +283,33 @@
             <Chinesesimp>挖掘长掩体的时间(秒)</Chinesesimp>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_ShortEnvelopeRemovalTime">
-            <English>Removal time (in seconds) for short envelope trenches</English>
-            <German>Zeit (in Sekunden) um kurze Grabene Gräben zu entfernen</German>
+            <English>Removal time (in seconds) for short envelope trenches. -1 takes the dig time</English>
+            <German>Zeit (in Sekunden) um kurze Grabene Gräben zu entfernen. -1 nimmt die Grabezeit</German>
             <French>Temps de suppression (en secondes) pour les tranchées individuelles</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_SmallEnvelopeRemovalTime">
-            <English>Removal time (in seconds) for small envelope trenches</English>
-            <German>Zeit (in Sekunden) um kleine Grabene Gräben zu entfernen</German>
+            <English>Removal time (in seconds) for small envelope trenches. -1 takes the dig time</English>
+            <German>Zeit (in Sekunden) um kleine Grabene Gräben zu entfernen. -1 nimmt die Grabezeit</German>
             <French>Temps de suppression (en secondes) pour les petites tranchées</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_BigEnvelopeRemovalTime">
-            <English>Removal time (in seconds) for big envelope trenches</English>
-            <German>Zeit (in Sekunden) um große Grabene Gräben zu entfernen</German>
+            <English>Removal time (in seconds) for big envelope trenches. -1 takes the dig time</English>
+            <German>Zeit (in Sekunden) um große Grabene Gräben zu entfernen. -1 nimmt die Grabezeit</German>
             <French>Temps de suppression (en secondes) pour les petites tranchées (meurtrières)</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_GiantEnvelopeRemovalTime">
-            <English>Removal time (in seconds) for giant envelope trenches</English>
-            <German>Zeit (in Sekunden) um riesige Grabene Gräben zu entfernen</German>
+            <English>Removal time (in seconds) for giant envelope trenches. -1 takes the dig time</English>
+            <German>Zeit (in Sekunden) um riesige Grabene Gräben zu entfernen. -1 nimmt die Grabezeit</German>
             <French>Temps de suppression (en secondes) pour les grandes tranchées (meurtrières)</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_VehicleEnvelopeRemovalTime">
-            <English>Removal time (in seconds) for vehicle envelope trenches</English>
-            <German>Zeit (in Sekunden) um Grabene Fahrzeuggräben zu entfernen</German>
+            <English>Removal time (in seconds) for vehicle envelope trenches. -1 takes the dig time</English>
+            <German>Zeit (in Sekunden) um Grabene Fahrzeuggräben zu entfernen. -1 nimmt die Grabezeit</German>
             <French>Temps de suppression (en secondes) pour les tranchées pour véhicule</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_LongEnvelopeRemovalTime">
-            <English>Removal time (in seconds) for Long envelope trenches</English>
-            <German>Zeit (in Sekunden) um Grabene Waffen Stellungs Gräben zu entfernen</German>
+            <English>Removal time (in seconds) for Long envelope trenches. -1 takes the dig time</English>
+            <German>Zeit (in Sekunden) um Grabene Waffen Stellungs Gräben zu entfernen. -1 nimmt die Grabezeit</German>
             <French>Temps de suppression (en secondes) pour les grandes tranchées</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_HelpDigging">

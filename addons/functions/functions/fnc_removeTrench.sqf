@@ -35,6 +35,10 @@ if (_diggerCount > 0 && {!(_switchingDigger)}) exitWith {
 };
 
 private _removeTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >>"ace_trenches_removalDuration"), 20];
+if (_removeTime isEqualTo -1) then {
+    _removeTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >>"ace_trenches_diggingDuration"), 20];
+};
+
 private _placeData = _trench getVariable ["ace_trenches_placeData", [[], []]];
 _placeData params ["", "_vecDirAndUp"];
 
