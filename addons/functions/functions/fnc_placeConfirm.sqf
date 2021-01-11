@@ -39,7 +39,7 @@ private _pos = ace_trenches_trench modelToWorldWorld [0,0,0];
 private _vecDirAndUp = [(vectorDir ace_trenches_trench), (vectorUp ace_trenches_trench)];
 deleteVehicle ace_trenches_trench;
 
-private _trench = createVehicle [_trenchClass, _pos, [], 0, "CAN_COLLIDE"];
+private _trench = createVehicle [_trenchClass, [0,0,0], [], 0, "CAN_COLLIDE"];
 private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> _trenchClass >>"ace_trenches_diggingDuration"), 20];
 
 _trench setObjectTextureGlobal [0, surfaceTexture (getPos _trench)];
