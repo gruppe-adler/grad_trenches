@@ -43,7 +43,6 @@ private _trench = createVehicle [_trenchClass, [0,0,0], [], 0, "CAN_COLLIDE"];
 private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> _trenchClass >>"ace_trenches_diggingDuration"), 20];
 
 _trench setObjectTextureGlobal [0, surfaceTexture (getPos _trench)];
-_trench setPosWorld _pos;
 _trench setVariable [QGVAR(endPos), _pos, true];
 
 private _posDiff = [configFile >> "CfgVehicles" >> _trenchClass >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry;
