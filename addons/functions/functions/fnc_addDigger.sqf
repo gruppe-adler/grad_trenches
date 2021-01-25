@@ -58,8 +58,12 @@ if ((_trench getVariable [QGVAR(diggingType), nil]) isEqualTo "Down") then {
             [_handle] call CBA_fnc_removePerFrameHandler;
             [_trench, _unit, true] call FUNC(continueDiggingTrench);
         };
+        
+        //Fatigue impact
+        ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (2 * GVAR(buildFatigueFactor))) max 0;
+        ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + ((2 * GVAR(buildFatigueFactor))/2000)) min 0.8;
     }, 
-    0.5, 
+    0.1, 
     [_unit, _trench, _condition]
 ] call CBA_fnc_addPerFrameHandler;
 
