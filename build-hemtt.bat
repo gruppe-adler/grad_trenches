@@ -12,7 +12,7 @@ if exist x\grad_trenches\addons (
 )
 mklink /j x\grad_trenches\addons addons
 
-hemtt build --force --release
+tools\hemtt build --force --release
 set BUILD_STATUS=%errorlevel%
 
 rmdir a3
