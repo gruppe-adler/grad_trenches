@@ -27,7 +27,7 @@ TRACE_1("",ace_trenches_trenchPlacementData);
 [_unit, "blockThrow", "ACE_Trenches", true] call ace_common_fnc_statusEffect_set;
 
 // create the trench
-private _trench = createSimpleObject [_trenchClass, [0, 0, 0]];
+private _trench = createSimpleObject [_trenchClass, [0, 0, 0], true];
 ace_trenches_trench = _trench;
 
 // prevent collisions with trench
