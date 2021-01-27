@@ -49,7 +49,7 @@ private _trench = createVehicle [_trenchClass, [0,0,0], [], 0, "CAN_COLLIDE"];
 private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> _trenchClass >>"ace_trenches_diggingDuration"), 20];
 
 _trench setPosWorld _newPos;
-_trench setObjectTextureGlobal [0, surfaceTexture (getPos _trench)];
+_trench setObjectTextureGlobal [0, surfaceTexture _pos];
 
 _trench setVariable [QGVAR(endPos), _pos, true];
 _trench setVariable [QGVAR(diggingSteps), (_posDiff/(_digTime*10)), true];
