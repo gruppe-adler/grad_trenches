@@ -19,7 +19,6 @@
 params ["_trench", "_unit"];
 
 private _diggersCount = count (_trench getVariable [QGVAR(diggers), []]);
-
 if (_diggersCount < 1) exitWith {
     [_trench, _unit, true] call FUNC(continueDiggingTrench);
 };
@@ -27,7 +26,6 @@ if (_diggersCount < 1) exitWith {
 [QGVAR(addDigger), [_trench, _unit, false]] call CBA_fnc_serverEvent;
 
 private _type = true;
-
 private _condition = {
     params ["_trench"];
 
@@ -35,13 +33,12 @@ private _condition = {
 };
 
 _unit setVariable [QGVAR(diggingTrench), true, true];
-
 if ((_trench getVariable [QGVAR(diggingType), nil]) isEqualTo "Down") then {
     _type = false;
     _condition = {
         params ["_trench"];
 
-        (_trench getVariable ["ace_trenches_progress", 0]) <= 0
+        (_trench getVariable ["ace_trenches_progress", 1]) <= 0
     };
 };
 
@@ -50,7 +47,10 @@ if ((_trench getVariable [QGVAR(diggingType), nil]) isEqualTo "Down") then {
         params ["_args", "_handle"];
         _args params ["_unit", "_trench", "_condition"];
 
-        if ([_trench] call _condition) then {
+        if (
+            isNull _trench ||
+            [_trench] call _condition
+        ) then {
             [_handle] call CBA_fnc_removePerFrameHandler;
         };
 
