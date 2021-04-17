@@ -38,7 +38,6 @@ if (isNull ace_trenches_trench) exitWith {};
 private _trenchClass = typeOf ace_trenches_trench;
 private _posDiff = [configFile >> "CfgVehicles" >> _trenchClass >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry;
 private _pos = ace_trenches_trench modelToWorldWorld [0,0,0];
-private _newPos = ace_trenches_trench modelToWorldWorld [0,0, -( _posDiff)];
 private _vecDirAndUp = [(vectorDir ace_trenches_trench), (vectorUp ace_trenches_trench)];
 
 //Delete prieview trench
@@ -48,10 +47,10 @@ deleteVehicle ace_trenches_trench;
 private _trench = createVehicle [_trenchClass, [0,0,0], [], 0, "CAN_COLLIDE"];
 private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> _trenchClass >>"ace_trenches_diggingDuration"), 20];
 
-_trench setPosWorld _newPos;
+_trench animateSource ["rise", _posDiff, true];
 _trench setObjectTextureGlobal [0, surfaceTexture _pos];
 
-_trench setVariable [QGVAR(endPos), _pos, true];
+_trench setVariable [QGVAR(endPos), -_posDiff, true];
 _trench setVariable [QGVAR(diggingSteps), (_posDiff/(_digTime*10)), true];
 _trench setVectorDirAndUp _vecDirAndUp;
 

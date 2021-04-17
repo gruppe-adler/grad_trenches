@@ -40,7 +40,7 @@ class Extended_Deleted_EventHandlers {
     class GRAD_envelope_vehicle {
         CAMOUFLAGE_DELETE;
     };
-    class GRAD_envelope_gunEmplacment {
+    class GRAD_envelope_long {
         CAMOUFLAGE_DELETE;
     };
 };
@@ -61,7 +61,7 @@ class Extended_Init_EventHandlers {
     class GRAD_envelope_vehicle {
         TRENCH_INIT;
     };
-    class GRAD_envelope_gunEmplacment {
+    class GRAD_envelope_long {
         TRENCH_INIT;
     };
 };

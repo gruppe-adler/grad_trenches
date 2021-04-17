@@ -30,7 +30,7 @@
             <Chinesesimp>正在移除伪装网...</Chinesesimp>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeGiantName">
-            <English>Envelope - Giant</English>
+            <English>Trench - Giant</English>
             <German>Graben - Sehr groß</German>
             <Russian>Окоп - Большой</Russian>
             <French>Tranchée - Grande (meurtrières)</French>
@@ -65,7 +65,7 @@
             <Chinesesimp>为该掩体布置伪装网</Chinesesimp>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeVehicleName">
-            <English>Envelope - Vehicle</English>
+            <English>Trench - Vehicle</English>
             <German>Graben - Fahrzeug</German>
             <Russian>Окоп - Для техники</Russian>
             <French>Tranchée - Véhicule</French>
@@ -86,7 +86,7 @@
             <Chinesesimp>挖载具掩体</Chinesesimp>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeShortName">
-            <English>Envelope - Short</English>
+            <English>Trench - Short</English>
             <German>Graben - Kurz</German>
             <Russian>Окоп - Короткий</Russian>
             <French>Tranchée - Petite</French>
@@ -334,7 +334,7 @@
             <Chinesesimp>启用后, 如果疲劳度达到0, 将停止挖掘。</Chinesesimp>
         </Key>
          <Key ID="STR_GRAD_Trenches_functions_EnvelopeLongName">
-            <English>Envelope - Long</English>
+            <English>Trench - Long</English>
             <German>Graben - Lang</German>
             <Russian>Окоп - Длинный</Russian>
             <French>Tranchée - Grande</French>
@@ -400,7 +400,7 @@
             <Turkish>Kürek</Turkish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeSmallName">
-            <English>Envelope - Small</English>
+            <English>Trench - Small</English>
             <German>Graben - Klein</German>
             <Polish>Wnęka - mała</Polish>
             <Italian>Fascia - Piccola</Italian>
@@ -448,7 +448,7 @@
             <Turkish>Küçük Siper</Turkish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeBigName">
-            <English>Envelope - Big</English>
+            <English>Trench - Big</English>
             <German>Graben - Groß</German>
             <Polish>Wnęka - duża</Polish>
             <Italian>Fascia - Grande</Italian>

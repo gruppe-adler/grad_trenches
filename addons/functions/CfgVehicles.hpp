@@ -106,7 +106,7 @@ class CfgVehicles {
         author = QAUTHOR;
         displayName = CSTRING(EnvelopeSmallName);
         descriptionShort = CSTRING(EnvelopeSmallDescription);
-        GVAR(offset) = 0.58;
+        GVAR(offset) = 0.585;
         ace_trenches_placementData[] = {8,1.1,0};
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";
@@ -127,7 +127,7 @@ class CfgVehicles {
         descriptionShort = CSTRING(EnvelopeBigDescription);
         ace_trenches_diggingDuration = QGVAR(bigEnvelopeDigTime);
         ace_trenches_removalDuration = QGVAR(bigEnvelopeRemovalTime);
-        GVAR(offset) = 1.5;
+        GVAR(offset) = 1.53;
 
         class CamouflagePositions1 {
             a[] = {0, 0.9, 3.4};
@@ -149,7 +149,7 @@ class CfgVehicles {
         descriptionShort = CSTRING(EnvelopeGiantDescription);
         ace_trenches_diggingDuration = QGVAR(giantEnvelopeDigTime);
         ace_trenches_removalDuration = QGVAR(giantEnvelopeRemovalTime);
-        GVAR(offset) = 1.8;
+        GVAR(offset) = 1.82;
         ace_trenches_placementData[] = {8,1.1,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
 
@@ -173,7 +173,7 @@ class CfgVehicles {
         descriptionShort = CSTRING(EnvelopeVehicleDescription);
         ace_trenches_diggingDuration = QGVAR(vehicleEnvelopeDigTime);
         ace_trenches_removalDuration = QGVAR(vehicleEnvelopeRemovalTime);
-        GVAR(offset) = 1.95;
+        GVAR(offset) = 2;
         ace_trenches_placementData[] = {10,1.1,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
 
@@ -216,7 +216,7 @@ class CfgVehicles {
         descriptionShort = CSTRING(EnvelopeLongDescription);
         ace_trenches_diggingDuration = QGVAR(longEnvelopeDigTime);
         ace_trenches_removalDuration = QGVAR(longEnvelopeRemovalTime);
-        GVAR(offset) = 1.63;
+        GVAR(offset) = 1.72;
         ace_trenches_placementData[] = {10,2,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
 

@@ -66,7 +66,7 @@ for FILEWITHINCLUDE in ${FILESWITHINCLUDES}; do
     sed -i '/#include/s/\/[Aa]3\(.*\)/'$(escapeSlashesForSed ${a3dir})'\L\1/' "$FILEWITHINCLUDE" #lower-case the a3-include
     sed -i '/#include/s/\/x\/cba/'$(escapeSlashesForSed ${cbadir})'/' "$FILEWITHINCLUDE"
     sed -i '/#include/s/\/x\/grad\///' "$FILEWITHINCLUDE" #special case for gruppe_adler_mod
-    sed -i '/#include/s/\/x\/grad_trenches\///' "$FILEWITHINCLUDE" #special case for grad_trenches
+    sed -i '/#include/s/\/x\/rnt\///' "$FILEWITHINCLUDE" #special case for rnt
     sed -i '/#include/s/\/z\/ace/'$(escapeSlashesForSed ${acedir})'/' "$FILEWITHINCLUDE"
 done
 

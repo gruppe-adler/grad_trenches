@@ -1,4 +1,5 @@
 @echo off
+set BIOUTPUT=1
 
 if exist a3 (
   rmdir a3

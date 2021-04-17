@@ -68,6 +68,7 @@ ace_trenches_digPFH = [{
     private _minzoffset = 0;
     private _ix = 0;
     private _iy = 0;
+    
     for [{_ix = -_dx/2},{_ix <= _dx/2},{_ix = _ix + _dx/3}] do {
         for [{_iy = -_dy/2},{_iy <= _dy/2},{_iy = _iy + _dy/3}] do {
             private _pos = _basePos vectorAdd (_v2 vectorMultiply _ix)
@@ -81,6 +82,7 @@ ace_trenches_digPFH = [{
             #endif
         };
     };
+
     _basePos set [2, (_basePos select 2) + _minzoffset + _offset];
     TRACE_2("", _minzoffset, _offset);
     _trench setPosASL _basePos;
