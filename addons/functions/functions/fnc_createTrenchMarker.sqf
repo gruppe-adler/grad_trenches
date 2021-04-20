@@ -13,7 +13,7 @@
  * Example:
  * _trench call grad_trenches_functions_fnc_createTrenchMarker
  *
- * Public: No
+ * Public: Yes
  */
 
 params ["_trench", "_friendlySide"];
