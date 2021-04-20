@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * _trench call grad_trenches_functions_fnc_createTrenchMarker
+ * [_trench, side player] call grad_trenches_functions_fnc_createTrenchMarker
  *
  * Public: Yes
  */
