@@ -22,7 +22,7 @@ params ["_trench"]
     {
         params ["_trench"];
         if ([side group player, _trench getVariable QGVAR(trenchSide)] call BIS_fnc_sideIsEnemy) then {
-            (_trench getVariable [QGVAR(trenchMapMarker), ""]) setMarkerAlpha 0;
+            (_trench getVariable [QGVAR(trenchMapMarker), ""]) setMarkerAlphaLocal 0;
         };
     },
     _trench
