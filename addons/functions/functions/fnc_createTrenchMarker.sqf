@@ -36,8 +36,8 @@ _marker setMarkerBrushLocal "SolidFull";
 _marker setMarkerSizeLocal [(_maxWidth / 2),(_maxLength / 2)];
 _marker setMarkerDirLocal _direction;
 _marker setMarkerColor "Color6_FD_F";
-// JIP compatible hide marker for enemies
-_trench remoteExec [QGVAR(setMarkerVisible), 0, _trench];
-
 _trench setVariable [QGVAR(trenchMapMarker), _marker, true];
 _trench setVariable [QGVAR(trenchSide), _friendlySide, true];
+
+// JIP compatible hide marker for enemies
+_trench remoteExec [QGVAR(setMarkerVisible), 0, _trench];
