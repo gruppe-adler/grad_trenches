@@ -27,7 +27,7 @@ private _maxLength = abs ((_p2 select 1) - (_p1 select 1));
 private _direction = getDir _trench;
 
 // Marker name unique to this trench object
-private _markerNameStr = format ["grad_trenches_marker_{0}", _trench];
+private _markerNameStr = format ["grad_trenches_marker_%1", _trench];
 
 // Create marker, but only for side of trench placer
 private _marker = createMarker [_markerNameStr, _trench];
