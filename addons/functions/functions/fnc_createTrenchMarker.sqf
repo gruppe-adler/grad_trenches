@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 /*
  * Author: Seb
- * Creates a map marker for a created trench but only for the creators side.
+ * Creates a map marker for a created trench but only for sides friendly to the creator side
  *
  * Arguments:
  * 0: Trench <OBJECT>
