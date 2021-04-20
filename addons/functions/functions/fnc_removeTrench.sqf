@@ -110,11 +110,10 @@ private _fnc_condition = {
         [_handle] call CBA_fnc_removePerFrameHandler;
     };
 
-    private _pos = (getPosWorld _trench);
-    private _posDiff = (_trench getVariable [QGVAR(diggingSteps), (([configFile >> "CfgVehicles" >> typeOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry)/(_removeTime*10))]) * _diggerCount;
+    private _animationPhase = _trench animationSourcePhase "rise";
+    private _diff = (_trench getVariable [QGVAR(diggingSteps), (([configFile >> "CfgVehicles" >> typeOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry)/(_removeTime*10))]) * _diggerCount;
  
-    _pos set [2, ((_pos select 2) - _posDiff)];
-    _trench setPosWorld _pos;
+    _trench animateSource ["rise", _animationPhase - _diff, true];
     _trench setVectorDirAndUp _vecDirAndUp;
 
     _trench setVariable ["ace_trenches_progress", _actualProgress - ((1/_removeTime)/10) * _diggerCount, true];

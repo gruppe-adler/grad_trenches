@@ -47,7 +47,6 @@ deleteVehicle ace_trenches_trench;
 private _trench = createVehicle [_trenchClass, [0,0,0], [], 0, "CAN_COLLIDE"];
 private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> _trenchClass >>"ace_trenches_diggingDuration"), 20];
 
-_trench animateSource ["rise", _posDiff, true];
 _trench setObjectTextureGlobal [0, surfaceTexture _pos];
 
 _trench setVariable [QGVAR(endPos), -_posDiff, true];
