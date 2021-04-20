@@ -29,9 +29,6 @@ private _direction = getDir _trench;
 // Marker name unique to this trench object
 private _markerNameStr = format ["grad_trenches_marker_{0}", _trench];
 
-// Sides enemy to placer
-private _enemySides = [east, west, independent, civilian] select {[_x, _friendlySide] call BIS_fnc_sideIsEnemy};
-
 // Create marker, but only for side of trench placer
 private _marker = createMarker [_markerNameStr, _trench];
 _marker setMarkerShapeLocal "RECTANGLE";
@@ -40,6 +37,7 @@ _marker setMarkerSizeLocal [(_maxWidth / 2),(_maxLength / 2)];
 _marker setMarkerDirLocal _direction;
 _marker setMarkerColor "Color6_FD_F";
 // JIP compatible hide marker for enemies
-[_marker, 0] remoteExec ["setMarkerAlphaLocal", _enemySides, _trench];
+_trench remoteExec [QGVAR(setMarkerVisible), _friendlySide, _trench];
 
 _trench setVariable [QGVAR(trenchMapMarker), _marker, true];
+_trench setVariable [QGVAR(trenchSide), _friendlySide, true];
