@@ -56,7 +56,9 @@ private _fnc_onFinish = {
     _trench setVariable [QGVAR(diggingType), nil, true];
     _unit setVariable [QGVAR(diggingTrench), false, true];
     [QGVAR(addDigger), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
-
+    
+    // Remove map marker
+    deleteMarker (_trench getVariable [QGVAR(trenchMapMarker), ""]);
     
     // Remove trench
     deleteVehicle _trench;
