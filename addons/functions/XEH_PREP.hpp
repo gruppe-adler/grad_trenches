@@ -7,6 +7,7 @@ PREP(canDigTrench);
 PREP(canPlaceCamouflage);
 PREP(canRemoveCamouflage);
 PREP(continueDiggingTrench);
+PREP(createTrenchMarker);
 PREP(decayPFH);
 PREP(deleteCamouflage);
 PREP(handleDiggerToGVAR);
