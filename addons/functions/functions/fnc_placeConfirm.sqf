@@ -52,6 +52,7 @@ _trench setObjectTextureGlobal [0, surfaceTexture _pos];
 _trench setVariable [QGVAR(endPos), -_posDiff, true];
 _trench setVariable [QGVAR(diggingSteps), (_posDiff/(_digTime*10)), true];
 _trench setVectorDirAndUp _vecDirAndUp;
+if (GVAR(createTrenchMarker)) then {[_trench, side group _unit] call FUNC(createTrenchMarker)};
 
 _trench setVariable ["ace_trenches_placeData", [_pos, _vecDirAndUp], true];
 _trench setVariable ["ace_trenches_progress", 0, true];

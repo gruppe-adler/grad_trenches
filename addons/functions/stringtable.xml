@@ -240,6 +240,12 @@
             <French>Le facteur de fatigue lors de la construction de tranchées (si 0, fatigue désactivée)</French>
             <Chinesesimp>建造掩体时的疲劳系数(0表示不考虑疲劳)</Chinesesimp>
         </Key>
+        <Key ID="STR_GRAD_Trenches_functions_createTrenchMarker_displayName">
+            <English>Create trench map markers</English>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_createTrenchMarker_tooltip">
+            <English>Create map markers for player-dug trenches, but only for the digger's side or any friendly side.</English>
+        </Key>
         <Key ID="STR_GRAD_Trenches_functions_ShortEnvelopeDigTime">
             <English>Dig time (in seconds) for short envelope trenches</English>
             <German>Zeit (in Sekunden) um kurze Grabene Gräben zu graben</German>
