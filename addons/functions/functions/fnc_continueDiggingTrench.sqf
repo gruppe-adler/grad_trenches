@@ -105,9 +105,6 @@ if (_actualProgress == 0) then {
     params ["_args", "_handle"];
     _args params ["_trench", "_unit", "_digTime", "_vecDirAndUp"];
     
-    private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
-    private _diggerCount = count (_trench getVariable [QGVAR(diggers),[]]);
-
     if (
         !(_trench getVariable ["ace_trenches_digging", false]) ||
         {_diggerCount <= 0}
@@ -121,12 +118,12 @@ if (_actualProgress == 0) then {
         [_handle] call CBA_fnc_removePerFrameHandler;
     };
 
+    private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
+    private _diggerCount = count (_trench getVariable [QGVAR(diggers),[]]);
     private _animationPhase = _trench animationSourcePhase "rise";
     private _diff = (_trench getVariable [QGVAR(diggingSteps), (([configFile >> "CfgVehicles" >> typeOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry)/(_digTime*10))]) * _diggerCount;
     
     _trench animateSource ["rise", _animationPhase + _diff, true];
-    _trench setVectorDirAndUp _vecDirAndUp;
-
     _trench setVariable ["ace_trenches_progress", _actualProgress + ((1/_digTime)/10) * _diggerCount, true];
 
     //Fatigue impact

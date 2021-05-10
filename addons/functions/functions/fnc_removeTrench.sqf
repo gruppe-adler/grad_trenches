@@ -59,6 +59,11 @@ private _fnc_onFinish = {
     
     // Remove map marker
     if (GVAR(createTrenchMarker)) then {deleteMarker (_trench getVariable [QGVAR(trenchMapMarker), ""])};
+
+    //Remove attached items
+    {
+        deleteVehicle _x;
+    } forEach attachedObjects _trench;
     
     // Remove trench
     deleteVehicle _trench;
