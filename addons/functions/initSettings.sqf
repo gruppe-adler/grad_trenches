@@ -4,7 +4,8 @@
 [QGVAR(camouflageRequireEntrenchmentTool), "CHECKBOX", [localize LSTRING(settingCamouflageRequireEntrenchmentTool_displayName), localize LSTRING(settingCamouflageRequireEntrenchmentTool_tooltip)], localize LSTRING(settingCategory), true, true] call CBA_fnc_addSetting;
 [QGVAR(stopBuildingAtFatigueMax), "CHECKBOX", [localize LSTRING(stopBuildingAtFatigueMax_displayName), localize LSTRING(stopBuildingAtFatigueMax_tooltip)], localize LSTRING(settingCategory), true, true] call CBA_fnc_addSetting;
 [QGVAR(buildFatigueFactor), "SLIDER", [localize LSTRING(settingBuildFatigueFactor_displayName), localize LSTRING(settingBuildFatigueFactor_tooltip)], localize LSTRING(settingCategory), [0, 5, 1, 2], true] call CBA_fnc_addSetting;
-[QGVAR(createTrenchMarker), "CHECKBOX", [localize LSTRING(createTrenchMarker_displayName), localize LSTRING(createTrenchMarker_tooltip)], localize LSTRING(settingCategory), true, true, {}, true] call CBA_fnc_addSetting;
+[QGVAR(createTrenchMarker), "CHECKBOX", [localize LSTRING(createTrenchMarker_displayName), localize LSTRING(createTrenchMarker_tooltip)], localize LSTRING(settingCategory), false, true, {}, true] call CBA_fnc_addSetting;
+[QGVAR(allowDiggingInVehicle), "CHECKBOX", [localize LSTRING(allowDiggingInVehicle_displayName), localize LSTRING(allowDiggingInVehicle_tooltip)], localize LSTRING(settingCategory), true, true, {}, true] call CBA_fnc_addSetting;
 
 //Trench specific settings
 [QGVAR(allowShortEnvelope), "CHECKBOX", [localize LSTRING(allowShortEnvelope_displayName), localize LSTRING(allowShortEnvelope_tooltip)], [localize LSTRING(settingCategory), localize LSTRING(trenchSubCategory)], true, true] call CBA_fnc_addSetting;

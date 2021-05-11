@@ -101,6 +101,29 @@ class CfgVehicles {
         };
     };
 
+    class B_APC_Tracked_01_base_F;
+    class B_APC_Tracked_01_CRV_F: B_APC_Tracked_01_base_F
+    {
+        class ACE_MainActions {
+            class grad_trenches_digEnvelopeVehicle {
+                displayName = CSTRING(DigEnvelopeVehicle);
+                statement = QUOTE([ARR_2({_this call FUNC(bpzBuild)},[ARR_3(_this select 0,'GRAD_envelope_vehicle',[0,0,0])])] call CBA_fnc_execNextFrame);
+                condition = QUOTE(GVAR(allowDiggingInVehicle) && ([ARR_2(_target,_player)] call FUNC(canDigVehicle)) && GVAR(allowVehicleEnvelope));
+                priority = -1;
+            };
+            class grad_trenches_digEnvelopeGiant: grad_trenches_digEnvelopeVehicle {
+                displayName = CSTRING(DigEnvelopeGiant);
+                statement = QUOTE([ARR_2({_this call FUNC(bpzBuild)},[ARR_3(_this select 0,'GRAD_envelope_giant',[0,0,0])])] call CBA_fnc_execNextFrame);
+                condition = QUOTE(GVAR(allowDiggingInVehicle) && ([ARR_2(_target,_player)] call FUNC(canDigVehicle)) && GVAR(allowGiantEnvelope));
+            };
+            class grad_trenches_digEnvelopeLongNameEmplacment: grad_trenches_digEnvelopeVehicle {
+                displayName = CSTRING(DigEnvelopeLong);
+                statement = QUOTE([ARR_2({_this call FUNC(bpzBuild)},[ARR_3(_this select 0,'GRAD_envelope_long',[0,0,0])])] call CBA_fnc_execNextFrame);
+                condition = QUOTE(GVAR(allowDiggingInVehicle) && ([ARR_2(_target,_player)] call FUNC(canDigVehicle)) && GVAR(allowLongEnvelope));
+            };
+        };
+    };
+
     class BagFence_base_F;
     class ACE_envelope_small: BagFence_base_F {
         author = QAUTHOR;

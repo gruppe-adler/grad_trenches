@@ -1,3 +1,4 @@
+ #include "script_component.hpp"
 /*
  * Author: Seb
  * Sets a marker to visible depending on player side.
@@ -16,14 +17,16 @@
 
 
 // waitUntil necessary for  JIP, as you must wait until player object exists to determine its side.
-params ["_trench"]
+params ["_trench"];
+
 [
     {!isNull Player},
     {
         params ["_trench"];
+        
         if ([side group player, _trench getVariable QGVAR(trenchSide)] call BIS_fnc_sideIsEnemy) then {
             (_trench getVariable [QGVAR(trenchMapMarker), ""]) setMarkerAlphaLocal 0;
         };
     },
-    _trench
+    [_trench]
 ] call CBA_fnc_waitUntilAndExecute;
