@@ -12,6 +12,8 @@ PREP(createTrenchMarker);
 PREP(decayPFH);
 PREP(deleteCamouflage);
 PREP(handleDiggerToGVAR);
+PREP(hitEH);
+PREP(hitFX);
 PREP(initCurator);
 PREP(initTrench);
 PREP(initTrench3DEN);

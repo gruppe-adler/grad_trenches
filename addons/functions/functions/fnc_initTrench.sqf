@@ -30,6 +30,10 @@ if (isServer) then {
     if (GVAR(allowTrenchDecay)) then {
        [_object, GVAR(timeoutToDecay), GVAR(decayTime)] call FUNC(decayPFH);
     };
+
+    if (GVAR(allowHitDecay)) then {
+       [_object, GVAR(hitDecayMultiplier)] call FUNC(hitEH);
+    };
 };
 
 

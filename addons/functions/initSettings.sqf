@@ -31,3 +31,7 @@
 [QGVAR(allowTrenchDecay), "CHECKBOX", [localize LSTRING(allowTrenchDecay_displayName), localize LSTRING(allowTrenchDecay_tooltip)], [localize LSTRING(settingCategory), localize LSTRING(decaySubCategory)], false, true] call CBA_fnc_addSetting;
 [QGVAR(timeoutToDecay), "SLIDER", [localize LSTRING(timeoutToDecay_displayName), localize LSTRING(timeoutToDecay_tooltip)], [localize LSTRING(settingCategory), localize LSTRING(decaySubCategory)], [60, 18000, 7200, 0], true] call CBA_fnc_addSetting;
 [QGVAR(decayTime), "SLIDER", [localize LSTRING(decayTime_displayName), localize LSTRING(decayTime_tooltip)], [localize LSTRING(settingCategory), localize LSTRING(decaySubCategory)], [30, 3600, 1800, 0], true] call CBA_fnc_addSetting;
+
+//Trench hit degradation setting
+[QGVAR(allowHitDecay), "CHECKBOX", [localize LSTRING(allowHitDecay_displayName), localize LSTRING(allowHitDecay_tooltip)], [localize LSTRING(settingCategory), localize LSTRING(hitDecaySubCategory)], false, true] call CBA_fnc_addSetting;
+[QGVAR(hitDecayMultiplier), "SLIDER", [localize LSTRING(hitDecayMultiplier_displayName), localize LSTRING(hitDecayMultiplier_tooltip)], [localize LSTRING(settingCategory), localize LSTRING(hitDecaySubCategory)], [0.1, 10, 1, 0], true] call CBA_fnc_addSetting;

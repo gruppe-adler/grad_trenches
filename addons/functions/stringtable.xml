@@ -533,5 +533,25 @@
             <English>Decay Setting</English>
             <German>Verfall Einstellungen</German>
         </Key>
+        <Key ID="STR_GRAD_Trenches_functions_hitDecaySubCategory">
+            <English>Hit Decay</English>
+            <German>Verfall bei Treffer</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_allowHitDecay_displayName">
+            <English>Allow Decay on Hit</English>
+            <German>Verfall bei Treffer erlauben</German>
+        </Key>
+         <Key ID="STR_GRAD_Trenches_functions_allowHitDecay_tooltip">
+            <English>Hit Damage lets trench sink into ground. HE is most effective.</English>
+            <German>Hit Damage lässt Gräben in den Boden sinken. HE ist am effektivsten.</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_hitDecayMultiplier_displayName">
+            <English>Multiplier for Hit Damage</English>
+            <German>Multiplikator für Trefferschaden</German>
+        </Key>
+         <Key ID="STR_GRAD_Trenches_functions_hitDecayMultiplier_tooltip">
+            <English>Multiplier for Hit Damage</English>
+            <German>Multiplikator für Trefferschaden</German>
+        </Key>
     </Package>
 </Project>
