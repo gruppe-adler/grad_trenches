@@ -33,7 +33,7 @@ _trench addEventHandler ["HitPart", {
 
         TRACE_1("hitEH", format ["direct Hit with " + str _ammo]);
 
-        if (_splashDamage > 2) then {
+        if (_splashDamage > 1) then {
             // send fx to clients
             [vectorDir _vehicle, ASLToAGL _position] remoteExec [FUNC(hitFX), [0,-2] select isDedicated];
 
