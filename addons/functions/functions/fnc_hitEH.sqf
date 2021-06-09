@@ -24,18 +24,24 @@ if (_trench getVariable [QGVAR(hitHandler), false]) exitWith {
 
 _trench setVariable [QGVAR(hitHandler), true, true];
 
+
+
 _trench addEventHandler ["HitPart", {
-    (_this select 0) params ["_vehicle", "_shooter", "_projectile", "_position", "_velocity", "_selection", "_ammo", "_vector", "_radius", "_surfaceType", "_isDirect"];
+    (_this select 0) params ["_trench", "_shooter", "_projectile", "_position", "_velocity", "_selection", "_ammo", "_vector", "_radius", "_surfaceType", "_isDirect"];
 
+    systemChat str _isDirect;
 
-    if (_isDirect) then {
+    systemChat str (_ammo select 2);
+
+    if (!_isDirect) then {
+        // add cooldown after indirect
         _ammo params ["", "", "_splashDamage", "", "_type"];
 
-        TRACE_1("hitEH", format ["direct Hit with " + str _ammo]);
+        diag_log format ["direct Hit with %1", _ammo];
 
         if (_splashDamage > 1) then {
             // send fx to clients
-            [vectorDir _vehicle, ASLToAGL _position] remoteExec [FUNC(hitFX), [0,-2] select isDedicated];
+            [vectorDir _trench, ASLToAGL _position] remoteExec [QFUNC(hitFX), [0,-2] select isDedicated];
 
             private _progress = _trench getVariable ["ace_trenches_progress", 0];
             private _damage = _splashDamage/20; // 1 HE shell appr 25% decay depending on ammo type
