@@ -42,7 +42,7 @@ _trench addEventHandler ["HitPart", {
             _progress = _progress - _damage;
 
             if (_progress > 0) then {
-                private _lift = (_progress/1) * [configFile >> "CfgVehicles" >> typeOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry;
+                private _lift = linearConversion [0, 1, _progress, -([configFile >> "CfgVehicles" >> typeOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry), 0, true];
                 _trench animateSource ["rise", _lift, true];
                 _trench setVariable ["ace_trenches_progress", _progress, true];
             } else {
