@@ -16,7 +16,7 @@
 params ["_trench", "_splashDamage"];
 
 // send fx to clients
-[vectorDir _trench, ASLToAGL (position _trench)] remoteExec [QFUNC(hitFX), [0,-2] select isDedicated];
+[QGVAR(hitFX), [vectorDir _trench, ASLToAGL (position _trench)]] call CBA_fnc_globalEvent;
 
 private _progress = _trench getVariable ["ace_trenches_progress", 0];
 private _multiplier = [configFile >> "CfgVehicles" >> typeOf _trench >> "grad_trenches_damageMultiplier", "NUMBER", 1] call CBA_fnc_getConfigEntry; 

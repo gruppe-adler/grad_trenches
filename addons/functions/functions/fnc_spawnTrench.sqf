@@ -24,8 +24,6 @@ params ["_trenchClass", "_posDiff", "_pos", "_vecDirAndUp"];
 private _trench = createVehicle [_trenchClass, [0,0,0], [], 0, "CAN_COLLIDE"];
 private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> _trenchClass >>"ace_trenches_diggingDuration"), 20];
 
-_trench setObjectTextureGlobal [0, surfaceTexture _pos];
-
 _trench setVariable [QGVAR(diggingSteps), (_posDiff/(_digTime*10)), true];
 if (GVAR(createTrenchMarker)) then {[_trench, side group _unit] call FUNC(createTrenchMarker)};
 
@@ -33,6 +31,7 @@ if (GVAR(createTrenchMarker)) then {[_trench, side group _unit] call FUNC(create
 
 _trench setVectorDirAndUp _vecDirAndUp; 
 _pos set [2, 0]; // trench can only sit on zero, rest is done by animation
+_trench setObjectTextureGlobal [0, surfaceTexture _pos];
 _trench setPosATL _pos; // prevent glitches by setting position last, prepare on 0,0,0 - move - rest is done by animation
 _trench setVariable ["ace_trenches_progress", 0, true];
 
