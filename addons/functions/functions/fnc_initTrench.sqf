@@ -31,7 +31,7 @@ if (isServer) then {
     };
 
     if (GVAR(allowHitDecay)) then {
-       [_object, GVAR(hitDecayMultiplier)] remoteExec [FUNC(hitEH), 0, true];
+       [_object, GVAR(hitDecayMultiplier)] remoteExec [QFUNC(hitEH), 0, true];
     };
 };
 

@@ -115,7 +115,7 @@ if (_actualProgress == 0) then {
     _trench setVariable ["ace_trenches_progress", _newProgress, true];
 
     [_trench, _newProgress] call FUNC(setTrenchProgress);
-    [_trench, _unit] remoteExec [EFUNC(applyFatigue), _unit];
+    [_trench, _unit] remoteExec [QFUNC(applyFatigue), _unit];
 
 }, 0.1, [_trench, _unit, _digTime]] call CBA_fnc_addPerFrameHandler;
 
