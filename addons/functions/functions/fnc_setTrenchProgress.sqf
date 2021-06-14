@@ -30,4 +30,4 @@ private _lift = (linearConversion
 
 _trench animateSource ["rise", _lift, true];
 
-diag_log format ["_lift %1, _offset %2, _position %3, _progress %4", _lift, _offset, getpos _trench, _progress];
+TRACE_4("_lift, _offset, _position, _progress", _lift, _offset, getpos _trench, _progress);
