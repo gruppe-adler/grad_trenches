@@ -31,7 +31,7 @@ if (isServer) then {
     };
 
     if (GVAR(allowHitDecay)) then {
-       [QGVAR(hitEH),[_object, GVAR(hitDecayMultiplier)]] call CBA_fnc_globalEvent;
+       [_object, GVAR(hitDecayMultiplier)] remoteExec [QFUNC(hitEH), 0, true];
     };
 };
 
