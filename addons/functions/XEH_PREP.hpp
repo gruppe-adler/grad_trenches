@@ -24,5 +24,7 @@ PREP(placeTrench);
 PREP(progressBar);
 PREP(removeCamouflage);
 PREP(removeTrench);
+PREP(serverEvents);
 PREP(setMarkerVisible);
 PREP(setTrenchProgress);
+PREP(spawnTrench);

@@ -45,21 +45,7 @@ _trench setVariable [QGVAR(diggers), [_unit], true];
 private _fnc_onFinish = {
     (_this select 0) params ["_unit", "_trench"];
 
-    _trench setVariable ["ace_trenches_digging", false, true];
-    _trench setVariable [QGVAR(diggingType), nil, true];
-    _unit setVariable [QGVAR(diggingTrench), false, true];
-    [QGVAR(addDigger), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
-    
-    // Remove map marker
-    if (GVAR(createTrenchMarker)) then {deleteMarker (_trench getVariable [QGVAR(trenchMapMarker), ""])};
-
-    //Remove attached items
-    {
-        deleteVehicle _x;
-    } forEach attachedObjects _trench;
-    
-    // Remove trench
-    deleteVehicle _trench;
+    [_trench] call FUNC(deleteTrench);
 
     // Reset animation
     [_unit, "", 1] call ace_common_fnc_doAnimation;
@@ -114,7 +100,7 @@ private _fnc_condition = {
     private _newProgress =  _actualProgress - ((1/_removeTime)/10) * _diggerCount;
     _trench setVariable ["ace_trenches_progress", _newProgress, true];
 
-    [_trench, _newProgress] call grad_trenches_functions_fnc_setTrenchProgress;
+    [_trench, _newProgress] call FUNC(setTrenchProgress);
 
     //Fatigue impact
     ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (2 * GVAR(buildFatigueFactor))) max 0;

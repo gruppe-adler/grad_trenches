@@ -114,7 +114,7 @@ if (_actualProgress == 0) then {
     private _newProgress =  _actualProgress + ((1/_digTime)/10) * _diggerCount;
     _trench setVariable ["ace_trenches_progress", _newProgress, true];
 
-    [_trench, _newProgress] call grad_trenches_functions_fnc_setTrenchProgress;
+    [_trench, _newProgress] call FUNC(setTrenchProgress);
 
     //Fatigue impact
     ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (2 * GVAR(buildFatigueFactor))) max 0;
