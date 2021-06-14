@@ -39,3 +39,5 @@ _trench setVariable ["ace_trenches_progress", 0, true];
 [QGVAR(addTrenchToDecay), [_trench, GVAR(timeoutToDecay), GVAR(decayTime)]] call CBA_fnc_serverEvent;
 
 [_trench, _unit, false] call FUNC(continueDiggingTrench);
+
+TRACE_1("Server spawning trench at ", _pos);
