@@ -4,10 +4,14 @@
  * Server receives hitPart Events from Clients and calulates
  *
  * Arguments:
- * NONE
+ * 0: Trench <OBJECT>
+ * 1: Splash Damage <NUMBER>
  *
  * Return Value:
  * NONE
+ *
+ * Example:
+ * [TrenchObj, 5] call grad_trenches_functions_fnc_hitPart;
  *
  * Public: No
  */
