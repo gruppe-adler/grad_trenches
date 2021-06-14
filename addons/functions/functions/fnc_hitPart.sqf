@@ -13,7 +13,7 @@
  */
 
 
-params ["_trench", "_splashDamage"]
+params ["_trench", "_splashDamage"];
 
 // send fx to clients
 [vectorDir _trench, ASLToAGL (position _trench)] remoteExec [QFUNC(hitFX), [0,-2] select isDedicated];
