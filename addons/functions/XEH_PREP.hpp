@@ -25,3 +25,4 @@ PREP(progressBar);
 PREP(removeCamouflage);
 PREP(removeTrench);
 PREP(setMarkerVisible);
+PREP(setTrenchProgress);
