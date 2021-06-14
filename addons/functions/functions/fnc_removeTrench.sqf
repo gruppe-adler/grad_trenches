@@ -96,7 +96,6 @@ private _fnc_condition = {
     _args params ["_trench", "_unit", "_removeTime"];
 
     private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
-    private _diggerCount = count (_trench getVariable [QGVAR(diggers),[]]);
 
     if (
         !(_trench getVariable ["ace_trenches_digging", false]) ||
@@ -111,19 +110,15 @@ private _fnc_condition = {
         [_handle] call CBA_fnc_removePerFrameHandler;
     };
 
-    private _animationPhase = _trench animationSourcePhase "rise";
-    private _diff = (_trench getVariable [QGVAR(diggingSteps), (([configFile >> "CfgVehicles" >> typeOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry)/(_removeTime*10))]) * _diggerCount;
- 
-    _trench animateSource ["rise", _animationPhase - _diff, true];
+    private _diggerCount = count (_trench getVariable [QGVAR(diggers),[]]);
+    private _newProgress =  _actualProgress - ((1/_digTime)/10) * _diggerCount;
+    _trench setVariable ["ace_trenches_progress", _newProgress, true];
 
-    _trench setVariable ["ace_trenches_progress", _actualProgress - ((1/_removeTime)/10) * _diggerCount, true];
+    [_trench, _newProgress] call grad_trenches_functions_fnc_setTrenchProgress;
 
     //Fatigue impact
     ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (2 * GVAR(buildFatigueFactor))) max 0;
     ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + ((2 * GVAR(buildFatigueFactor))/2000)) min 1;
-
-    // Save progress
-    _trench setVariable ["ace_trenches_progress", (_actualProgress - ((1/(_removeTime *10)) * _diggerCount)), true];
 
     if (GVAR(stopBuildingAtFatigueMax) && (ace_advanced_fatigue_anReserve <= 0)) exitWith {
         [_handle] call CBA_fnc_removePerFrameHandler;
