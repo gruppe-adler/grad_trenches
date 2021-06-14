@@ -4,13 +4,14 @@
  * Apply Fatigue on Client
  *
  * Arguments:
- * NONE
+ * 0: Trench <OBJECT>
+ * 1: Unit <OBJECT>
  *
  * Return Value:
  * NONE
  *
  * Example:
- * [] call grad_trenches_functions_fnc_applyFatigue
+ * [trenchObj, unitObj] call grad_trenches_functions_fnc_applyFatigue
  *
  * Public: No
  */
