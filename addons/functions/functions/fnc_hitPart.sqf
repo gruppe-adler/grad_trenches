@@ -24,7 +24,7 @@ private _damage = (_splashDamage*_multiplier)/20; // 1 HE shell appr 25% decay d
 _progress = _progress - _damage;
 
 if (_progress > 0) then {
-     [_trench, _progress] call FUNC(setTrenchProgress);
+    [_trench, _progress] call FUNC(setTrenchProgress);
 } else {
-    deleteVehicle _trench;
+    [_trench] call FUNC(deleteTrench);
 };
