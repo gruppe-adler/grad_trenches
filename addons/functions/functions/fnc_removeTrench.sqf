@@ -102,7 +102,7 @@ private _fnc_condition = {
 
     [_trench, _newProgress, 0.1] call FUNC(setTrenchProgress);
     private _sound = str (selectRandom [1,2,3,4,5,6,7]);
-    playSound3D ["grad_trenches\addons\sounds\dig" + _sound + ".ogg", _trench, false, nil, 1, 1, 50];
+    playSound3D ["x\grad_trenches\addons\sounds\dig" + _sound + ".ogg", _trench, false, getpos _trench, 1, 1, 100];
 
     //Fatigue impact
     ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (2 * GVAR(buildFatigueFactor))) max 0;
