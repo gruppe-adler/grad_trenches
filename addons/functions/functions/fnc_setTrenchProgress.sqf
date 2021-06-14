@@ -20,8 +20,6 @@ params ["_trench", "_progress"];
 
 private _offset = [configFile >> "CfgVehicles" >> typeOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry;
 
-diag_log format ["_progress %1", _progress];
-
 private _lift = (linearConversion 
     [0, 1, 
     _progress, 
@@ -31,3 +29,5 @@ private _lift = (linearConversion
     ]);
 
 _trench animateSource ["rise", _lift, true];
+
+diag_log format ["_lift %1, _offset %2, _position %3, _progress %4", _lift, _offset, getpos _trench, _progress];

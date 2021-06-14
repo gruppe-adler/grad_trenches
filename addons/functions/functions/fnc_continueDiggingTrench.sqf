@@ -38,12 +38,6 @@ if (_diggerCount > 0 && {!(_switchingDigger)}) exitWith {
 };
 
 private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >>"ace_trenches_diggingDuration"), 20];
-private _placeData = _trench getVariable ["ace_trenches_placeData", [[], []]];
-_placeData params ["", "_vecDirAndUp"];
-
-if (isNil "_vecDirAndUp" && {_vecDirAndUp isEqualTo []}) then {
-    _vecDirAndUp = [vectorDir _trench, vectorUp _trench];
-};
 
 _trench setVariable [QGVAR(diggers), [_unit], true];
 
@@ -100,7 +94,7 @@ if (_actualProgress == 0) then {
 
 [{
     params ["_args", "_handle"];
-    _args params ["_trench", "_unit", "_digTime", "_vecDirAndUp"];
+    _args params ["_trench", "_unit", "_digTime"];
     
     if (
         !(_trench getVariable ["ace_trenches_digging", false]) ||
@@ -122,9 +116,6 @@ if (_actualProgress == 0) then {
 
     [_trench, _newProgress] call grad_trenches_functions_fnc_setTrenchProgress;
 
-    diag_log format ["_lift %1, _offset %2, _position %3", _lift, _offset, getpos _trench];
-
-
     //Fatigue impact
     ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (2 * GVAR(buildFatigueFactor))) max 0;
     ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + ((2 * GVAR(buildFatigueFactor))/2000)) min 0.8;
@@ -135,7 +126,7 @@ if (_actualProgress == 0) then {
         [QGVAR(addDigger), [_trench, _unit, true]] call CBA_fnc_serverEvent;
         _unit setVariable [QGVAR(diggingTrench), false];
     };
-}, 0.1, [_trench, _unit, _digTime, _vecDirAndUp]] call CBA_fnc_addPerFrameHandler;
+}, 0.1, [_trench, _unit, _digTime]] call CBA_fnc_addPerFrameHandler;
 
 // Play animation
 [_unit] call FUNC(loopanimation);

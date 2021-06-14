@@ -39,13 +39,6 @@ if (_removeTime isEqualTo -1) then {
     _removeTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >>"ace_trenches_diggingDuration"), 20];
 };
 
-private _placeData = _trench getVariable ["ace_trenches_placeData", [[], []]];
-_placeData params ["", "_vecDirAndUp"];
-
-if (isNil "_vecDirAndUp" || {_vecDirAndUp isEqualTo []}) then {
-    _vecDirAndUp = [vectorDir _trench, vectorUp _trench];
-};
-
 _trench setVariable [QGVAR(diggers), [_unit], true];
 
 // Create progress bar
@@ -100,7 +93,7 @@ private _fnc_condition = {
 
 [{
     params ["_args", "_handle"];
-    _args params ["_trench", "_unit", "_removeTime", "_vecDirAndUp"];
+    _args params ["_trench", "_unit", "_removeTime"];
 
     private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
     private _diggerCount = count (_trench getVariable [QGVAR(diggers),[]]);
@@ -122,7 +115,6 @@ private _fnc_condition = {
     private _diff = (_trench getVariable [QGVAR(diggingSteps), (([configFile >> "CfgVehicles" >> typeOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry)/(_removeTime*10))]) * _diggerCount;
  
     _trench animateSource ["rise", _animationPhase - _diff, true];
-    _trench setVectorDirAndUp _vecDirAndUp;
 
     _trench setVariable ["ace_trenches_progress", _actualProgress - ((1/_removeTime)/10) * _diggerCount, true];
 
@@ -139,7 +131,7 @@ private _fnc_condition = {
         [QGVAR(addDigger), [_trench, _unit, true]] call CBA_fnc_serverEvent;
         _unit setVariable [QGVAR(diggingTrench), false];
     };
-}, 0.1, [_trench, _unit, _removeTime, _vecDirAndUp]] call CBA_fnc_addPerFrameHandler;
+}, 0.1, [_trench, _unit, _removeTime]] call CBA_fnc_addPerFrameHandler;
 
 // Play animation
 [_unit] call FUNC(loopanimation);

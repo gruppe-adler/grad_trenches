@@ -40,7 +40,7 @@ private _posDiff = [configFile >> "CfgVehicles" >> _trenchClass >> QGVAR(offset)
 private _pos = ace_trenches_trench modelToWorldWorld [0,0,0];
 private _vecDirAndUp = [(vectorDir ace_trenches_trench), (vectorUp ace_trenches_trench)];
 
-//Delete prieview trench
+//Delete preview trench
 deleteVehicle ace_trenches_trench;
 
 //Create a new trench, that is globaly visible
@@ -50,12 +50,13 @@ private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehi
 _trench setObjectTextureGlobal [0, surfaceTexture _pos];
 
 _trench setVariable [QGVAR(diggingSteps), (_posDiff/(_digTime*10)), true];
-_trench setVectorDirAndUp _vecDirAndUp;
 if (GVAR(createTrenchMarker)) then {[_trench, side group _unit] call FUNC(createTrenchMarker)};
 
-[_trench, 0] call grad_trenches_functions_fnc_setTrenchProgress;
-_trench setPos _pos;
-_trench setVariable ["ace_trenches_placeData", [_pos, _vecDirAndUp], true];
+[_trench, 0] call grad_trenches_functions_fnc_setTrenchProgress; // animate to down under initially
+
+_trench setVectorDirAndUp _vecDirAndUp; 
+_pos set [2, 0]; // trench can only sit on zero, rest is done by animation
+_trench setPosATL _pos; // prevent glitches by setting position last, prepare on 0,0,0 - move - rest is done by animation
 _trench setVariable ["ace_trenches_progress", 0, true];
 
 [QGVAR(addTrenchToDecay), [_trench, GVAR(timeoutToDecay), GVAR(decayTime)]] call CBA_fnc_serverEvent;
