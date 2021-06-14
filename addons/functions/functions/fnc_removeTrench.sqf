@@ -111,7 +111,7 @@ private _fnc_condition = {
     };
 
     private _diggerCount = count (_trench getVariable [QGVAR(diggers),[]]);
-    private _newProgress =  _actualProgress - ((1/_digTime)/10) * _diggerCount;
+    private _newProgress =  _actualProgress - ((1/_removeTime)/10) * _diggerCount;
     _trench setVariable ["ace_trenches_progress", _newProgress, true];
 
     [_trench, _newProgress] call grad_trenches_functions_fnc_setTrenchProgress;
