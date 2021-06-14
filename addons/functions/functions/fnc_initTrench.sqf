@@ -32,9 +32,7 @@ if (isServer) then {
     };
 
     if (GVAR(allowHitDecay)) then {
-       diag_log "added hit decay EH pre";
        [_object, GVAR(hitDecayMultiplier)] call FUNC(hitEH);
-       diag_log "added hit decay EH aft";
     };
 };
 

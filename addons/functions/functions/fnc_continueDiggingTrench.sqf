@@ -55,9 +55,6 @@ private _fnc_onFinish = {
     _unit setVariable [QGVAR(diggingTrench), false, true];
     [QGVAR(addDigger), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
 
-    private _pos = _trench getVariable [QGVAR(endPos), []];
-    _trench setPosWorld _pos;
-
     // Save progress global
     _trench setVariable ["ace_trenches_progress", 1, true];
 
@@ -120,11 +117,13 @@ if (_actualProgress == 0) then {
 
     private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
     private _diggerCount = count (_trench getVariable [QGVAR(diggers),[]]);
-    private _animationPhase = _trench animationSourcePhase "rise";
-    private _diff = (_trench getVariable [QGVAR(diggingSteps), (([configFile >> "CfgVehicles" >> typeOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry)/(_digTime*10))]) * _diggerCount;
-    
-    _trench animateSource ["rise", _animationPhase + _diff, true];
-    _trench setVariable ["ace_trenches_progress", _actualProgress + ((1/_digTime)/10) * _diggerCount, true];
+    private _newProgress =  _actualProgress + ((1/_digTime)/10) * _diggerCount;
+    _trench setVariable ["ace_trenches_progress", _newProgress, true];
+
+    [_trench, _newProgress] call grad_trenches_functions_fnc_setTrenchProgress;
+
+    diag_log format ["_lift %1, _offset %2, _position %3", _lift, _offset, getpos _trench];
+
 
     //Fatigue impact
     ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (2 * GVAR(buildFatigueFactor))) max 0;
