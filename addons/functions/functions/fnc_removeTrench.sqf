@@ -100,7 +100,9 @@ private _fnc_condition = {
     private _newProgress =  _actualProgress - ((1/_removeTime)/10) * _diggerCount;
     _trench setVariable ["ace_trenches_progress", _newProgress, true];
 
-    [_trench, _newProgress] call FUNC(setTrenchProgress);
+    [_trench, _newProgress, 0.1] call FUNC(setTrenchProgress);
+    private _sound = str (selectRandom [1,2,3,4,5,6,7]);
+    playSound3D ["grad_trenches\addons\sounds\dig" + _sound + ".ogg", _trench, false, nil, 1, 1, 50];
 
     //Fatigue impact
     ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (2 * GVAR(buildFatigueFactor))) max 0;
@@ -112,7 +114,7 @@ private _fnc_condition = {
         [QGVAR(addDigger), [_trench, _unit, true]] call CBA_fnc_serverEvent;
         _unit setVariable [QGVAR(diggingTrench), false];
     };
-}, 0.1, [_trench, _unit, _removeTime]] call CBA_fnc_addPerFrameHandler;
+}, 1, [_trench, _unit, _removeTime]] call CBA_fnc_addPerFrameHandler;
 
 // Play animation
 [_unit] call FUNC(loopanimation);

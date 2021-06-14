@@ -16,7 +16,7 @@
 * Public: No
 */
 
-params ["_trench", "_progress"];
+params ["_trench", "_progress", ["_duration", 0]];
 
 private _offset = [configFile >> "CfgVehicles" >> typeOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry;
 
@@ -28,6 +28,10 @@ private _lift = (linearConversion
     true
     ]);
 
-_trench animateSource ["rise", _lift, true];
+if (_duration > 0) then {
+    _trench animateSource ["rise", _lift, _duration];
+} else {
+    _trench animateSource ["rise", _lift, true];
+};
 
 TRACE_4("_lift, _offset, _position, _progress", _lift, _offset, getpos _trench, _progress);

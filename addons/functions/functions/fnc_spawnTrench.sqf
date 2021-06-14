@@ -29,7 +29,7 @@ _trench setObjectTextureGlobal [0, surfaceTexture _pos];
 _trench setVariable [QGVAR(diggingSteps), (_posDiff/(_digTime*10)), true];
 if (GVAR(createTrenchMarker)) then {[_trench, side group _unit] call FUNC(createTrenchMarker)};
 
-[_trench, 0] call FUNC(setTrenchProgress); // animate to down under initially
+[_trench, 0, 0] call FUNC(setTrenchProgress); // animate to down under initially
 
 _trench setVectorDirAndUp _vecDirAndUp; 
 _pos set [2, 0]; // trench can only sit on zero, rest is done by animation

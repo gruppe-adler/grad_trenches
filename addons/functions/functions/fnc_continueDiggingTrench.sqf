@@ -111,13 +111,16 @@ if (_actualProgress == 0) then {
 
     private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
     private _diggerCount = count (_trench getVariable [QGVAR(diggers),[]]);
-    private _newProgress =  _actualProgress + ((1/_digTime)/10) * _diggerCount;
+    private _newProgress =  _actualProgress + ((1/_digTime)) * _diggerCount;
     _trench setVariable ["ace_trenches_progress", _newProgress, true];
 
-    [_trench, _newProgress] call FUNC(setTrenchProgress);
+    [_trench, _newProgress, 0.1] call FUNC(setTrenchProgress);
     [_trench, _unit] remoteExec [QFUNC(applyFatigue), _unit];
 
-}, 0.1, [_trench, _unit, _digTime]] call CBA_fnc_addPerFrameHandler;
+    private _sound = str (selectRandom [1,2,3,4,5,6,7]);
+    playSound3D ["\grad_trenches\addons\sounds\dig" + _sound + ".ogg", _trench, false, nil, 1, 1, 50];
+
+}, 1, [_trench, _unit, _digTime]] call CBA_fnc_addPerFrameHandler;
 
 // Play animation
 [_unit] call FUNC(loopanimation);
