@@ -115,17 +115,8 @@ if (_actualProgress == 0) then {
     _trench setVariable ["ace_trenches_progress", _newProgress, true];
 
     [_trench, _newProgress] call FUNC(setTrenchProgress);
+    [_trench, _unit] remoteExec [EFUNC(applyFatigue), _unit];
 
-    //Fatigue impact
-    ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (2 * GVAR(buildFatigueFactor))) max 0;
-    ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + ((2 * GVAR(buildFatigueFactor))/2000)) min 0.8;
-
-    if (GVAR(stopBuildingAtFatigueMax) && {ace_advanced_fatigue_anReserve <= 0}) exitWith {
-        [_handle] call CBA_fnc_removePerFrameHandler;
-        _trench setVariable ["ace_trenches_digging", false, true];
-        [QGVAR(addDigger), [_trench, _unit, true]] call CBA_fnc_serverEvent;
-        _unit setVariable [QGVAR(diggingTrench), false];
-    };
 }, 0.1, [_trench, _unit, _digTime]] call CBA_fnc_addPerFrameHandler;
 
 // Play animation

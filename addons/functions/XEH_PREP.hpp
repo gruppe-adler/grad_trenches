@@ -1,5 +1,6 @@
 PREP(addDigger);
 PREP(applyCamouflageAttribute);
+PREP(applyFatigue);
 PREP(canHelpDiggingTrench);
 PREP(canContinueDiggingTrench);
 PREP(canDig);
