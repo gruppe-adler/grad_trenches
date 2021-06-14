@@ -11,27 +11,33 @@
  * Can dig <BOOL/NUMBER>
  *
  * Example:
- * [ACE_player] call grad_trenches_functions_fnc_canDigTrench
+ * [vehicle ACE_player, ACE_player, ""] call grad_trenches_functions_fnc_canDigVehicle
  *
  * Public: No
  */
 
-params ["_vehicle", ["_trench", ""]];
+params ["_vehicle", "_unit", ["_trench", ""]];
 
+private _return = false;
 
-private _return = _vehicle call FUNC(canDig);
-
-if (_return isEqualType 0) then {
-	_return = _return > 0;
-};
-
-if !(_return) exitWith {false};
-
-if !(_trench isEqualTo "") then {
-	_return = _trench call FUNC(canDig);
+if (
+	_vehicle isEqualTo objectParent _unit && 
+	_vehicle in WHITELIST_CRV
+) then {
+	_return = _vehicle call FUNC(canDig);
 
 	if (_return isEqualType 0) then {
 		_return = _return > 0;
+	};
+
+	if !(_return) exitWith {false};
+
+	if !(_trench isEqualTo "") then {
+		_return = _trench call FUNC(canDig);
+
+		if (_return isEqualType 0) then {
+			_return = _return > 0;
+		};
 	};
 };
 
