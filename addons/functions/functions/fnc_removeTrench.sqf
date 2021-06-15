@@ -98,7 +98,6 @@ private _fnc_condition = {
 
     private _diggerCount = count (_trench getVariable [QGVAR(diggers),[]]);
     private _newProgress =  _actualProgress - ((1/_removeTime)/10) * _diggerCount;
-    _trench setVariable ["ace_trenches_progress", _newProgress, true];
 
     [_trench, _newProgress, 0.1] call FUNC(setTrenchProgress);
     private _sound = str (selectRandom [1,2,3,4,5,6,7]);

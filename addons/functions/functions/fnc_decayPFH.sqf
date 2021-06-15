@@ -65,8 +65,6 @@ if (isNil QGVAR(decayPFH)) then {
 						) then {
 							deleteVehicle _trench;
 						} else {
-							_trench setVariable ["ace_trenches_progress", _progress];
-
 							[_trench, _progress, 1] call FUNC(setTrenchProgress);
 
 							_newArray pushBack [_trench, _timeoutToDecay, _decayTime, _decayTimeMax];

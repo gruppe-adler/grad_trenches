@@ -33,7 +33,6 @@ _trench setVectorDirAndUp _vecDirAndUp;
 _pos set [2, 0]; // trench can only sit on zero, rest is done by animation
 _trench setObjectTextureGlobal [0, surfaceTexture _pos];
 _trench setPosATL _pos; // prevent glitches by setting position last, prepare on 0,0,0 - move - rest is done by animation
-_trench setVariable ["ace_trenches_progress", 0, true];
 
 [QGVAR(addTrenchToDecay), [_trench, GVAR(timeoutToDecay), GVAR(decayTime)]] call CBA_fnc_serverEvent;
 
