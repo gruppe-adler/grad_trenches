@@ -26,7 +26,7 @@ private _trench = createVehicle [_trenchClass, [0,0,0], [], 0, "CAN_COLLIDE"];
 private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> _trenchClass >>"ace_trenches_diggingDuration"), 20];
 
 _trench setVariable [QGVAR(diggingSteps), (_posDiff/(_digTime*10)), true];
-if (GVAR(createTrenchMarker)) then {[_trench, side group _unit] call FUNC(createTrenchMarker)};
+if (GVAR(createTrenchMarker)) then {[_trench, side _unit] call FUNC(createTrenchMarker)};
 
 [_trench, 0, 0] call FUNC(setTrenchProgress); // animate to down under initially
 
