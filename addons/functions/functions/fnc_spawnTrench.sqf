@@ -8,6 +8,7 @@
 * 1: PosDiff <NUMBER 0-1>
 * 2: Pos <ARRAY>
 * 3: VecDirAndUp <NESTED ARRAY>
+* 4: Unit <OBJECT>
 *
 * Return Value:
 * None
@@ -18,7 +19,7 @@
 * Public: No
 */
 
-params ["_trenchClass", "_posDiff", "_pos", "_vecDirAndUp"];
+params ["_trenchClass", "_posDiff", "_pos", "_vecDirAndUp", "_unit"];
 
 //Create a new trench, that is globally visible
 private _trench = createVehicle [_trenchClass, [0,0,0], [], 0, "CAN_COLLIDE"];

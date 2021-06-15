@@ -43,4 +43,4 @@ private _vecDirAndUp = [(vectorDir ace_trenches_trench), (vectorUp ace_trenches_
 //Delete preview trench
 deleteVehicle ace_trenches_trench;
 
-[QGVAR(spawnTrench), [_trenchClass, _posDiff, _pos, _vecDirAndUp]] call CBA_fnc_serverEvent;
+[QGVAR(spawnTrench), [_trenchClass, _posDiff, _pos, _vecDirAndUp, _unit]] call CBA_fnc_serverEvent;
