@@ -112,7 +112,6 @@ if (_actualProgress == 0) then {
     private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
     private _diggerCount = count (_trench getVariable [QGVAR(diggers),[]]);
     private _newProgress =  _actualProgress + ((1/_digTime)) * _diggerCount;
-    _trench setVariable ["ace_trenches_progress", _newProgress, true];
 
     [_trench, _newProgress, 0.1] call FUNC(setTrenchProgress);
     [QGVAR(applyFatigue), [_trench, _unit], _unit] call CBA_fnc_targetEvent;
