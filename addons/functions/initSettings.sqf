@@ -27,6 +27,13 @@
 [QGVAR(LongEnvelopeDigTime), "SLIDER", localize LSTRING(LongEnvelopeDigTime), [localize LSTRING(settingCategory), localize LSTRING(trenchSubCategory)], [5, 1200, 100, 0], true] call CBA_fnc_addSetting;
 [QGVAR(LongEnvelopeRemovalTime), "SLIDER", localize LSTRING(LongEnvelopeRemovalTime), [localize LSTRING(settingCategory), localize LSTRING(trenchSubCategory)], [-1, 1200, -1, 0], true] call CBA_fnc_addSetting;
 
+//Trench hit damage multiplier
+[QGVAR(smallEnvelopeDamageMultiplier), "SLIDER", localize LSTRING(smallEnvelopeDamageMultiplier), [localize LSTRING(settingCategory), localize LSTRING(trenchSubCategory)], [0.1, 10, 3, 0], true] call CBA_fnc_addSetting;
+[QGVAR(shortEnvelopeDamageMultiplier), "SLIDER", localize LSTRING(shortEnvelopeDamageMultiplier), [localize LSTRING(settingCategory), localize LSTRING(trenchSubCategory)], [0.1, 10, 2, 0], true] call CBA_fnc_addSetting;
+[QGVAR(bigEnvelopeDamageMultiplier), "SLIDER", localize LSTRING(bigEnvelopeDamageMultiplier), [localize LSTRING(settingCategory), localize LSTRING(trenchSubCategory)], [0.1, 10, 2, 0], true] call CBA_fnc_addSetting;
+[QGVAR(giantEnvelopeDamageMultiplier), "SLIDER", localize LSTRING(giantEnvelopeDamageMultiplier), [localize LSTRING(settingCategory), localize LSTRING(trenchSubCategory)], [0.1, 10, 1, 0], true] call CBA_fnc_addSetting;
+[QGVAR(vehicleEnvelopeDamageMultiplier), "SLIDER", localize LSTRING(vehicleEnvelopeDamageMultiplier), [localize LSTRING(settingCategory), localize LSTRING(trenchSubCategory)], [0.1, 10, 1, 0], true] call CBA_fnc_addSetting;
+
 //Trench decay settings
 [QGVAR(allowTrenchDecay), "CHECKBOX", [localize LSTRING(allowTrenchDecay_displayName), localize LSTRING(allowTrenchDecay_tooltip)], [localize LSTRING(settingCategory), localize LSTRING(decaySubCategory)], false, true] call CBA_fnc_addSetting;
 [QGVAR(timeoutToDecay), "SLIDER", [localize LSTRING(timeoutToDecay_displayName), localize LSTRING(timeoutToDecay_tooltip)], [localize LSTRING(settingCategory), localize LSTRING(decaySubCategory)], [60, 18000, 7200, 0], true] call CBA_fnc_addSetting;
