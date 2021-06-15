@@ -34,4 +34,4 @@ if (_duration > 0) then {
     _trench animateSource ["rise", _lift, true];
 };
 
-TRACE_4("_lift, _offset, _position, _progress", _lift, _offset, getpos _trench, _progress);
+TRACE_4("_lift: %1, _offset: %2, _position: %3, _progress: %4", _lift, _offset, getpos _trench, _progress);
