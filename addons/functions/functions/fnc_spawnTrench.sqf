@@ -14,7 +14,7 @@
 * None
 *
 * Example:
-* [TrenchObj, 0.5] call grad_trenches_functions_fnc_setTrenchProgress
+* [TypeOf TrenchObj, 0.5, [0,0,0], [[0,0,0], [0,0,0]], ace_player] call grad_trenches_functions_fnc_spawnTrench
 *
 * Public: No
 */
