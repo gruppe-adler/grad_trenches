@@ -30,5 +30,5 @@ _progress = _progress - _damage;
 if (_progress > 0) then {
     [_trench, _progress, 0] call FUNC(setTrenchProgress);
 } else {
-    [_trench] call FUNC(deleteTrench);
+    [_trench, objNull] call FUNC(deleteTrench);
 };

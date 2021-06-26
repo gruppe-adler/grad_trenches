@@ -15,12 +15,13 @@
  * Public: No
  */
 
-params ["_trench"];
+params ["_trench", ["_unit", objNull]];
 
 _trench setVariable ["ace_trenches_digging", false, true];
 _trench setVariable [QGVAR(diggingType), nil, true];
-_unit setVariable [QGVAR(diggingTrench), false, true];
-[QGVAR(addDigger), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
+if (!isNull _unit) then {
+    _unit setVariable [QGVAR(diggingTrench), false, true];
+};
 
 // Remove map marker
 if (GVAR(createTrenchMarker)) then {deleteMarker (_trench getVariable [QGVAR(trenchMapMarker), ""])};
