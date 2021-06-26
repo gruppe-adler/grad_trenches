@@ -17,8 +17,7 @@ for "_i" from 1 to _count do {
     private _ps1 = "#particlesource" createVehicleLocal [0,0,0]; 
 
     private _prefix = if (_count < 10) then { "0" } else { "" };
-    private _selectionName = "fxSource" + _prefix + str _count;
-    systemChat str _prefix;
+    private _selectionName = "fxSource" + _prefix + str _i;
     private _position = (_vehicle modelToWorld (_vehicle selectionPosition _selectionName));
     _ps1 setPos _position;
     _ps1 setParticleParams [   
@@ -26,8 +25,8 @@ for "_i" from 1 to _count do {
      1, 10, [0,1,-2.5], _vector, 1, 10, 1, 0.2, [0.1, 0.1],   
      [[1, 1, 1 ,1]],   
      [0, 1], 1, 0, "", "", _ps1, 0, true, .1];   
-    _ps1 setParticleRandom [2, [1.5, 0.1, 2], [2, 2, 4], 0, 1, [0, 0, 0, 0], 0, 0];   
-    _ps1 setParticleCircle [3.2, [1,-1,2]];
+    _ps1 setParticleRandom [2, [0.1, 0.1, 0.1], [0.1, 0.1, 0.2], 0, 1, [0, 0, 0, 0], 0, 0];   
+    _ps1 setParticleCircle [0.2, [0,0,0.3]];
     _ps1 setDropInterval 0.005;  
     [{ deleteVehicle (_this select 0); }, [_ps1], 0.1] call CBA_fnc_waitAndExecute; 
 };
