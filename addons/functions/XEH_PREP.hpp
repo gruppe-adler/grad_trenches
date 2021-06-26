@@ -13,6 +13,7 @@ PREP(createTrenchMarker);
 PREP(decayPFH);
 PREP(deleteCamouflage);
 PREP(deleteTrench);
+PREP(digFX);
 PREP(handleDiggerToGVAR);
 PREP(hitEH);
 PREP(hitFX);

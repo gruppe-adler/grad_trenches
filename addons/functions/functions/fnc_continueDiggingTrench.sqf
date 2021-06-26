@@ -115,9 +115,11 @@ if (_actualProgress == 0) then {
 
     [_trench, _newProgress, 0.1] call FUNC(setTrenchProgress);
     [QGVAR(applyFatigue), [_trench, _unit], _unit] call CBA_fnc_targetEvent;
+    [QGVAR(digFX), [_trench]] call CBA_fnc_globalEvent;
 
     private _sound = str (selectRandom [1,2,3,4,5,6,7]);
     playSound3D ["x\grad_trenches\addons\sounds\dig" + _sound + ".ogg", _trench, false, getpos _trench, 1, 1, 100];
+
 }, 1, [_trench, _unit, _digTime]] call CBA_fnc_addPerFrameHandler;
 
 // Play animation
