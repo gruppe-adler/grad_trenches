@@ -47,7 +47,7 @@ private _fnc_onFinish = {
     _trench setVariable ["ace_trenches_digging", false, true];
     _trench setVariable [QGVAR(diggingType), nil, true];
     _unit setVariable [QGVAR(diggingTrench), false, true];
-    [QGVAR(addDigger), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
+    [QGVAR(handleDiggerToGVAR), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
 
     // Save progress global
     _trench setVariable ["ace_trenches_progress", 1, true];
@@ -60,7 +60,7 @@ private _fnc_onFailure = {
     _trench setVariable ["ace_trenches_digging", false, true];
     _trench setVariable [QGVAR(diggingType), nil, true];
     _unit setVariable [QGVAR(diggingTrench), false, true];
-    [QGVAR(addDigger), [_trench, _unit, true]] call CBA_fnc_serverEvent;
+    [QGVAR(handleDiggerToGVAR), [_trench, _unit, true]] call CBA_fnc_serverEvent;
 
     // Save progress global
     private _progress = _trench getVariable ["ace_trenches_progress", 0];
@@ -105,7 +105,7 @@ if (_actualProgress == 0) then {
     ) exitWith {
         [_handle] call CBA_fnc_removePerFrameHandler;
         _trench setVariable ["ace_trenches_digging", false, true];
-        [QGVAR(addDigger), [_trench, _unit, true]] call CBA_fnc_serverEvent;
+        [QGVAR(handleDiggerToGVAR), [_trench, _unit, true]] call CBA_fnc_serverEvent;
     };
 
     if (_actualProgress >= 1) exitWith {

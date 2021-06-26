@@ -28,7 +28,6 @@ ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + ((_multiplier
 
 if (GVAR(stopBuildingAtFatigueMax) && {ace_advanced_fatigue_anReserve <= 0}) exitWith {
      _trench setVariable ["ace_trenches_digging", false, true]; // also stops server PFH
-     [QGVAR(addDigger), [_trench, _unit, true]] call CBA_fnc_serverEvent;
+     [QGVAR(handleDiggerToGVAR), [_trench, _unit, true]] call CBA_fnc_serverEvent;
      _unit setVariable [QGVAR(diggingTrench), false];
 };
- 

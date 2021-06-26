@@ -56,7 +56,7 @@ private _fnc_onFailure = {
     _trench setVariable ["ace_trenches_digging", false, true];
     _trench setVariable [QGVAR(diggingType), nil, true];
     _unit setVariable [QGVAR(diggingTrench), false, true];
-    [QGVAR(addDigger), [_trench, _unit, true]] call CBA_fnc_serverEvent;
+    [QGVAR(handleDiggerToGVAR), [_trench, _unit, true]] call CBA_fnc_serverEvent;
 
     // Save progress global
     private _progress = _trench getVariable ["ace_trenches_progress", 0];
@@ -89,7 +89,7 @@ private _fnc_condition = {
     ) exitWith {
         [_handle] call CBA_fnc_removePerFrameHandler;
         _trench setVariable ["ace_trenches_digging", false, true];
-        [QGVAR(addDigger), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
+        [QGVAR(handleDiggerToGVAR), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
     };
 
     if (_actualProgress <= 0) exitWith {
@@ -103,6 +103,8 @@ private _fnc_condition = {
     private _sound = str (selectRandom [1,2,3,4,5,6,7]);
     playSound3D ["x\grad_trenches\addons\sounds\dig" + _sound + ".ogg", _trench, false, getpos _trench, 1, 1, 100];
 
+    [QGVAR(digFX), [_trench]] call CBA_fnc_globalEvent;
+    
     //Fatigue impact
     ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (2 * GVAR(buildFatigueFactor))) max 0;
     ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + ((2 * GVAR(buildFatigueFactor))/2000)) min 1;
@@ -110,7 +112,7 @@ private _fnc_condition = {
     if (GVAR(stopBuildingAtFatigueMax) && (ace_advanced_fatigue_anReserve <= 0)) exitWith {
         [_handle] call CBA_fnc_removePerFrameHandler;
         _trench setVariable ["ace_trenches_digging", false, true];
-        [QGVAR(addDigger), [_trench, _unit, true]] call CBA_fnc_serverEvent;
+        [QGVAR(handleDiggerToGVAR), [_trench, _unit, true]] call CBA_fnc_serverEvent;
         _unit setVariable [QGVAR(diggingTrench), false];
     };
 }, 1, [_trench, _unit, _removeTime]] call CBA_fnc_addPerFrameHandler;
