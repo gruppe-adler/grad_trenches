@@ -23,7 +23,7 @@ if (_diggersCount < 1) exitWith {
     [_trench, _unit, true] call FUNC(continueDiggingTrench);
 };
 
-[QGVAR(addDigger), [_trench, _unit, false]] call CBA_fnc_serverEvent;
+[QGVAR(handleDiggerToGVAR), [_trench, _unit, false]] call CBA_fnc_serverEvent;
 
 private _type = true;
 private _condition = {
