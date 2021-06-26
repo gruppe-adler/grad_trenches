@@ -19,6 +19,7 @@ params ["_trench", ["_unit", objNull]];
 
 _trench setVariable ["ace_trenches_digging", false, true];
 _trench setVariable [QGVAR(diggingType), nil, true];
+[QGVAR(handleDiggerToGVAR), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
 if (!isNull _unit) then {
     _unit setVariable [QGVAR(diggingTrench), false, true];
 };
