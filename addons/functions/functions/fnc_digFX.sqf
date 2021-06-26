@@ -27,7 +27,7 @@ private _selections = (_vehicle selectionNames "Memory") select {(_x find "fxsou
     _particleSource setPos _position;
     _particleSource setParticleParams [   
      "\A3\Data_F\ParticleEffects\Universal\Mud", "", "SpaceObject",   
-     1, 10, [0,0,0.1], [0,0,0], 1, 10, 1, 0.2, [0.05],   
+     1, 10, [0,0,0], [0,0,1], 1, 10, 1, 0.2, [0.05],   
      [[1, 1, 1 ,1]],   
      [0, 1], 1, 0, "", "", _particleSource, 0, true, .1];   
     _particleSource setParticleRandom [2, [0.5, 0.5, 0.1], [0.1, 0.1, 0.2], 0, 2, [0, 0, 0, 0], 0, 0];   
