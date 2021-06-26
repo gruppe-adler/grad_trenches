@@ -79,7 +79,7 @@ private _fnc_condition = {
     true
 };
 
-[[_unit, _trench], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_DiggingTrench", _fnc_condition] call EFUNC(progressBar);
+[[_unit, _trench], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_DiggingTrench", _fnc_condition] call FUNC(progressBar);
 
 if (_actualProgress == 0) then {
     //Remove grass
