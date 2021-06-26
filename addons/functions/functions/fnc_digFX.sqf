@@ -3,13 +3,13 @@ params ["_vehicle"];
 private _count = 0;
 
 switch (typeof _vehicle) do { 
-    case "trench_short" : {  _count = 7; }; 
-    case "trench_small" : {  _count = 5; }; 
-    case "trench_big" : {  _count = 7; }; 
-    case "trench_giant" : {  _count = 11; }; 
-    case "trench_vehicle" : {  _count = 13; }; 
-    case "trench_long" : {  _count = 15; }; 
-    default {  /*...code...*/ }; 
+    case "GRAD_envelope_short" : {  _count = 7; }; 
+    case "ACE_envelope_small" : {  _count = 5; }; 
+    case "ACE_envelope_big" : {  _count = 7; }; 
+    case "GRAD_envelope_giant" : {  _count = 11; }; 
+    case "GRAD_envelope_vehicle" : {  _count = 13; }; 
+    case "GRAD_envelope_long" : {  _count = 15; }; 
+    default {  }; 
 };
 
 for "_i" from 1 to _count do {
@@ -18,7 +18,8 @@ for "_i" from 1 to _count do {
 
     private _prefix = if (_count < 10) then { "0" } else { "" };
     private _selectionName = "fxSource" + _prefix + str _count;
-    private _position = (_vehicle modelToWorld (_vehicle selectionPosition _selectionName);
+    systemChat str _prefix;
+    private _position = (_vehicle modelToWorld (_vehicle selectionPosition _selectionName));
     _ps1 setPos _position;
     _ps1 setParticleParams [   
      "\A3\Data_F\ParticleEffects\Universal\Mud", "", "SpaceObject",   
