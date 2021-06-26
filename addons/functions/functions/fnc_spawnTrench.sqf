@@ -37,6 +37,6 @@ _trench setPosATL _pos; // prevent glitches by setting position last, prepare on
 
 [QGVAR(addTrenchToDecay), [_trench, GVAR(timeoutToDecay), GVAR(decayTime)]] call CBA_fnc_serverEvent;
 
-[_trench, _unit, false] call FUNC(continueDiggingTrench);
+[QGVAR(continueDiggingTrench), [_trench, _unit, false], _unit] call CBA_fnc_targetEvent;
 
 TRACE_1("Server spawning trench at ", _pos);

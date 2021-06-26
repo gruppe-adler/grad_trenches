@@ -13,4 +13,5 @@ if (hasInterface) then {
     [QGVAR(hitFX), {_this call FUNC(hitFX);}] call CBA_fnc_addEventHandler;
     [QGVAR(applyFatigue), {_this call FUNC(applyFatigue);}] call CBA_fnc_addEventHandler;
     [QGVAR(digFX), {_this call FUNC(digFX);}] call CBA_fnc_addEventHandler;
+    [QGVAR(continueDiggingTrench), {_this call FUNC(continueDiggingTrench);}] call CBA_fnc_addEventHandler;
 };
