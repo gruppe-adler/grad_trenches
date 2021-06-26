@@ -17,7 +17,7 @@
 
 params ["_vehicle"];
 
-private _selections = (_vehicle selectionNames "Memory") select {(_x find "fxSource") isEqualTo 0};
+private _selections = (_vehicle selectionNames "Memory") select {(_x find "fxSource") isNotEqualTo 0};
 
 {
     private _selectionName = _x;
