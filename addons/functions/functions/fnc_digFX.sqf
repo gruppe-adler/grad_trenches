@@ -33,7 +33,7 @@ for "_i" from 1 to _count do {
     private _vector = (vectorDir _vehicle) vectorMultiply 1;
     private _ps1 = "#particlesource" createVehicleLocal [0,0,0]; 
 
-    private _prefix = if (_count < 10) then { "0" } else { "" };
+    private _prefix = if (_i < 10) then { "0" } else { "" };
     private _selectionName = "fxSource" + _prefix + str _i;
     private _position = (_vehicle modelToWorld (_vehicle selectionPosition _selectionName));
     _ps1 setPos _position;
