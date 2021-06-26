@@ -96,6 +96,9 @@ if (_actualProgress == 0) then {
     params ["_args", "_handle"];
     _args params ["_trench", "_unit", "_digTime"];
     
+    private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
+    private _diggerCount = count (_trench getVariable [QGVAR(diggers),[]]);
+    
     if (
         !(_trench getVariable ["ace_trenches_digging", false]) ||
         {_diggerCount <= 0}
@@ -109,8 +112,6 @@ if (_actualProgress == 0) then {
         [_handle] call CBA_fnc_removePerFrameHandler;
     };
 
-    private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
-    private _diggerCount = count (_trench getVariable [QGVAR(diggers),[]]);
     private _newProgress =  _actualProgress + ((1/_digTime)) * _diggerCount;
 
     [_trench, _newProgress, 0.1] call FUNC(setTrenchProgress);
