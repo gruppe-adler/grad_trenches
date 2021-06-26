@@ -1,3 +1,20 @@
+#include "script_component.hpp"
+/*
+ * Author: nomisum
+ * Displaying Dig FX on Digging
+ *
+ * Arguments:
+ * 0: Trench <OBJECT>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [TrenchObj] call grad_trenches_functions_fnc_digFX;
+ *
+ * Public: No
+ */
+
 params ["_vehicle"];
 
 private _count = 0;
@@ -22,12 +39,11 @@ for "_i" from 1 to _count do {
     _ps1 setPos _position;
     _ps1 setParticleParams [   
      "\A3\Data_F\ParticleEffects\Universal\Mud", "", "SpaceObject",   
-     1, 10, [0,1,-2.5], _vector, 1, 10, 1, 0.2, [0.1, 0.1],   
+     1, 10, [0,0,-2.5], [0,0,0], 1, 10, 1, 0.2, [0.1, 0.1],   
      [[1, 1, 1 ,1]],   
      [0, 1], 1, 0, "", "", _ps1, 0, true, .1];   
-    _ps1 setParticleRandom [2, [0.1, 0.1, 0.1], [0.1, 0.1, 0.2], 0, 1, [0, 0, 0, 0], 0, 0];   
-    _ps1 setParticleCircle [0.2, [0,0,0.3]];
+    _ps1 setParticleRandom [2, [0.5, 0.5, 0.1], [0.1, 0.1, 0.2], 0, 1, [0, 0, 0, 0], 0, 0];   
+    _ps1 setParticleCircle [0.3, [0,0,0.3]];
     _ps1 setDropInterval 0.005;  
     [{ deleteVehicle (_this select 0); }, [_ps1], 0.1] call CBA_fnc_waitAndExecute; 
 };
-
