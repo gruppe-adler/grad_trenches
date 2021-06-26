@@ -17,19 +17,9 @@
 
 params ["_vehicle"];
 
-private _count = 0;
+private _selections = (_vehicle selectionNames "Memory") select {(_x find "fxSource") isEqualTo 0};
 
-switch (typeof _vehicle) do { 
-    case "GRAD_envelope_short" : {  _count = 7; }; 
-    case "ACE_envelope_small" : {  _count = 5; }; 
-    case "ACE_envelope_big" : {  _count = 7; }; 
-    case "GRAD_envelope_giant" : {  _count = 11; }; 
-    case "GRAD_envelope_vehicle" : {  _count = 13; }; 
-    case "GRAD_envelope_long" : {  _count = 15; }; 
-    default {  }; 
-};
-
-for "_i" from 1 to _count do {
+{
     private _vector = (vectorDir _vehicle) vectorMultiply 1;
     private _ps1 = "#particlesource" createVehicleLocal [0,0,0]; 
 
@@ -46,4 +36,4 @@ for "_i" from 1 to _count do {
     _ps1 setParticleCircle [0.3, [0,0,0.3]];
     _ps1 setDropInterval 0.005;  
     [{ deleteVehicle (_this select 0); }, [_ps1], 0.1] call CBA_fnc_waitAndExecute; 
-};
+} forEach _selections;
