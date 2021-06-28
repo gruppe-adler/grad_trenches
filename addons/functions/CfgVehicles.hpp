@@ -202,7 +202,7 @@ class CfgVehicles {
         GVAR(offset) = 2;
         ace_trenches_placementData[] = {10,1.1,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
-        GVAR(damageMultiplier) = = QGVAR(vehicleEnvelopeDamageMultiplier);
+        GVAR(damageMultiplier) = QGVAR(vehicleEnvelopeDamageMultiplier);
 
         class CamouflagePositions1 {
             a[] = {3.9, 2.5, 3.5};
