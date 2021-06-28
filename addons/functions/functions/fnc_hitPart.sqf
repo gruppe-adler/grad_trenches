@@ -23,8 +23,8 @@ params ["_trench", "_position", "_splashDamage"];
 [QGVAR(hitFX), [vectorDir _trench, ASLToAGL (_position)]] call CBA_fnc_globalEvent;
 
 private _progress = _trench getVariable ["ace_trenches_progress", 0];
-private _multiplier = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >> GVAR(damageMultiplier)), -1];
-private _globalMultiplier = missionNamespace getVariable [GVAR(hitDecayMultiplier), -1];
+private _multiplier = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >> QGVAR(damageMultiplier)), -1];
+private _globalMultiplier = missionNamespace getVariable [QGVAR(hitDecayMultiplier), -1];
 private _damage = (_splashDamage*_multiplier*_globalMultiplier)/20; // 1 HE shell appr 25% decay depending on ammo type
 _progress = _progress - _damage;
 
