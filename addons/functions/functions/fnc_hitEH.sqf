@@ -46,6 +46,10 @@ _trench addEventHandler ["HitPart", {
             }, [_trench], 1] call CBA_fnc_waitAndExecute;
 
             if (_splashDamage > 1) then {
+                // reduce effect for grenades
+                if (_projectile isKindOf "Grenade") then {
+                    _splashDamage = _splashDamage*0.1;
+                };
                 [QGVAR(hitPart), [_trench, _position, _splashDamage]] call CBA_fnc_serverEvent;
             };
         };
