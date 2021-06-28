@@ -553,5 +553,25 @@
             <English>Multiplier for Hit Damage</English>
             <German>Multiplikator für Trefferschaden</German>
         </Key>
+        <Key ID="STR_GRAD_Trenches_functions_smallEnvelopeDamageMultiplier">
+            <English>Small Trench Multiplier</English>
+            <German>Multiplikator Kleiner Schützengraben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_shortEnvelopeDamageMultiplier">
+             <English>Short Trench Multiplier</English>
+            <German>Multiplikator kurzer Schützengraben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_bigEnvelopeDamageMultiplier">
+           <English>Big Trench Multiplier</English>
+            <German>Multiplikator großer Schützengraben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_giantEnvelopeDamageMultiplier">
+            <English>Giant Trench Multiplier</English>
+            <German>Multiplikator Sehr großer Schützengraben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_vehicleEnvelopeDamageMultiplier">
+            <English>Vehicle Trench Multiplier</English>
+            <German>Multiplikator Fahrzeuggraben</German>
+        </Key>
     </Package>
 </Project>
