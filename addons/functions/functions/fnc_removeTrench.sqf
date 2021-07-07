@@ -99,7 +99,7 @@ private _fnc_condition = {
     private _diggerCount = count (_trench getVariable [QGVAR(diggers),[]]);
     private _newProgress =  _actualProgress - ((1/_removeTime)) * _diggerCount;
 
-    [_trench, _newProgress, 0.1] call FUNC(setTrenchProgress);
+    [_trench, _newProgress, 1.5] call FUNC(setTrenchProgress); // not too fast so animation is still visible
     private _sound = str (selectRandom [1,2,3,4,5,6,7]);
     playSound3D ["x\grad_trenches\addons\sounds\dig" + _sound + ".ogg", _trench, false, getpos _trench, 1, 1, 100];
 

@@ -6,6 +6,7 @@
 * Arguments:
 * 0: Trench <OBJECT>
 * 1: Progress <NUMBER 0-1>
+* 2: Duration <NUMBER 0-1>
 *
 * Return Value:
 * None
@@ -16,7 +17,7 @@
 * Public: No
 */
 
-params ["_trench", "_progress", ["_duration", 0]];
+params ["_trench", "_progress", ["_animationSpeedMultiplier", 0]];
 
 private _offset = [configFile >> "CfgVehicles" >> typeOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry;
 
@@ -28,8 +29,8 @@ private _lift = (linearConversion
     true
     ]);
 
-if (_duration > 0) then {
-    _trench animateSource ["rise", _lift, _duration];
+if (_animationSpeedMultiplier > 0) then {
+    _trench animateSource ["rise", _lift, _animationSpeedMultiplier];
 } else {
     _trench animateSource ["rise", _lift, true];
 };

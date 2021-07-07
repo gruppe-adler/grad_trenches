@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [TrenchObj, 1] remoteExec ["grad_trenches_functions_fnc_hitEH"];
+ * [TrenchObj, 1] remoteExec ["grad_trenches_functions_fnc_hitEHAdd"];
  *
  * Public: No
  */
@@ -24,7 +24,7 @@ if (_trench getVariable [QGVAR(hitHandler), false]) exitWith {
 
 _trench setVariable [QGVAR(hitHandler), true];
 
-
+// only fires on shooters client
 _trench addEventHandler ["HitPart", {
     (_this select 0) params ["_trench", "_shooter", "_projectile", "_position", "_velocity", "_selection", "_ammo", "_vector", "_radius", "_surfaceType", "_isDirect"];
 
@@ -32,8 +32,8 @@ _trench addEventHandler ["HitPart", {
     if (!_isDirect) then {
         // add cooldown after indirect
         if (!(_trench getVariable [QGVAR(hitCoolDown),false])) then {
-            _ammo params ["", "", "_splashDamage", "", "_type"];
-
+            _ammo params ["_hitValue", "_indirectHitValue", "_splashDamage", "", "_type"];
+ 
             _trench setVariable [QGVAR(hitCoolDown), true];
 
             [{
@@ -46,11 +46,17 @@ _trench addEventHandler ["HitPart", {
             }, [_trench], 1] call CBA_fnc_waitAndExecute;
 
             if (_splashDamage > 1) then {
+
+                // larger HE shells should do way more damage than e.g. HE ammo of an APC that has higher cadency
+                private _damageNormalized = ((_hitValue + _indirectHitValue + _splashDamage)/3000); // 300 is arbitrary value
+
+                diag_log format ["hit %1 + indirecthit %2 + splash %3 -> result %4", _hitValue, _indirectHitValue, _splashDamage, _damageNormalized];
+
                 // reduce effect for grenades
                 if (_projectile isKindOf "Grenade") then {
-                    _splashDamage = _splashDamage*0.1;
+                    _damageNormalized = _damageNormalized*0.1;
                 };
-                [QGVAR(hitPart), [_trench, _position, _splashDamage]] call CBA_fnc_serverEvent;
+                [QGVAR(hitPart), [_trench, _position, _damageNormalized]] call CBA_fnc_serverEvent;
             };
         };
     };

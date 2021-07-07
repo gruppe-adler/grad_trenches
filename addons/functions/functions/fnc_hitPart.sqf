@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 /*
  * Author: nomisum
- * Server receives hitPart Events from Clients and calulates
+ * Server receives hitPart Events from Clients and calculates
  *
  * Arguments:
  * 0: Trench <OBJECT>
@@ -24,9 +24,11 @@ params ["_trench", "_position", "_splashDamage"];
 
 private _progress = _trench getVariable ["ace_trenches_progress", 0];
 private _multiplier = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> (typeOf _trench) >> QGVAR(damageMultiplier)), -1];
-private _globalMultiplier = missionNamespace getVariable [QGVAR(hitDecayMultiplier), -1];
-private _damage = (_splashDamage*_multiplier*_globalMultiplier)/20; // 1 HE shell appr 25% decay depending on ammo type
+private _globalMultiplier = missionNamespace getVariable [QGVAR(hitDecayMultiplier), 1];
+private _damage = (_splashDamage*_multiplier*_globalMultiplier);
 _progress = _progress - _damage;
+
+diag_log format ["progress %1, damage %2, _multiplier %3, _globalMultiplier %4", _progress, _damage, _multiplier, _globalMultiplier];
 
 if (_progress > 0) then {
     [_trench, _progress, 0] call FUNC(setTrenchProgress);

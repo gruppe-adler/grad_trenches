@@ -114,7 +114,7 @@ if (_actualProgress == 0) then {
 
     private _newProgress =  _actualProgress + ((1/_digTime)) * _diggerCount;
 
-    [_trench, _newProgress, 0.1] call FUNC(setTrenchProgress);
+    [_trench, _newProgress, 1.5] call FUNC(setTrenchProgress); // not too fast so animation is still visible
     [QGVAR(applyFatigue), [_trench, _unit], _unit] call CBA_fnc_targetEvent;
     [QGVAR(digFX), [_trench]] call CBA_fnc_globalEvent;
 

@@ -15,7 +15,7 @@ PREP(deleteCamouflage);
 PREP(deleteTrench);
 PREP(digFX);
 PREP(handleDiggerToGVAR);
-PREP(hitEH);
+PREP(hitEHAdd);
 PREP(hitFX);
 PREP(hitPart);
 PREP(initCurator);
