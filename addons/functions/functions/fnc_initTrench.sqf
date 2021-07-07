@@ -29,10 +29,11 @@ if (isServer) then {
     if (GVAR(allowTrenchDecay)) then {
        [_object, GVAR(timeoutToDecay), GVAR(decayTime)] call FUNC(decayPFH);
     };
+};
 
-    if (GVAR(allowHitDecay)) then {
-       [_object, GVAR(hitDecayMultiplier)] remoteExec [QFUNC(hitEH), 0, true];
-    };
+// hitpart is local args, so must be applied everywhere
+if (GVAR(allowHitDecay)) then {
+    [_object, GVAR(hitDecayMultiplier)] call FUNC(hitEH);
 };
 
 
