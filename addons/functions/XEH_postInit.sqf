@@ -13,7 +13,6 @@ if (isServer) then {
     {
         // hitpart is local args, so must be applied everywhere
         if (GVAR(allowHitDecay)) then {
-            diag_log format ["initTrench hitdecay %1", GVAR(hitDecayMultiplier)];
             [QGVAR(hitEHAdd), [_object, GVAR(hitDecayMultiplier)]] call CBA_fnc_globalEventJIP;
         };
     } forEach (entities "ACE_envelope_small");

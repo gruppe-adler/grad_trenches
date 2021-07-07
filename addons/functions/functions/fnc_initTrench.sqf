@@ -27,14 +27,12 @@ if (isServer) then {
    _object setVariable ["ace_trenches_progress", 1, true];
 
     if (GVAR(allowTrenchDecay)) then {
-       diag_log format ["initTrench trenchdecay %1", GVAR(decayTime)];
        [_object, GVAR(timeoutToDecay), GVAR(decayTime)] call FUNC(decayPFH);
     };
 };
 
 // hitpart is local args, so must be applied everywhere
 if (GVAR(allowHitDecay)) then {
-    diag_log format ["initTrench hitdecay %1", GVAR(hitDecayMultiplier)];
     [QGVAR(hitEHAdd), [_object, GVAR(hitDecayMultiplier)]] call CBA_fnc_globalEventJIP;
 };
 

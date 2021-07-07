@@ -50,8 +50,6 @@ _trench addEventHandler ["HitPart", {
                 // larger HE shells should do way more damage than e.g. HE ammo of an APC that has higher cadency
                 private _damageNormalized = ((_hitValue + _indirectHitValue + _splashDamage)/3000); // 300 is arbitrary value
 
-                diag_log format ["hit %1 + indirecthit %2 + splash %3 -> result %4", _hitValue, _indirectHitValue, _splashDamage, _damageNormalized];
-
                 // reduce effect for grenades
                 if (_projectile isKindOf "Grenade") then {
                     _damageNormalized = _damageNormalized*0.1;

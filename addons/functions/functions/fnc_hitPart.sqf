@@ -28,8 +28,6 @@ private _globalMultiplier = missionNamespace getVariable [QGVAR(hitDecayMultipli
 private _damage = (_splashDamage*_multiplier*_globalMultiplier);
 _progress = _progress - _damage;
 
-diag_log format ["progress %1, damage %2, _multiplier %3, _globalMultiplier %4", _progress, _damage, _multiplier, _globalMultiplier];
-
 if (_progress > 0) then {
     [_trench, _progress, 0] call FUNC(setTrenchProgress);
 } else {
