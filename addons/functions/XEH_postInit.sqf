@@ -16,7 +16,7 @@ if (isServer) then {
             diag_log format ["initTrench hitdecay %1", GVAR(hitDecayMultiplier)];
             [QGVAR(hitEHAdd), [_object, GVAR(hitDecayMultiplier)]] call CBA_fnc_globalEventJIP;
         };
-    } forEach (entities [["ACE_envelope_small", "ACE_envelope_big", "GRAD_envelope_giant", "GRAD_envelope_vehicle", "GRAD_envelope_short"]]);
+    } forEach (entities "ACE_envelope_small");
 };
 
 if (hasInterface) then {
