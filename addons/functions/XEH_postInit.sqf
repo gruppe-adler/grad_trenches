@@ -8,6 +8,15 @@ if (isServer) then {
     [QGVAR(hitPart), {_this call FUNC(hitPart);}] call CBA_fnc_addEventHandler;
     [QGVAR(hitEHAdd), {_this call FUNC(hitEHAdd);}] call CBA_fnc_addEventHandler;
     [QGVAR(spawnTrench), {_this call FUNC(spawnTrench);}] call CBA_fnc_addEventHandler;
+
+    // add hit EH to preplaced trenches
+    {
+        // hitpart is local args, so must be applied everywhere
+        if (GVAR(allowHitDecay)) then {
+            diag_log format ["initTrench hitdecay %1", GVAR(hitDecayMultiplier)];
+            [QGVAR(hitEHAdd), [_object, GVAR(hitDecayMultiplier)]] call CBA_fnc_globalEventJIP;
+        };
+    } forEach (entities [["ACE_envelope_small", "ACE_envelope_big", "GRAD_envelope_giant", "GRAD_envelope_vehicle", "GRAD_envelope_short"]]);
 };
 
 if (hasInterface) then {
