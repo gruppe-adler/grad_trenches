@@ -28,31 +28,7 @@ if (isNull _trench || {_camouflageObjects isEqualTo []}) exitWith {};
 private _fnc_onFinish = {
     (_this select 0) params ["_unit", "_trench", "_camouflageObjects"];
 
-    private _statusNumber = _trench getVariable [QGVAR(trenchCamouflageStatus), 0];
-    _statusNumber = _statusNumber +1;
-    private _statusString = str _statusNumber;
-
-    private _placedObjects = [];
-    private _camouflageObjectsArray = _trench getVariable [QGVAR(camouflageObjects), []];
-
-    {
-        private _object = createSimpleObject [selectRandom _camouflageObjects, [0,0,0]];
-        _object attachTo [_trench, getArray _x];
-
-        if (is3DEN) then {
-            _object setVariable [QGVAR(positionData), getArray _x,true];
-        };
-
-        _placedObjects pushBack _object;
-    } forEach (configProperties [configFile >> "CfgVehicles" >> (typeof _trench) >> ("CamouflagePositions" + _statusString)]);
-
-    // pushFront
-    reverse _camouflageObjectsArray;
-    _camouflageObjectsArray pushBack _placedObjects;
-    reverse _camouflageObjectsArray;
-
-    _trench setVariable [QGVAR(camouflageObjects), _camouflageObjectsArray, true];
-    _trench setVariable [QGVAR(trenchCamouflageStatus), _statusNumber];
+    [_trench, 1] call FUNC(applyCamouflageAttribute);
 
     // Reset animation
     [_unit, "", 1] call ace_common_fnc_doAnimation;

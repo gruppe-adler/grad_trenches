@@ -20,6 +20,9 @@ params ["_trench", "_value"];
 
 if (_value isEqualTo 1) then {
     private _camouflageObjects = [configFile >> "CfgWorldsTextures" >> worldName >> "camouflageObjects", "ARRAY", []] call CBA_fnc_getConfigEntry;
+    if (_camouflageObjects isEqualTo []) exitWith {
+        TRACE_1("No camouflage objects available for this terrain", _camouflageObjects);
+    };
     private _statusNumber = _trench getVariable [QGVAR(trenchCamouflageStatus), 0];
     _statusNumber = _statusNumber +1;
 

@@ -60,7 +60,6 @@ class CfgVehicles {
                     statement = "";
                     showDisabled = 0;
                     priority = 3;
-                    // icon = "z\ace\addons\trenches\UI\w_entrchtool_ca.paa";
                     exceptions[] = {"notOnMap", "isNotInside", "isNotSitting"};
 
                     class ace_trenches_digEnvelopeSmall {
