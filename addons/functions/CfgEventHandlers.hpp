@@ -28,7 +28,6 @@ class Extended_Deleted_EventHandlers {
     class ACE_envelope_small {
         CAMOUFLAGE_DELETE;
     };
-
     class ACE_envelope_big {
         CAMOUFLAGE_DELETE;
     };
@@ -36,11 +35,13 @@ class Extended_Deleted_EventHandlers {
     class GRAD_envelope_giant {
         CAMOUFLAGE_DELETE;
     };
-
     class GRAD_envelope_vehicle {
         CAMOUFLAGE_DELETE;
     };
     class GRAD_envelope_long {
+        CAMOUFLAGE_DELETE;
+    };
+    class GRAD_envelope_short {
         CAMOUFLAGE_DELETE;
     };
 };
@@ -62,6 +63,9 @@ class Extended_Init_EventHandlers {
         TRENCH_INIT;
     };
     class GRAD_envelope_long {
+        TRENCH_INIT;
+    };
+    class GRAD_envelope_short {
         TRENCH_INIT;
     };
 };

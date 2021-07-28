@@ -40,7 +40,7 @@ if (GVAR(allowHitDecay)) then {
 if (local _object) then {
     // Has to be delayed to ensure MP compatibility (vehicle spawned in same frame as texture is applied)
     [{
-        params ["_obj"];
-        _obj setObjectTextureGlobal [0, surfaceTexture (getPos _obj)];
-    }, _object] call CBA_fnc_execNextFrame;
+        params ["_object"];
+        _object setObjectTextureGlobal [0, surfaceTexture (getPos _object)];
+    }, _object, 0.1] call CBA_fnc_waitAndExecute;
 };
