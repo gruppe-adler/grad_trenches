@@ -573,5 +573,13 @@
             <English>Vehicle Trench Multiplier</English>
             <German>Multiplikator Fahrzeuggraben</German>
         </Key>
+        <Key ID="STR_GRAD_Trenches_functions_allowEffectse_displayName">
+            <English>Enable effects</English>
+            <German>Effekte aktivieren</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_allowEffects_tooltip">
+            <English>Enables effects & sounds while digging</English>
+            <German>Aktiviert Effekte & Geräusche während des Grabens</German>
+        </Key>
     </Package>
 </Project>
