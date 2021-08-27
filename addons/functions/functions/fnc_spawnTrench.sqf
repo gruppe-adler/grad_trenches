@@ -26,8 +26,6 @@ private _trench = createVehicle [_trenchClass, [0,0,0], [], 0, "CAN_COLLIDE"];
 private _digTime = missionNamespace getVariable [getText (configFile >> "CfgVehicles" >> _trenchClass >>"ace_trenches_diggingDuration"), 20];
 
 _trench setVariable [QGVAR(diggingSteps), (_posDiff/(_digTime*10)), true];
-if (GVAR(createTrenchMarker)) then {[_trench, side _unit] call FUNC(createTrenchMarker)};
-
 [_trench, 0, 0] call FUNC(setTrenchProgress); // animate to down under initially
 
 _trench setVectorDirAndUp _vecDirAndUp; 
@@ -38,5 +36,7 @@ _trench setPosATL _pos; // prevent glitches by setting position last, prepare on
 [QGVAR(addTrenchToDecay), [_trench, GVAR(timeoutToDecay), GVAR(decayTime)]] call CBA_fnc_serverEvent;
 
 [QGVAR(continueDiggingTrench), [_trench, _unit, false], _unit] call CBA_fnc_targetEvent;
+
+if (GVAR(createTrenchMarker)) then {[_trench, side _unit] call FUNC(createTrenchMarker)};
 
 TRACE_1("Server spawning trench at ", _pos);
