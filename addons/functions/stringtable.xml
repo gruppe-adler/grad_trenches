@@ -578,8 +578,8 @@
             <German>Effekte aktivieren</German>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowEffects_tooltip">
-            <English>Enables effects & sounds while digging</English>
-            <German>Aktiviert Effekte & Geräusche während des Grabens</German>
+            <English>Enables effects &amp; sounds while digging</English>
+            <German>Aktiviert Effekte &amp; Geräusche während des Grabens</German>
         </Key>
     </Package>
 </Project>
