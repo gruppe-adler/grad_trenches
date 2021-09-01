@@ -25,18 +25,22 @@ if (is3DEN) exitWith {
 
 if (isServer) then {
    _object setVariable ["ace_trenches_progress", 1, true];
-   _object setVariable ["ace_trenches_placeData", [_pos, _vecDirAndUp], true];
 
     if (GVAR(allowTrenchDecay)) then {
        [_object, GVAR(timeoutToDecay), GVAR(decayTime)] call FUNC(decayPFH);
     };
 };
 
+// hitpart is local args, so must be applied everywhere
+if (GVAR(allowHitDecay)) then {
+    [QGVAR(hitEHAdd), [_object, GVAR(hitDecayMultiplier)]] call CBA_fnc_globalEventJIP;
+};
+
 
 if (local _object) then {
     // Has to be delayed to ensure MP compatibility (vehicle spawned in same frame as texture is applied)
     [{
-        params ["_obj"];
-        _obj setObjectTextureGlobal [0, surfaceTexture (getPos _obj)];
-    }, _object] call CBA_fnc_execNextFrame;
+        params ["_object"];
+        _object setObjectTextureGlobal [0, surfaceTexture (getPos _object)];
+    }, _object, 0.1] call CBA_fnc_waitAndExecute;
 };
