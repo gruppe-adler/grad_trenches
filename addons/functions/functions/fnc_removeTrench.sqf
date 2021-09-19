@@ -101,11 +101,11 @@ private _fnc_condition = {
 
     [_trench, _newProgress, 1.5] call FUNC(setTrenchProgress); // not too fast so animation is still visible
     
+    //Show spezial effects
     if (GVAR(allowEffects)) then {
         [QGVAR(digFX), [_trench]] call CBA_fnc_globalEvent;
 
-        private _sound = str (selectRandom [1,2,3,4,5,6,7]);
-        playSound3D ["x\grad_trenches\addons\sounds\dig" + _sound + ".ogg", _trench, false, getpos _trench, 1, 1, 100];
+        [_trench] call FUNC(playSound);
     };
 
     //Fatigue impact

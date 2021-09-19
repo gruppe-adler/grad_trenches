@@ -116,15 +116,17 @@ if (_actualProgress == 0) then {
 
     [_trench, _newProgress, 1.5] call FUNC(setTrenchProgress); // not too fast so animation is still visible
     [QGVAR(applyFatigue), [_trench, _unit], _unit] call CBA_fnc_targetEvent;
+
+    //Show special effects
     if (GVAR(allowEffects)) then {
         [QGVAR(digFX), [_trench]] call CBA_fnc_globalEvent;
 
-        private _sound = str (selectRandom [1,2,3,4,5,6,7]);
-        playSound3D ["x\grad_trenches\addons\sounds\dig" + _sound + ".ogg", _trench, false, getpos _trench, 1, 1, 100];
+        [_trench] call FUNC(playSound);
     };
 
 }, 1, [_trench, _unit, _digTime]] call CBA_fnc_addPerFrameHandler;
 
 // Play animation
 [_unit] call FUNC(loopanimation);
+
 [QGVAR(resetDecay), [_trench]] call CBA_fnc_serverEvent;

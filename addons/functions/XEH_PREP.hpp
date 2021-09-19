@@ -25,6 +25,7 @@ PREP(loopAnimation);
 PREP(placeCamouflage);
 PREP(placeConfirm);
 PREP(placeTrench);
+PREP(playSound);
 PREP(progressBar);
 PREP(removeCamouflage);
 PREP(removeTrench);
