@@ -106,11 +106,10 @@
             <French>Creuser une petite tranchée</French>
             <Chinesesimp>挖短掩体</Chinesesimp>
         </Key>
-
         <Key ID="STR_GRAD_Trenches_functions_settingCategory">
             <English>GRAD Trenches</English>
             <German>GRAD Trenches</German>
-            <Russian>GRAD окопы</Russian> 
+            <Russian>GRAD окопы</Russian>
             <French>GRAD Tranchées</French>
             <Chinesesimp>GRAD 掩体</Chinesesimp>
         </Key>
@@ -581,12 +580,12 @@
             <Russian>Множитель урона малого окопа</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_shortEnvelopeDamageMultiplier">
-             <English>Short Trench Multiplier</English>
+            <English>Short Trench Multiplier</English>
             <German>Multiplikator kurzer Schützengraben</German>
             <Russian>Множитель урона короткого окопа</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_bigEnvelopeDamageMultiplier">
-           <English>Big Trench Multiplier</English>
+            <English>Big Trench Multiplier</English>
             <German>Multiplikator großer Schützengraben</German>
             <Russian>Множитель урона среднего окопа</Russian>
         </Key>
