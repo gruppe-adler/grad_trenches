@@ -106,11 +106,10 @@
             <French>Creuser une petite tranchée</French>
             <Chinesesimp>挖短掩体</Chinesesimp>
         </Key>
-
         <Key ID="STR_GRAD_Trenches_functions_settingCategory">
             <English>GRAD Trenches</English>
             <German>GRAD Trenches</German>
-            <Russian>GRAD окопы</Russian> 
+            <Russian>GRAD окопы</Russian>
             <French>GRAD Tranchées</French>
             <Chinesesimp>GRAD 掩体</Chinesesimp>
         </Key>
@@ -242,9 +241,11 @@
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_createTrenchMarker_displayName">
             <English>Create trench map markers</English>
+            <Russian>Отмечать окопы на карте</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_createTrenchMarker_tooltip">
             <English>Create map markers for player-dug trenches, but only for the digger's side or any friendly side.</English>
+            <Russian>Отмечать отрытые игроком окопы на карте для всех на своей или любой союзной стороне.</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_ShortEnvelopeDigTime">
             <English>Dig time (s) for short envelope trenches</English>
@@ -291,31 +292,37 @@
         <Key ID="STR_GRAD_Trenches_functions_ShortEnvelopeRemovalTime">
             <English>Removal time (s) for short envelope trenches. -1 takes the dig time</English>
             <German>Zeit (s) um kurze Gräben zu entfernen. -1 nimmt die Grabezeit</German>
+            <Russian>Время срытия (сек) короткого окопа. -1 приравнивает к времени откапывания</Russian>
             <French>Temps de suppression (s) pour les tranchées individuelles</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_SmallEnvelopeRemovalTime">
             <English>Removal time (s) for small envelope trenches. -1 takes the dig time</English>
             <German>Zeit (s) um kleine Gräben zu entfernen. -1 nimmt die Grabezeit</German>
+            <Russian>Время срытия (сек) малого окопа. -1 приравнивает к времени откапывания</Russian>
             <French>Temps de suppression (s) pour les petites tranchées</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_BigEnvelopeRemovalTime">
             <English>Removal time (s) for big envelope trenches. -1 takes the dig time</English>
             <German>Zeit (s) um große Gräben zu entfernen. -1 nimmt die Grabezeit</German>
+            <Russian>Время срытия (сек) среднего окопа. -1 приравнивает к времени откапывания</Russian>
             <French>Temps de suppression (s) pour les petites tranchées (meurtrières)</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_GiantEnvelopeRemovalTime">
             <English>Removal time (s) for giant envelope trenches. -1 takes the dig time</English>
             <German>Zeit (s) um riesige Gräben zu entfernen. -1 nimmt die Grabezeit</German>
+            <Russian>Время срытия (сек) большого окопа. -1 приравнивает к времени откапывания</Russian>
             <French>Temps de suppression (s) pour les grandes tranchées (meurtrières)</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_VehicleEnvelopeRemovalTime">
             <English>Removal time (s) for vehicle envelope trenches. -1 takes the dig time</English>
             <German>Zeit (s) um Fahrzeuggräben zu entfernen. -1 nimmt die Grabezeit</German>
+            <Russian>Время срытия (сек) окопа для техники. -1 приравнивает к времени откапывания</Russian>
             <French>Temps de suppression (s) pour les tranchées pour véhicule</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_LongEnvelopeRemovalTime">
             <English>Removal time (s) for Long envelope trenches. -1 takes the dig time</English>
             <German>Zeit (s) um Lange Gräben zu entfernen. -1 nimmt die Grabezeit</German>
+            <Russian>Время срытия (сек) длинного окопа. -1 приравнивает к времени откапывания</Russian>
             <French>Temps de suppression (s) pour les grandes tranchées</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_HelpDigging">
@@ -370,6 +377,7 @@
         <Key ID="STR_GRAD_Trenches_functions_allowLongEnvelope_tooltip">
             <English>Allow digging of envelope long trenches</English>
             <German>Erlaube das Graben von Grabenen Langegräben</German>
+            <Russian>Разрешить откапывание длинных окопов</Russian>
             <French>Autoriser de creuser des grandes tranchées</French>
             <Chinesesimp>允许挖掘长掩体</Chinesesimp>
         </Key>
@@ -504,82 +512,102 @@
         <Key ID="STR_GRAD_Trenches_functions_allowTrenchDecay_displayName">
             <English>Allow trench decay</English>
             <German>Erlaube Gräben zu verfallen</German>
+            <Russian>Разрешить разрушение окопов</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowTrenchDecay_tooltip">
             <English>Trenches will automatically start to decay after a set time</English>
             <German>Gräben beginnen automatisch zu verfallen nach einer gegebenen Zeit</German>
+            <Russian>Окопы начнут автоматически разрушаться после заданного времени</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_timeoutToDecay_displayName">
             <English>Timeout to decay</English>
             <German>Wartezeit bis zum Verfall</German>
+            <Russian>Время до начала разрушения</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_timeoutToDecay_tooltip">
             <English>Time the server waits until it starts to decay the trenche</English>
             <German>Zeit die der Server wartet bis der Graben verfällt</German>
+            <Russian>Время, отсчитываемое сервером до начала разрушения окопа</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_decayTime_displayName">
             <English>Decay time</English>
             <German>Verfall Zeit</German>
+            <Russian>Время разрушения</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_decayTime_tooltip">
             <English>Time it takes to fully remove the trench</English>
             <German>Zeit bis der Graben komplett verschwunden ist</German>
+            <Russian>Время, которое занимает полное разрушение окопа</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_trenchSubCategory">
             <English>Trench settings</English>
             <German>Graben Einstellungen</German>
+            <Russian>Настройки окопов</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_decaySubCategory">
             <English>Decay Setting</English>
             <German>Verfall Einstellungen</German>
+            <Russian>Настройки разрушения</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_hitDecaySubCategory">
             <English>Hit Decay</English>
             <German>Verfall bei Treffer</German>
+            <Russian>Разрушение от попаданий</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowHitDecay_displayName">
             <English>Allow Decay on Hit</English>
             <German>Verfall bei Treffer erlauben</German>
+            <Russian>Разрешить разрушение окопа от попадания</Russian>
         </Key>
          <Key ID="STR_GRAD_Trenches_functions_allowHitDecay_tooltip">
             <English>Hit Damage lets trench sink into ground. HE is most effective.</English>
             <German>Hit Damage lässt Gräben in den Boden sinken. HE ist am effektivsten.</German>
+            <Russian>Урон от попадания погружает окоп в землю. Фугасные боеприпасы имеют наибольшую эффективность.</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_hitDecayMultiplier_displayName">
             <English>Multiplier for Hit Damage</English>
             <German>Multiplikator für Trefferschaden</German>
+            <Russian>Множитель урона от попадания</Russian>
         </Key>
          <Key ID="STR_GRAD_Trenches_functions_hitDecayMultiplier_tooltip">
             <English>Multiplier for Hit Damage</English>
             <German>Multiplikator für Trefferschaden</German>
+            <Russian>Множитель урона от попадания</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_smallEnvelopeDamageMultiplier">
             <English>Small Trench Multiplier</English>
             <German>Multiplikator Kleiner Schützengraben</German>
+            <Russian>Множитель урона малого окопа</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_shortEnvelopeDamageMultiplier">
-             <English>Short Trench Multiplier</English>
+            <English>Short Trench Multiplier</English>
             <German>Multiplikator kurzer Schützengraben</German>
+            <Russian>Множитель урона короткого окопа</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_bigEnvelopeDamageMultiplier">
-           <English>Big Trench Multiplier</English>
+            <English>Big Trench Multiplier</English>
             <German>Multiplikator großer Schützengraben</German>
+            <Russian>Множитель урона среднего окопа</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_giantEnvelopeDamageMultiplier">
             <English>Giant Trench Multiplier</English>
             <German>Multiplikator Sehr großer Schützengraben</German>
+            <Russian>Множитель урона большого окопа</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_vehicleEnvelopeDamageMultiplier">
             <English>Vehicle Trench Multiplier</English>
             <German>Multiplikator Fahrzeuggraben</German>
+            <Russian>Множитель урона окопа для техники</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowEffectse_displayName">
             <English>Enable effects</English>
             <German>Effekte aktivieren</German>
+            <Russian>Включить эффекты</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowEffects_tooltip">
             <English>Enables effects &amp; sounds while digging</English>
             <German>Aktiviert Effekte &amp; Geräusche während des Grabens</German>
+            <Russian>Включает эффекты и звуки при откапывании</Russian>
         </Key>
     </Package>
 </Project>
