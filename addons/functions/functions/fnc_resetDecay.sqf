@@ -21,6 +21,6 @@ params ["_trench"];
 
 {
 	if (_trench isEqualTo (_x select 0)) exitWith {
-		GVAR(decayArray) set [_forEachIndex, [_trench, GVAR(timeoutToDecay), GVAR(decayTime), GVAR(decayTime)]];
+		GVAR(decayArray) set [_forEachIndex, [_trench, GVAR(timeoutToDecay), GVAR(decayTime)]];
 	};
 } forEach GVAR(decayArray);

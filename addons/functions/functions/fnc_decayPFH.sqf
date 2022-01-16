@@ -28,7 +28,7 @@ if (isNil QGVAR(decayArray)) then {
 // Don't add the same trench twice; This means that the PFH must have already been added, so exit
 if (_trench in (GVAR(decayArray) apply {_x select 0})) exitWith {};
 
-GVAR(decayArray) pushBack [_trench, _timeoutToDecay, _decayTime, _decayTime];
+GVAR(decayArray) pushBack [_trench, _timeoutToDecay, _decayTime];
 
 if !(isNil QGVAR(decayPFH)) exitWith {};
 
@@ -38,38 +38,30 @@ GVAR(decayPFH) = [{
 		GVAR(decayPFH) = nil;
 	};
 
-	private _newArray = [];
-
-	{
-		_x params ["_trench", "_timeoutToDecay", "_decayTime", "_decayTimeMax"];
+	GVAR(decayArray) = GVAR(decayArray) apply {
+		_x params ["_trench", "_timeoutToDecay", "_decayTimeMax"];
 
 		if (isNull _trench) then {
 			continue;
 		};
 
-		if (count (_trench getVariable [QGVAR(diggers),[]]) >= 1) then {
-			_newArray pushBack [_trench, _timeoutToDecay, _decayTime, _decayTimeMax];
+		if (count (_trench getVariable [QGVAR(diggers), []]) >= 1) then {
+            [_trench, _timeoutToDecay, _decayTimeMax] // Return
 		} else {
 			if (_timeoutToDecay <= 10) then {
-				_timeoutToDecay = 0;
-
-				_decayTime = (_decayTime - 10) max 0;
-
 				private _progress = _trench getVariable ["ace_trenches_progress", 0];
-				_progress = _progress - (10 / _decayTimeMax);
+				_progress = _progress - (10 / (_decayTimeMax max 10)); // In case _decayTimeMax is set to 0
 
-				if (_progress <= 0 || {_decayTime <= 0}) then {
+				if (_progress <= 0) then {
 					deleteVehicle _trench;
 				} else {
 					[_trench, _progress, 1] call FUNC(setTrenchProgress);
 
-					_newArray pushBack [_trench, _timeoutToDecay, _decayTime, _decayTimeMax];
+					[_trench, 0, _decayTimeMax] // Return
 				};
 			} else {
-				_newArray pushBack [_trench, _timeoutToDecay - 10, _decayTime, _decayTimeMax];
+				[_trench, _timeoutToDecay - 10, _decayTimeMax] // Return
 			};
 		};
-	} forEach GVAR(decayArray);
-
-	GVAR(decayArray) = _newArray;
+	};
 }, 10, []] call CBA_fnc_addPerFrameHandler;
