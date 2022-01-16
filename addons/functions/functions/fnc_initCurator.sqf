@@ -22,7 +22,7 @@ params [
 _logic addEventHandler ["CuratorObjectEdited", {
     params ["", "_object"];
 
-    if (isClass (configFile >> "CfgVehicles" >> typeOf _object >> "CamouflagePositions1")) then {
+    if (isClass (configOf _object >> "CamouflagePositions1")) then {
         [{
             params ["_obj"];
             _obj setObjectTextureGlobal [0, surfaceTexture (getPos _obj)];
@@ -33,7 +33,7 @@ _logic addEventHandler ["CuratorObjectEdited", {
 _logic addEventHandler ["CuratorObjectPlaced", {
     params ["", "_object"];
 
-    if (isClass (configFile >> "CfgVehicles" >> typeOf _object >> "CamouflagePositions1")) then {
+    if (isClass (configOf _object >> "CamouflagePositions1")) then {
         [{
             params ["_obj"];
             _obj setObjectTextureGlobal [0, surfaceTexture (getPos _obj)];

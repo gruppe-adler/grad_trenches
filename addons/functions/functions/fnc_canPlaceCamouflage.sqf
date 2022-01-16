@@ -19,11 +19,13 @@
 params ["_trench", "_unit"];
 
 private _statusNumber = _trench getVariable [QGVAR(trenchCamouflageStatus), 0];
-private _statusString = "CamouflagePositions" + str (_statusNumber +1);
+private _statusString = "CamouflagePositions" + str (_statusNumber + 1);
 
 if !(GVAR(allowCamouflage)) exitWith {false};
 if (GVAR(camouflageRequireEntrenchmentTool) && {!("ACE_EntrenchingTool" in items _unit)}) exitWith {false};
 
-(isClass (configFile >> "CfgVehicles" >> (typeof _trench) >> _statusString)) &&
+private _config = configOf _trench >> _statusString;
+
+(isClass _config) &&
 {count (getArray (configFile >> "CfgWorldsTextures" >> worldName >> "camouflageObjects")) > 0} &&
-{count (configProperties [configFile >> "CfgVehicles" >> (typeof _trench) >> _statusString]) > 0}
+{count (configProperties [_config]) > 0}

@@ -45,7 +45,7 @@ if (isNull _object) then {
         params ["_initTrench"];
 
         {
-            if (isNumber (configFile >> "CfgVehicles" >> (typeOf _x) >> QGVAR(isTrench))) then {
+            if (isNumber (configOf _x >> QGVAR(isTrench))) then {
                 [_x] call _initTrench;
             };
         } forEach (all3DENEntities select 0);

@@ -18,7 +18,7 @@
 
 params ["_unit", ["_trench", ""]];
 
-if !("ACE_EntrenchingTool" in (_unit call ace_common_fnc_uniqueItems)) exitWith {false};
+if !("ACE_EntrenchingTool" in items _unit) exitWith {false};
 
 private _return = _unit call FUNC(canDig);
 

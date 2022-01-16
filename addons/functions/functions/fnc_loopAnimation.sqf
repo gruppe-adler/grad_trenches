@@ -14,20 +14,18 @@
  *
  * Public: No
  */
- 
+
 params ["_unit"];
 
 [_unit, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation;
 
 [
-    _unit, 
-    "AnimDone", 
+    _unit,
+    "AnimDone",
     {
         params ["_unit", "_anim"];
 
-        if (
-            !(_unit getVariable [QGVAR(diggingTrench), false])
-        ) exitWith {
+        if !(_unit getVariable [QGVAR(diggingTrench), false]) exitWith {
             _unit removeEventHandler ["AnimDone", _thisID];
         };
 

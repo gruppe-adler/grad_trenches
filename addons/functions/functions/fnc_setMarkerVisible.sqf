@@ -15,15 +15,14 @@
  * Public: No
  */
 
-
-// waitUntil necessary for  JIP, as you must wait until player object exists to determine its side.
+// waitUntil necessary for JIP, as you must wait until player object exists to determine its side.
 params ["_trench"];
 
 [
-    {!isNull Player},
+    {!isNull player},
     {
         params ["_trench"];
-        
+
         if ([side group player, _trench getVariable QGVAR(trenchSide)] call BIS_fnc_sideIsEnemy) then {
             (_trench getVariable [QGVAR(trenchMapMarker), ""]) setMarkerAlphaLocal 0;
         };

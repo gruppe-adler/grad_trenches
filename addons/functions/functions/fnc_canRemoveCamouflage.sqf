@@ -18,4 +18,5 @@
 params ["_trench"];
 
 if !(GVAR(allowCamouflage)) exitWith {false};
-(count (_trench getVariable [QGVAR(camouflageObjects), []]) > 0)
+
+count (_trench getVariable [QGVAR(camouflageObjects), []]) > 0

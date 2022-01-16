@@ -5,7 +5,6 @@
  *
  * Arguments:
  * 0: Trench <OBJECT>
- * 
  *
  * Return Value:
  * None
@@ -19,4 +18,4 @@
 params ["_trench"];
 
 private _sound = str (selectRandom [1,2,3,4,5,6,7]);
-playSound3D ["x\grad_trenches\addons\sounds\dig" + _sound + ".ogg", _trench, false, getpos _trench, 1, 1, 100];
+playSound3D ["x\grad_trenches\addons\sounds\dig" + _sound + ".ogg", _trench, false, getPos _trench, 1, 1, 100];

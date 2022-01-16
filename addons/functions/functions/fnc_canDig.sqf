@@ -2,7 +2,7 @@
 #include "\z\ace\addons\common\script_component.hpp"
 /*
  * Author: Ruthberg, commy2
- * Checks if the player can dig on the surface below (enough dust).
+ * Checks if a trench can be dug on the surface below an object (enough dust).
  *
  * Arguments:
  * 0: Object <OBJECT>
@@ -11,7 +11,7 @@
  * Can Dig <BOOL>
  *
  * Example:
- * [ACE_player] call ace_common_fnc_canDig
+ * [ACE_player] call grad_trenches_functions_fnc_canDig
  *
  * Public: No
  */
@@ -30,7 +30,7 @@ private _surfaceDust = getNumber (_config >> "dust");
 TRACE_2("Surface",_surfaceType,_surfaceDust);
 
 if (isNumber (_config >> "ACE_canDig")) then {
-    (getNumber (_config >> "ACE_canDig")) == 1 // return
+    (getNumber (_config >> "ACE_canDig")) == 1 // Return
 } else {
-    !(_surfaceType in DIG_SURFACE_BLACKLIST) && {(_surfaceDust >= 0.1) || {_surfaceType in DIG_SURFACE_WHITELIST}} // return
+    !(_surfaceType in DIG_SURFACE_BLACKLIST) && {(_surfaceDust >= 0.1) || {_surfaceType in DIG_SURFACE_WHITELIST}} // Return
 };
