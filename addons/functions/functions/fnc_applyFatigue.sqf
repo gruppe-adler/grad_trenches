@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 /*
  * Author:  nomisum
- * Apply Fatigue on Client.
+ * Apply Fatigue on Client. Called every 1s on builder.
  *
  * Arguments:
  * 0: Trench <OBJECT>
@@ -16,18 +16,14 @@
  * Public: No
  */
 
-// Called every 1s on builder
-
 params ["_trench", "_unit"];
 
-private _multiplier = 10; // Calculation was done every .1s before
-
 // Fatigue impact
-ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (_multiplier * 2 * GVAR(buildFatigueFactor))) max 0;
-ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + (_multiplier * GVAR(buildFatigueFactor) / 1000)) min 0.8; // 2 * GVAR(buildFatigueFactor) / 2000
+ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (GVAR(buildFatigueFactor) * 20)) max 0; // GVAR(buildFatigueFactor) * 2 * 10; Calculation was done every .1s before, so multiply by 10
+ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + (GVAR(buildFatigueFactor) / 100)) min 0.8; // 10 * 2 * GVAR(buildFatigueFactor) / 2000
 
 if (GVAR(stopBuildingAtFatigueMax) && {ace_advanced_fatigue_anReserve <= 0}) exitWith {
-     _trench setVariable ["ace_trenches_digging", false, true]; // Also stops server PFH
-     [QGVAR(handleDiggerToGVAR), [_trench, _unit, true]] call CBA_fnc_serverEvent;
-     _unit setVariable [QGVAR(diggingTrench), false];
+    _trench setVariable ["ace_trenches_digging", false, true]; // Also stops server PFH
+    [QGVAR(handleDiggerToGVAR), [_trench, _unit, true]] call CBA_fnc_serverEvent;
+    _unit setVariable [QGVAR(diggingTrench), false];
 };

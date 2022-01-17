@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 /*
- * Author: Salbei, Elkano, johnb43
+ * Author: Salbei, Elkano
  * Starts removing trenches after a given time.
  *
  * Arguments:
@@ -22,7 +22,7 @@ params ["_trench", ["_timeoutToDecay", 7200], ["_decayTime", 1800]];
 if (!isServer || {isNull _trench} || {!GVAR(allowTrenchDecay)}) exitWith {};
 
 if (isNil QGVAR(decayArray)) then {
-	GVAR(decayArray) = [];
+    GVAR(decayArray) = [];
 };
 
 // Don't add the same trench twice; This means that the PFH must have already been added, so exit
@@ -33,35 +33,39 @@ GVAR(decayArray) pushBack [_trench, _timeoutToDecay, _decayTime];
 if !(isNil QGVAR(decayPFH)) exitWith {};
 
 GVAR(decayPFH) = [{
-	if (GVAR(decayArray) isEqualTo []) exitWith {
-		[GVAR(decayPFH)] call CBA_fnc_removePerframeHandler;
-		GVAR(decayPFH) = nil;
-	};
+    if (GVAR(decayArray) isEqualTo []) exitWith {
+        [GVAR(decayPFH)] call CBA_fnc_removePerframeHandler;
+        GVAR(decayPFH) = nil;
+    };
 
-	GVAR(decayArray) = GVAR(decayArray) apply {
-		_x params ["_trench", "_timeoutToDecay", "_decayTimeMax"];
+    private _newArray = [];
 
-		if (isNull _trench) then {
-			continue;
-		};
+    {
+        _x params ["_trench", "_timeoutToDecay", "_decayTimeMax"];
 
-		if (count (_trench getVariable [QGVAR(diggers), []]) >= 1) then {
-            [_trench, _timeoutToDecay, _decayTimeMax] // Return
-		} else {
-			if (_timeoutToDecay <= 10) then {
-				private _progress = _trench getVariable ["ace_trenches_progress", 0];
-				_progress = _progress - (10 / (_decayTimeMax max 10)); // In case _decayTimeMax is set to 0
+        if (isNull _trench) then {
+            continue;
+        };
 
-				if (_progress <= 0) then {
-					deleteVehicle _trench;
-				} else {
-					[_trench, _progress, 1] call FUNC(setTrenchProgress);
+        if (count (_trench getVariable [QGVAR(diggers), []]) >= 1) then {
+            _newArray pushBack [_trench, _timeoutToDecay, _decayTimeMax];
+        } else {
+            if (_timeoutToDecay <= 10) then {
+                private _progress = _trench getVariable ["ace_trenches_progress", 0];
+                _progress = _progress - (10 / (_decayTimeMax max 10)); // In case _decayTimeMax is set to 0
 
-					[_trench, 0, _decayTimeMax] // Return
-				};
-			} else {
-				[_trench, _timeoutToDecay - 10, _decayTimeMax] // Return
-			};
-		};
-	};
+                if (_progress <= 0) then {
+                    deleteVehicle _trench;
+                } else {
+                    [_trench, _progress, 1] call FUNC(setTrenchProgress);
+
+                    _newArray pushBack [_trench, 0, _decayTimeMax];
+                };
+            } else {
+                _newArray pushBack [_trench, _timeoutToDecay - 10, _decayTimeMax];
+            };
+        };
+    } forEach GVAR(decayArray);
+
+    GVAR(decayArray) = _newArray;
 }, 10, []] call CBA_fnc_addPerFrameHandler;
