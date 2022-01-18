@@ -23,10 +23,6 @@ TRACE_2("continueDiggingTrench",_trench,_unit,_switchingDigger);
 private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
 if (_actualProgress >= 1) exitWith {};
 
-/*
-test_trench = _trench;
-publicVariable "test_trench";
-*/
 
 // Mark trench as being worked on
 _trench setVariable ["ace_trenches_digging", true, true];
