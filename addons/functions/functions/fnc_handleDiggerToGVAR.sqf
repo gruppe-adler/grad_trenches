@@ -6,8 +6,8 @@
  * Arguments:
  * 0: Trench <OBJECT>
  * 1: Unit <OBJECT>
- * 2: IsRemoveMode <BOOLEAN>
- * 3: RemoveAll <BOOLEAN>
+ * 2: IsRemoveMode <BOOLEAN> (optional)
+ * 3: RemoveAll <BOOLEAN> (optional)
  *
  * Return Value:
  * None
@@ -24,10 +24,12 @@ private _diggingPlayers = _trench getVariable [QGVAR(diggers), []];
 
 if (_removeAll) then {
     _diggingPlayers = [];
-} else { if (_isRemoveMode) then {
-    _diggingPlayers = _diggingPlayers - [_unit];
 } else {
-    _diggingPlayers pushBackUnique _unit;
-}};
+    if (_isRemoveMode) then {
+        _diggingPlayers = _diggingPlayers - [_unit];
+    } else {
+        _diggingPlayers pushBackUnique _unit;
+    };
+};
 
 _trench setVariable [QGVAR(diggers), _diggingPlayers, true];

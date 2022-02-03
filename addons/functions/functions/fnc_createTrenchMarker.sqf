@@ -5,13 +5,13 @@
  *
  * Arguments:
  * 0: Trench <OBJECT>
- * 1: Friendly side
+ * 1: Friendly side <SIDE>
  *
  * Return Value:
  * None
  *
  * Example:
- * [_trench, side player] call grad_trenches_functions_fnc_createTrenchMarker
+ * [TrenchObj, side player] call grad_trenches_functions_fnc_createTrenchMarker
  *
  * Public: Yes
  */
@@ -33,7 +33,7 @@ private _markerNameStr = format ["grad_trenches_marker_%1", _trench];
 private _marker = createMarker [_markerNameStr, _trench];
 _marker setMarkerShapeLocal "RECTANGLE";
 _marker setMarkerBrushLocal "SolidFull";
-_marker setMarkerSizeLocal [(_maxWidth / 2),(_maxLength / 2)];
+_marker setMarkerSizeLocal [_maxWidth / 2, _maxLength / 2];
 _marker setMarkerDirLocal _direction;
 _marker setMarkerColor "Color6_FD_F";
 _trench setVariable [QGVAR(trenchMapMarker), _marker, true];

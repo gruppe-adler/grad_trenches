@@ -5,7 +5,6 @@
  *
  * Arguments:
  * 0: Trench <OBJECT>
- * 
  *
  * Return Value:
  * None

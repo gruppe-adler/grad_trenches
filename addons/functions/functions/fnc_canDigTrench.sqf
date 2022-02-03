@@ -5,7 +5,7 @@
  *
  * Arguments:
  * 0: Unit <OBJECT>
- * 1: Trench <OBJECT>
+ * 1: Trench <OBJECT> (optional)
  *
  * Return Value:
  * Can dig <BOOL/NUMBER>
@@ -16,25 +16,16 @@
  * Public: No
  */
 
-params ["_unit", ["_trench", ""]];
+params ["_unit", ["_trench", objNull]];
 
-if !("ACE_EntrenchingTool" in (_unit call ace_common_fnc_uniqueItems)) exitWith {false};
+if !("ACE_EntrenchingTool" in items _unit) exitWith {false};
 
-private _return = _unit call FUNC(canDig);
+if (((getPosATL _unit) select 2) > 0.05) exitWith {false};
 
-if (_return isEqualType 0) then {
-	_return = _return > 0;
+if !(_unit call FUNC(canDig)) exitWith {false};
+
+if !(isNull _trench) exitWith {
+    _trench call FUNC(canDig)
 };
 
-if !(_return) exitWith {false};
-if ((getPosATL _unit) select 2 > 0.05) exitWith {false};
-
-if !(_trench isEqualTo "") then {
-	_return = _trench call FUNC(canDig);
-
-	if (_return isEqualType 0) then {
-		_return = _return > 0;
-	};
-};
-
-_return
+true

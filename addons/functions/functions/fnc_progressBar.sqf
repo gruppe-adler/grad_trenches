@@ -23,13 +23,13 @@ params ["_args", "_onFinish", "_onFail", ["_localizedTitle", ""], ["_condition",
 
 private _player = [] call CBA_fnc_currentUnit;
 
-//Open Dialog and set the title
+// Open Dialog and set the title
 closeDialog 0;
 createDialog "ace_common_ProgressBar_Dialog";
 
 (uiNamespace getVariable "ace_common_ctrlProgressBarTitle") ctrlSetText _localizedTitle;
 
-//Adjust position based on user setting:
+// Adjust position based on user setting:
 private _ctrlPos = ctrlPosition (uiNamespace getVariable "ace_common_ctrlProgressBarTitle");
 _ctrlPos set [1, ((0 + 29 * ace_common_settingProgressBarLocation) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + (safezoneY + (safezoneH - (((safezoneW / safezoneH) min 1.2) / 1.2))/2))];
 
@@ -43,11 +43,11 @@ _ctrlPos set [1, ((0 + 29 * ace_common_settingProgressBarLocation) * ((((safezon
 [{
     (_this select 0) params ["_args", "_onFinish", "_onFail", "_condition", "_player", "_exceptions"];
     _args params ["", "_trench", ["_finishCondition", true]];
-    
+
     private _progress = _trench getVariable ["ace_trenches_progress", 0];
     private _errorCode = -1;
 
-    // this does not check: target fell unconscious, target died, target moved inside vehicle / left vehicle, target moved outside of players range, target moves at all.
+    // This does not check: target fell unconscious, target died, target moved inside vehicle / left vehicle, target moved outside of players range, target moves at all.
     if (isNull (uiNamespace getVariable ["ace_common_ctrlProgressBar", controlNull])) then {
         _errorCode = 1;
     } else {
@@ -62,7 +62,7 @@ _ctrlPos set [1, ((0 + 29 * ace_common_settingProgressBarLocation) * ((((safezon
                 } else {
                     if (_finishCondition && _progress >= 1) then {
                         _errorCode = 0;
-                    }else{
+                    } else {
                        if (!(_finishCondition) && _progress <= 0) then {
                           _errorCode = 0;
                        };
@@ -73,9 +73,9 @@ _ctrlPos set [1, ((0 + 29 * ace_common_settingProgressBarLocation) * ((((safezon
     };
 
     if (_errorCode != -1) then {
-        //Error or Success, close dialog and remove PFEH
+        // Error or Success, close dialog and remove PFEH
 
-        //Only close dialog if it's the progressBar:
+        // Only close dialog if it's the progressBar:
         if (!isNull (uiNamespace getVariable ["ace_common_ctrlProgressBar", controlNull])) then {
             closeDialog 0;
         };
@@ -96,7 +96,7 @@ _ctrlPos set [1, ((0 + 29 * ace_common_settingProgressBarLocation) * ((((safezon
             };
         };
     } else {
-        //Update Progress Bar
+        // Update Progress Bar
         (uiNamespace getVariable "ace_common_ctrlProgressBar") progressSetPosition _progress;
     };
 }, 0, [_args, _onFinish, _onFail, _condition, _player, _exceptions]] call CBA_fnc_addPerFrameHandler;
