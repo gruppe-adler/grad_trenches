@@ -19,8 +19,8 @@
 params ["_trench", "_unit"];
 
 // Fatigue impact
-ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (GVAR(buildFatigueFactor) * 20)) max 0; // GVAR(buildFatigueFactor) * 2 * 10; Calculation was done every .1s before, so multiply by 10
-ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + (GVAR(buildFatigueFactor) / 100)) min 0.8; // 10 * 2 * GVAR(buildFatigueFactor) / 2000
+ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (GVAR(buildFatigueFactor) * 20)) max 0;
+ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + (GVAR(buildFatigueFactor) / 100)) min 0.8;
 
 if (GVAR(stopBuildingAtFatigueMax) && {ace_advanced_fatigue_anReserve <= 0}) exitWith {
     _trench setVariable ["ace_trenches_digging", false, true]; // Also stops server PFH
