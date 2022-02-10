@@ -105,7 +105,7 @@ private _fnc_condition = {
 
     [_trench, _newProgress, 1.5] call FUNC(setTrenchProgress); // not too fast so animation is still visible
 
-    // Show spezial effects
+    // Show special effects
     if (GVAR(allowEffects)) then {
         [QGVAR(digFX), [_trench]] call CBA_fnc_globalEvent;
 

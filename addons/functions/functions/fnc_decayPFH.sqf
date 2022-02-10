@@ -51,6 +51,12 @@ GVAR(decayPFH) = [{
             _newArray pushBack [_trench, _timeoutToDecay, _decayTimeMax];
         } else {
             if (_timeoutToDecay <= 10) then {
+                // If there are players in the area and CBA setting enabled, reset trench decay
+                if (GVAR(playersInAreaRadius) isNotEqualTo 0 && {(((ASLToAGL getPosASL _trench) nearEntities ["CAManBase", GVAR(playersInAreaRadius)]) select {isPlayer _x}) isNotEqualTo []}) then {
+                    _newArray pushBack [_trench, GVAR(timeoutToDecay), GVAR(decayTime)];
+                    continue;
+                };
+
                 private _progress = _trench getVariable ["ace_trenches_progress", 0];
                 _progress = _progress - (10 / (_decayTimeMax max 10)); // In case _decayTimeMax is set to 0
 
@@ -58,6 +64,10 @@ GVAR(decayPFH) = [{
                     deleteVehicle _trench;
                 } else {
                     [_trench, _progress, 1] call FUNC(setTrenchProgress);
+
+                    if (GVAR(allowEffects)) then {
+                        [QGVAR(digFX), [_trench]] call CBA_fnc_globalEvent;
+                    };
 
                     _newArray pushBack [_trench, 0, _decayTimeMax];
                 };
