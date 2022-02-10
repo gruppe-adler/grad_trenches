@@ -546,12 +546,12 @@
             <Russian>Время, которое занимает полное разрушение окопа</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_playersInAreaRadius_displayName">
-            <English>Player detection radius for disabling decay</English>
-            <German>Spielerdetektionsradius für Grabenverfallsverhinderung</German>
+            <English>Player detection radius for preventing decay</English>
+            <German>Spielererkennungsradius zur Grabenverfallsverhinderung</German>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_playersInAreaRadius_tooltip">
-            <English>If players are around a trench in the given radius, the trench will not decay. To turn off player detection set radius to 0.</English>
-            <German>Falls sich Spieler um einen Graben im gegebenen Radius befinden, wird der Graben nicht verfallen. Um Spielerdetektion auszuschalten Radius auf 0 setzen.</German>
+            <English>If players are within the given radius around a trench, it will not decay. To turn off player detection set radius to 0.</English>
+            <German>Falls sich Spieler im gegebenen Radius um einen Graben befinden, wird dieser nicht verfallen. Um Spielererkennung auszuschalten Radius auf 0 setzen.</German>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_trenchSubCategory">
             <English>Trench settings</English>
