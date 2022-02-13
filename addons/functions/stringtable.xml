@@ -316,7 +316,7 @@
         <Key ID="STR_GRAD_Trenches_functions_VehicleEnvelopeRemovalTime">
             <English>Removal time (s) for vehicle envelope trenches.</English>
             <German>Zeit (s) um Fahrzeuggräben zu entfernen.</German>
-            <Russian>Время срытия (сек) окопа для техники./Russian>
+            <Russian>Время срытия (сек) окопа для техники.</Russian>
             <French>Temps de suppression (s) pour les tranchées pour véhicule</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_LongEnvelopeRemovalTime">
