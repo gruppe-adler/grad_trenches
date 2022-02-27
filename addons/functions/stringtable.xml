@@ -290,40 +290,46 @@
             <Chinesesimp>挖掘长掩体的时间(秒)</Chinesesimp>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_ShortEnvelopeRemovalTime">
-            <English>Removal time (s) for short envelope trenches. -1 takes the dig time</English>
-            <German>Zeit (s) um kurze Gräben zu entfernen. -1 nimmt die Grabezeit</German>
-            <Russian>Время срытия (сек) короткого окопа. -1 приравнивает к времени откапывания</Russian>
+            <English>Removal time (s) for short envelope trenches.</English>
+            <German>Zeit (s) um kurze Gräben zu entfernen.</German>
+            <Russian>Время срытия (сек) короткого окопа.</Russian>
             <French>Temps de suppression (s) pour les tranchées individuelles</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_SmallEnvelopeRemovalTime">
-            <English>Removal time (s) for small envelope trenches. -1 takes the dig time</English>
-            <German>Zeit (s) um kleine Gräben zu entfernen. -1 nimmt die Grabezeit</German>
-            <Russian>Время срытия (сек) малого окопа. -1 приравнивает к времени откапывания</Russian>
+            <English>Removal time (s) for small envelope trenches.</English>
+            <German>Zeit (s) um kleine Gräben zu entfernen.</German>
+            <Russian>Время срытия (сек) малого окопа.</Russian>
             <French>Temps de suppression (s) pour les petites tranchées</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_BigEnvelopeRemovalTime">
-            <English>Removal time (s) for big envelope trenches. -1 takes the dig time</English>
-            <German>Zeit (s) um große Gräben zu entfernen. -1 nimmt die Grabezeit</German>
-            <Russian>Время срытия (сек) среднего окопа. -1 приравнивает к времени откапывания</Russian>
+            <English>Removal time (s) for big envelope trenches.</English>
+            <German>Zeit (s) um große Gräben zu entfernen.</German>
+            <Russian>Время срытия (сек) среднего окопа.</Russian>
             <French>Temps de suppression (s) pour les petites tranchées (meurtrières)</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_GiantEnvelopeRemovalTime">
-            <English>Removal time (s) for giant envelope trenches. -1 takes the dig time</English>
-            <German>Zeit (s) um riesige Gräben zu entfernen. -1 nimmt die Grabezeit</German>
-            <Russian>Время срытия (сек) большого окопа. -1 приравнивает к времени откапывания</Russian>
+            <English>Removal time (s) for giant envelope trenches.</English>
+            <German>Zeit (s) um riesige Gräben zu entfernen.</German>
+            <Russian>Время срытия (сек) большого окопа.</Russian>
             <French>Temps de suppression (s) pour les grandes tranchées (meurtrières)</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_VehicleEnvelopeRemovalTime">
-            <English>Removal time (s) for vehicle envelope trenches. -1 takes the dig time</English>
-            <German>Zeit (s) um Fahrzeuggräben zu entfernen. -1 nimmt die Grabezeit</German>
-            <Russian>Время срытия (сек) окопа для техники. -1 приравнивает к времени откапывания</Russian>
+            <English>Removal time (s) for vehicle envelope trenches.</English>
+            <German>Zeit (s) um Fahrzeuggräben zu entfernen.</German>
+            <Russian>Время срытия (сек) окопа для техники.</Russian>
             <French>Temps de suppression (s) pour les tranchées pour véhicule</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_LongEnvelopeRemovalTime">
-            <English>Removal time (s) for Long envelope trenches. -1 takes the dig time</English>
-            <German>Zeit (s) um Lange Gräben zu entfernen. -1 nimmt die Grabezeit</German>
-            <Russian>Время срытия (сек) длинного окопа. -1 приравнивает к времени откапывания</Russian>
+            <English>Removal time (s) for Long envelope trenches.</English>
+            <German>Zeit (s) um Lange Gräben zu entfernen.</German>
+            <Russian>Время срытия (сек) длинного окопа.</Russian>
             <French>Temps de suppression (s) pour les grandes tranchées</French>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_EnvelopeRemovalTime_tooltip">
+            <English>-1 takes the dig time.</English>
+            <German>-1 nimmt die Grabezeit.</German>
+            <Russian>-1 приравнивает к времени откапывания.</Russian>
+            <French>-1 prend le temps d'excavation.</French>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_HelpDigging">
             <English>Help digging</English>
@@ -539,6 +545,14 @@
             <German>Zeit bis der Graben komplett verschwunden ist</German>
             <Russian>Время, которое занимает полное разрушение окопа</Russian>
         </Key>
+        <Key ID="STR_GRAD_Trenches_functions_playersInAreaRadius_displayName">
+            <English>Player detection radius for preventing decay</English>
+            <German>Spielererkennungsradius zur Grabenverfallsverhinderung</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_playersInAreaRadius_tooltip">
+            <English>If players are within the given radius around a trench, it will not decay. To turn off player detection set radius to 0.</English>
+            <German>Falls sich Spieler im gegebenen Radius um einen Graben befinden, wird dieser nicht verfallen. Um Spielererkennung auszuschalten Radius auf 0 setzen.</German>
+        </Key>
         <Key ID="STR_GRAD_Trenches_functions_trenchSubCategory">
             <English>Trench settings</English>
             <German>Graben Einstellungen</German>
@@ -599,7 +613,7 @@
             <German>Multiplikator Fahrzeuggraben</German>
             <Russian>Множитель урона окопа для техники</Russian>
         </Key>
-        <Key ID="STR_GRAD_Trenches_functions_allowEffectse_displayName">
+        <Key ID="STR_GRAD_Trenches_functions_allowEffects_displayName">
             <English>Enable effects</English>
             <German>Effekte aktivieren</German>
             <Russian>Включить эффекты</Russian>

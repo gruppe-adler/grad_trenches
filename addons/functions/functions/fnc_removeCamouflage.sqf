@@ -32,6 +32,6 @@ private _fnc_onFailure = {
     [_unit, "", 1] call ace_common_fnc_doAnimation;
 };
 
-[CAMOUFLAGE_DURATION, [_unit, _trench], _fnc_onFinish, _fnc_onFailure, localize LSTRING(removeCamouflageProgress)] call ace_common_fnc_progressBar;
+[CAMOUFLAGE_DURATION, [_unit, _trench], _fnc_onFinish, _fnc_onFailure, LLSTRING(removeCamouflageProgress)] call ace_common_fnc_progressBar;
 
 [_unit, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation;

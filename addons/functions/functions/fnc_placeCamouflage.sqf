@@ -44,6 +44,6 @@ if (isNull _unit) exitWith {
     [[objnull, _trench]] call _fnc_onFinish;
 };
 
-[CAMOUFLAGE_DURATION, [_unit, _trench], _fnc_onFinish, _fnc_onFailure, localize LSTRING(placeCamouflageProgress)] call ace_common_fnc_progressBar;
+[CAMOUFLAGE_DURATION, [_unit, _trench], _fnc_onFinish, _fnc_onFailure, LLSTRING(placeCamouflageProgress)] call ace_common_fnc_progressBar;
 
 [_unit, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation;
