@@ -4,14 +4,14 @@
  * Apply camouflage attribute to trench.
  *
  * Arguments:
- * 0: Object <OBJECT>
+ * 0: Trench <OBJECT>
  * 1: Value <NUMBER>
  *
  * Return Value:
  * None
  *
  * Example:
- * [TrenchObj, ACE_player] call grad_trenches_functions_fnc_applyCamouflageAttribute
+ * [TrenchObj, 1] call grad_trenches_functions_fnc_applyCamouflageAttribute
  *
  * Public: No
  */
@@ -20,11 +20,13 @@ params ["_trench", "_value"];
 
 if (_value isEqualTo 1) then {
     private _camouflageObjects = [configFile >> "CfgWorldsTextures" >> worldName >> "camouflageObjects", "ARRAY", []] call CBA_fnc_getConfigEntry;
+
     if (_camouflageObjects isEqualTo []) exitWith {
         TRACE_1("No camouflage objects available for this terrain", _camouflageObjects);
     };
+
     private _statusNumber = _trench getVariable [QGVAR(trenchCamouflageStatus), 0];
-    _statusNumber = _statusNumber +1;
+    _statusNumber = _statusNumber + 1;
 
     private _placedObjects = [];
     private _camouflageObjectsArray = _trench getVariable [QGVAR(camouflageObjects), []];
@@ -36,7 +38,7 @@ if (_value isEqualTo 1) then {
         _obj setVariable [QGVAR(positionData), _array, true];
 
         _placedObjects pushBack _obj;
-    } forEach (configProperties [configFile >> "CfgVehicles" >> (typeof _trench) >> ("CamouflagePositions" + str _statusNumber)]);
+    } forEach (configProperties [configOf _trench >> "CamouflagePositions" + str _statusNumber]);
 
     // pushFront
     reverse _camouflageObjectsArray;

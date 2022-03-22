@@ -5,7 +5,7 @@
  *
  * Arguments:
  * 0: Trench <OBJECT>
- * 1: Unit <OBJECT>
+ * 1: Unit <OBJECT> (optional)
  *
  * Return Value:
  * None
@@ -26,7 +26,7 @@ private _camouflageObjects = [configFile >> "CfgWorldsTextures" >> worldName >> 
 if (isNull _trench || {_camouflageObjects isEqualTo []}) exitWith {};
 
 private _fnc_onFinish = {
-    (_this select 0) params ["_unit", "_trench", "_camouflageObjects"];
+    (_this select 0) params ["_unit", "_trench"];
 
     [_trench, 1] call FUNC(applyCamouflageAttribute);
 
@@ -44,6 +44,6 @@ if (isNull _unit) exitWith {
     [[objnull, _trench]] call _fnc_onFinish;
 };
 
-[CAMOUFLAGE_DURATION, [_unit, _trench, _camouflageObjects], _fnc_onFinish, _fnc_onFailure, localize LSTRING(placeCamouflageProgress)] call ace_common_fnc_progressBar;
+[CAMOUFLAGE_DURATION, [_unit, _trench], _fnc_onFinish, _fnc_onFailure, LLSTRING(placeCamouflageProgress)] call ace_common_fnc_progressBar;
 
 [_unit, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation;

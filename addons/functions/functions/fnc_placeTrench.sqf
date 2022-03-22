@@ -4,7 +4,7 @@
  * Starts the place process for trench.
  *
  * Arguments:
- * 0: unit <OBJECT>
+ * 0: Unit <OBJECT>
  * 1: Trench class <STRING>
  *
  * Return Value:
@@ -18,19 +18,19 @@
 
 params ["_unit", "_trenchClass"];
 
-//Load trench data
+// Load trench data
 ace_trenches_trenchPlacementData = getArray (configFile >> "CfgVehicles" >> _trenchClass >> "ace_trenches_placementData");
 TRACE_1("",ace_trenches_trenchPlacementData);
 
-// prevent the placing unit from running
+// Prevent the placing unit from running
 [_unit, "forceWalk", "ACE_Trenches", true] call ace_common_fnc_statusEffect_set;
 [_unit, "blockThrow", "ACE_Trenches", true] call ace_common_fnc_statusEffect_set;
 
-// create the trench
+// Create the trench
 private _trench = createSimpleObject [_trenchClass, [0, 0, 0], true];
 ace_trenches_trench = _trench;
 
-// prevent collisions with trench
+// Prevent collisions with trench
 ["ace_common_enableSimulationGlobal", [_trench, false]] call CBA_fnc_serverEvent;
 
 GVAR(digDirection) = 0;
@@ -38,7 +38,7 @@ GVAR(currentSurface) = "";
 
 _trench setPos (getPos _unit vectorAdd [0,2,0]);
 
-// pfh that runs while placement is in progress (before actual digging)
+// PFH that runs while placement is in progress (before actual digging)
 
 ace_trenches_digPFH = [{
     (_this select 0) params ["_unit", "_trench"];
@@ -68,7 +68,7 @@ ace_trenches_digPFH = [{
     private _minzoffset = 0;
     private _ix = 0;
     private _iy = 0;
-    
+
     for [{_ix = -_dx/2},{_ix <= _dx/2},{_ix = _ix + _dx/3}] do {
         for [{_iy = -_dy/2},{_iy <= _dy/2},{_iy = _iy + _dy/3}] do {
             private _pos = _basePos vectorAdd (_v2 vectorMultiply _ix)
@@ -95,7 +95,7 @@ ace_trenches_digPFH = [{
     };
 }, 0, [_unit, _trench]] call CBA_fnc_addPerFrameHandler;
 
-// add mouse button action and hint
+// Add mouse button action and hint
 [localize "STR_ace_trenches_ConfirmDig", localize "STR_ace_trenches_CancelDig"] call ace_interaction_fnc_showMouseHint;
 
 _unit setVariable ["ace_trenches_Dig", [
