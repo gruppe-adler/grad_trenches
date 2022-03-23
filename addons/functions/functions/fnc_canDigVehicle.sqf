@@ -16,22 +16,8 @@
  * Public: No
  */
 
-params ["_vehicle", ["_trench", ""]];
+params ["_vehicle"];
 
 private _return = _vehicle call FUNC(canDig);
-
-if (_return isEqualType 0) then {
-	_return = _return > 0;
-};
-
-if !(_return) exitWith {false};
-
-if !(_trench isEqualTo "") then {
-	_return = _trench call FUNC(canDig);
-
-	if (_return isEqualType 0) then {
-		_return = _return > 0;
-	};
-};
 
 _return

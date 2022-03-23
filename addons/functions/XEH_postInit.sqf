@@ -1,6 +1,14 @@
 #include "script_component.hpp"
 
-WHITELIST_CRV = ["B_APC_Tracked_01_CRV_F"];
+private _digVehicleConfigClasses = "true" configClasses (configFile >> "CfgVehicles");
+{
+  private _classname = configName _x;
+
+  [_classname, "init", {
+      (_this select 0) call FUNC(vehicleAction);
+  }, true, [], true] call CBA_fnc_addClassEventHandler;
+} forEach _digVehicleConfigClasses;
+
 
 if (isServer) then {
     [QGVAR(addDigger), {_this call FUNC(addDigger);}] call CBA_fnc_addEventHandler;

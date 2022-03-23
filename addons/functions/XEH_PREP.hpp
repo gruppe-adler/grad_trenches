@@ -1,6 +1,8 @@
+PREP(vehicleAction);
 PREP(addDigger);
 PREP(applyCamouflageAttribute);
 PREP(applyFatigue);
+PREP(bpzBuild);
 PREP(canHelpDiggingTrench);
 PREP(canContinueDiggingTrench);
 PREP(canDig);
