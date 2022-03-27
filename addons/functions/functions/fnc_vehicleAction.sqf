@@ -6,6 +6,9 @@ if (!(isClass (configFile >> "CfgDigVehicles" >> typeOf _vehicle))) exitWith {
     hint "Vehicle Digging not supported";
 };
 
+if (_vehicle getVariable ["GRAD_trenches_vehicleDiggingActionAdded", false]) exitWith {};
+_vehicle setVariable ["GRAD_trenches_vehicleDiggingActionAdded", true];
+
 [_vehicle] call FUNC(bpzBuild);
 
 _vehicle addAction [

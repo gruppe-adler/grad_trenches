@@ -95,22 +95,6 @@ class CfgVehicles {
                         statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'GRAD_envelope_long')])] call CBA_fnc_execNextFrame);
                         condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call FUNC(canContinueDiggingTrench)) && GVAR(allowLongEnvelope));
                     };
-                    class grad_trenches_digEnvelopeVehicle {
-                        displayName = CSTRING(DigEnvelopeVehicle);
-                        statement = QUOTE([ARR_2({_this call FUNC(crvBuild)},[ARR_3(_this select 0,'GRAD_envelope_vehicle',[0,0,0])])] call CBA_fnc_execNextFrame);
-                        condition = QUOTE(GVAR(allowDiggingInVehicle) && ([ARR_2(_target,_player)] call FUNC(canDigVehicle)) && GVAR(allowVehicleEnvelope));
-                        priority = -1;
-                    };
-                    class grad_trenches_digEnvelopeGiant: grad_trenches_digEnvelopeVehicle {
-                        displayName = CSTRING(DigEnvelopeGiant);
-                        statement = QUOTE([ARR_2({_this call FUNC(crvBuild)},[ARR_3(_this select 0,'GRAD_envelope_giant',[0,0,0])])] call CBA_fnc_execNextFrame);
-                        condition = QUOTE(GVAR(allowDiggingInVehicle) && ([ARR_2(_target,_player)] call FUNC(canDigVehicle)) && GVAR(allowGiantEnvelope));
-                    };
-                    class grad_trenches_digEnvelopeLongNameEmplacment: grad_trenches_digEnvelopeVehicle {
-                        displayName = CSTRING(DigEnvelopeLong);
-                        statement = QUOTE([ARR_2({_this call FUNC(crvBuild)},[ARR_3(_this select 0,'GRAD_envelope_long',[0,0,0])])] call CBA_fnc_execNextFrame);
-                        condition = QUOTE(GVAR(allowDiggingInVehicle) && ([ARR_2(_target,_player)] call FUNC(canDigVehicle)) && GVAR(allowLongEnvelope));
-                    };
                 };
             };
         };
