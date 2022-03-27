@@ -22,27 +22,28 @@ _vehicle addEventHandler ["EpeContactStart", {
 
 	private _dir1 = getDir _object1;
 	private _dir2 = getDir _object2;
+	private _config = configFile >> "CfgDigVehicles" >> typeOf _object1;
+    private _distanceToTrench = getNumber (_config >> "distanceToTrench");
 
-
-	if ((abs(_dir1 - _dir2)) > 10) exitWith { systemchat "angle not fitting"; };
+	if ((abs(_dir1 - _dir2)) > 15) exitWith { systemchat "angle not fitting"; };
 
 	// if vehicle is inside trench
-	if ((getPos _object1) inArea [(_object2 modelToWorld [0,-3.35,0]), .5, .5, getDir _object2, true, -1]) then {
+	if ((getPos _object1) inArea [(_object2 modelToWorld [0.2,-_distanceToTrench,0]), .5, .5, getDir _object2, true, -1]) then {
 
 		// check which trench is larger and attach the larger one, delete the other
-		private _trench = _object1 getVariable [QGVAR(trenchDigged), objNull];
+		private _trench = _object1 getVariable ["grad_trenches_functions_trenchDigged", objNull];
 		private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
 
 		if (_object2 getVariable ["ace_trenches_progress", 0] > _actualProgress) then {
 			deleteVehicle _trench;
-			_object2 attachTo [_vehicle, [0,3.35,-5]];
-			_vehicle setVariable [QGVAR(isDigging), true, true];
-			_vehicle setVariable [QGVAR(trenchDigged), _object2, true];
+			_object2 attachTo [_vehicle, [0.2,_distanceToTrench,-5]];
+			_vehicle setVariable ["grad_trenches_functions_isDigging", true, true];
+			_vehicle setVariable ["grad_trenches_functions_trenchDigged", _object2, true];
 		} else {
 			deleteVehicle _object2;
-			_trench attachTo [_vehicle, [0,3.35,-5]];
-			_vehicle setVariable [QGVAR(isDigging), true, true];
-			_vehicle setVariable [QGVAR(trenchDigged), _trench, true];
+			_trench attachTo [_vehicle, [0.2,_distanceToTrench,-5]];
+			_vehicle setVariable ["grad_trenches_functions_isDigging", true, true];
+			_vehicle setVariable ["grad_trenches_functions_trenchDigged", _trench, true];
 		};
 	};
 }];
@@ -53,12 +54,20 @@ _vehicle addAction [
 	{
 		params ["_target", "_caller", "_actionId", "_arguments"];
 
-    private _config = configFile >> "CfgDigVehicles" >> typeOf _target;
-    private _animation = getText (_config >> "animation");
-    private _plowLowered = getNumber (_config >> "plowLowered");
-    _target animate [_animation, _plowLowered];
-    _target setCruiseControl [7, false];
-    _target setVariable ["grad_trenches_functions_plowlowered", true, true];
+	    private _config = configFile >> "CfgDigVehicles" >> typeOf _target;
+	    private _animation = getText (_config >> "animation");
+	    private _plowLowered = getNumber (_config >> "plowLowered");
+	    _target animate [_animation, _plowLowered];
+	    _target setCruiseControl [7, false];    
+
+	    [{
+	    	params ["_target", "_animation", "_plowLowered"];
+	    	(animationPhase _animation == _plowLowered)
+		},
+	    {	
+	    	params ["_target", "_animation", "_plowLowered"];
+			_target setVariable ["grad_trenches_functions_plowlowered", true, true];
+		}, [_target, _animation, _plowLowered]] call CBA_fnc_waitUntilAndExecute;
 	},
 	nil,
 	1.5,
@@ -77,12 +86,12 @@ _vehicle addAction [
 	{
 		params ["_target", "_caller", "_actionId", "_arguments"];
 
-    private _config = configFile >> "CfgDigVehicles" >> typeOf _target;
-    private _animation = getText (_config >> "animation");
-    private _plowRaised = getNumber (_config >> "plowRaised");
-    _target animate [_animation, _plowRaised];
-    _target setCruiseControl [0, false];
-    _target setVariable ["grad_trenches_functions_plowlowered", false, true];
+	    private _config = configFile >> "CfgDigVehicles" >> typeOf _target;
+	    private _animation = getText (_config >> "animation");
+	    private _plowRaised = getNumber (_config >> "plowRaised");
+	    _target animate [_animation, _plowRaised];
+	    _target setCruiseControl [0, false];
+	    _target setVariable ["grad_trenches_functions_plowlowered", false, true];
 	},
 	nil,
 	1.5,
