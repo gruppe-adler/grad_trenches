@@ -28,7 +28,7 @@ _vehicle addEventHandler ["EpeContactStart", {
 	if ((abs(_dir1 - _dir2)) > 15) exitWith { systemchat "angle not fitting"; };
 
 	// if vehicle is inside trench
-	if ((getPos _object1) inArea [(_object2 modelToWorld [0.2,-_distanceToTrench,0]), .5, .5, getDir _object2, true, -1]) then {
+	if ((getPos _object1) inArea [(_object2 modelToWorld [-0.1,-_distanceToTrench,0]), .5, .5, getDir _object2, true, -1]) then {
 
 		// check which trench is larger and attach the larger one, delete the other
 		private _trench = _object1 getVariable ["grad_trenches_functions_trenchDigged", objNull];
@@ -36,12 +36,12 @@ _vehicle addEventHandler ["EpeContactStart", {
 
 		if (_object2 getVariable ["ace_trenches_progress", 0] > _actualProgress) then {
 			deleteVehicle _trench;
-			_object2 attachTo [_vehicle, [0.2,_distanceToTrench,-5]];
+			_object2 attachTo [_vehicle, [-0.1,_distanceToTrench,-5]];
 			_vehicle setVariable ["grad_trenches_functions_isDigging", true, true];
 			_vehicle setVariable ["grad_trenches_functions_trenchDigged", _object2, true];
 		} else {
 			deleteVehicle _object2;
-			_trench attachTo [_vehicle, [0.2,_distanceToTrench,-5]];
+			_trench attachTo [_vehicle, [-0.1,_distanceToTrench,-5]];
 			_vehicle setVariable ["grad_trenches_functions_isDigging", true, true];
 			_vehicle setVariable ["grad_trenches_functions_trenchDigged", _trench, true];
 		};
@@ -62,7 +62,7 @@ _vehicle addAction [
 
 	    [{
 	    	params ["_target", "_animation", "_plowLowered"];
-	    	(animationPhase _animation == _plowLowered)
+	    	(_target animationPhase _animation == _plowLowered)
 		},
 	    {	
 	    	params ["_target", "_animation", "_plowLowered"];
