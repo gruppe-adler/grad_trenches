@@ -35,7 +35,7 @@ params ["_vehicle"];
     };
 
     // save performance
-    if (!(_vehicle getVariable ["grad_trenches_functions_plowlowered", false]) && !(_vehicle getVariable [QGVAR(isDigging), false])) exitWith {}
+    if (!(_vehicle getVariable ["grad_trenches_functions_plowlowered", false]) && !(_vehicle getVariable [QGVAR(isDigging), false])) exitWith {};
 
     // init digging
     if (!(_vehicle getVariable [QGVAR(isDigging), false])) then {
