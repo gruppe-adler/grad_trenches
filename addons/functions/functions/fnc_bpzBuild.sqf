@@ -71,7 +71,7 @@ params ["_vehicle"];
         } else {
             if (_speed < -0.5) then {
                 detach _trench;
-                _vehicle getVariable [QGVAR(trenchDigged), objNull, true];
+                _vehicle setVariable [QGVAR(trenchDigged), objNull, true];
                 _vehicle setVariable [QGVAR(isDigging), false, true];
                 _trench setVariable ["ace_trenches_placeData", [getPos _trench, [vectorDir _trench, vectorUp _trench]], true];
             };
