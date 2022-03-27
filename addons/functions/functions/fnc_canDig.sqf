@@ -16,11 +16,19 @@
  * Public: No
  */
 
-params ["_object"];
+params ["_positionAGL"];
 
-private _posASL = getPosASL _object;
+private _posASL = [0,0,0];
 
-if (surfaceIsWater _posASL || {isOnRoad _object}) exitWith {false};
+if (typeName _positionAGL == "OBJECT") then {
+    _posASL = getPosASL _positionAGL;
+};
+
+if (typeName _positionAGL == "ARRAY") then {
+    _posASL =  AGLtoASL _positionAGL;
+};
+
+if (surfaceIsWater _posASL || {isOnRoad _posASL}) exitWith {false};
 
 private _surfaceClass = (surfaceType _posASL) select [1];
 private _config = configFile >> "CfgSurfaces" >> _surfaceClass;

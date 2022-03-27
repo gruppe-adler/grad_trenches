@@ -7,7 +7,6 @@ PREP(canHelpDiggingTrench);
 PREP(canContinueDiggingTrench);
 PREP(canDig);
 PREP(canDigTrench);
-PREP(canDigVehicle);
 PREP(canPlaceCamouflage);
 PREP(canRemoveCamouflage);
 PREP(continueDiggingTrench);
