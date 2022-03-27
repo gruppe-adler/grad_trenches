@@ -18,13 +18,32 @@ if (isServer) then {
 _vehicle addEventHandler ["EpeContactStart", {
 	params ["_object1", "_object2", "_selection1", "_selection2", "_force"];
 
+	if (typeOf _object2 != "GRAD_envelope_vehicle") exitWith {};
+
 	private _dir1 = getDir _object1;
 	private _dir2 = getDir _object2;
 
+
 	if ((abs(_dir1 - _dir2)) > 10) exitWith { hint "angle not fitting"; };
 
-	if (getPos _object1 inArea [_object modelToWorld [0,3,0], 2, 2, getDir _object1, true, -1]) then {
-		_object2 attachTo [];
+	// if vehicle is inside trench
+	if ((getPos _object1) inArea [(_object2 modelToWorld [0,-3,0]), .5, .5, getDir _object2, true, -1]) then {
+
+		// check which trench is larger and attach the larger one, delete the other
+		private _trench = _object1 getVariable [QGVAR(trenchDigged), objNull];
+		private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
+
+		if (_object2 getVariable ["ace_trenches_progress", 0] > _actualProgress) then {
+			deleteVehicle _trench;
+			_object2 attachTo [_vehicle, [0,3,-5]];
+			_vehicle setVariable [QGVAR(isDigging), true, true];
+			_vehicle setVariable [QGVAR(trenchDigged), _object2, true];
+		} else {
+			deleteVehicle _object2;
+			_trench attachTo [_vehicle, [0,3,-5]];
+			_vehicle setVariable [QGVAR(isDigging), true, true];
+			_vehicle setVariable [QGVAR(trenchDigged), _trench, true];
+		};
 	};
 }];
 

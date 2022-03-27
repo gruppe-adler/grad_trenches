@@ -42,7 +42,7 @@ _target animate [_animation, _plowLowered];
     if (!(_vehicle getVariable [QGVAR(isDigging), false])) then {
 
         // can dig vehicle on this position
-        if (!([_vehicle modelToWorld [0,3.5,0]] call FUNC(canDig))) exitWith {};
+        if (!([_vehicle modelToWorld [0,3,0]] call FUNC(canDig))) exitWith {};
 
         private _speed = speed _vehicle;
         if (_speed > 1) then {   
@@ -50,7 +50,7 @@ _target animate [_animation, _plowLowered];
             _vehicle setVariable [QGVAR(isDigging), true, true];
             private _trench = "GRAD_envelope_vehicle" createVehicle [0,0,0];
             [_trench, 0] call grad_trenches_functions_fnc_setTrenchProgress;
-            _trench attachTo [_vehicle, [0,3.5,-5]];
+            _trench attachTo [_vehicle, [0,3,-5]];
             _trench setObjectTextureGlobal [0, surfaceTexture getPos _vehicle];
             _vehicle setVariable [QGVAR(trenchDigged), _trench, true];
         };
@@ -67,7 +67,7 @@ _target animate [_animation, _plowLowered];
         };
 
         private _speed = speed _vehicle;
-        private _digTime = 20;
+        private _digTime = 5;
         private _diff = 1/(_digTime*10);
 
         if (_speed > 1) then {

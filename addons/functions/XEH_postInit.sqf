@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-private _digVehicleConfigClasses = "true" configClasses (configFile >> "CfgVehicles");
+private _digVehicleConfigClasses = "true" configClasses (configFile >> "CfgDigVehicles");
 {
   private _classname = configName _x;
 
