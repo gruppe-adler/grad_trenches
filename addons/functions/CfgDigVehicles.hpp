@@ -3,13 +3,13 @@ class CfgDigVehicles {
     class B_APC_Tracked_01_CRV_F {
         animation = "moveplow";
         plowRaised = 0;
-        plowLowered = 1;
+        plowLowered = 0.9;
     };
 
     class B_T_APC_Tracked_01_CRV_F {
         animation = "moveplow";
         plowRaised = 0;
-        plowLowered = 1;
+        plowLowered = 0.9;
     };
 
     class gm_ge_army_bpz2a0 {

@@ -24,10 +24,10 @@ _vehicle addEventHandler ["EpeContactStart", {
 	private _dir2 = getDir _object2;
 
 
-	if ((abs(_dir1 - _dir2)) > 10) exitWith { hint "angle not fitting"; };
+	if ((abs(_dir1 - _dir2)) > 10) exitWith { systemchat "angle not fitting"; };
 
 	// if vehicle is inside trench
-	if ((getPos _object1) inArea [(_object2 modelToWorld [0,-3,0]), .5, .5, getDir _object2, true, -1]) then {
+	if ((getPos _object1) inArea [(_object2 modelToWorld [0,-3.35,0]), .5, .5, getDir _object2, true, -1]) then {
 
 		// check which trench is larger and attach the larger one, delete the other
 		private _trench = _object1 getVariable [QGVAR(trenchDigged), objNull];
@@ -35,12 +35,12 @@ _vehicle addEventHandler ["EpeContactStart", {
 
 		if (_object2 getVariable ["ace_trenches_progress", 0] > _actualProgress) then {
 			deleteVehicle _trench;
-			_object2 attachTo [_vehicle, [0,3,-5]];
+			_object2 attachTo [_vehicle, [0,3.35,-5]];
 			_vehicle setVariable [QGVAR(isDigging), true, true];
 			_vehicle setVariable [QGVAR(trenchDigged), _object2, true];
 		} else {
 			deleteVehicle _object2;
-			_trench attachTo [_vehicle, [0,3,-5]];
+			_trench attachTo [_vehicle, [0,3.35,-5]];
 			_vehicle setVariable [QGVAR(isDigging), true, true];
 			_vehicle setVariable [QGVAR(trenchDigged), _trench, true];
 		};
