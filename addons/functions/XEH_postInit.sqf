@@ -5,7 +5,7 @@ private _digVehicleConfigClasses = "true" configClasses (configFile >> "CfgVehic
   private _classname = configName _x;
 
   [_classname, "init", {
-      (_this select 0) call FUNC(vehicleAction);
+      [_this select 0] call FUNC(vehicleAction);
   }, true, [], true] call CBA_fnc_addClassEventHandler;
 } forEach _digVehicleConfigClasses;
 

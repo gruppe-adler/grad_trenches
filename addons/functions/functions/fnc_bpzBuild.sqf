@@ -40,15 +40,18 @@ params ["_vehicle"];
     // init digging
     if (!(_vehicle getVariable [QGVAR(isDigging), false])) then {
 
-        // can dig vehicle on this position
-        if (!([_vehicle] call FUNC(canDigVehicle))) exitWith {};
+        if (_speed > 1) then {
 
-        _vehicle setVariable [QGVAR(isDigging), true, true];
-        private _trench = "GRAD_envelope_vehicle" createVehicle [0,0,0];
+            // can dig vehicle on this position
+            if (!([_vehicle] call FUNC(canDigVehicle))) exitWith {};
 
-        [_trench, 0] call grad_trenches_functions_fnc_setTrenchProgress;
-        _trench attachTo [_vehicle, [0,3,5]];
-        _trench setObjectTextureGlobal [0, surfaceTexture getPos _vehicle];
+            _vehicle setVariable [QGVAR(isDigging), true, true];
+            private _trench = "GRAD_envelope_vehicle" createVehicle [0,0,0];
+            [_trench, 0] call grad_trenches_functions_fnc_setTrenchProgress;
+            _trench attachTo [_vehicle, [0,3,-5]];
+            _trench setObjectTextureGlobal [0, surfaceTexture getPos _vehicle];
+            _vehicle setVariable [QGVAR(trenchDigged), _trench, true];
+        };
 
     } else {
         private _trench = _vehicle getVariable [QGVAR(trenchDigged), objNull];
