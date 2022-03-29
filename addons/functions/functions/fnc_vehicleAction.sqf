@@ -15,6 +15,7 @@ if (isServer) then {
 };
 
 // needs to be local to driver, thats why everyone get this
+/*
 _vehicle addEventHandler ["EpeContactStart", {
 	params ["_object1", "_object2", "_selection1", "_selection2", "_force"];
 
@@ -48,6 +49,7 @@ _vehicle addEventHandler ["EpeContactStart", {
 		};
 	};
 }];
+*/
 
 
 _vehicle addAction [
@@ -67,13 +69,17 @@ _vehicle addAction [
 	    _target setCruiseControl [7, false];    
 
 	    [{
-	    	params ["_target", "_animation", "_plowLowered"];
-	    	(_target animationPhase _animation == _plowLowered)
+	    	params ["_target", "_type", "_animation", "_plowLowered"];
+	    	if (_type == "animate") then {
+	    		(_target animationPhase _animation == _plowLowered)
+	    	} else {
+	    		(_target animationSourcePhase _animation == _plowLowered)
+	    	};
 		},
 	    {	
-	    	params ["_target", "_animation", "_plowLowered"];
+	    	params ["_target", "_type", "_animation", "_plowLowered"];
 			_target setVariable ["grad_trenches_functions_plowlowered", true, true];
-		}, [_target, _animation, _plowLowered]] call CBA_fnc_waitUntilAndExecute;
+		}, [_target, _type, _animation, _plowLowered]] call CBA_fnc_waitUntilAndExecute;
 	},
 	nil,
 	1.5,
