@@ -51,13 +51,13 @@ private _distanceToTrench = getNumber (_config >> "distanceToTrench");
             _vehicle setVariable [QGVAR(isDigging), true, true];
             private _trench = "GRAD_envelope_vehicle" createVehicle [0,0,0];
             [_trench, 0] call grad_trenches_functions_fnc_setTrenchProgress;
+            _vehicle setVariable [QGVAR(trenchDigged), _trench, true];
 
             [{
                 params ["_vehicle", "_trench", "_distanceToTrench"];
-                _trench attachTo [_vehicle, [-0.227,_distanceToTrench,-5]];
                 _trench setObjectTextureGlobal [0, surfaceTexture getPos _vehicle];
-                _vehicle setVariable [QGVAR(trenchDigged), _trench, true];
-            }, [_vehicle, _trench, _distanceToTrench]] call CBA_fnc_execNextFrame;
+                _trench attachTo [_vehicle, [-0.227,_distanceToTrench,-5]];
+            }, [_vehicle, _trench, _distanceToTrench], 0.2] call CBA_fnc_waitAndExecute;
         };
 
     } else {
