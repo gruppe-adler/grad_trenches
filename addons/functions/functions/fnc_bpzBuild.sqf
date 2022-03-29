@@ -75,6 +75,7 @@ private _distanceToTrench = getNumber (_config >> "distanceToTrench");
             [_trench, _actualProgress + _diff, 0.7] call grad_trenches_functions_fnc_setTrenchProgress;
             _trench setObjectTextureGlobal [0, surfaceTexture position _vehicle];
             [QGVAR(digFX), [_trench]] call CBA_fnc_globalEvent;
+            [QGVAR(digFXVehicleBlade), [_vehicle]] call CBA_fnc_globalEvent;            
         } else {
             if (_speed < -0.5 || (vectorUp _vehicle select 2 < 0.99)) then {
                 detach _trench;

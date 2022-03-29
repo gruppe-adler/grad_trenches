@@ -15,6 +15,7 @@ PREP(decayPFH);
 PREP(deleteCamouflage);
 PREP(deleteTrench);
 PREP(digFX);
+PREP(digFXVehicleBlade);
 PREP(handleDiggerToGVAR);
 PREP(hitEHAdd);
 PREP(hitFX);

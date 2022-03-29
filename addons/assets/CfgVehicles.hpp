@@ -63,7 +63,7 @@ class CfgVehicles {
         };
     };
     class GRAD_envelope_vehicle: BagFence_base_F {
-        model = QPATHTOF(data\trench_vehicle_nomi.p3d);
+        model = QPATHTOF(data\trench_vehicle.p3d);
         hiddenSelections[] = {"velka"};
         editorPreview = QPATHTOF(data\trench_vehicle.paa);
 
