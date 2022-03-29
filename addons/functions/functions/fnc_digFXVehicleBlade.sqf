@@ -18,20 +18,21 @@
 params ["_vehicle"];
 
 private _config = configFile >> "CfgDigVehicles" >> typeOf _vehicle;
-private _selection = getText (_config >> "animation");
+private _selection = getText (_config >> "selection");
 
 
 
-private _Xoffset = _x;
 private _particleSource = "#particlesource" createVehicleLocal [0,0,0];
-private _position = _vehicle modelToWorld (_vehicle selectionPosition _selection);
+private _selectionPosition = (_vehicle selectionPosition _selection);
+_selectionPosition set [0, _selectionPosition+0.5];
+private _position = _vehicle modelToWorld _selectionPosition;
 _particleSource setPos _position;
 _particleSource setParticleParams [
  "\A3\Data_F\ParticleEffects\Universal\Mud", "", "SpaceObject",
  1, 10, [0,0,0], [0,0,1], 1, 10, 1, 0.2, [0.05],
  [[1, 1, 1 ,1]],
  [0, 1], 1, 0, "", "", _particleSource, 0, true, .1];
-_particleSource setParticleRandom [2, [2, 0, 0.1], [0.1, 0.1, 0.2], 0, 2, [0, 0, 0, 0], 0, 0];
+_particleSource setParticleRandom [2, [0, 2, 0.1], [0.1, 0.1, 0.2], 0, 2, [0, 0, 0, 0], 0, 0];
 _particleSource setParticleCircle [0.1, [0,0,0.3]];
 _particleSource setDropInterval 0.005;
 
