@@ -19,9 +19,6 @@ params ["_vehicle"];
 
 private _config = configFile >> "CfgDigVehicles" >> typeOf _vehicle;
 private _selection = getText (_config >> "selection");
-
-
-
 private _particleSource = "#particlesource" createVehicleLocal [0,0,0];
 private _selectionPosition = (_vehicle selectionPosition _selection);
 _selectionPosition set [1, _selectionPosition select 1 + 0.5];
