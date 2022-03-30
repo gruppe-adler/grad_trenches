@@ -62,10 +62,10 @@ _vehicle addAction [
 	    private _plowLowered = getNumber (_config >> "plowLowered");
 	    private _type = getText (_config >> "type");
 	    if (_type == "animate") then {
-	    	_target animate [_animation, _plowLowered];
+	        _target animate [_animation, _plowLowered];
 	    } else {
-	    	_target animatesource [_animation, _plowLowered];
-		};
+	        _target animatesource [_animation, _plowLowered];
+	    };
 	    _target setCruiseControl [7, false];    
 
 	    [{
