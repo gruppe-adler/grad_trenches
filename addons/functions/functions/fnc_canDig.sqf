@@ -24,7 +24,7 @@ if (typeName _positionAGL == "OBJECT") then {
     _posASL = getPosASL _positionAGL;
 };
 
-if (typeName _positionAGL == "ARRAY") then {
+if (_positionAGL isEqualType []) then {
     _posASL =  AGLtoASL _positionAGL;
 };
 
