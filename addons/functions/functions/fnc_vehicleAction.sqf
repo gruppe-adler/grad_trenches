@@ -3,7 +3,7 @@
 params ["_vehicle"];
 
 if (!(isClass (configFile >> "CfgDigVehicles" >> typeOf _vehicle))) exitWith {
-    diag_log "Vehicle Digging not supported";
+    diag_log format ["Vehicle Digging not supported on %1", typeOf _vehicle];
 };
 
 if (_vehicle getVariable ["GRAD_trenches_vehicleDiggingActionAdded", false]) exitWith {};
