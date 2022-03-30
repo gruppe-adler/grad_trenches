@@ -20,7 +20,7 @@ params ["_positionAGL"];
 
 private _posASL = [0,0,0];
 
-if (typeName _positionAGL == "OBJECT") then {
+if (_positionAGL isEqualType objNull) then {
     _posASL = getPosASL _positionAGL;
 };
 
