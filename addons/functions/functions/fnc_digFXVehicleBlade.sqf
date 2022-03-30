@@ -24,7 +24,7 @@ private _selection = getText (_config >> "selection");
 
 private _particleSource = "#particlesource" createVehicleLocal [0,0,0];
 private _selectionPosition = (_vehicle selectionPosition _selection);
-_selectionPosition set [1, _selectionPosition#1+0.5];
+_selectionPosition set [1, _selectionPosition select 1 + 0.5];
 private _position = _vehicle modelToWorld _selectionPosition;
 _particleSource setPos _position;
 _particleSource setParticleParams [
