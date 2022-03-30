@@ -50,7 +50,7 @@ private _distanceToTrench = getNumber (_config >> "distanceToTrench");
 
             _vehicle setVariable [QGVAR(isDigging), true, true];
             private _trench = "GRAD_envelope_vehicle" createVehicle [0,0,0];
-            [_trench, 0] call grad_trenches_functions_fnc_setTrenchProgress;
+            [_trench, 0] call FUNC(setTrenchProgress);
             _vehicle setVariable [QGVAR(trenchDigged), _trench, true];
 
             [{
