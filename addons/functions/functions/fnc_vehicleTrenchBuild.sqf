@@ -37,7 +37,7 @@ private _distanceToTrench = getNumber (_config >> "distanceToTrench");
     #define vehicleNotTiltedValue 0.99
 
     // save performance
-    if ((_vehicle getVariable ["grad_trenches_functions_plowlowered", 0] == 1) && !(_vehicle getVariable [QGVAR(isDigging), false])) exitWith {};
+    if ((_vehicle getVariable ["grad_trenches_functions_plowlowered", 0] == 0) && !(_vehicle getVariable [QGVAR(isDigging), false])) exitWith {};
 
     // init digging
     if (!(_vehicle getVariable [QGVAR(isDigging), false])) then {
