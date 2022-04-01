@@ -34,6 +34,7 @@ private _distanceToTrench = getNumber (_config >> "distanceToTrench");
     };
 
     #define trenchHorizontalOffset -0.227
+    #define vehicleNotTiltedValue 0.99
 
     // save performance
     if (!(_vehicle getVariable ["grad_trenches_functions_plowlowered", false]) && !(_vehicle getVariable [QGVAR(isDigging), false])) exitWith {};
@@ -45,7 +46,7 @@ private _distanceToTrench = getNumber (_config >> "distanceToTrench");
         if (!([_vehicle modelToWorld [trenchHorizontalOffset,_distanceToTrench,0]] call FUNC(canDig))) exitWith {};
 
         // only work when vehicle is not tilted
-        if (vectorUp _vehicle select 2 < 0.99) exitWith {};
+        if (vectorUp _vehicle select 2 < vehicleNotTiltedValue) exitWith {};
 
         private _speed = speed _vehicle;
         if (_speed > 1) then {   
@@ -83,7 +84,7 @@ private _distanceToTrench = getNumber (_config >> "distanceToTrench");
             [QGVAR(digFX), [_trench]] call CBA_fnc_globalEvent;
             [QGVAR(digFXVehicleBlade), [_vehicle]] call CBA_fnc_globalEvent;            
         } else {
-            if (_speed < -0.5 || (vectorUp _vehicle select 2 < 0.99)) then {
+            if (_speed < -0.5 || (vectorUp _vehicle select 2 < vehicleNotTiltedValue)) then {
                 detach _trench;
                 _vehicle setVariable [QGVAR(trenchDigged), objNull, true];
                 _vehicle setVariable [QGVAR(isDigging), false, true];
