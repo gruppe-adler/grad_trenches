@@ -74,7 +74,7 @@ private _distanceToTrench = getNumber (_config >> "distanceToTrench");
         };
 
         private _speed = speed _vehicle;
-        private _digTime = 5;
+        private _digTime = missionNameSpace getVariable [QGVAR(vehicleTrenchBuildSpeed), 5];
         private _diff = 1/(_digTime*10);
 
         if (_speed > 1) then {

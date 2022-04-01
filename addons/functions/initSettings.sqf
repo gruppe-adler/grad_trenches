@@ -44,3 +44,6 @@
 // Trench hit degradation setting
 [QGVAR(allowHitDecay), "CHECKBOX", [LLSTRING(allowHitDecay_displayName), LLSTRING(allowHitDecay_tooltip)], [LLSTRING(settingCategory), LLSTRING(hitDecaySubCategory)], true, true] call CBA_fnc_addSetting;
 [QGVAR(hitDecayMultiplier), "SLIDER", [LLSTRING(hitDecayMultiplier_displayName), LLSTRING(hitDecayMultiplier_tooltip)], [LLSTRING(settingCategory), LLSTRING(hitDecaySubCategory)], [0.1, 10, 1, 1], true] call CBA_fnc_addSetting;
+
+// Vehicle Trench Build Speed
+[QGVAR(vehicleTrenchBuildSpeed), "SLIDER", [LLSTRING(vehicleTrenchBuildSpeed_displayName), LLSTRING(vehicleTrenchBuildSpeed_tooltip)], [LLSTRING(settingCategory), LLSTRING(vehicleTrenchBuildSubCategory)], [1, 30, 5, 0], true] call CBA_fnc_addSetting;
