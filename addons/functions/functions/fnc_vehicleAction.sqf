@@ -20,7 +20,7 @@ _vehicle addEventHandler ["EpeContactStart", {
 	params ["_object1", "_object2", "_selection1", "_selection2", "_force"];
 
 	if (typeOf _object2 != "GRAD_envelope_vehicle") exitWith {};
-	if (!(_object1 getVariable ["grad_trenches_functions_plowlowered", false])) exitWith {};
+	if (!(_object1 getVariable ["grad_trenches_functions_plowlowered", 0])) exitWith {};
 
 	private _dir1 = getDir _object1;
 	private _dir2 = getDir _object2;
@@ -51,73 +51,89 @@ _vehicle addEventHandler ["EpeContactStart", {
 }];
 */
 
+if (hasInterface) then {
+	_vehicle addAction [
+		"Lower Plow",
+		{
+			params ["_target", "_caller", "_actionId", "_arguments"];
 
-_vehicle addAction [
-	"Lower Plow",
-	{
-		params ["_target", "_caller", "_actionId", "_arguments"];
+		    private _config = configFile >> "CfgDigVehicles" >> typeOf _target;
+		    private _animation = getText (_config >> "animation");
+		    private _plowLowered = getNumber (_config >> "plowLowered");
+		    private _type = getText (_config >> "type");
+		    if (_type == "animate") then {
+		        _target animate [_animation, _plowLowered];
+		    } else {
+		        _target animatesource [_animation, _plowLowered];
+		    };
+		    _target setCruiseControl [7, false];    
+		    _target setVariable ["grad_trenches_functions_plowlowered", -1, true]; // animating state to prevent multi execution
 
-	    private _config = configFile >> "CfgDigVehicles" >> typeOf _target;
-	    private _animation = getText (_config >> "animation");
-	    private _plowLowered = getNumber (_config >> "plowLowered");
-	    private _type = getText (_config >> "type");
-	    if (_type == "animate") then {
-	        _target animate [_animation, _plowLowered];
-	    } else {
-	        _target animatesource [_animation, _plowLowered];
-	    };
-	    _target setCruiseControl [7, false];    
-
-	    [{
-	    	params ["_target", "_type", "_animation", "_plowLowered"];
-	    	if (_type == "animate") then {
-	    		(_target animationPhase _animation == _plowLowered)
-	    	} else {
-	    		(_target animationSourcePhase _animation == _plowLowered)
-	    	};
+		    [{
+		    	params ["_target", "_type", "_animation", "_plowLowered"];
+		    	if (_type == "animate") then {
+		    		(_target animationPhase _animation == _plowLowered)
+		    	} else {
+		    		(_target animationSourcePhase _animation == _plowLowered)
+		    	};
+			},
+		    {	
+		    	params ["_target", "_type", "_animation", "_plowLowered"];
+				_target setVariable ["grad_trenches_functions_plowlowered", 1, true];
+			}, [_target, _type, _animation, _plowLowered]] call CBA_fnc_waitUntilAndExecute;
 		},
-	    {	
-	    	params ["_target", "_type", "_animation", "_plowLowered"];
-			_target setVariable ["grad_trenches_functions_plowlowered", true, true];
-		}, [_target, _type, _animation, _plowLowered]] call CBA_fnc_waitUntilAndExecute;
-	},
-	nil,
-	1.5,
-	true,
-	true,
-	"",
-	"!(_target getVariable ['grad_trenches_functions_plowlowered', false])", // _target, _this, _originalTarget
-	50,
-	false,
-	"",
-	""
-];
+		nil,
+		1.5,
+		true,
+		true,
+		"",
+		"!(_target getVariable ['grad_trenches_functions_plowlowered', 0]) == 0", // _target, _this, _originalTarget
+		50,
+		false,
+		"",
+		""
+	];
 
-_vehicle addAction [
-	"Raise Plow",
-	{
-		params ["_target", "_caller", "_actionId", "_arguments"];
+	_vehicle addAction [
+		"Raise Plow",
+		{
+			params ["_target", "_caller", "_actionId", "_arguments"];
 
-	    private _config = configFile >> "CfgDigVehicles" >> typeOf _target;
-	    private _animation = getText (_config >> "animation");
-	    private _plowRaised = getNumber (_config >> "plowRaised");
-	    private _type = getText (_config >> "type");
-	    if (_type == "animate") then {
-	    	_target animate [_animation, _plowRaised];
-	    } else {
-	    	_target animatesource [_animation, _plowRaised];
-		};
-	    _target setCruiseControl [0, false];
-	    _target setVariable ["grad_trenches_functions_plowlowered", false, true];
-	},
-	nil,
-	1.5,
-	true,
-	true,
-	"",
-	"(_target getVariable ['grad_trenches_functions_plowlowered', false])", // _target, _this, _originalTarget
-	50,
-	false,
-	"",
-	""
-];
+		    private _config = configFile >> "CfgDigVehicles" >> typeOf _target;
+		    private _animation = getText (_config >> "animation");
+		    private _plowRaised = getNumber (_config >> "plowRaised");
+		    private _type = getText (_config >> "type");
+		    if (_type == "animate") then {
+		    	_target animate [_animation, _plowRaised];
+		    } else {
+		    	_target animatesource [_animation, _plowRaised];
+			};
+		    _target setCruiseControl [0, false];
+		    _target setVariable ["grad_trenches_functions_plowlowered", -1, true]; // animating state to prevent multi execution
+
+		    [{
+		    	params ["_target", "_type", "_animation", "_plowRaised"];
+		    	if (_type == "animate") then {
+		    		(_target animationPhase _animation == _plowRaised)
+		    	} else {
+		    		(_target animationSourcePhase _animation == _plowRaised)
+		    	};
+			},
+		    {	
+		    	params ["_target", "_type", "_animation", "_plowRaised"];
+				_target setVariable ["grad_trenches_functions_plowlowered", 0, true];
+			}, [_target, _type, _animation, _plowRaised]] call CBA_fnc_waitUntilAndExecute;
+		    
+		},
+		nil,
+		1.5,
+		true,
+		true,
+		"",
+		"(_target getVariable ['grad_trenches_functions_plowlowered', 0]) == 1", // _target, _this, _originalTarget
+		50,
+		false,
+		"",
+		""
+	];
+};
