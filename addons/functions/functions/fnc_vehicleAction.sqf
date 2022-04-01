@@ -90,7 +90,7 @@ if (hasInterface) then {
 		true,
 		true,
 		"",
-		"!((_target getVariable ['grad_trenches_functions_plowlowered', 0]) == 0)", // _target, _this, _originalTarget
+		"((_target getVariable ['grad_trenches_functions_plowlowered', 0]) == 0)", // _target, _this, _originalTarget
 		50,
 		false,
 		"",
