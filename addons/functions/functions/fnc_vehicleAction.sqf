@@ -6,12 +6,15 @@ if (!(isClass (configFile >> "CfgDigVehicles" >> typeOf _vehicle))) exitWith {
     diag_log format ["Vehicle Digging not supported on %1", typeOf _vehicle];
 };
 
-if (_vehicle getVariable ["GRAD_trenches_vehicleDiggingActionAdded", false]) exitWith {};
-_vehicle setVariable ["GRAD_trenches_vehicleDiggingActionAdded", true];
+if (_vehicle getVariable [QGVAR(vehicleDiggingActionAdded), false]) exitWith {
+    WARNING_1("attempt to add vehicle action more than once on %1", _vehicle);
+};
+
+_vehicle setVariable [QGVAR(vehicleDiggingActionAdded), true];
 
 // building is on server only
 if (isServer) then {
-	[_vehicle] call FUNC(bpzBuild);
+	[_vehicle] call FUNC(vehicleTrenchBuild);
 };
 
 // needs to be local to driver, thats why everyone get this

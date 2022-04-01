@@ -33,6 +33,8 @@ private _distanceToTrench = getNumber (_config >> "distanceToTrench");
         [_handle] call CBA_fnc_removePerFrameHandler;
     };
 
+    #define trenchHorizontalOffset -0.227
+
     // save performance
     if (!(_vehicle getVariable ["grad_trenches_functions_plowlowered", false]) && !(_vehicle getVariable [QGVAR(isDigging), false])) exitWith {};
 
@@ -40,7 +42,7 @@ private _distanceToTrench = getNumber (_config >> "distanceToTrench");
     if (!(_vehicle getVariable [QGVAR(isDigging), false])) then {
 
         // can dig vehicle on this position
-        if (!([_vehicle modelToWorld [-0.227,_distanceToTrench,0]] call FUNC(canDig))) exitWith {};
+        if (!([_vehicle modelToWorld [trenchHorizontalOffset,_distanceToTrench,0]] call FUNC(canDig))) exitWith {};
 
         // only work when vehicle is not tilted
         if (vectorUp _vehicle select 2 < 0.99) exitWith {};
@@ -56,7 +58,7 @@ private _distanceToTrench = getNumber (_config >> "distanceToTrench");
             [{
                 params ["_vehicle", "_trench", "_distanceToTrench"];
                 _trench setObjectTextureGlobal [0, surfaceTexture getPos _vehicle];
-                _trench attachTo [_vehicle, [-0.227,_distanceToTrench,-5]];
+                _trench attachTo [_vehicle, [trenchHorizontalOffset,_distanceToTrench,-5]];
             }, [_vehicle, _trench, _distanceToTrench], 0.2] call CBA_fnc_waitAndExecute;
         };
 
@@ -64,7 +66,7 @@ private _distanceToTrench = getNumber (_config >> "distanceToTrench");
         private _trench = _vehicle getVariable [QGVAR(trenchDigged), objNull];
         private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
 
-        if (!([_vehicle modelToWorld [-0.227,_distanceToTrench,0]] call FUNC(canDig))) exitWith {
+        if (!([_vehicle modelToWorld [trenchHorizontalOffset,_distanceToTrench,0]] call FUNC(canDig))) exitWith {
             detach _trench;
             _vehicle setVariable [QGVAR(trenchDigged), objNull, true];
             _vehicle setVariable [QGVAR(isDigging), false, true];
