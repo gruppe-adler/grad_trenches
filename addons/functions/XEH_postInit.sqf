@@ -1,5 +1,15 @@
 #include "script_component.hpp"
 
+private _digVehicleConfigClasses = "true" configClasses (configFile >> "CfgDigVehicles");
+{
+  private _classname = configName _x;
+
+  [_classname, "init", {
+      [_this select 0] call FUNC(vehicleAction);
+  }, true, [], true] call CBA_fnc_addClassEventHandler;
+} forEach _digVehicleConfigClasses;
+
+
 if (isServer) then {
     [QGVAR(addDigger), {_this call FUNC(addDigger);}] call CBA_fnc_addEventHandler;
     [QGVAR(handleDiggerToGVAR), {_this call FUNC(handleDiggerToGVAR);}] call CBA_fnc_addEventHandler;
@@ -22,6 +32,7 @@ if (hasInterface) then {
     [QGVAR(hitFX), {_this call FUNC(hitFX);}] call CBA_fnc_addEventHandler;
     [QGVAR(applyFatigue), {_this call FUNC(applyFatigue);}] call CBA_fnc_addEventHandler;
     [QGVAR(digFX), {_this call FUNC(digFX);}] call CBA_fnc_addEventHandler;
+    [QGVAR(digFXVehicleBlade), {_this call FUNC(digFXVehicleBlade);}] call CBA_fnc_addEventHandler;
     [QGVAR(hitEHAdd), {_this call FUNC(hitEHAdd);}] call CBA_fnc_addEventHandler;
     [QGVAR(continueDiggingTrench), {_this call FUNC(continueDiggingTrench);}] call CBA_fnc_addEventHandler;
 };

@@ -623,5 +623,17 @@
             <German>Aktiviert Effekte &amp; Geräusche während des Grabens</German>
             <Russian>Включает эффекты и звуки при откапывании</Russian>
         </Key>
+         <Key ID="STR_GRAD_Trenches_functions_vehicleTrenchBuildSpeed_displayName">
+            <English>Digging by Vehicle Duration</English>
+            <German>Graben per Fahrzeug Dauer</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_vehicleTrenchBuildSpeed_tooltip">
+            <English>Time it takes to raise a vehicle trench when driving forward with plow lowered.</English>
+            <German>Zeit, die es dauert, um vorwärts fahrend mit gesenktem Schild einen Fahrzeug-Graben zu bauen.</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_vehicleTrenchBuildSubCategory">
+            <English>Vehicle Digging settings</English>
+            <German>Fahrzeug-Graben Einstellungen</German>
+        </Key>        
     </Package>
 </Project>
