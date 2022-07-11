@@ -134,7 +134,7 @@ if (hasInterface) then {
 		true,
 		"",
 		"((_target getVariable ['grad_trenches_functions_plowlowered', 0]) == 1) && (call CBA_fnc_currentUnit) == driver _target", // _target, _this, _originalTarget
-		50,
+		10,
 		false,
 		"",
 		""
