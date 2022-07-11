@@ -90,7 +90,7 @@ if (hasInterface) then {
 		true,
 		true,
 		"",
-		"((_target getVariable ['grad_trenches_functions_plowlowered', 0]) == 0) && player == driver _target", // _target, _this, _originalTarget
+		"((_target getVariable ['grad_trenches_functions_plowlowered', 0]) == 0) && _this == driver _target", // _target, _this, _originalTarget
 		50,
 		false,
 		"",
