@@ -90,7 +90,7 @@ if (hasInterface) then {
 		true,
 		true,
 		"",
-		"((_target getVariable ['grad_trenches_functions_plowlowered', 0]) == 0)", // _target, _this, _originalTarget
+		"((_target getVariable ['grad_trenches_functions_plowlowered', 0]) == 0) && _this == driver _target", // _target, _this, _originalTarget
 		50,
 		false,
 		"",
@@ -133,8 +133,8 @@ if (hasInterface) then {
 		true,
 		true,
 		"",
-		"((_target getVariable ['grad_trenches_functions_plowlowered', 0]) == 1)", // _target, _this, _originalTarget
-		50,
+		"((_target getVariable ['grad_trenches_functions_plowlowered', 0]) == 1) && (call CBA_fnc_currentUnit) == driver _target", // _target, _this, _originalTarget
+		10,
 		false,
 		"",
 		""
