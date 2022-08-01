@@ -28,4 +28,5 @@ private _config = configOf _trench >> _statusString;
 
 (isClass _config) &&
 {count (getArray (configFile >> "CfgWorldsTextures" >> worldName >> "camouflageObjects")) > 0} &&
-{count (configProperties [_config]) > 0}
+{count (configProperties [_config]) > 0} &&
+{_trench getVariable ["ace_trenches_progress", 0] == 100}
