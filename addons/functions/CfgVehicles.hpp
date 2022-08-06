@@ -238,4 +238,27 @@ class CfgVehicles {
             position = "[0,-2,3.5]";
         };
     };
+    class GRAD_envelope_deformTest: ACE_envelope_big {
+        displayName = CSTRING(EnvelopeLongName);
+        descriptionShort = CSTRING(EnvelopeLongDescription);
+        ace_trenches_diggingDuration = QGVAR(longEnvelopeDigTime);
+        ace_trenches_removalDuration = QGVAR(longEnvelopeRemovalTime);
+        GVAR(offset) = 1.72;
+        ace_trenches_placementData[] = {10,2,0.20};
+        ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
+
+        class CamouflagePositions1 {
+            a[] = {6.7, 0, 3.2};
+            b[] = {3, 0.5, 3.1};
+            c[] = {-2.2, -0.9, 4};
+            d[] = {-3, 0.5, 3.1};
+            e[] = {-6.9, -0.1, 3.1};
+        };
+
+        class CamouflagePositions2 {};
+
+        class ACE_MainActions {
+            position = "[0,-2,3.5]";
+        };
+    };
 };

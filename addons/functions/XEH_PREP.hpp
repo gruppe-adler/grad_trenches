@@ -12,6 +12,7 @@ PREP(canRemoveCamouflage);
 PREP(continueDiggingTrench);
 PREP(createTrenchMarker);
 PREP(decayPFH);
+PREP(deformTerrain);
 PREP(deleteCamouflage);
 PREP(deleteTrench);
 PREP(digFX);
