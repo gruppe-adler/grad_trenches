@@ -92,10 +92,10 @@ class CfgVehicles {
             };
         };
     };
-    class GRAD_envelope_deformTest: BagFence_base_F {
-        model = QPATHTOF(data\trench_deformTest.p3d);
-        hiddenSelections[] = {"velka"};
-        editorPreview = QPATHTOF(data\trench_long.paa);
+    class GRAD_envelope_hightinghole: BagFence_base_F {
+        model = QPATHTOF(data\trench_fightinghole.p3d);
+        hiddenSelections[] = {"texture_01", "texture_02"};
+        //editorPreview = QPATHTOF(data\trench_fightinghole.paa);
 
         class AnimationSources
         {
@@ -103,7 +103,7 @@ class CfgVehicles {
             {
                 source = "user";	// The controller is defined as a user animation.
                 animPeriod = 1;		// The animation period used for this controller.
-                initPhase = 0;		// Initial phase when object is created.
+                initPhase = 1.5;	// Initial phase when object is created.
             };
         };
     };

@@ -634,6 +634,22 @@
         <Key ID="STR_GRAD_Trenches_functions_vehicleTrenchBuildSubCategory">
             <English>Vehicle Digging settings</English>
             <German>Fahrzeug-Graben Einstellungen</German>
-        </Key>        
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_EnvelopeFightingHoleName">
+            <English>Fighting Hole</English>
+            <German>Kampfloch</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_EnvelopeFightingHoleDescription">
+            <English>A hole in the ground to give up to 2 persons cover.</English>
+            <German>Ein Loch im Boden, das bis zu 2 Personen schutz bietet.</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_FightingHoleEnvelopeDigTime">
+            <English>Dig time (s) for small fighting hole</English>
+            <German>Zeit (s) um Kampfloch zu graben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_FightingHoleEnvelopeRemovalTime">
+            <English>Removal time (s) for fighting hole</English>
+            <German>Zeit (s) um kleine Kampfloch zu entfernen</German>
+        </Key>
     </Package>
 </Project>

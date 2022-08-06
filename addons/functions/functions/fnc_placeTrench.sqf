@@ -89,9 +89,9 @@ ace_trenches_digPFH = [{
     _trench setVectorDirAndUp [_v1, _v3];
     ace_trenches_trenchPos = _basePos;
 
-    if (surfaceType (position _trench) != GVAR(currentSurface)) then {
-        GVAR(currentSurface) = surfaceType (position _trench);
-        _trench setObjectTextureGlobal [0, surfaceTexture (getPos _trench)];
+    if (surfaceType _basePos != GVAR(currentSurface)) then {
+        GVAR(currentSurface) = surfaceType _basePos;
+        _trench setObjectTextureGlobal [0, surfaceTexture _basePos];
     };
 }, 0, [_unit, _trench]] call CBA_fnc_addPerFrameHandler;
 

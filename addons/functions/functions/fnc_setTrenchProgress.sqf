@@ -17,7 +17,7 @@
 * Public: No
 */
 
-params ["_trench", "_progress", ["_animationSpeedMultiplier", 0]];
+params ["_trench", "_progress", ["_animationSpeedMultiplier", 0], ["_isNegativ", true]];
 
 private _offset = [configOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry;
 
@@ -25,7 +25,7 @@ private _lift = linearConversion [
     0,
     1,
     _progress,
-    -_offset,
+    _offset,
     0,
     true
 ];
