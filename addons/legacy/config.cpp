@@ -6,7 +6,7 @@ class CfgPatches {
         units[] = {"GRAD_envelope_giant", "GRAD_envelope_vehicle", "GRAD_envelope_short", "GRAD_envelope_long"};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = { QMAINPATCH, "ace_trenches" };
+        requiredAddons[] = { QMAINPATCH, "ace_trenches", "grad_trenches_common", "grad_trenches_assets" };
         authors[] = { "Salbei", "chris579" };
         VERSION_CONFIG;
     };

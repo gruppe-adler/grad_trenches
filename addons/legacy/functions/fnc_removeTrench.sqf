@@ -57,7 +57,7 @@ private _fnc_onFailure = {
     _trench setVariable ["ace_trenches_digging", false, true];
     _trench setVariable [QGVAR(diggingType), nil, true];
     _unit setVariable [QGVAR(diggingTrench), false, true];
-    [QGVAR(handleDiggerToGVAR), [_trench, _unit, true]] call CBA_fnc_serverEvent;
+    [QEGVAR(common,handleDiggerToGVAR), [_trench, _unit, true]] call CBA_fnc_serverEvent;
 
     // Save progress global
     private _progress = _trench getVariable ["ace_trenches_progress", 0];
@@ -67,7 +67,7 @@ private _fnc_onFailure = {
     [_unit, "", 1] call ace_common_fnc_doAnimation;
 
     // Reset decay
-    [QGVAR(resetDecay), [_trench]] call CBA_fnc_serverEvent;
+    [QEGVAR(common,resetDecay), [_trench]] call CBA_fnc_serverEvent;
 };
 private _fnc_condition = {
     (_this select 0) params ["", "_trench"];
@@ -94,7 +94,7 @@ private _fnc_condition = {
     ) exitWith {
         [_handle] call CBA_fnc_removePerFrameHandler;
         _trench setVariable ["ace_trenches_digging", false, true];
-        [QGVAR(handleDiggerToGVAR), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
+        [QEGVAR(common,handleDiggerToGVAR), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
     };
 
     if (_actualProgress <= 0) exitWith {
@@ -104,23 +104,13 @@ private _fnc_condition = {
     private _newProgress = _actualProgress - (_diggerCount / _removeTime);
 
     [_trench, _newProgress, 1.5] call EFUNC(common,setTrenchProgress); // not too fast so animation is still visible
+    [QEGVAR(common,applyFatigue), [_trench, _unit], _unit] call CBA_fnc_targetEvent;
 
     // Show special effects
     if (GVAR(allowEffects)) then {
-        [QGVAR(digFX), [_trench]] call CBA_fnc_globalEvent;
+        [QEGVAR(common,digFX), [_trench]] call CBA_fnc_globalEvent;
 
         [_trench] call EFUNC(common,playSound);
-    };
-
-    // Fatigue impact
-    ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (2 * GVAR(buildFatigueFactor))) max 0;
-    ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + (GVAR(buildFatigueFactor) / 1000)) min 1; // 2 * GVAR(buildFatigueFactor) / 2000
-
-    if (GVAR(stopBuildingAtFatigueMax) && {ace_advanced_fatigue_anReserve <= 0}) exitWith {
-        [_handle] call CBA_fnc_removePerFrameHandler;
-        _trench setVariable ["ace_trenches_digging", false, true];
-        [QGVAR(handleDiggerToGVAR), [_trench, _unit, true]] call CBA_fnc_serverEvent;
-        _unit setVariable [QGVAR(diggingTrench), false];
     };
 }, 1, [_trench, _unit, _removeTime]] call CBA_fnc_addPerFrameHandler;
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="GRAD">
-    <Package name="trenches">
+<Project name="GRAD_trenches">
+    <Package name="common">
         <Key ID="STR_grad_trenches_common_PlaceCamouflage">
             <English>Place camouflage</English>
             <German>Tarnung platzieren</German>
@@ -44,8 +44,8 @@
             <Chinesesimp>为该掩体布置伪装网</Chinesesimp>
         </Key>
         <Key ID="STR_GRAD_Trenches_common_settingCategory">
-            <English>GRAD Trenches</English>
-            <German>GRAD Trenches</German>
+            <English>GRAD Trenches Common</English>
+            <German>GRAD Trenches Common</German>
             <Russian>GRAD окопы</Russian>
             <French>GRAD Tranchées</French>
             <Chinesesimp>GRAD 掩体</Chinesesimp>
@@ -204,11 +204,6 @@
         <Key ID="STR_GRAD_Trenches_common_playersInAreaRadius_tooltip">
             <English>If players are within the given radius around a trench, it will not decay. To turn off player detection set radius to 0.</English>
             <German>Falls sich Spieler im gegebenen Radius um einen Graben befinden, wird dieser nicht verfallen. Um Spielererkennung auszuschalten Radius auf 0 setzen.</German>
-        </Key>
-        <Key ID="STR_GRAD_Trenches_common_trenchSubCategory">
-            <English>Trench settings</English>
-            <German>Graben Einstellungen</German>
-            <Russian>Настройки окопов</Russian>
         </Key>
         <Key ID="STR_GRAD_Trenches_common_decaySubCategory">
             <English>Decay Setting</English>

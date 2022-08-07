@@ -81,7 +81,7 @@ private _distanceToTrench = getNumber (_config >> "distanceToTrench");
         if (_speed > 1) then {
             [_trench, _actualProgress + _diff, 0.7] call EFUNC(common,setTrenchProgress);
             _trench setObjectTextureGlobal [0, surfaceTexture position _vehicle];
-            [QGVAR(digFX), [_trench]] call CBA_fnc_globalEvent;
+            [QEGVAR(common,digFX), [_trench]] call CBA_fnc_globalEvent;
             [QGVAR(digFXVehicleBlade), [_vehicle]] call CBA_fnc_globalEvent;
         } else {
             if (_speed < -0.5 || (vectorUp _vehicle select 2 < vehicleNotTiltedValue)) then {

@@ -92,7 +92,7 @@ class CfgVehicles {
             };
         };
     };
-    class GRAD_envelope_hightinghole: BagFence_base_F {
+    class GRAD_envelope_fightinghole: BagFence_base_F {
         model = QPATHTOF(data\trench_fightinghole.p3d);
         hiddenSelections[] = {"texture_01", "texture_02"};
         //editorPreview = QPATHTOF(data\trench_fightinghole.paa);
@@ -106,5 +106,11 @@ class CfgVehicles {
                 initPhase = 1.5;	// Initial phase when object is created.
             };
         };
+    };
+    class GRAD_envelope_filler5m: BagFence_base_F {
+        model = QPATHTOF(data\trench_filler5m.p3d);
+        hiddenSelections[] = {"velka"};
+        scope = 1;
+        //editorPreview = QPATHTOF(data\trench_fightinghole.paa);
     };
 };

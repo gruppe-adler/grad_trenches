@@ -11,21 +11,21 @@
                 distance = 10; \
              };  \
             class GVAR(helpDigging) { \
-                displayName = CSTRING(HelpDigging); \
+                displayName = ECSTRING(common,HelpDigging); \
                 condition = QUOTE([ARR_2(_target,_player)] call EFUNC(common,canHelpDiggingTrench)); \
                 statement = QUOTE([ARR_2(_target,_player)] call EFUNC(common,addDigger)); \
                 priority = -1; \
                 distance = 10; \
             }; \
             class GVAR(placeCamouflage) { \
-                displayName = CSTRING(placeCamouflage); \
+                displayName = ECSTRING(common,placeCamouflage); \
                 condition = QUOTE([ARR_2(_target,_player)] call EFUNC(common,canPlaceCamouflage)); \
                 statement = QUOTE([ARR_2(_target,_player)] call EFUNC(common,placeCamouflage)); \
                 priority = -1; \
                 distance = 10; \
             }; \
             class GVAR(removeCamouflage) { \
-                displayName = CSTRING(removeCamouflage); \
+                displayName = ECSTRING(common,removeCamouflage); \
                 condition = QUOTE([_target] call EFUNC(common,canRemoveCamouflage)); \
                 statement = QUOTE([ARR_2(_target,_player)] call EFUNC(common,removeCamouflage)); \
                 priority = -1; \
@@ -38,8 +38,8 @@
         class GVAR(camouflageAttribute) { \
             control = "CheckboxNumber"; \
             defaultValue = "0"; \
-            displayName = CSTRING(CamouflageAttribute); \
-            tooltip = CSTRING(CamouflageAttributeTooltip); \
+            displayName = ECSTRING(common,CamouflageAttribute); \
+            tooltip = ECSTRING(common,CamouflageAttributeTooltip); \
             expression = QUOTE([ARR_2(_this,_value)] call EFUNC(common,applyCamouflageAttribute)); \
             property = QUOTE(grad_trenches_camouflageTrench); \
         }; \
@@ -221,29 +221,6 @@ class CfgVehicles {
         ace_trenches_diggingDuration = QGVAR(longEnvelopeDigTime);
         ace_trenches_removalDuration = QGVAR(longEnvelopeRemovalTime);
         GVAR(offset) = -1.72;
-        ace_trenches_placementData[] = {10,2,0.20};
-        ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
-
-        class CamouflagePositions1 {
-            a[] = {6.7, 0, 3.2};
-            b[] = {3, 0.5, 3.1};
-            c[] = {-2.2, -0.9, 4};
-            d[] = {-3, 0.5, 3.1};
-            e[] = {-6.9, -0.1, 3.1};
-        };
-
-        class CamouflagePositions2 {};
-
-        class ACE_MainActions {
-            position = "[0,-2,3.5]";
-        };
-    };
-    class GRAD_envelope_fightinghole: ACE_envelope_big {
-        displayName = CSTRING(EnvelopeFightingHoleName);
-        descriptionShort = CSTRING(EnvelopeFightingHoleDescription);
-        ace_trenches_diggingDuration = QGVAR(FightingHoleEnvelopeDigTime);
-        ace_trenches_removalDuration = QGVAR(FightingHoleEnvelopeRemovalTime);
-        GVAR(offset) = 1.5;
         ace_trenches_placementData[] = {10,2,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
 

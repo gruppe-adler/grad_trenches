@@ -11,21 +11,21 @@
                 distance = 10; \
              };  \
             class GVAR(helpDigging) { \
-                displayName = CSTRING(HelpDigging); \
+                displayName = ECSTRING(common,HelpDigging); \
                 condition = QUOTE([ARR_2(_target,_player)] call EFUNC(common,canHelpDiggingTrench)); \
                 statement = QUOTE([ARR_2(_target,_player)] call EFUNC(common,addDigger)); \
                 priority = -1; \
                 distance = 10; \
             }; \
             class GVAR(placeCamouflage) { \
-                displayName = CSTRING(placeCamouflage); \
+                displayName = ECSTRING(common,placeCamouflage); \
                 condition = QUOTE([ARR_2(_target,_player)] call EFUNC(common,canPlaceCamouflage)); \
                 statement = QUOTE([ARR_2(_target,_player)] call EFUNC(common,placeCamouflage)); \
                 priority = -1; \
                 distance = 10; \
             }; \
             class GVAR(removeCamouflage) { \
-                displayName = CSTRING(removeCamouflage); \
+                displayName = ECSTRING(common,removeCamouflage); \
                 condition = QUOTE([_target] call EFUNC(common,canRemoveCamouflage)); \
                 statement = QUOTE([ARR_2(_target,_player)] call EFUNC(common,removeCamouflage)); \
                 priority = -1; \
@@ -38,8 +38,8 @@
         class GVAR(camouflageAttribute) { \
             control = "CheckboxNumber"; \
             defaultValue = "0"; \
-            displayName = CSTRING(CamouflageAttribute); \
-            tooltip = CSTRING(CamouflageAttributeTooltip); \
+            displayName = ECSTRING(common,CamouflageAttribute); \
+            tooltip = ECSTRING(common,CamouflageAttributeTooltip); \
             expression = QUOTE([ARR_2(_this,_value)] call EFUNC(common,applyCamouflageAttribute)); \
             property = QUOTE(grad_trenches_camouflageTrench); \
         }; \
@@ -51,10 +51,6 @@ class CfgVehicles {
     class CAManBase: Man {
         class ACE_SelfActions {
             class ACE_Equipment {
-
-                delete ace_trenches_digEnvelopeSmall;
-                delete ace_trenches_digEnvelopeBig;
-
                 class ace_trenches {
                     displayName = "$STR_ACE_Trenches_EntrenchingToolName";
                     condition = QUOTE(_player call EFUNC(common,canDigTrench) && GVAR(allowDigging));
@@ -76,16 +72,26 @@ class CfgVehicles {
         };
     };
     */
-    class ACE_envelope_big;
-    class GRAD_envelope_fightinghole: ACE_envelope_big {
+    class BagFence_base_F;
+    class GRAD_envelope_fightinghole: BagFence_base_F {
+        author = "Salbei";
         displayName = CSTRING(EnvelopeFightingHoleName);
         descriptionShort = CSTRING(EnvelopeFightingHoleDescription);
+        scope = 2;
+        scopecurator = 2;
+        editorCategory = "EdCat_Things";
+        editorSubcategory = "EdSubcat_Military";
+        GVAR(isTrench) = 1;
         ace_trenches_diggingDuration = QGVAR(FightingHoleEnvelopeDigTime);
         ace_trenches_removalDuration = QGVAR(FightingHoleEnvelopeRemovalTime);
-        GVAR(offset) = 1.5;
+        GVAR(offset) = 1.22;
         ace_trenches_placementData[] = {10,2,0.20};
         ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
         GVAR(damageMultiplier) = QGVAR(fightingholeEnvelopeDamageMultiplier);
+
+        class EventHandlers {
+            class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers {};
+        };
 
         class CamouflagePositions1 {
             a[] = {6.7, 0, 3.2};

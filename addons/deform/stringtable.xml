@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="GRAD">
-    <Package name="trenches">
+<Project name="GRAD_trenches">
+    <Package name="deform">
+        <Key ID="STR_GRAD_Trenches_deform_settingCategory">
+            <English>GRAD Trenches Deform</English>
+            <German>GRAD Trenches Deform</German>
+        </Key>
         <Key ID="STR_GRAD_Trenches_deform_EnvelopeFightingHoleName">
-            <English>Fighting Hole</English>
-            <German>Kampfloch</German>
+            <English>Trench - Fighting Hole</English>
+            <German>Graben - Kampfloch</German>
         </Key>
         <Key ID="STR_GRAD_Trenches_deform_EnvelopeFightingHoleDescription">
             <English>A hole in the ground to give up to 2 persons cover.</English>

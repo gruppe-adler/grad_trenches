@@ -33,7 +33,7 @@ _pos set [2, 0]; // Trench can only sit on zero, rest is done by animation
 _trench setObjectTextureGlobal [0, surfaceTexture _pos];
 _trench setPosATL _pos; // Prevent glitches by setting position last, prepare on 0,0,0 - move - rest is done by animation
 
-[QGVAR(addTrenchToDecay), [_trench, GVAR(timeoutToDecay), GVAR(decayTime)]] call CBA_fnc_serverEvent;
+[QEGVAR(common,addTrenchToDecay), [_trench, GVAR(timeoutToDecay), GVAR(decayTime)]] call CBA_fnc_serverEvent;
 
 [QGVAR(continueDiggingTrench), [_trench, _unit, false], _unit] call CBA_fnc_targetEvent;
 

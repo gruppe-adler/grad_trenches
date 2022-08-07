@@ -46,7 +46,7 @@ private _fnc_onFinish = {
     _trench setVariable ["ace_trenches_digging", false, true];
     _trench setVariable [QGVAR(diggingType), nil, true];
     _unit setVariable [QGVAR(diggingTrench), false, true];
-    [QGVAR(handleDiggerToGVAR), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
+    [QEGVAR(common,handleDiggerToGVAR), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
 
     // Save progress global
     _trench setVariable ["ace_trenches_progress", 1, true];
@@ -60,7 +60,7 @@ private _fnc_onFailure = {
     _trench setVariable ["ace_trenches_digging", false, true];
     _trench setVariable [QGVAR(diggingType), nil, true];
     _unit setVariable [QGVAR(diggingTrench), false, true];
-    [QGVAR(handleDiggerToGVAR), [_trench, _unit, true]] call CBA_fnc_serverEvent;
+    [QEGVAR(common,handleDiggerToGVAR), [_trench, _unit, true]] call CBA_fnc_serverEvent;
 
     // Save progress global
     private _progress = _trench getVariable ["ace_trenches_progress", 0];
@@ -105,7 +105,7 @@ if (_actualProgress == 0) then {
     ) exitWith {
         [_handle] call CBA_fnc_removePerFrameHandler;
         _trench setVariable ["ace_trenches_digging", false, true];
-        [QGVAR(handleDiggerToGVAR), [_trench, _unit, true]] call CBA_fnc_serverEvent;
+        [QEGVAR(common,handleDiggerToGVAR), [_trench, _unit, true]] call CBA_fnc_serverEvent;
     };
 
     if (_actualProgress >= 1) exitWith {
@@ -115,11 +115,11 @@ if (_actualProgress == 0) then {
     private _newProgress = _actualProgress + (_diggerCount / _digTime);
 
     [_trench, _newProgress, 1.5] call EFUNC(common,setTrenchProgress); // Not too fast so animation is still visible
-    [QGVAR(applyFatigue), [_trench, _unit], _unit] call CBA_fnc_targetEvent;
+    [QEGVAR(common,applyFatigue), [_trench, _unit], _unit] call CBA_fnc_targetEvent;
 
     // Show special effects
     if (GVAR(allowEffects)) then {
-        [QGVAR(digFX), [_trench]] call CBA_fnc_globalEvent;
+        [QEGVAR(common,digFX), [_trench]] call CBA_fnc_globalEvent;
 
         [_trench] call EFUNC(common,playSound);
     };
@@ -129,4 +129,4 @@ if (_actualProgress == 0) then {
 // Play animation
 [_unit] call EFUNC(common,loopanimation);
 
-[QGVAR(resetDecay), [_trench]] call CBA_fnc_serverEvent;
+[QEGVAR(common,resetDecay), [_trench]] call CBA_fnc_serverEvent;
