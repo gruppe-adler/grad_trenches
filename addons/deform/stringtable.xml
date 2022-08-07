@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="GRAD">
+    <Package name="trenches">
+        <Key ID="STR_GRAD_Trenches_deform_EnvelopeFightingHoleName">
+            <English>Fighting Hole</English>
+            <German>Kampfloch</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_deform_EnvelopeFightingHoleDescription">
+            <English>A hole in the ground to give up to 2 persons cover.</English>
+            <German>Ein Loch im Boden, das bis zu 2 Personen schutz bietet.</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_deform_FightingHoleEnvelopeDigTime">
+            <English>Dig time (s) for small fighting hole</English>
+            <German>Zeit (s) um Kampfloch zu graben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_deform_FightingHoleEnvelopeRemovalTime">
+            <English>Removal time (s) for fighting hole</English>
+            <German>Zeit (s) um kleine Kampfloch zu entfernen</German>
+        </Key>
+    </Package>
+</Project>

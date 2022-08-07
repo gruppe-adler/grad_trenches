@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="GRAD">
+    <Package name="trenches">
+        <Key ID="STR_grad_trenches_common_PlaceCamouflage">
+            <English>Place camouflage</English>
+            <German>Tarnung platzieren</German>
+            <Russian>Маскировать окоп</Russian>
+            <French>Placer le camouflage</French>
+            <Chinesesimp>布置伪装网</Chinesesimp>
+        </Key>
+        <Key ID="STR_grad_trenches_common_PlaceCamouflageProgress">
+            <English>Placing camouflage...</English>
+            <German>Platziere Tarnung...</German>
+            <Russian>Маскирую окоп...</Russian>
+            <French>Installation du camouflage...</French>
+            <Chinesesimp>正在布置伪装网...</Chinesesimp>
+        </Key>
+        <Key ID="STR_grad_trenches_common_RemoveCamouflage">
+            <English>Remove camouflage</English>
+            <German>Tarnung entfernen</German>
+            <Russian>Убрать маскировку</Russian>
+            <French>Enlever le camouflage</French>
+            <Chinesesimp>移除伪装网</Chinesesimp>
+        </Key>
+        <Key ID="STR_grad_trenches_common_RemoveCamouflageProgress">
+            <English>Removing camouflage...</English>
+            <German>Entferne Tarnung...</German>
+            <Russian>Убираю маскировку окопа...</Russian>
+            <French>Suppression du camouflage...</French>
+            <Chinesesimp>正在移除伪装网...</Chinesesimp>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_CamouflageAttribute">
+            <English>Apply camouflage</English>
+            <German>Tarnung anbringen</German>
+            <Russian>Маскировать</Russian>
+            <French>Appliquer le camouflage</French>
+            <Chinesesimp>布置伪装网</Chinesesimp>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_CamouflageAttributeTooltip">
+            <English>Apply camouflage to this trench</English>
+            <German>Tarnung an diesen Graben anbringen</German>
+            <Russian>Маскировать окоп</Russian>
+            <French>Appliquer un camouflage à cette tranchée</French>
+            <Chinesesimp>为该掩体布置伪装网</Chinesesimp>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_settingCategory">
+            <English>GRAD Trenches</English>
+            <German>GRAD Trenches</German>
+            <Russian>GRAD окопы</Russian>
+            <French>GRAD Tranchées</French>
+            <Chinesesimp>GRAD 掩体</Chinesesimp>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_settingAllowDigging_displayName">
+            <English>Allow digging</English>
+            <German>Erlaube den Bau von Gräben</German>
+            <Russian>Разрешить копать окопы</Russian>
+            <French>Autoriser l'excavation</French>
+            <Chinesesimp>允许挖掘</Chinesesimp>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_settingAllowDigging_tooltip">
+            <English>Allow digging trenches with an entrenchment tool</English>
+            <German>Erlaube den Bau von Gräben mit dem Klappspaten</German>
+            <Russian>Разрешить копать окопы лопатой</Russian>
+            <French>Autoriser l'excavation des tranchées avec une pelle tactique</French>
+            <Chinesesimp>允许使用战备锹挖掘掩体</Chinesesimp>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_settingAllowCamouflage_displayName">
+            <English>Allow camouflage</English>
+            <German>Erlaube Tarnung</German>
+            <Russian>Разрешить маскировку</Russian>
+            <French>Autoriser le camouflage</French>
+            <Chinesesimp>允许使用伪装网</Chinesesimp>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_settingAllowCamouflage_tooltip">
+            <English>Allow camouflaging trenches</English>
+            <German>Erlaube das Tarnen von Gräben</German>
+            <Russian>Разрешить маскировать окопы</Russian>
+            <French>Autoriser le camouflage des tranchées</French>
+            <Chinesesimp>允许为掩体布置伪装网</Chinesesimp>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_settingCamouflageRequireEntrenchmentTool_displayName">
+            <English>Require entrenchment tool for camouflaging</English>
+            <German>Klappspaten für Tarnen benötigt</German>
+            <Russian>Нужна лопата чтобы маскировать окопы</Russian>
+            <French>Pelle tactique pour camouflage</French>
+            <Chinesesimp>需要携带战备锹才能布置伪装网</Chinesesimp>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_settingCamouflageRequireEntrenchmentTool_tooltip">
+            <English>Require entrenchment tool for camouflaging</English>
+            <German>Fordere Klappspaten für das Tarnen von Gräben</German>
+            <Russian>Нужна лопата чтобы маскировать окопы</Russian>
+            <French>Nécessite une pelle tactique pour appliquer du camouflage</French>
+            <Chinesesimp>需要携带战备锹才能布置伪装网</Chinesesimp>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_settingBuildFatigueFactor_displayName">
+            <English>Fatigue factor</English>
+            <German>Ausdauerkoeffizient</German>
+            <Russian>Коэффициент усталости</Russian>
+            <French>Facteur de fatigue</French>
+            <Chinesesimp>疲劳系数</Chinesesimp>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_settingBuildFatigueFactor_tooltip">
+            <English>The fatigue factor when building trenches (0 to deactive fatigue use)</English>
+            <German>Der Ausdauerkoeffizient beim Bauen von Gräben (0 zum Deaktivieren)</German>
+            <Russian>Как сильно повышается усталость от копания (0 чтобы не повышалась)</Russian>
+            <French>Le facteur de fatigue lors de la construction de tranchées (si 0, fatigue désactivée)</French>
+            <Chinesesimp>建造掩体时的疲劳系数(0表示不考虑疲劳)</Chinesesimp>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_createTrenchMarker_displayName">
+            <English>Create trench map markers</English>
+            <Russian>Отмечать окопы на карте</Russian>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_createTrenchMarker_tooltip">
+            <English>Create map markers for player-dug trenches, but only for the digger's side or any friendly side.</English>
+            <Russian>Отмечать отрытые игроком окопы на карте для всех на своей или любой союзной стороне.</Russian>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_HelpDigging">
+            <English>Help digging</English>
+            <German>Mit graben</German>
+            <Russian>Помочь отрыть окоп</Russian>
+            <French>Aider à creuser</French>
+            <Chinesesimp>参与挖掘</Chinesesimp>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_stopBuildingAtFatigueMax_displayName">
+            <English>Enable Stop on Fatigue</English>
+            <German>Aktiviere Ausdauerbedingter grabe stop</German>
+            <Russian>Прекратить копать при полной усталости</Russian>
+            <French>Activer l'arrêt en cas de fatigue</French>
+            <Chinesesimp>疲劳时停止挖掘</Chinesesimp>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_stopBuildingAtFatigueMax_tooltip">
+            <English>If enabled the digger will stop digging if his fatigue reaches 0.</English>
+            <German>Wenn aktiviert hören die Spieler auf zu graben wenn ihre Ausdauer 0 erreicht.</German>
+            <Russian>При наступлении полной усталости откапывание окопа прекращается</Russian>
+            <French>Si activé, le joueur cessera de creuser si sa fatigue atteint 0.</French>
+            <Chinesesimp>启用后, 如果疲劳度达到0, 将停止挖掘。</Chinesesimp>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_EntrenchingToolName">
+            <English>Entrenching Tool</English>
+            <German>Klappspaten</German>
+            <Polish>Saperka</Polish>
+            <Italian>Pala da Trincea</Italian>
+            <Spanish>Pala para trincheras</Spanish>
+            <French>Pelle tactique</French>
+            <Czech>Polní lopatka</Czech>
+            <Portuguese>Ferramenta de trincheira</Portuguese>
+            <Russian>Малая пехотная лопата</Russian>
+            <Japanese>シャベル</Japanese>
+            <Korean>야전삽</Korean>
+            <Chinesesimp>战备锹</Chinesesimp>
+            <Chinese>戰備鍬</Chinese>
+            <Turkish>Kürek</Turkish>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_EntrenchingToolDescription">
+            <English>Entrenching Tool</English>
+            <Polish>Saperka, używana do budowy wnęk</Polish>
+            <German>Mit dem Klappspaten können Erdwälle oder Gräben ausgehoben werden. </German>
+            <Italian>Pala da Trincea</Italian>
+            <Spanish>Pala para trincheras</Spanish>
+            <French>Pelle tactique</French>
+            <Czech>Polní lopatky se používají k zákopovým a jiným pracem.</Czech>
+            <Portuguese>Ferramenta de trincheira</Portuguese>
+            <Russian>Малая пехотная лопата</Russian>
+            <Japanese>シャベル</Japanese>
+            <Korean>야전용 삽. 군인들의 영원한 친구</Korean>
+            <Chinesesimp>战备锹</Chinesesimp>
+            <Chinese>戰備鍬</Chinese>
+            <Turkish>Kürek</Turkish>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_allowTrenchDecay_displayName">
+            <English>Allow trench decay</English>
+            <German>Erlaube Gräben zu verfallen</German>
+            <Russian>Разрешить разрушение окопов</Russian>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_allowTrenchDecay_tooltip">
+            <English>Trenches will automatically start to decay after a set time</English>
+            <German>Gräben beginnen automatisch zu verfallen nach einer gegebenen Zeit</German>
+            <Russian>Окопы начнут автоматически разрушаться после заданного времени</Russian>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_timeoutToDecay_displayName">
+            <English>Timeout to decay</English>
+            <German>Wartezeit bis zum Verfall</German>
+            <Russian>Время до начала разрушения</Russian>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_timeoutToDecay_tooltip">
+            <English>Time the server waits until it starts to decay the trenche</English>
+            <German>Zeit die der Server wartet bis der Graben verfällt</German>
+            <Russian>Время, отсчитываемое сервером до начала разрушения окопа</Russian>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_decayTime_displayName">
+            <English>Decay time</English>
+            <German>Verfall Zeit</German>
+            <Russian>Время разрушения</Russian>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_decayTime_tooltip">
+            <English>Time it takes to fully remove the trench</English>
+            <German>Zeit bis der Graben komplett verschwunden ist</German>
+            <Russian>Время, которое занимает полное разрушение окопа</Russian>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_playersInAreaRadius_displayName">
+            <English>Player detection radius for preventing decay</English>
+            <German>Spielererkennungsradius zur Grabenverfallsverhinderung</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_playersInAreaRadius_tooltip">
+            <English>If players are within the given radius around a trench, it will not decay. To turn off player detection set radius to 0.</English>
+            <German>Falls sich Spieler im gegebenen Radius um einen Graben befinden, wird dieser nicht verfallen. Um Spielererkennung auszuschalten Radius auf 0 setzen.</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_trenchSubCategory">
+            <English>Trench settings</English>
+            <German>Graben Einstellungen</German>
+            <Russian>Настройки окопов</Russian>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_decaySubCategory">
+            <English>Decay Setting</English>
+            <German>Verfall Einstellungen</German>
+            <Russian>Настройки разрушения</Russian>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_hitDecaySubCategory">
+            <English>Hit Decay</English>
+            <German>Verfall bei Treffer</German>
+            <Russian>Разрушение от попаданий</Russian>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_allowHitDecay_displayName">
+            <English>Allow Decay on Hit</English>
+            <German>Verfall bei Treffer erlauben</German>
+            <Russian>Разрешить разрушение окопа от попадания</Russian>
+        </Key>
+         <Key ID="STR_GRAD_Trenches_common_allowHitDecay_tooltip">
+            <English>Hit Damage lets trench sink into ground. HE is most effective.</English>
+            <German>Hit Damage lässt Gräben in den Boden sinken. HE ist am effektivsten.</German>
+            <Russian>Урон от попадания погружает окоп в землю. Фугасные боеприпасы имеют наибольшую эффективность.</Russian>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_hitDecayMultiplier_displayName">
+            <English>Multiplier for Hit Damage</English>
+            <German>Multiplikator für Trefferschaden</German>
+            <Russian>Множитель урона от попадания</Russian>
+        </Key>
+         <Key ID="STR_GRAD_Trenches_common_hitDecayMultiplier_tooltip">
+            <English>Multiplier for Hit Damage</English>
+            <German>Multiplikator für Trefferschaden</German>
+            <Russian>Множитель урона от попадания</Russian>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_allowEffects_displayName">
+            <English>Enable effects</English>
+            <German>Effekte aktivieren</German>
+            <Russian>Включить эффекты</Russian>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_common_allowEffects_tooltip">
+            <English>Enables effects &amp; sounds while digging</English>
+            <German>Aktiviert Effekte &amp; Geräusche während des Grabens</German>
+            <Russian>Включает эффекты и звуки при откапывании</Russian>
+        </Key>
+    </Package>
+</Project>
