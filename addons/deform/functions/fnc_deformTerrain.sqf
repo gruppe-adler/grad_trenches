@@ -17,12 +17,11 @@
 
 
 params [
-    ["_obj", objectNull, [objectNull]]
+    ["_boundingBox", [], [[]], [2]],
+    ["_zASL", 0, 0]
 ];
 
-private _ret = [_obj] call FUNC(getBBThatNeedsToBeDugOut);
-_ret params ["_bb", "_zASL"];
-private _cells = [_bb] call FUNC(getCellsToAdjst);
+private _cells = [_boundingBox] call FUNC(getCellsToAdjst);
 
 private _arr = _cells apply {[_x select 0, _x select 1, _zASL]};
 setTerrainHeight _arr;

@@ -4,7 +4,8 @@ class CfgVehicles {
     class BagFence_base_F;
     class GRAD_envelope_short: BagFence_base_F {
         model = QPATHTOF(data\trench_short.p3d);
-        hiddenSelections[] = {"velka"};
+        hiddenSelections[] = {"camo_1"};
+        hiddenSelectionsTextures[] = {"x\grad_trenches\addons\assets\data\zemlia.paa","x\grad_trenches\addons\assets\data\zemlia.paa"};
         editorPreview = QPATHTOF(data\trench_short.paa);
 
         class AnimationSources
@@ -19,7 +20,8 @@ class CfgVehicles {
     };
     class ACE_envelope_small: BagFence_base_F {
         model = QPATHTOF(data\trench_small.p3d);
-        hiddenSelections[] = {"velka"};
+        hiddenSelections[] = {"camo_1"};
+        hiddenSelectionsTextures[] = {"x\grad_trenches\addons\assets\data\zemlia.paa","x\grad_trenches\addons\assets\data\zemlia.paa"};
         editorPreview = QPATHTOF(data\trench_small.paa);
 
         class AnimationSources
@@ -34,7 +36,8 @@ class CfgVehicles {
     };
     class ACE_envelope_big: BagFence_base_F {
         model = QPATHTOF(data\trench_big.p3d);
-        hiddenSelections[] = {"velka"};
+        hiddenSelections[] = {"camo_1"};
+        hiddenSelectionsTextures[] = {"x\grad_trenches\addons\assets\data\zemlia.paa","x\grad_trenches\addons\assets\data\zemlia.paa"};
         editorPreview = QPATHTOF(data\trench_big.paa);
 
         class AnimationSources
@@ -49,7 +52,8 @@ class CfgVehicles {
     };
     class GRAD_envelope_giant: BagFence_base_F {
         model = QPATHTOF(data\trench_giant.p3d);
-        hiddenSelections[] = {"velka"};
+        hiddenSelections[] = {"camo_1"};
+        hiddenSelectionsTextures[] = {"x\grad_trenches\addons\assets\data\zemlia.paa","x\grad_trenches\addons\assets\data\zemlia.paa"};
         editorPreview = QPATHTOF(data\trench_giant.paa);
 
         class AnimationSources
@@ -64,7 +68,8 @@ class CfgVehicles {
     };
     class GRAD_envelope_vehicle: BagFence_base_F {
         model = QPATHTOF(data\trench_vehicle.p3d);
-        hiddenSelections[] = {"velka"};
+        hiddenSelections[] = {"camo_1"};
+        hiddenSelectionsTextures[] = {"x\grad_trenches\addons\assets\data\zemlia.paa","x\grad_trenches\addons\assets\data\zemlia.paa"};
         editorPreview = QPATHTOF(data\trench_vehicle.paa);
 
         class AnimationSources
@@ -79,7 +84,8 @@ class CfgVehicles {
     };
     class GRAD_envelope_long: BagFence_base_F {
         model = QPATHTOF(data\trench_long.p3d);
-        hiddenSelections[] = {"velka"};
+        hiddenSelections[] = {"camo_1"};
+        hiddenSelectionsTextures[] = {"x\grad_trenches\addons\assets\data\zemlia.paa"};
         editorPreview = QPATHTOF(data\trench_long.paa);
 
         class AnimationSources
@@ -94,7 +100,8 @@ class CfgVehicles {
     };
     class GRAD_envelope_fightinghole: BagFence_base_F {
         model = QPATHTOF(data\trench_fightinghole.p3d);
-        hiddenSelections[] = {"texture_01", "texture_02"};
+        hiddenSelections[] = {"camo_1", "camo_2"};
+        hiddenSelectionsTextures[] = {"x\grad_trenches\addons\assets\data\zemlia.paa","x\grad_trenches\addons\assets\data\zemlia.paa"};
         //editorPreview = QPATHTOF(data\trench_fightinghole.paa);
 
         class AnimationSources
@@ -109,7 +116,14 @@ class CfgVehicles {
     };
     class GRAD_envelope_filler5m: BagFence_base_F {
         model = QPATHTOF(data\trench_filler5m.p3d);
-        hiddenSelections[] = {"velka"};
+        hiddenSelections[] = {"camo_1"};
+        scope = 1;
+        //editorPreview = QPATHTOF(data\trench_fightinghole.paa);
+    };
+    class GRAD_peg: BagFence_base_F {
+        model = QPATHTOF(data\peg.p3d);
+        hiddenSelections[] = {"camo_1","camo_2"};
+		hiddenSelectionsTextures[] = {"a3\structures_f\data\wood\woodbroken_co.paa","a3\structures_f\data\wood\woodbroken_co.paa"};
         scope = 1;
         //editorPreview = QPATHTOF(data\trench_fightinghole.paa);
     };

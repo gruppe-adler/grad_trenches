@@ -17,11 +17,11 @@
  */
 
 params [
-    ["_bb", [], [[]], [2]],
+    ["_boundingBox", [], [[]], [2]],
     ["_areaToCover", false, [false]]
 ];
 
-_boundingBox  params [
+_boundingBox params [
     ["_min", [], [[]], [2, 3]],
     ["_max", [], [[]], [2, 3]]
 ];
