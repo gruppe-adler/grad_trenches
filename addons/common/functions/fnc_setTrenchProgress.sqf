@@ -17,9 +17,11 @@
 * Public: No
 */
 
-params ["_trench", "_progress", ["_animationSpeedMultiplier", 0]];
+params ["_trench", "_progress", ["_animationSpeedMultiplier", 0],["_animSource", "rise"], "_offset"];
 
-private _offset = [configOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry;
+if (isNil "_offset") then {
+    _offset = [configOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry;
+};
 
 private _lift = linearConversion [
     0,
@@ -31,9 +33,9 @@ private _lift = linearConversion [
 ];
 
 if (_animationSpeedMultiplier > 0) then {
-    _trench animateSource ["rise", _lift, _animationSpeedMultiplier];
+    _trench animateSource [_animSource, _lift, _animationSpeedMultiplier];
 } else {
-    _trench animateSource ["rise", _lift, true];
+    _trench animateSource [_animSource, _lift, true];
 };
 
 _trench setVariable ["ace_trenches_progress", _progress, true];

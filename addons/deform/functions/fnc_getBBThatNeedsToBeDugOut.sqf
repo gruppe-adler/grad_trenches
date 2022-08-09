@@ -22,7 +22,7 @@ params [
     ["_obj", objectNull, [objectNull]]
 ];
 
-private _relativeBB = _obj selectionPosition [SELECTION_NAME, "Memory", "BoundingBox"];
+private _relativeBB = _obj selectionPosition ["drop", "Memory", "BoundingBox"];
 private _boundingBox = _relativeBB apply { _x modelToWorld _obj };
 
 _boundingBox  params [
