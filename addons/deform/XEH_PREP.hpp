@@ -1,3 +1,6 @@
+PREP(choosePos);
+PREP(confirmPos);
+PREP(continueDeformingTrench);
 PREP(createTrench);
 PREP(deformTerrain);
 PREP(getBBThatNeedsToBeDugOut);

@@ -123,6 +123,7 @@ class CfgVehicles {
     class GRAD_envelope_filler5m: BagFence_base_F {
         model = QPATHTOF(data\trench_filler5m.p3d);
         hiddenSelections[] = {"camo_1"};
+        hiddenSelectionsTextures[] = {"x\grad_trenches\addons\assets\data\zemlia.paa"};
         scope = 1;
         //editorPreview = QPATHTOF(data\trench_fightinghole.paa);
     };

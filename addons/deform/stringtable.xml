@@ -21,5 +21,17 @@
             <English>Removal time (s) for fighting hole</English>
             <German>Zeit (s) um kleine Kampfloch zu entfernen</German>
         </Key>
+        <Key ID="STR_GRAD_Trenches_legacy_allowFightingHoleEnvelope_tooltip">
+            <English>Allow digging of small envelope trenches</English>
+            <German>Erlaube das Graben von Kampfloch Gräben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_legacy_fightingHoleEnvelopeDigTime">
+            <English>Dig time (s) for fighting hole trenches</English>
+            <German>Zeit (s) um Kampflochn zu graben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_legacy_fightingHoleEnvelopeRemovalTime">
+            <English>Removal time (s) for fighting hole trenches.</English>
+            <German>Zeit (s) um Kampfloch zu entfernen.</German>
+        </Key>
     </Package>
 </Project>

@@ -29,12 +29,12 @@ TRACE_1("",ace_trenches_trenchPlacementData);
 
 private _trench = createSimpleObject [_trenchClass, [0, 0, 0], true];
 _trench hideObjectGlobal true;
+GVAR(trench) = _trench;
 
 // Prevent collisions with trench
 ["ace_common_enableSimulationGlobal", [_trench, false]] call CBA_fnc_serverEvent;
 
-private _ret = [_trench] call FUNC(getBBThatNeedsToBeDugOut);
-_ret params ["_boundingBox", "_zASL"];
+([_trench] call FUNC(getBBThatNeedsToBeDugOut)) params ["_boundingBox", "_zASL"];
 
 _boundingBox params [
     ["_min", [], [[]], [2, 3]],
@@ -44,7 +44,7 @@ _boundingBox params [
 private _pegs = [];
 {
     private _obj = createSimpleObject ["", [0, 0, 0], true];
-    _obj attachTo [_trench, _x, "drop"];
+    _obj attachTo [_trench, _x];
 
     _pegs pushBack _obj;
 }forEach [_min, [_min #0, _max #1], [_max #0, _min #1], _max];
@@ -111,7 +111,7 @@ GVAR(positionPFH) = [{
 _unit setVariable [GVAR(Dig), [
     _unit, "DefaultAction",
     {GVAR(digPFH) != -1},
-    {[_this select 0] call FUNC(placeConfirm)}
+    {[_this select 0] call FUNC(confirmPos)}
 ] call ace_common_fnc_addActionEventHandler];
 
 _unit setVariable [GVAR(isPlacing), true, true];

@@ -19,11 +19,11 @@
  */
 
 params [
-    ["_obj", objectNull, [objectNull]]
+    "_obj"
 ];
 
 private _relativeBB = _obj selectionPosition ["drop", "Memory", "BoundingBox"];
-private _boundingBox = _relativeBB apply { _x modelToWorld _obj };
+private _boundingBox = _relativeBB apply { _obj modelToWorld _x };
 
 _boundingBox  params [
     ["_min", [], [[]], [3]],
@@ -39,7 +39,7 @@ private _xmax = _x1 max _x2;
 private _ymin = _y1 min _y2;
 private _ymax = _y1 max _y2;
 
-private _zmin = AGLToASL (_z1 min _z2);
+private _zmin = _z1 min _z2;
 
 [
     [

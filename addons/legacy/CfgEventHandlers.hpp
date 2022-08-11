@@ -1,5 +1,5 @@
 #define CAMOUFLAGE_DELETE class GVAR(camouflageDelete) { \
-        deleted = QUOTE(if (isServer) then {_this call EFUNC(legacy,deleteCamouflage)}); \
+        deleted = QUOTE(if (isServer) then {_this call EFUNC(common,deleteCamouflage)}); \
     }
 
 #define TRENCH_INIT class GVAR(trenchInit) { \

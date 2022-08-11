@@ -11,7 +11,7 @@
  * Terrain cells in area
  *
  * Example:
- * [boundingBox TrenchObj, [[50,100], [50,100]]] call grad_trenches_deform_fnc_deformTerrain;
+ * [boundingBox TrenchObj, false] call grad_trenches_deform_fnc_fnc_getCellsToAdjust;
  *
  * Public: No
  */
