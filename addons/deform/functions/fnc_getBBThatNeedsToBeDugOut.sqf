@@ -1,13 +1,10 @@
 #include "script_component.hpp"
 /*
  * Author: Zade, Salbei
- * Changes the terrain height in an area
+ * Gets the positions of a selection in a model
  *
  * Arguments:
- * 0: Position <POSITION>
- * 1: X-Cordinat <NUMBER>
- * 2: Y-Cordinat <NUMBER>
- * 3: Desired Terrain Height <NUMBER>
+ * 0: OBJECT <OBJECT>
  *
  * Return Value:
  * None
@@ -22,10 +19,9 @@ params [
     "_obj"
 ];
 
-private _relativeBB = _obj selectionPosition ["drop", "Memory", "BoundingBox"];
-private _boundingBox = _relativeBB apply { _obj modelToWorld _x };
+private _boundingBox = _obj selectionPosition ["drop", "Geometry", "BoundingBox"];
 
-_boundingBox  params [
+_boundingBox params [
     ["_min", [], [[]], [3]],
     ["_max", [], [[]], [3]]
 ];
@@ -43,8 +39,8 @@ private _zmin = _z1 min _z2;
 
 [
     [
-        [_xmin, _ymin],
-        [_xmax, _ymax]
+        [_xmin, _ymin, 0],
+        [_xmax, _ymax, 0]
     ],
     _zmin
 ]

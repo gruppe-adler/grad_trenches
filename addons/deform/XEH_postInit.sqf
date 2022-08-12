@@ -1,3 +1,5 @@
+#include "script_component.hpp"
+
 if (isServer) then {
     [QGVAR(createTrench), {_this call FUNC(createTrench);}] call CBA_fnc_addEventHandler;
 };

@@ -28,7 +28,7 @@ GVAR(positionPFH) = -1;
 // Remove mouse button actions
 call ace_interaction_fnc_hideMouseHint;
 
-[_unit, "DefaultAction", _unit getVariable [GVAR(Dig), -1]] call ace_common_fnc_removeActionEventHandler;
+[_unit, "DefaultAction", _unit getVariable [QGVAR(Dig), -1]] call ace_common_fnc_removeActionEventHandler;
 _unit setVariable ["ace_trenches_isPlacing", false, true];
 
 // Delete placement dummy and create real trench

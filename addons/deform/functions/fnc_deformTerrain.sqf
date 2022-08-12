@@ -15,16 +15,26 @@
  * Public: No
  */
 
+diag_log str _this;
 
+/*
 params [
-    ["_trench", objNull],
+    "_trench",
     ["_boundingBox", [], [[]], [2]],
     ["_zASL", 0, 0]
 ];
+*/
+params [
+    "_trench",
+    "_boundingBox",
+    "_zASL"
+];
 
 getTerrainInfo params ["", "", "_cellsize"];
-private _cells = [_boundingBox] call FUNC(getCellsToAdjst);
+private _cells = [_boundingBox, true, _cellsize] call FUNC(getCellsToAdjust);
 private _pos = getPosWorld _trench;
+
+diag_log format ["Cellsize: %1, Cells: %2, Pos; %3", _cellsize, _cells, _pos];
 
 gridLines = [];
 
@@ -57,6 +67,7 @@ gridLines = [];
 //#endif
 
 private _arr = _cells apply {[_x select 0, _x select 1, _zASL]};
+diag_log str _arr;
 setTerrainHeight _arr;
 
 _cells

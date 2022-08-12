@@ -19,16 +19,15 @@
 params ["_unit", "_trenchClass"];
 
 // Load trench data
-GVAR(trenchPlacementData) = getArray (configFile >> "CfgVehicles" >> _trenchClass >> "ace_trenches_placementData");
+GVAR(trenchPlacementData) = getArray (configFile >> "CfgVehicles" >> _trenchClass >> QGVAR(placementData));
 TRACE_1("",ace_trenches_trenchPlacementData);
-
 
 // Prevent the placing unit from running
 [_unit, "forceWalk", "GRAD_Trenches", true] call ace_common_fnc_statusEffect_set;
 [_unit, "blockThrow", "GRAD_Trenches", true] call ace_common_fnc_statusEffect_set;
 
 private _trench = createSimpleObject [_trenchClass, [0, 0, 0], true];
-_trench hideObjectGlobal true;
+//_trench hideObjectGlobal true;
 GVAR(trench) = _trench;
 
 // Prevent collisions with trench
@@ -37,17 +36,17 @@ GVAR(trench) = _trench;
 ([_trench] call FUNC(getBBThatNeedsToBeDugOut)) params ["_boundingBox", "_zASL"];
 
 _boundingBox params [
-    ["_min", [], [[]], [2, 3]],
-    ["_max", [], [[]], [2, 3]]
+    ["_min", [], [[]], [2, 3, 0]],
+    ["_max", [], [[]], [2, 3, 0]]
 ];
 
 private _pegs = [];
 {
-    private _obj = createSimpleObject ["", [0, 0, 0], true];
+    private _obj = createSimpleObject ["GRAD_peg", [0, 0, 0], true];
     _obj attachTo [_trench, _x];
 
     _pegs pushBack _obj;
-}forEach [_min, [_min #0, _max #1], [_max #0, _min #1], _max];
+}forEach [_min, [_min #0, _max #1, 0], [_max #0, _min #1, 0], _max];
 
 GVAR(digDirection) = 0;
 
@@ -55,6 +54,7 @@ GVAR(positionPFH) = [{
     params ["_args", "_handle"];
     _args params ["_unit", "_trench", "_pegs"];
 
+    /*
     //Check if all helper objects are still there
     private _oneLost = false;
     {
@@ -63,7 +63,7 @@ GVAR(positionPFH) = [{
         };
     }forEach _pegs;
 
-    if (_oneLost ||{isNull _trench}) exitWith {
+    if (_oneLost || {isNull _trench}) exitWith {
         [_unit] call FUNC(placeCancel);
     };
 
@@ -76,7 +76,7 @@ GVAR(positionPFH) = [{
     {
         _x setObjectTextureGlobal [1, _texture];
     }forEach _pegs;
-
+    */
     GVAR(trenchPlacementData) params ["_dx", "_dy", "_offset"];
     private _basePos = _unit modelToWorld [0, 4, 0];
     private _angle = GVAR(digDirection) + getDir _unit;
@@ -108,10 +108,10 @@ GVAR(positionPFH) = [{
 // Add mouse button action and hint
 [localize "STR_ace_trenches_ConfirmDig", localize "STR_ace_trenches_CancelDig"] call ace_interaction_fnc_showMouseHint;
 
-_unit setVariable [GVAR(Dig), [
+_unit setVariable [QGVAR(Dig), [
     _unit, "DefaultAction",
-    {GVAR(digPFH) != -1},
+    {GVAR(positionPFH) != -1},
     {[_this select 0] call FUNC(confirmPos)}
 ] call ace_common_fnc_addActionEventHandler];
 
-_unit setVariable [GVAR(isPlacing), true, true];
+_unit setVariable [QGVAR(isPlacing), true, true];

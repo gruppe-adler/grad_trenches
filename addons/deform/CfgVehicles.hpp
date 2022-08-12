@@ -52,20 +52,13 @@ class CfgVehicles {
         class ACE_SelfActions {
             class ACE_Equipment {
                 class ace_trenches {
-                    displayName = "$STR_ACE_Trenches_EntrenchingToolName";
-                    condition = QUOTE(_player call EFUNC(common,canDigTrench) && GVAR(allowDigging));
-                    statement = "";
-                    showDisabled = 0;
-                    priority = 3;
-                    exceptions[] = {"notOnMap", "isNotInside", "isNotSitting"};
-
                     class ace_trenches_digEnvelopefightinghole {
                         displayName = CSTRING(DigEnvelopefightinghole);
                         exceptions[] = {};
                         showDisabled = 0;
                         priority = 4;
                         statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'GRAD_envelope_fightinghole')])] call CBA_fnc_execNextFrame);
-                        condition = QUOTE(GVAR(allowDigging) && ([ARR_2(_target,_player)] call FUNC(canContinueDiggingTrench)) && GVAR(allowSmallEnvelope));
+                        condition = QUOTE(EGVAR(common,allowDigging) && ([ARR_2(_target,_player)] call FUNC(canContinueDeformingTrench)) && GVAR(allowSmallEnvelope));
                     };
                 };
             };
@@ -86,8 +79,8 @@ class CfgVehicles {
         ace_trenches_removalDuration = QGVAR(FightingHoleEnvelopeRemovalTime);
         GVAR(offset) = 1.22;
         GVAR(offset1) = -0.36;
-        ace_trenches_placementData[] = {10,2,0.20};
-        ace_trenches_grassCuttingPoints[] = {{-1.5,-1,0},{1.5,-1,0}};
+        GVAR(placementData)[] = {10,2,-0.01};
+        GVAR(grassCuttingPoints)[] = {{-1.5,-1,0},{1.5,-1,0}};
         GVAR(damageMultiplier) = QGVAR(fightingholeEnvelopeDamageMultiplier);
 
         class EventHandlers {

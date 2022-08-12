@@ -127,7 +127,7 @@ class CfgVehicles {
         scope = 1;
         //editorPreview = QPATHTOF(data\trench_fightinghole.paa);
     };
-    class GRAD_peg: BagFence_base_F {
+    class GRAD_trenches_peg: BagFence_base_F {
         model = QPATHTOF(data\peg.p3d);
         hiddenSelections[] = {"camo_1","camo_2"};
 		hiddenSelectionsTextures[] = {"a3\structures_f\data\wood\woodbroken_co.paa","a3\structures_f\data\wood\woodbroken_co.paa"};

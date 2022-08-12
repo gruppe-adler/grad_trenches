@@ -17,16 +17,16 @@
  */
 
 params [
-    ["_boundingBox", [], [[]], [2]],
-    ["_areaToCover", false, [false]]
+    ["_relativeBB", [], [[]], [2]],
+    ["_areaToCover", false, [false]],
+    ["_cellsize", 0, [0]]
 ];
 
+private _boundingBox = _relativeBB apply { _obj modelToWorld _x };
 _boundingBox params [
-    ["_min", [], [[]], [2, 3]],
-    ["_max", [], [[]], [2, 3]]
+    ["_min", [], [[]], [2, 3, 0]],
+    ["_max", [], [[]], [2, 3, 0]]
 ];
-
-getTerrainInfo params ["", "", "_cellsize"];
 
 _min params [ ["_xmin", 0, [0]], ["_ymin", 0, [0]] ];
 _max params [ ["_xmax", 0, [0]], ["_ymax", 0, [0]] ];
@@ -43,6 +43,8 @@ if (_areaToCover) then {
     _ymin = _ymin - _cellsize;
     _ymax = _ymax + _cellsize;
 };
+
+diag_log format ["xMin: %1, yMin: %2, xMax: %3, yMax: %4", _xmin, _ymin, _xmax, _ymax];
 
 private _cells = [];
 

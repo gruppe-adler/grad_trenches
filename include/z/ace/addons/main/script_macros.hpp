@@ -39,6 +39,17 @@
 
 #define ARR_SELECT(ARRAY,INDEX,DEFAULT) (if (count ARRAY > INDEX) then {ARRAY select INDEX} else {DEFAULT})
 
+// ACEX Merge
+#define ACEX_PREFIX acex
+#define XADDON DOUBLES(ACEX_PREFIX,COMPONENT)
+#define XGVAR(var) DOUBLES(XADDON,var)
+#define EXGVAR(var1,var2) TRIPLES(ACEX_PREFIX,var1,var2)
+#define QXGVAR(var) QUOTE(XGVAR(var))
+#define QEXGVAR(var1,var2) QUOTE(EXGVAR(var1,var2))
+#define QQXGVAR(var) QUOTE(QXGVAR(var))
+#define QQEXGVAR(var1,var2) QUOTE(QEXGVAR(var1,var2))
+#define ACEX_PREP(func) PREP(func); TRIPLES(XADDON,fnc,func) = DFUNC(func)
+
 
 #define MACRO_ADDWEAPON(WEAPON,COUNT) class _xx_##WEAPON { \
     weapon = #WEAPON; \
@@ -68,6 +79,7 @@
 #define TYPE_MAGAZINE_HANDGUN_AND_GL 16 // mainly
 #define TYPE_MAGAZINE_PRIMARY_AND_THROW 256
 #define TYPE_MAGAZINE_SECONDARY_AND_PUT 512 // mainly
+#define TYPE_MAGAZINE_MISSILE 768
 // more types
 #define TYPE_BINOCULAR_AND_NVG 4096
 #define TYPE_WEAPON_VEHICLE 65536
@@ -106,16 +118,6 @@
 
 #define PREP_MODULE(folder) [] call compile preprocessFileLineNumbers QPATHTOF(folder\__PREP__.sqf)
 
-#ifdef DISABLE_COMPILE_CACHE
-   #define PREP_W_INTERCEPT(fncName,fncNameIntercept,capabilityString) if (capabilityString in (uiNamespace getVariable ["Intercept_cba_capabilities", []])) then { \
-       DFUNC(fncName) = compile preprocessFileLineNumbers QPATHTOF(functions\DOUBLES(fnc,fncNameIntercept).sqf) \
-   } else { PREP(fncName); }
-#else
-   #define PREP_W_INTERCEPT(fncName,fncNameIntercept,capabilityString) if (capabilityString in (uiNamespace getVariable ["Intercept_cba_capabilities", []])) then { \
-       [QPATHTOF(functions\DOUBLES(fnc,fncNameIntercept).sqf), QFUNC(fncName)] call CBA_fnc_compileFunction \
-   } else { PREP(fncName); }
-#endif
-
 #define ACE_isHC (!hasInterface && !isDedicated)
 
 #define IDC_STAMINA_BAR 193
@@ -125,8 +127,7 @@
 #define PFORMAT_10(MESSAGE,A,B,C,D,E,F,G,H,I,J) \
     format ['%1: A=%2, B=%3, C=%4, D=%5, E=%6, F=%7, G=%8, H=%9, I=%10 J=%11', MESSAGE, RETNIL(A), RETNIL(B), RETNIL(C), RETNIL(D), RETNIL(E), RETNIL(F), RETNIL(G), RETNIL(H), RETNIL(I), RETNIL(J)]
 #ifdef DEBUG_MODE_FULL
-#define TRACE_10(MESSAGE,A,B,C,D,E,F,G,H,I,J) \
-    [THIS_FILE_, __LINE__, PFORMAT_10(MESSAGE,A,B,C,D,E,F,G,H,I,J)] call CBA_fnc_log
+#define TRACE_10(MESSAGE,A,B,C,D,E,F,G,H,I,J) LOG_SYS_FILELINENUMBERS('TRACE',PFORMAT_10(str diag_frameNo + ' ' + (MESSAGE),A,B,C,D,E,F,G,H,I,J))
 #else
    #define TRACE_10(MESSAGE,A,B,C,D,E,F,G,H,I,J) /* disabled */
 #endif
@@ -145,5 +146,7 @@
 #define MOA_TO_RAD(d) ((d) * 0.00029088) // Conversion factor: PI / 10800
 
 #define ZEUS_ACTION_CONDITION ([_target, {QUOTE(QUOTE(ADDON)) in curatorAddons _this}, missionNamespace, QUOTE(QGVAR(zeusCheck)), 1E11, 'ace_interactMenuClosed'] call EFUNC(common,cachedCall))
+
+#define SUBSKILLS ["aimingAccuracy", "aimingShake", "aimingSpeed", "spotDistance", "spotTime", "courage", "reloadSpeed", "commanding", "general"]
 
 #include "script_debug.hpp"
