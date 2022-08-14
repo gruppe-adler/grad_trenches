@@ -15,15 +15,6 @@
  * Public: No
  */
 
-diag_log str _this;
-
-/*
-params [
-    "_trench",
-    ["_boundingBox", [], [[]], [2]],
-    ["_zASL", 0, 0]
-];
-*/
 params [
     "_trench",
     "_boundingBox",
@@ -31,43 +22,24 @@ params [
 ];
 
 getTerrainInfo params ["", "", "_cellsize"];
-private _cells = [_boundingBox, true, _cellsize] call FUNC(getCellsToAdjust);
+private _cells = [_trench, _boundingBox, _cellsize, true] call FUNC(getCellsToAdjust);
 private _pos = getPosWorld _trench;
+private _depth = getNumber(configFile >> "CfgVehicles" >> ( typeOf _trench ) >> QGVAR(depth));
+if (_cellsize < 5) then {
+    {
+        if !(_trench inArea [_x, _cellsize, _cellsize, 0, true]) then {
+            private _obj = "GRAD_envelope_filler5m" createVehicle [0,0,0];
+            _x set [2, -0.1];
+            _obj setPosWorld _x;
+        };
+    }forEach _cells;
+} else {
 
-diag_log format ["Cellsize: %1, Cells: %2, Pos; %3", _cellsize, _cells, _pos];
+};
 
-gridLines = [];
+diag_log format ["Depth: %1, Pos: %2 = %3", _depth, (_pos select 2)];
 
-{
-    //#ifdef DEBUG_MODE_FULL
-        private _p1 = [_x, _y] vectorMultiply _cellsize;	  //bottom-left corner
-        private _p2 = [_x, _y + 1] vectorMultiply _cellsize;  //top-left corner
-        private _p3 = [_x + 1, _y] vectorMultiply _cellsize;  //bottom-right corner
-        _p1 set [2, 0.1];
-        _p2 set [2, 0.1];
-        _p3 set [2, 0.1];
-
-        gridLines pushBack [_p1, _p2, [1,0,0,1]];
-        gridLines pushBack [_p1, _p3, [1,0,0,1]];
-        gridLines pushBack [_p2, _p3, [0,1,0,1]];
-    //#endif
-    if !(_trench inArea [_x, _cellsize, _cellsize, 0, true]) then {
-        private _obj = "GRAD_envelope_filler5m" createVehicle [0,0,0];
-        _obj setPos _x;
-
-    };
-}forEach _cells;
-
-//#ifdef DEBUG_MODE_FULL
-    onEachFrame {
-        {
-            drawLine3d _x;
-        } forEach _gridLines;
-    };
-//#endif
-
-private _arr = _cells apply {[_x select 0, _x select 1, _zASL]};
-diag_log str _arr;
-setTerrainHeight _arr;
+private _arr = _cells apply {[_x select 0, _x select 1, (_pos select 2) - _depth]};
+setTerrainHeight [_arr, false];
 
 _cells

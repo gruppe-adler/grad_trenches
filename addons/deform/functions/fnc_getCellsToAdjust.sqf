@@ -11,18 +11,19 @@
  * Terrain cells in area
  *
  * Example:
- * [boundingBox TrenchObj, false] call grad_trenches_deform_fnc_fnc_getCellsToAdjust;
+ * [trench, boundingBox TrenchObj, 4, false] call grad_trenches_deform_fnc_fnc_getCellsToAdjust;
  *
  * Public: No
  */
 
 params [
+    "_trench",
     ["_relativeBB", [], [[]], [2]],
-    ["_areaToCover", false, [false]],
-    ["_cellsize", 0, [0]]
+    ["_cellsize", 0, [0]],
+    ["_areaToCover", false, [false]]
 ];
 
-private _boundingBox = _relativeBB apply { _obj modelToWorld _x };
+private _boundingBox = _relativeBB apply { _trench modelToWorld _x };
 _boundingBox params [
     ["_min", [], [[]], [2, 3, 0]],
     ["_max", [], [[]], [2, 3, 0]]
@@ -31,12 +32,6 @@ _boundingBox params [
 _min params [ ["_xmin", 0, [0]], ["_ymin", 0, [0]] ];
 _max params [ ["_xmax", 0, [0]], ["_ymax", 0, [0]] ];
 
-private _xmin = floor (_xmin / _cellsize);
-private _xmax = ceil (_xmax / _cellsize);
-
-private _ymin = floor (_ymin / _cellsize);
-private _ymax = ceil (_ymax / _cellsize);
-
 if (_areaToCover) then {
     _xmin = _xmin - _cellsize;
     _xmax = _xmax + _cellsize;
@@ -44,14 +39,12 @@ if (_areaToCover) then {
     _ymax = _ymax + _cellsize;
 };
 
-diag_log format ["xMin: %1, yMin: %2, xMax: %3, yMax: %4", _xmin, _ymin, _xmax, _ymax];
-
 private _cells = [];
+private _xCord = _xmin;
+private _yCord = _ymin;
 
-private _x = _xmin;
-private _y = _ymin;
-while {_x <= _xmax} do {
-    while {_y <= _ymax} do {
+for [{ _x = _xCord }, { _x <= _xmax }, { _x = _x + 1 }] do {
+    for [{ _y = _yCord }, { _y <= _ymax }, { _y = _y + 1 }] do {
         _cells pushBack [_x, _y];
     };
 };
