@@ -41,8 +41,8 @@ if (GVAR(createTrenchMarker)) then {
 
 TRACE_1("Server spawning trench at ", _pos);
 
-([_trench] call FUNC(getBBThatNeedsToBeDugOut)) params ["_boundingBox", "_zASL"];
+([_trench] call FUNC(getBBThatNeedsToBeDugOut)) params ["_boundingBox"];
 
-[_trench, _boundingBox, _zASL] call FUNC(deformTerrain);
+[_trench, _boundingBox] call FUNC(deformTerrain);
 
 [QGVAR(continueDeformingTrench), [_trench, _unit, false], _unit] call CBA_fnc_targetEvent;
