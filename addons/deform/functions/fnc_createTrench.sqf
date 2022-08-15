@@ -29,7 +29,7 @@ _trench setVariable [QGVAR(diggingSteps), _posDiff / (_digTime * 10), true];
 [_trench, 0, 0] call EFUNC(common,setTrenchProgress); // Animate to down under initially
 
 _trench setVectorDirAndUp _vecDirAndUp;
-_pos set [2, 0.01]; // Trench should sit below zero, to prevent glitches with the terrain
+_pos set [2, -0.01]; // Trench should sit below zero, to prevent glitches with the terrain
 _trench setObjectTextureGlobal [0, surfaceTexture _pos];
 _trench setPosATL _pos; // Prevent glitches by setting position last, prepare on 0,0,0 - move - rest is done by animation
 

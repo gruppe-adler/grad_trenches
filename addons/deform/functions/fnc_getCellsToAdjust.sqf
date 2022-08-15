@@ -29,22 +29,31 @@ _boundingBox params [
     ["_max", [], [[]], [2, 3, 0]]
 ];
 
-_min params [ ["_xmin", 0, [0]], ["_ymin", 0, [0]] ];
-_max params [ ["_xmax", 0, [0]], ["_ymax", 0, [0]] ];
+_min params [ ["_xMin", 0, [0]], ["_yMin", 0, [0]] ];
+_max params [ ["_xMax", 0, [0]], ["_yMax", 0, [0]] ];
 
-if (_areaToCover) then {
-    _xmin = _xmin - _cellsize;
-    _xmax = _xmax + _cellsize;
-    _ymin = _ymin - _cellsize;
-    _ymax = _ymax + _cellsize;
+private _minCell = [_min] call FUNC(getPosCell);
+private _maxCell = [_max] call FUNC(getPosCell);
+if (_minCell isNotEqualTo _maxCell) then {
+    _xMax = _xMax + _cellsize;
+    _yMax = _yMax + _cellsize;
 };
 
-private _cells = [];
-private _xCord = _xmin;
-private _yCord = _ymin;
+if (_areaToCover) then {
+    _xMin = _xMin - _cellsize;
+    _xMax = _xMax + _cellsize;
+    _yMin = _yMin - _cellsize;
+    _yMax = _yMax + _cellsize;
+};
 
-for [{ _x = _xCord }, { _x <= _xmax }, { _x = _x + 1 }] do {
-    for [{ _y = _yCord }, { _y <= _ymax }, { _y = _y + 1 }] do {
+systemChat str [_xMin, _xMax, _yMin, _yMax];
+
+private _cells = [];
+private _xCord = _xMin;
+private _yCord = _yMin;
+
+for [{ _x = _xCord }, { _x <= _xMax }, { _x = _x + _cellsize }] do {
+    for [{ _y = _yCord }, { _y <= _yMax }, { _y = _y + _cellsize }] do {
         _cells pushBack [_x, _y];
     };
 };

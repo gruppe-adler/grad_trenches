@@ -77,8 +77,8 @@ class CfgVehicles {
         GVAR(isTrench) = 1;
         ace_trenches_diggingDuration = QGVAR(FightingHoleEnvelopeDigTime);
         ace_trenches_removalDuration = QGVAR(FightingHoleEnvelopeRemovalTime);
-        GVAR(offset) = 1.22;
-        GVAR(offset1) = -0.36;
+        GVAR(offset) = -0.4;
+        GVAR(offset1) = 1.22;
         GVAR(depth) = 1.5;
         GVAR(placementData)[] = {10,2,-0.01};
         GVAR(grassCuttingPoints)[] = {{-1.5,-1,0},{1.5,-1,0}};

@@ -110,7 +110,7 @@ class CfgVehicles {
             {
                 source = "user";	// The controller is defined as a user animation.
                 animPeriod = 1;		// The animation period used for this controller.
-                initPhase = 0;	    // Initial phase when object is created.
+                initPhase = -0.4;	    // Initial phase when object is created.
             };
             class drop
             {
@@ -122,7 +122,7 @@ class CfgVehicles {
     };
     class GRAD_envelope_filler5m: BagFence_base_F {
         model = QPATHTOF(data\trench_filler5m.p3d);
-        hiddenSelections[] = {"camo_1"};
+        hiddenSelections[] = {"velka"};
         hiddenSelectionsTextures[] = {"x\grad_trenches\addons\assets\data\zemlia.paa"};
         scope = 1;
         //editorPreview = QPATHTOF(data\trench_fightinghole.paa);
