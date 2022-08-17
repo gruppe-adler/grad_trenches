@@ -18,7 +18,8 @@
 if !(isServer) exitWith {};
 
 params [
-    "_trench"
+    "_trench",
+    "_vecDirAndUp"
 ];
 
 //Get cells to deform & cover up
@@ -29,6 +30,13 @@ private _cellsWithEdge = [_trench, _cellsize, 1.5, true] call FUNC(getCellsToAdj
 //Get all trench object related parameters
 private _pos = getPosWorld _trench;
 private _depth = getNumber(configFile >> "CfgVehicles" >> ( typeOf _trench ) >> QGVAR(depth));
+
+private _boundingBox = 2 boundingBoxReal _trench;
+private _bbx = _boundingBox apply _relativeBB apply { _trench modelToWorld _x };
+_bbx params ["_minBB", "_maxBB"];
+_minBB params ["_xMinBB", "_yMinBB"];
+_maxBB params ["_xMaxBB", "_yMaxBB"];
+
 
 //Fill some variables to reduce processing requirment
 private _halfCellsize = _cellsize/2;
@@ -44,7 +52,7 @@ private _fillerObjects = [];
     private _pos = [(_x # 0) + _halfCellsize, ( _x # 1) + _halfCellsize, _newHeight];
     if !(_trench inArea [_pos, _cellsize + 0.1, _cellsize + 0.1, 0, true, _cellsize]) then {
         private _obj = "GRAD_envelope_filler" createVehicle _pos;
-        _obj setVectorDirAndUp [[0,0,0],[0,0,0]];
+        _obj setVectorDirAndUp _vecDirAndUp;
         _obj setPosWorld _pos;
         _obj setObjectScale _cellsize;
 
@@ -53,7 +61,12 @@ private _fillerObjects = [];
         _fillerObjects pushBack _obj;
     } else {
         //Handle cover in cells with the trench inside
-
+        {
+            private _poitionsInCell = [];
+            if (_x inArea [_pos, _cellsize + 0.1, _cellsize + 0.1, 0, true, _cellsize]) then {
+                _poitionsInCell pushBack _x;
+            };
+        }forEach [_minBB, [_xMaxBB, _yMinBB, 0], [_xMinBB, _yMaxBB, 0], _max];
     };
 }forEach _cellsWithEdge;
 

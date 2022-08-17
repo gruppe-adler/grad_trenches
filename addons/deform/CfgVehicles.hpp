@@ -46,7 +46,6 @@
     }
 
 class CfgVehicles {
-    /*
     class Man;
     class CAManBase: Man {
         class ACE_SelfActions {
@@ -57,14 +56,14 @@ class CfgVehicles {
                         exceptions[] = {};
                         showDisabled = 0;
                         priority = 4;
-                        statement = QUOTE([ARR_2({_this call FUNC(placeTrench)},[ARR_2(_this select 0,'GRAD_envelope_fightinghole')])] call CBA_fnc_execNextFrame);
-                        condition = QUOTE(EGVAR(common,allowDigging) && ([ARR_2(_target,_player)] call FUNC(canContinueDeformingTrench)) && GVAR(allowSmallEnvelope));
+                        statement = QUOTE([ARR_2({_this call FUNC(choosePos)},[ARR_2(_this select 0,'GRAD_envelope_fightinghole')])] call CBA_fnc_execNextFrame);
+                        condition = QUOTE(EGVAR(common,allowDigging) && ([ARR_2(_target,_player)] call FUNC(canContinueDeformingTrench)) && GVAR(allowFightingholeEnvelope));
                     };
                 };
             };
         };
     };
-    */
+
     class BagFence_base_F;
     class GRAD_envelope_fightinghole: BagFence_base_F {
         author = "Salbei";

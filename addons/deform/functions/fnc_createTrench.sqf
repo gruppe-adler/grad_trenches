@@ -31,6 +31,7 @@ _trench setVariable [QGVAR(diggingSteps), _posDiff / (_digTime * 10), true];
 _trench setVectorDirAndUp _vecDirAndUp;
 _pos set [2, -0.01]; // Trench should sit below zero, to prevent glitches with the terrain
 _trench setObjectTextureGlobal [0, surfaceTexture _pos];
+_trench setObjectTextureGlobal [1, surfaceTexture _pos];
 _trench setPosATL _pos; // Prevent glitches by setting position last, prepare on 0,0,0 - move - rest is done by animation
 
 [QEGVAR(common,addTrenchToDecay), [_trench, GVAR(timeoutToDecay), GVAR(decayTime)]] call CBA_fnc_serverEvent;
@@ -39,6 +40,6 @@ if (GVAR(createTrenchMarker)) then {
     [_trench, side _unit] call EFUNC(common,createTrenchMarker);
 };
 
-[_trench] call FUNC(deformTerrain);
+[_trench, _vecDirAndUp] call FUNC(deformTerrain);
 
 [QGVAR(continueDeformingTrench), [_trench, _unit, false], _unit] call CBA_fnc_targetEvent;
