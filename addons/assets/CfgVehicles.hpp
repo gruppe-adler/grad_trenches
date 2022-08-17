@@ -100,7 +100,7 @@ class CfgVehicles {
     };
     class GRAD_envelope_fightinghole: BagFence_base_F {
         model = QPATHTOF(data\trench_fightinghole.p3d);
-        hiddenSelections[] = {"camo_1", "camo_2"};
+        hiddenSelections[] = {"texture_01", "texture_02"};
         hiddenSelectionsTextures[] = {"x\grad_trenches\addons\assets\data\zemlia.paa","x\grad_trenches\addons\assets\data\zemlia.paa"};
         //editorPreview = QPATHTOF(data\trench_fightinghole.paa);
 
@@ -120,8 +120,8 @@ class CfgVehicles {
             };
         };
     };
-    class GRAD_envelope_filler5m: BagFence_base_F {
-        model = QPATHTOF(data\trench_filler5m.p3d);
+    class GRAD_envelope_filler: BagFence_base_F {
+        model = QPATHTOF(data\trench_filler.p3d);
         hiddenSelections[] = {"velka"};
         hiddenSelectionsTextures[] = {"x\grad_trenches\addons\assets\data\zemlia.paa"};
         scope = 1;

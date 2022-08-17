@@ -6,7 +6,6 @@ PREP(createTrench);
 PREP(deformTerrain);
 PREP(getBBThatNeedsToBeDugOut);
 PREP(getCellsToAdjust);
-PREP(getPosCell);
 PREP(handleKilled);
 PREP(initTrench3DEN);
 PREP(placeCancel);

@@ -1,61 +1,80 @@
 #include "script_component.hpp"
 /*
- * Author: Zade, Salbei
+ * Author: DerZade, Salbei, EL_D148L0
  * Changes the terrain height in an area
  *
  * Arguments:
- * 0: Boundingbox <ARRAY>
- * 1: Area to cover <ARRAY>
+ * 0: Trench Object <OBJECT>
+ * 0: Cellsize <NUMBER>
+ * 0: Minimal Boundingbox Size <NUMBER>
+ * 3: Area to cover <BOOLEAN>
  *
  * Return Value:
  * Terrain cells in area
  *
  * Example:
- * [trench, boundingBox TrenchObj, 4, false] call grad_trenches_deform_fnc_fnc_getCellsToAdjust;
+ * [trench, getTerrainInfo # 2, 1.5, false] call grad_trenches_deform_fnc_fnc_getCellsToAdjust;
  *
  * Public: No
  */
 
 params [
-    "_trench",
-    ["_relativeBB", [], [[]], [2]],
-    ["_cellsize", 0, [0]],
+    "_trenchObject",
+    ["_cellsize", -1],
+    ["_minBBoxSize", 1.5],
     ["_areaToCover", false, [false]]
 ];
 
-private _boundingBox = _relativeBB apply { _trench modelToWorld _x };
-_boundingBox params [
-    ["_min", [], [[]], [2, 3, 0]],
-    ["_max", [], [[]], [2, 3, 0]]
-];
+if (_cellsize isEqualTo -1) then {
+	_cellsize = getTerrainInfo # 2;
+};
 
-_min params [ ["_xMin", 0, [0]], ["_yMin", 0, [0]] ];
-_max params [ ["_xMax", 0, [0]], ["_yMax", 0, [0]] ];
+//Get object bounding box
+private _bbx = 2 boundingBoxReal _trenchObject;
+_bbx params ["_minBB", "_maxBB", "_boundingSphereRadius"];
+_minBB params ["_xMinBB", "_yMinBB", "_zMinBB"];
+_maxBB params ["_xMaxBB", "_yMaxBB"];
 
-private _minCell = [_min] call FUNC(getPosCell);
-private _maxCell = [_max] call FUNC(getPosCell);
-if (_minCell isNotEqualTo _maxCell) then {
-    _xMax = _xMax + _cellsize;
-    _yMax = _yMax + _cellsize;
+private _xWidth = (_xMaxBB) - (_xMinBB);
+private _yWidth = (_yMaxBB) - (_yMinBB);
+
+if (_xWidth < (_minBBoxSize * _cellsize)) then {
+	_diff = ((_minBBoxSize * _cellsize) - _xWidth) / 2;
+	_xMinBB = _xMinBB - _diff;
+	_xMaxBB = _xMaxBB + _diff;
+};
+
+if (_yWidth < (_minBBoxSize * _cellsize)) then {
+	_diff = ((_minBBoxSize * _cellsize) - _yWidth) / 2;
+	_yMinBB = _yMinBB - _diff;
+	_yMaxBB = _yMaxBB + _diff;
 };
 
 if (_areaToCover) then {
-    _xMin = _xMin - _cellsize;
-    _xMax = _xMax + _cellsize;
-    _yMin = _yMin - _cellsize;
-    _yMax = _yMax + _cellsize;
+    _xMinBB = _xMinBB - _cellsize;
+    _xMaxBB = _xMaxBB + _cellsize;
+    _yMinBB = _yMinBB - _cellsize;
+    _yMaxBB = _yMaxBB + _cellsize;
 };
 
-systemChat str [_xMin, _xMax, _yMin, _yMax];
+private _bbxCenter  = boundingCenter _trenchObject;
+_bbxCenter set [2, _zMinBB-1] ;
+private _bbxCenterWorld = _trenchObject modelToWorldWorld _bbxCenter;
+
+private _area = [_bbxCenterWorld, abs (_xMinBB - _bbxCenter # 0), abs (_yMinBB - _bbxCenter # 1), getDir _trenchObject, true, -1];
+
+_bbxCenterWorld apply {round (_x / _cellsize)} params ["_x0", "_y0"];
+private _step = ceil (_boundingSphereRadius / _cellsize);
 
 private _cells = [];
-private _xCord = _xMin;
-private _yCord = _yMin;
 
-for [{ _x = _xCord }, { _x <= _xMax }, { _x = _x + _cellsize }] do {
-    for [{ _y = _yCord }, { _y <= _yMax }, { _y = _y + _cellsize }] do {
-        _cells pushBack [_x, _y];
-    };
+for "_x" from (_x0 - _step) to (_x0 + _step) do {
+	for "_y" from (_y0 - _step) to (_y0 + _step) do {
+		private _pos1 = [_x, _y] vectorMultiply _cellsize;
+		if (_pos1 inArea _area) then {
+			_cells append [ + _pos1];
+		};
+	};
 };
 
-_cells
+_cells;

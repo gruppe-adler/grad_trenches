@@ -18,8 +18,8 @@
 params ["_unit"];
 
 // Enable running again
-[_unit, "forceWalk", "ACE_Trenches", false] call ace_common_fnc_statusEffect_set;
-[_unit, "blockThrow", "ACE_Trenches", false] call ace_common_fnc_statusEffect_set;
+[_unit, "forceWalk", "GRAD_Trenches", false] call ace_common_fnc_statusEffect_set;
+[_unit, "blockThrow", "GRAD_Trenches", false] call ace_common_fnc_statusEffect_set;
 
 // Remove dig pfh
 [GVAR(positionPFH)] call CBA_fnc_removePerFrameHandler;
