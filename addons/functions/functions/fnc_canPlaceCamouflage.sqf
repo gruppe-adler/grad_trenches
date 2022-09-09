@@ -18,12 +18,11 @@
 
 params ["_trench", "_unit"];
 
+if !(GVAR(allowCamouflage)) exitWith {false};
+if (GVAR(camouflageRequireEntrenchmentTool) && {!([_unit] call ace_trenches_fnc_hasEntrenchingTool)}) exitWith {false};
+
 private _statusNumber = _trench getVariable [QGVAR(trenchCamouflageStatus), 0];
 private _statusString = "CamouflagePositions" + str (_statusNumber + 1);
-
-if !(GVAR(allowCamouflage)) exitWith {false};
-if (GVAR(camouflageRequireEntrenchmentTool) && {!("ACE_EntrenchingTool" in items _unit)}) exitWith {false};
-
 private _config = configOf _trench >> _statusString;
 
 (isClass _config) &&

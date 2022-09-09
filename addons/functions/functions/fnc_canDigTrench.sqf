@@ -18,7 +18,7 @@
 
 params ["_unit", ["_trench", objNull]];
 
-if !("ACE_EntrenchingTool" in items _unit) exitWith {false};
+if !([_unit] call ace_trenches_fnc_hasEntrenchingTool) exitWith {false};
 
 if (((getPosATL _unit) select 2) > 0.05) exitWith {false};
 
