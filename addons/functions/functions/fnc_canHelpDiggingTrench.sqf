@@ -18,7 +18,7 @@
 
 params ["_trench", "_unit"];
 
-if !("ACE_EntrenchingTool" in items _unit) exitWith {false};
+if !([_unit] call ace_trenches_fnc_hasEntrenchingTool) exitWith {false};
 if ((_trench getVariable ["ace_trenches_progress", 0]) >= 1) exitWith {false};
 if !(_trench getVariable ["ace_trenches_digging", false]) exitWith {false};
 if (count (_trench getVariable [QGVAR(diggers), []]) < 1) exitWith {false};
