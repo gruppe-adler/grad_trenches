@@ -9,8 +9,8 @@
             <English>Trench - Fighting Hole</English>
             <German>Graben - Kampfloch</German>
         </Key>
-        <Key ID="STR_GRAD_Trenches_legacy_DigEnvelopeFightingHole">
-            <English>Dig Giant Fighting Hole</English>
+        <Key ID="STR_GRAD_Trenches_deform_DigEnvelopeFightingHole">
+            <English>Dig Fighting Hole</English>
             <German>Grabe Kampfloch</German>
         </Key>
         <Key ID="STR_GRAD_Trenches_deform_EnvelopeFightingHoleDescription">

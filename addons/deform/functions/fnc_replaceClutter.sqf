@@ -21,11 +21,13 @@ params ["_trianglesPositionsAndObjects"];
     _x params ["_trinaglePositions", "_trinagleObject"];
     _trinaglePositions params ["_posA", "_posB", "_posC"];
 
-    private
+    private _dir = getDir _trinagleObject;
+    private _vectorDir = vectorDir _trinagleObject;
+    private _vectorUp = vectorUp _trinagleObject;
 
-    private _surface = surfaceTexture getPos _trinagleObject;
+    private _surfaceType = surfaceType getPos _trinagleObject;
 
-    // Remove any starting #
+    // Remove any starting # from texture name
     private _index = _surfaceType find "#";
     if (_index > -1) then {
         private _str = _surfaceType splitString "";
@@ -48,6 +50,9 @@ params ["_trianglesPositionsAndObjects"];
 
     // Populate the triangle with clutter
     for "_i" from 1 to floor (_area/_density) do {
+
+        private _pos = [0,0,0]; // Position calculation missing
+
         private _num = ((floor random 100) +1)/100;
         {
             _num = _num -_x;
@@ -69,6 +74,8 @@ params ["_trianglesPositionsAndObjects"];
                 ];
 
                 _clutter setObjectScale _scale;
+                _clutter attachTo [_trinagleObject, _pos];
+                _clutter setVectorDirAndUp [_vectorDir, _vectorUp];
             };
         }forEach _clutterProbability;
     };
