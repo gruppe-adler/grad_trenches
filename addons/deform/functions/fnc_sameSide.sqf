@@ -1,6 +1,5 @@
 #include "script_component.hpp"
 
-params ["_p1", "_p2", "_a", "_b"];
 /*
  * Author: EL_D148L0
  * calculates whether two points lie on the same side of a line in 2d space.
@@ -21,13 +20,13 @@ params ["_p1", "_p2", "_a", "_b"];
  * Public: No
  */
 
+params ["_p1", "_p2", "_p1Line", "_p2Line"];
 
 // are 2d or 3d vectors
 // does some rounding fuckery to fit my needs, do not use for unrelated stuff
 // a and b are the end points of the line
-private _v1 = [_b # 0 - _a # 0, _b # 1 - _a # 1];
-private _cp1 = (_v1) vectorCrossProduct ([_p1 # 0 - _a # 0, _p1 # 1 - _a # 1]);
-private _cp2 = (_v1) vectorCrossProduct ([_p2 # 0 - _a # 0, _p2 # 1 - _a # 1]);
-private _f = (_cp1 #2) * (_cp2 #2);
+private _vector = [_p2Line # 0 - _p1Line # 0, _p2Line # 1 - _p1Line # 1];
+private _cp1 = _vector vectorCrossProduct ([_p1 # 0 - _p1Line # 0, _p1 # 1 - _p1Line # 1]);
+private _cp2 = _vector vectorCrossProduct ([_p2 # 0 - _p1Line # 0, _p2 # 1 - _p1Line # 1]);
 
-(_f > 0.001)
+(((_cp1 #2) * (_cp2 #2)) > 0.001)

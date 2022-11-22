@@ -30,53 +30,20 @@ private _trench = createSimpleObject [_trenchClass, [0, 0, 0], true];
 //_trench hideObjectGlobal true;
 GVAR(trench) = _trench;
 
+// Make dug out wall visible for choosing position
+private _offset = [configOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry;
+_trench animateSource ["rise", _offset, true];
+
 // Prevent collisions with trench
 ["ace_common_enableSimulationGlobal", [_trench, false]] call CBA_fnc_serverEvent;
-
-([_trench] call FUNC(getBBThatNeedsToBeDugOut)) params ["_boundingBox", "_zASL"];
-
-_boundingBox params [
-    ["_min", [], [[]], [2, 3, 0]],
-    ["_max", [], [[]], [2, 3, 0]]
-];
-
-private _pegs = [];
-{
-    private _obj = createSimpleObject ["GRAD_peg", [0, 0, 0], true];
-    _obj attachTo [_trench, _x];
-
-    _pegs pushBack _obj;
-}forEach [_min, [_min #0, _max #1, 0], [_max #0, _min #1, 0], _max];
+_unit disableCollisionWith _trench;
 
 GVAR(digDirection) = 0;
 
 GVAR(positionPFH) = [{
     params ["_args", "_handle"];
-    _args params ["_unit", "_trench", "_pegs"];
+    _args params ["_unit", "_trench"];
 
-    /*
-    //Check if all helper objects are still there
-    private _oneLost = false;
-    {
-        if (isNull _x) exitWith {
-            _oneLost = true;
-        };
-    }forEach _pegs;
-
-    if (_oneLost || {isNull _trench}) exitWith {
-        [_unit] call FUNC(placeCancel);
-    };
-
-    //Choose texture to indicate possibility of digging
-    private _texture = "#(rgb,8,8,3)color(0,1,0,1)";
-    if !([_unit, _trench] call FUNC(canDigDeformTrench)) then {
-        _texture = "#(rgb,8,8,3)color(1,0,0,1)";
-    };
-
-    {
-        _x setObjectTextureGlobal [1, _texture];
-    }forEach _pegs;
-    */
     GVAR(trenchPlacementData) params ["_dx", "_dy", "_offset"];
     private _basePos = _unit modelToWorld [0, 4, 0];
     private _angle = GVAR(digDirection) + getDir _unit;
@@ -103,7 +70,7 @@ GVAR(positionPFH) = [{
     TRACE_2("", _minzoffset, _offset);
     _trench setPosASL _basePos;
     _trench setVectorDirAndUp [_v1, _v3];
-}, 0, [_unit, _trench, _pegs]]call CBA_fnc_addPerFrameHandler;
+}, 0, [_unit, _trench]]call CBA_fnc_addPerFrameHandler;
 
 // Add mouse button action and hint
 [localize "STR_ace_trenches_ConfirmDig", localize "STR_ace_trenches_CancelDig"] call ace_interaction_fnc_showMouseHint;

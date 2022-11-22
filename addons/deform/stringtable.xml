@@ -9,6 +9,10 @@
             <English>Trench - Fighting Hole</English>
             <German>Graben - Kampfloch</German>
         </Key>
+        <Key ID="STR_GRAD_Trenches_legacy_DigEnvelopeFightingHole">
+            <English>Dig Giant Fighting Hole</English>
+            <German>Grabe Kampfloch</German>
+        </Key>
         <Key ID="STR_GRAD_Trenches_deform_EnvelopeFightingHoleDescription">
             <English>A hole in the ground to give up to 2 persons cover.</English>
             <German>Ein Loch im Boden, das bis zu 2 Personen schutz bietet.</German>

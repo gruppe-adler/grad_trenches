@@ -20,4 +20,6 @@
 
 params ["_p1", "_a", "_b", "_c"];
 
-([_p1, _a, _b, _c] call FUNC(sameSide)) && ([_p1, _b, _a, _c] call FUNC(sameSide)) && ([_p1, _c, _a, _b] call FUNC(sameSide));
+([_p1, _a, _b, _c] call FUNC(sameSide)) &&
+{[_p1, _b, _a, _c] call FUNC(sameSide)} &&
+{[_p1, _c, _a, _b] call FUNC(sameSide)}

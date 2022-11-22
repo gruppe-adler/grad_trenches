@@ -102,31 +102,28 @@ class CfgVehicles {
         model = QPATHTOF(data\trench_fightinghole.p3d);
         hiddenSelections[] = {"texture_01", "texture_02", "texture_03", "texture_04"};
         hiddenSelectionsTextures[] = {"x\grad_trenches\addons\assets\data\zemlia.paa", "x\grad_trenches\addons\assets\data\zemlia.paa", "x\grad_trenches\addons\assets\data\zemlia.paa", "x\grad_trenches\addons\assets\data\zemlia.paa"};
+        GVAR(borderLines)[] = {{corner_1_1, corner_1_2}, {corner_1_2, corner_2_2}, {corner_2_2, corner_2_1},{corner_2_1, corner_1_1}};
+        GVAR(fillingTriangles)[] = {{corner_1_1, corner_1_2, corner_2_1}, {corner_1_2, corner_2_2, corner_2_1}};
+        GVAR(openCorners)[] = {};
         //editorPreview = QPATHTOF(data\trench_fightinghole.paa);
 
         class AnimationSources
         {
-            class rise
-            {
-                source = "user";	// The controller is defined as a user animation.
-                animPeriod = 1;		// The animation period used for this controller.
-                initPhase = -0.4;	    // Initial phase when object is created.
-            };
             class drop
             {
                 source = "user";	// The controller is defined as a user animation.
                 animPeriod = 1;		// The animation period used for this controller.
                 initPhase = 1.22;	// Initial phase when object is created.
             };
+            class rise
+            {
+                source = "user";	// The controller is defined as a user animation.
+                animPeriod = 1;		// The animation period used for this controller.
+                initPhase = -0.4;	    // Initial phase when object is created.
+            };
         };
     };
-    class GRAD_envelope_filler: BagFence_base_F {
-        model = QPATHTOF(data\trench_filler.p3d);
-        hiddenSelections[] = {"velka"};
-        hiddenSelectionsTextures[] = {"x\grad_trenches\addons\assets\data\zemlia.paa"};
-        scope = 1;
-        //editorPreview = QPATHTOF(data\trench_fightinghole.paa);
-    };
+    /*
     class GRAD_trenches_peg: BagFence_base_F {
         model = QPATHTOF(data\peg.p3d);
         hiddenSelections[] = {"camo_1","camo_2"};
@@ -134,4 +131,93 @@ class CfgVehicles {
         scope = 1;
         //editorPreview = QPATHTOF(data\trench_fightinghole.paa);
     };
+    */
+    class Rocks_base_F;
+	class GRAD_trenches_triangle_filler: Rocks_base_F
+	{
+		scope				= 1;										/// makes the lamp invisible in editor
+		scopeCurator		= 1;											/// makes the lamp visible in Zeus
+		displayName			= "Magic Triangle";									/// displayed in Editor
+		model				= QPATHTOF(data\triangle_filler.p3d);	/// simple path to model
+		hiddenSelections[] = {"camo"}; /// what selection in model could have different textures
+		hiddenSelectionsTextures[] = {"\a3\missions_f_aow\data\img\textures\grass\grass_01_co.paa"}; /// what texture is going to be used
+
+		armor				= 5000;	/// just some protection against missiles, collisions and explosions
+
+		class Hitpoints {};
+		class AnimationSources {
+			class Corner_1_UD_source
+			{
+				source = user; // "user" = custom source = not controlled by some engine value
+				initPhase = 0; // Initial value of animations based on this source
+				animPeriod = 1; // Coefficient for duration of change of this animation
+				sound = "GenericDoorsSound"; /// Selects sound class from CfgAnimationSourceSounds that is going to be used for sounds of doors
+			};
+			class Corner_1_LR_source
+			{
+				source = user; // "user" = custom source = not controlled by some engine value
+				initPhase = 0; // Initial value of animations based on this source
+				animPeriod = 1; // Coefficient for duration of change of this animation
+				sound = "GenericDoorsSound"; /// Selects sound class from CfgAnimationSourceSounds that is going to be used for sounds of doors
+			};
+			class Corner_1_FB_source
+			{
+				source = user; // "user" = custom source = not controlled by some engine value
+				initPhase = 0; // Initial value of animations based on this source
+				animPeriod = 1; // Coefficient for duration of change of this animation
+				sound = "GenericDoorsSound"; /// Selects sound class from CfgAnimationSourceSounds that is going to be used for sounds of doors
+			};
+			class Corner_2_UD_source
+			{
+				source = user; // "user" = custom source = not controlled by some engine value
+				initPhase = 0; // Initial value of animations based on this source
+				animPeriod = 1; // Coefficient for duration of change of this animation
+				sound = "GenericDoorsSound"; /// Selects sound class from CfgAnimationSourceSounds that is going to be used for sounds of doors
+			};
+			class Corner_2_LR_source
+			{
+				source = user; // "user" = custom source = not controlled by some engine value
+				initPhase = 0; // Initial value of animations based on this source
+				animPeriod = 1; // Coefficient for duration of change of this animation
+				sound = "GenericDoorsSound"; /// Selects sound class from CfgAnimationSourceSounds that is going to be used for sounds of doors
+			};
+			class Corner_2_FB_source
+			{
+				source = user; // "user" = custom source = not controlled by some engine value
+				initPhase = 0; // Initial value of animations based on this source
+				animPeriod = 1; // Coefficient for duration of change of this animation
+				sound = "GenericDoorsSound"; /// Selects sound class from CfgAnimationSourceSounds that is going to be used for sounds of doors
+			};
+			class Corner_3_UD_source
+			{
+				source = user; // "user" = custom source = not controlled by some engine value
+				initPhase = 0; // Initial value of animations based on this source
+				animPeriod = 1; // Coefficient for duration of change of this animation
+				sound = "GenericDoorsSound"; /// Selects sound class from CfgAnimationSourceSounds that is going to be used for sounds of doors
+			};
+			class Corner_3_LR_source
+			{
+				source = user; // "user" = custom source = not controlled by some engine value
+				initPhase = 0; // Initial value of animations based on this source
+				animPeriod = 1; // Coefficient for duration of change of this animation
+				sound = "GenericDoorsSound"; /// Selects sound class from CfgAnimationSourceSounds that is going to be used for sounds of doors
+			};
+			class Corner_3_LR_source_FB_source
+			{
+				source = user; // "user" = custom source = not controlled by some engine value
+				initPhase = 0; // Initial value of animations based on this source
+				animPeriod = 1; // Coefficient for duration of change of this animation
+				sound = "GenericDoorsSound"; /// Selects sound class from CfgAnimationSourceSounds that is going to be used for sounds of doors
+			};
+		};
+	};
+
+    class GRAD_trenches_triangleLarge_filler: GRAD_trenches_triangle_filler
+	{
+		displayName			= "Magic Triangle (larger anim range)";									/// displayed in Editor
+		model				= QPATHTOF(data\trinagleLarge_filler.p3d);	/// simple path to model
+		hiddenSelections[] = {"camo"}; /// what selection in model could have different textures
+		hiddenSelectionsTextures[] = {"\a3\missions_f_aow\data\img\textures\grass\grass_01_co.paa"}; /// what texture is going to be used
+
+	};
 };

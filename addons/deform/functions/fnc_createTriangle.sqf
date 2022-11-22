@@ -17,42 +17,28 @@
  * Public: No
  */
 
-
-
-
-//TODO when reworking this function use setObjectScale to scale the boundingbox according to the largest side of the triangle 
-
-
-
-
+//TODO when reworking this function use setObjectScale to scale the boundingbox according to the largest side of the triangle
 
 
 //this procedure sorts the points so the object doesn't get turned inside out
 private _posAVG = ((_this # 0) vectorAdd ((_this # 1) vectorAdd (_this # 2))) vectorMultiply (1/3);
-
-
 
 _this = [_this, [_posAVG], {
 	private _diff = _x vectorDiff _input0;
 	_diff # 1 atan2 _diff # 0
 }, "DESCEND"] call BIS_fnc_sortBy;
 
-
-
-
 params ["_pos1", "_pos2", "_pos3"];
 
-
-private _triangleClass = "Triangle";
+private _triangleClass = "GRAD_trenches_triangle_filler";
 
 private _cellsize = getTerrainInfo#2;
 if (_cellsize > 5) then {
-	_triangleClass = "TriangleLarge";
+	_triangleClass = "GRAD_trenches_triangleLarge_filler";
 };
 
-
 private _triangleObject = createVehicle [_triangleClass, ASLtoAGL _pos1,  [], 0, "CAN_COLLIDE"];
-_triangleObject setvectordirandup [[0,1,0], [0,0,1]];
+_triangleObject setVectorDirandUp [[0,1,0], [0,0,1]];
 
 private _pos2Diff = _pos2 vectorDiff (_triangleObject modelToWorldWorld (_triangleObject selectionPosition ["Corner_2_Pos", "Memory"]));
 _triangleObject animate ["Corner_2_LR", _pos2Diff # 0, true];
@@ -65,11 +51,4 @@ _triangleObject animate ["Corner_3_LR", _pos3Diff # 0, true];
 _triangleObject animate ["Corner_3_FB", _pos3Diff # 1, true];
 _triangleObject animate ["Corner_3_UD", _pos3Diff # 2, true];
 
-
-_triangleObject;
-
-
-//c setpos (_triangleObject modelToWorld (_triangleObject selectionPosition ["Corner_3_Pos", "Memory"]));
-
-
-//_triangleObject animate [Corner_3_LR, 1]
+_triangleObject

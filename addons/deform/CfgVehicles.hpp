@@ -52,7 +52,7 @@ class CfgVehicles {
             class ACE_Equipment {
                 class ace_trenches {
                     class ace_trenches_digEnvelopefightinghole {
-                        displayName = CSTRING(DigEnvelopefightinghole);
+                        displayName = CSTRING(DigEnvelopeFightingHole);
                         exceptions[] = {};
                         showDisabled = 0;
                         priority = 4;

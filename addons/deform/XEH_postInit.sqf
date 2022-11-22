@@ -7,3 +7,5 @@ if (isServer) then {
 if (hasInterface) then {
     [QGVAR(continueDeformingTrench), {_this call FUNC(continueDeformingTrench);}] call CBA_fnc_addEventHandler;
 };
+
+GVAR(coveredTrenchList) = [];

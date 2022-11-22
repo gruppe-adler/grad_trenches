@@ -10,7 +10,7 @@
  * either "done" or "open corner" if a trench network that is not setup correctly was passed <STRING>
  *
  * Example:
- * [[_tronch1]] call ELD_magicTriangle_scripts_fnc_initTrench;
+ * [[_tronch1]] call grad_trenches_deform_fnc_fullyInitTrenchesWithIntersect;
  *
  * Public: No
  */
@@ -21,8 +21,7 @@ params ["_trenches"];
 
 (([_trenches] call FUNC(getConfigInfo)) call FUNC(analyseOC)) params ["_blFromConfig", "_tftFromConfig", "_leftOverOC"];
 
-
-if ((count _leftOverOC) > 0) exitwith {"open corner"}; // stop if open corner
+if ((count _leftOverOC) > 0) exitwith {systemChat "open corner"}; // stop if open corner
 
 private _pointsToModify = [_trenches] call FUNC(makeManyHole);
 private _terrainLines = [_pointsToModify] call FUNC(getTerrainlines);
@@ -92,7 +91,6 @@ private _trianglesToDelete = [];
 			_deleteThisTriangle = _deleteThisTriangle || (_x inPolygon _thisTrianglePos);
 		} forEach _bpFromConfig3d;
 
-
 		if (!_deleteThisTriangle) then {
 			//this is probably expensive processing wise but it only gets run once per triangle
 			//ellipse check cause i can't think of anything cheaper that makes sense
@@ -123,7 +121,6 @@ private _trianglesToDelete = [];
 				if (_deleteThisTriangle) then {break;};
 			} forEach _bpFromConfig3d;
 		};
-
 
 		if (_deleteThisTriangle) then {
 			_deletedTriangles append [_thisTrianglePos];
@@ -218,13 +215,15 @@ private _cellsize = getTerrainInfo#2;
 	_positionsAndHeights append [_newPosAndHeight];
 } foreach (_PTMForList - _PTMForListToNotLower);
 
-
-
-
 private _trianglesPositionsAndObjects = [_blFromConfig, _terrainLines, _tftFromConfig] call FUNC(createTrianglesToHole);
+
+[_trianglesPositionsAndObjects] call FUNC(replaceClutter);
+
 setTerrainHeight [_positionsAndHeights, false];
 
-{deleteVehicle _x;} foreach _trianglesToDelete;
+{
+    deleteVehicle _x;
+} foreach _trianglesToDelete;
 
 private _trenchPoints = [];
 {
