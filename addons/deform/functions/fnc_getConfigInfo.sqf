@@ -31,7 +31,6 @@ private _ocFromConfig = [];
 	private _blNames = getArray ((configOf _thisTrench) >> QEGVAR(assets,borderLines));
 	private _blPositions = [];
 	{
-        diag_log str _x;
 		private _thisblCoords = [_thisTrench modelToWorldWorld (_thisTrench selectionPosition [_x # 0, "Memory"]), _thisTrench modelToWorldWorld (_thisTrench selectionPosition [_x # 1, "Memory"])];
 		_blPositions append [_thisblCoords];
 	} foreach _blNames;

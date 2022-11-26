@@ -114,8 +114,10 @@ if (_actualProgress == 0) then {
 
     private _newProgress = _actualProgress + (_diggerCount / _digTime);
 
-    [_trench, _newProgress, 1.5] call EFUNC(common,setTrenchProgress); // Not too fast so animation is still visible
-    [_trench, _newProgress, 1.5, "drop", [configOf _trench >> QGVAR(offset1), "NUMBER", 2] call CBA_fnc_getConfigEntry] call EFUNC(common,setTrenchProgress); // Not too fast so animation is still visible
+    // Animate trench & save progress in object
+    [_trench, _newProgress, 1.5] call EFUNC(common,setTrenchProgress);
+    [_trench, _newProgress, 1.5, "drop", [configOf _trench >> QEGVAR(common,offset1), "NUMBER", 2] call CBA_fnc_getConfigEntry] call EFUNC(common,setTrenchProgress);
+
     [QEGVAR(common,applyFatigue), [_trench, _unit], _unit] call CBA_fnc_targetEvent;
 
     // Show special effects

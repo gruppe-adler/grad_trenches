@@ -25,17 +25,49 @@
             <English>Removal time (s) for fighting hole</English>
             <German>Zeit (s) um kleine Kampfloch zu entfernen</German>
         </Key>
-        <Key ID="STR_GRAD_Trenches_legacy_allowFightingHoleEnvelope_tooltip">
+        <Key ID="STR_GRAD_Trenches_deform_allowFightingHoleEnvelope_tooltip">
             <English>Allow digging of small envelope trenches</English>
             <German>Erlaube das Graben von Kampfloch Gräben</German>
         </Key>
-        <Key ID="STR_GRAD_Trenches_legacy_fightingHoleEnvelopeDigTime">
+        <Key ID="STR_GRAD_Trenches_deform_fightingHoleEnvelopeDigTime">
             <English>Dig time (s) for fighting hole trenches</English>
             <German>Zeit (s) um Kampflochn zu graben</German>
         </Key>
-        <Key ID="STR_GRAD_Trenches_legacy_fightingHoleEnvelopeRemovalTime">
+        <Key ID="STR_GRAD_Trenches_deform_fightingHoleEnvelopeRemovalTime">
             <English>Removal time (s) for fighting hole trenches.</English>
             <German>Zeit (s) um Kampfloch zu entfernen.</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_deform_ContinueDiggingTrench">
+            <English>Continue Digging Trench</English>
+            <Polish>Wzów kopanie okopu</Polish>
+            <Portuguese>Continuar cavando trincheira</Portuguese>
+            <French>Poursuivre l'excavation de la tranchée</French>
+            <Russian>Продолжить копание окопа</Russian>
+            <Czech>Pokračovat v kopání</Czech>
+            <Japanese>塹壕を掘りつづける</Japanese>
+            <German>Graben fortsetzen</German>
+            <Korean>계속해서 참호파기</Korean>
+            <Italian>Continuando a Scavare la Trincea</Italian>
+            <Chinesesimp>继续挖掘掩体</Chinesesimp>
+            <Chinese>繼續蓋掩體</Chinese>
+            <Turkish>Kazmaya Devam Et</Turkish>
+            <Spanish>Continuar cavando trinchera</Spanish>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_deform_RemoveEnvelope">
+            <English>Remove Trench</English>
+            <Polish>Usuń wnękę</Polish>
+            <Portuguese>Remover trincheira</Portuguese>
+            <French>Retirer la tranchée</French>
+            <Russian>Убрать окоп</Russian>
+            <Czech>Odstranit zákop</Czech>
+            <Japanese>塹壕を消す</Japanese>
+            <German>Schützengraben entfernen</German>
+            <Korean>참호 제거</Korean>
+            <Italian>Rimuovi Trincea</Italian>
+            <Chinesesimp>移除掩体</Chinesesimp>
+            <Chinese>移除掩體</Chinese>
+            <Turkish>Siperi Kaldır</Turkish>
+            <Spanish>Eliminar trinchera</Spanish>
         </Key>
     </Package>
 </Project>

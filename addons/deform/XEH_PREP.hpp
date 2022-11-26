@@ -7,6 +7,7 @@ PREP(createTrench);
 PREP(createTriangle);
 PREP(createTrianglesToHole);
 PREP(deformAndCoverTerrain);
+PREP(findPositionsInTriangle);
 PREP(getConfigInfo);
 PREP(getTerrainlines);
 PREP(handleKilled);

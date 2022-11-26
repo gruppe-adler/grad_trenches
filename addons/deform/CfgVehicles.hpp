@@ -1,13 +1,16 @@
 #define TRENCHES_ACTIONS class ACE_Actions { \
         class ACE_MainActions { \
             distance = 10; \
-            position = "[0,0,3.3]"; \
-            class ACE_ContinueDiggingTrench { \
+            class GVAR(ContinueDiggingTrench) { \
+                displayName = CSTRING(ContinueDiggingTrench); \
+                condition = QUOTE([ARR_2(_target,_player)] call ace_trenches_fnc_canContinueDiggingTrench); \
                 statement = QUOTE([ARR_3(_target,_player,true)] call FUNC(continueDiggingTrench);); \
                 distance = 10; \
             }; \
-            class ACE_RemoveTrench { \
-                statement = QUOTE([ARR_3(_target,_player,true)] call EFUNC(common,removeTrench);); \
+            class GVAR(RemoveTrench) { \
+                displayName = CSTRING(RemoveEnvelope); \
+                condition = QUOTE([ARR_2(_target,_player)] call ace_trenches_fnc_canRemoveTrench); \
+                statement = QUOTE([ARR_3(_target,_player,true)] call FUNC(removeDeformTrench);); \
                 distance = 10; \
              };  \
             class GVAR(helpDigging) { \
@@ -17,31 +20,6 @@
                 priority = -1; \
                 distance = 10; \
             }; \
-            class GVAR(placeCamouflage) { \
-                displayName = ECSTRING(common,placeCamouflage); \
-                condition = QUOTE([ARR_2(_target,_player)] call EFUNC(common,canPlaceCamouflage)); \
-                statement = QUOTE([ARR_2(_target,_player)] call EFUNC(common,placeCamouflage)); \
-                priority = -1; \
-                distance = 10; \
-            }; \
-            class GVAR(removeCamouflage) { \
-                displayName = ECSTRING(common,removeCamouflage); \
-                condition = QUOTE([_target] call EFUNC(common,canRemoveCamouflage)); \
-                statement = QUOTE([ARR_2(_target,_player)] call EFUNC(common,removeCamouflage)); \
-                priority = -1; \
-                distance = 10; \
-            }; \
-        }; \
-    }
-
-#define TRENCHES_ATTRIBUTES class Attributes { \
-        class GVAR(camouflageAttribute) { \
-            control = "CheckboxNumber"; \
-            defaultValue = "0"; \
-            displayName = ECSTRING(common,CamouflageAttribute); \
-            tooltip = ECSTRING(common,CamouflageAttributeTooltip); \
-            expression = QUOTE([ARR_2(_this,_value)] call EFUNC(common,applyCamouflageAttribute)); \
-            property = QUOTE(grad_trenches_camouflageTrench); \
         }; \
     }
 
@@ -76,8 +54,8 @@ class CfgVehicles {
         GVAR(isTrench) = 1;
         ace_trenches_diggingDuration = QGVAR(FightingHoleEnvelopeDigTime);
         ace_trenches_removalDuration = QGVAR(FightingHoleEnvelopeRemovalTime);
-        GVAR(offset) = -0.4;
-        GVAR(offset1) = 1.22;
+        EGVAR(common,offset) = -0.4;
+        EGVAR(common,offset1) = 1.22;
         GVAR(depth) = 1.5;
         GVAR(placementData)[] = {10,2,-0.01};
         GVAR(grassCuttingPoints)[] = {{-1.5,-1,0},{1.5,-1,0}};
@@ -98,10 +76,9 @@ class CfgVehicles {
         class CamouflagePositions2 {};
 
         class ACE_MainActions {
-            position = "[0,-2,3.5]";
+            position = "[0,0,3.5]";
         };
 
         TRENCHES_ACTIONS;
-        TRENCHES_ATTRIBUTES;
     };
 };

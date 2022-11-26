@@ -31,7 +31,7 @@ private _trench = createSimpleObject [_trenchClass, [0, 0, 0], true];
 GVAR(trench) = _trench;
 
 // Make dug out wall visible for choosing position
-private _offset = [configOf _trench >> QGVAR(offset), "NUMBER", 2] call CBA_fnc_getConfigEntry;
+private _offset = [configOf _trench >> QEGVAR(common,offset1), "NUMBER", 2] call CBA_fnc_getConfigEntry;
 _trench animateSource ["rise", _offset, true];
 
 // Prevent collisions with trench
