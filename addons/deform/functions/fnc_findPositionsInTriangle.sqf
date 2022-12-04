@@ -15,20 +15,31 @@
  * Public: No
  */
 
-params ["_posA", "_posB", "_posC", "_amount", "_area", "_spacing"];
+params ["_lastPos", "_amount", "_spacing", "_posA", "_posB", "_middlePos", ["_oldReturn", []]];
 
-private _lastPos = _posA;
 private _return = [];
-for "_i" from 1 to _amount do {
-    private _check = true;
-    while {_check} do {
-        private _newPos = _lastPos getPos [_spacing, random 360];
-        if (_newPos inPolygon [_posA, _posB, _posC]) then {
-            _check = false;
-            _return pushBack _newPos;
-            _lastPos = _newPos;
-        };
-    };
+private _returnCheck = _oldReturn;
+
+ for "_i" from 1 to (_amount * 2)  do {
+	for "_o" from 1 to 15 do {
+		private _newPos = _lastPos getPos [_spacing, ((_dir + (random 360)) mod 360)];
+		private _checkDistance = _returnCheck select {(_x distance _newPos) < _spacing};
+
+		if (
+			(_newPos inPolygon [_posA, _posB, _middlePos]) &&
+			{_checkDistance isEqualTo []} &&
+			{!((_newPos distance _posA) < _spacing)}
+		) exitWith {
+			_return pushBack _newPos;
+			_returnCheck pushBack _newPos;
+			_lastPos = _newPos;
+		};
+	};
 };
 
-_return
+if (_return isNotEqualTo []) then {
+	_return = _return call BIS_fnc_arrayShuffle;
+	_return deleteRange [4, count _return];
+};
+
+_return + _oldReturn

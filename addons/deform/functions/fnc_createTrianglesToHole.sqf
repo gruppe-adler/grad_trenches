@@ -104,7 +104,6 @@ private _possibleStartSides = [];
 
 //part of experimental ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 private _trenchPoints = [];
-
 {
 	_trenchPoints pushBackUnique (_x # 0);
 	_trenchPoints pushBackUnique (_x # 1);
@@ -117,15 +116,32 @@ while {_running} do {
 	// repeatable block start
 	private _newPossibleStartSides = [];
 	{
-		private _possibleTriangles = [];
+
 		private _thisPSS = + _x;
 		private _line = _thisPSS # 0;
 		private _extraPoint = _thisPSS # 1;
+
+		private _startPointsSorted = (_terrainPoints + _trenchPoints);
+
+		private _startPointsSorted = [_startPointsSorted, [_line, (_line # 0) distance2D (_line # 1)], {
+			private _sa = _input1;
+			private _sb = (_input0 # 1) distance2D (_x);
+			private _sc = (_x) distance2D (_input0 # 0);
+			if (_sa == 0 || _sb == 0 || _sc == 0) then {
+				0;
+			} else {
+				selectMin [acos (((_sb ^ 2) + (_sc ^ 2) - (_sa ^ 2)) / (2 * _sb * _sc)), acos (((_sa ^ 2) + (_sc ^ 2) - (_sb ^ 2)) / (2 * _sa * _sc)), acos (((_sa ^ 2) + (_sb ^ 2) - (_sc ^ 2)) / (2 * _sa * _sb))];
+			};
+		}, "DESCEND"] call BIS_fnc_sortBy;
+
+		private _finaltriangle = [];
+
 		{
-			//first check, does it go backwards into what it came from?
 			if ([_x, _extraPoint, _line #0, _line #1] call FUNC(sameSide)) then {
 				continue;
 			};
+
+
 
 			private _thisPT = [_line #0, _line #1, _x];  // _thisPossibleTriangle
 			private _sides = [[_thisPT # 0, _thisPT # 1], [_thisPT # 1, _thisPT # 2], [_thisPT # 2, _thisPT # 0]];
@@ -146,6 +162,7 @@ while {_running} do {
 				continue;
 			};
 
+
 			// check if triangle is extremely flat
 			private _sa = (_thisPT # 0) distance2D (_thisPT # 1);
 			private _sb = (_thisPT # 1) distance2D (_thisPT # 2);
@@ -157,7 +174,9 @@ while {_running} do {
 				continue;
 			};
 
+
 			//part of experimental ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 			{	//check if any terrain or trench points are in the triangle
 
 				if ((!(_x in _thisPT)) && (_x inPolygon _thisPT)) then {
@@ -170,6 +189,7 @@ while {_running} do {
 			if (!_allowed) then {
 				continue;
 			};
+
 
 			{ // check if triangle intersects terrain lines
 				if (([_x # 0, _extraPoint, _line #0, _line #1] call FUNC(sameSide)) && {[_x # 1, _extraPoint, _line #0, _line #1] call FUNC(sameSide)}) then {
@@ -188,11 +208,14 @@ while {_running} do {
 				};
 			} foreach _terrainLines;
 
+
 			if (!_allowed) then {
 				continue;
 			};
 
+
 			// check if one side of the triangle covers 2 terrainlines at once.   added to fix a very specific bug.
+
 			private _p1 = [(_thisPT # 1 # 0 + _thisPT # 2 # 0)/2, (_thisPT # 1 # 1 + _thisPT # 2 # 1)/2];
 			private _p2 = [(_thisPT # 0 # 0 + _thisPT # 2 # 0)/2, (_thisPT # 0 # 1 + _thisPT # 2 # 1)/2];
 			private _p3 = [(_thisPT # 0 # 0 + _thisPT # 1 # 0)/2, (_thisPT # 0 # 1 + _thisPT # 1 # 1)/2];
@@ -205,23 +228,21 @@ while {_running} do {
 				};
 			} foreach _terrainPoints;
 
+
 			if (!_allowed) then {
 				continue;
 			};
 
 			{ //check if triangle intersects any other triangle (overused and probably expensive)
-				// l = l + 1;
-
 				if ((([_x # 0, _extraPoint, _line #0, _line #1] call FUNC(sameSide)) && {[_x # 1, _extraPoint, _line #0, _line #1] call FUNC(sameSide)}) && {[_x # 2, _extraPoint, _line #0, _line #1] call FUNC(sameSide)}) then {
 					continue;
 				};
-				// h = h + 1;
 
 				if ([_thisPT, _x] call FUNC(triangleIntersect)) then {
 					_allowed = false;
 					break;
 				};
-			} foreach _triangles;// + _trenchFillingTriangles;// no longer necessary
+			} foreach _triangles;
 
 
 			if (!_allowed) then {
@@ -229,24 +250,15 @@ while {_running} do {
 			};
 
 			if (_allowed) then {
-				_possibleTriangles append [_thisPT];
+				_finaltriangle = _thisPT;
+				break;
 			};
 
-		} foreach (_terrainPoints + _trenchPoints); //experimental thing here --------------------------------------------------------------------------------------------------------------------------------------------------
+		} foreach _startPointsSorted; //experimental thing here --------------------------------------------------------------------------------------------------------------------------------------------------
 
-		if ((count _possibleTriangles) == 0) then {
+		if (_finaltriangle isEqualTo []) then {
 			continue;
 		};
-
-		private _possibleTrianglesSorted = [_possibleTriangles, [], {
-			private _sa = (_x # 0) distance2D (_x # 1);
-			private _sb = (_x # 1) distance2D (_x # 2);
-			private _sc = (_x # 2) distance2D (_x # 0);
-			selectMin [acos (((_sb ^ 2) + (_sc ^ 2) - (_sa ^ 2)) / (2 * _sb * _sc)), acos (((_sa ^ 2) + (_sc ^ 2) - (_sb ^ 2)) / (2 * _sa * _sc)), acos (((_sa ^ 2) + (_sb ^ 2) - (_sc ^ 2)) / (2 * _sa * _sb))];
-		}, "DESCEND"] call BIS_fnc_sortBy;
-
-		private _finaltriangle = _possibleTrianglesSorted # 0;
-		//_finaltrianglestill in format [_line #0, _line #1, thirdpoint];
 
 		private _sides = [[_finalTriangle # 0, _finalTriangle # 1], [_finalTriangle # 1, _finalTriangle # 2], [_finalTriangle # 2, _finalTriangle # 0]];
 		{_x sort true} foreach _sides;
@@ -290,8 +302,8 @@ private _trianglesPositionsAndObjects = [];
 
 {
 	private _obj = _x call FUNC(createTriangle);
-	_obj setObjectTextureGlobal [0, surfaceTexture getPos _obj];
+	_obj setObjectTextureGlobal [0, surfaceTexture getpos _obj];
 	_trianglesPositionsAndObjects append [[_x, _obj]]
 } foreach _triangles;
 
-_trianglesPositionsAndObjects
+_trianglesPositionsAndObjects;

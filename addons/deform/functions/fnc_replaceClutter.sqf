@@ -50,43 +50,47 @@ params ["_trianglesPositionsAndObjects"];
     // Get amount and positions
     private _density = getNumber (configfile >> "CfgWorlds" >> worldname >> "clutterGrid");
     private _amount = floor (_area/_density);
-    private _posArray = [_posA, _posB, _posC, _amount, _area, (_lengthA max _lengthB max _lengthC)/_amount] call FUNC(findPositionsInTriangle);
+    private _spacing = (_lengthA max _lengthB max _lengthC)/_amount;
 
+    private _middlePos = _posB vectorAdd ((_posC vectorDiff _posB) vectorMultiply 0.5);
+    private _dir = _posA getDir _posB;
 
-    GRAD_CLUTTER = [];
-    diag_log format ["Pos Array Count: %1", count _posArray];
+    private _posArray = [_posA, _amount, _spacing, _posA, _posB, _middlePos] call FUNC(findPositionsInTriangle);
+    _posArray = [_posA, _amount, _spacing, _posA, _posC, _middlePos, _posArray] call FUNC(findPositionsInTriangle);
+
     // Populate the triangle with clutter
-    for "_i" from 1 to _amount do {
+    {
         private _num = ((floor random 100) +1)/100;
-        private _attachPos = _trinagleObject worldToModelVisual(_posArray select _i);
+        private _attachPos = _trinagleObject worldToModelVisual _x;
 
-        if (!isNil "_attachPos") then {
-            {
-                _num = _num -_x;
+        {
+            _num = _num -_x;
 
-                if (_num <= 0) exitWith {
-                    private _type = _clutterObjectsType select _forEachIndex;
-                    private _clutter = createSimpleObject [getText (configfile >> "CfgWorlds" >> worldname>> "Clutter" >> _type >> "model"), [0,0,0], false];
+            if (_num <= 0) exitWith {
+                private _type = _clutterObjectsType select _forEachIndex;
+                private _clutter = createSimpleObject [getText (configfile >> "CfgWorlds" >> worldname>> "Clutter" >> _type >> "model"), [0,0,0], false];
 
-                    private _scaleMax = getNumber (configfile >> "CfgWorlds" >> worldname >> "Clutter" >> _type >> "scaleMax");
-                    private _scaleMin = getNumber (configfile >> "CfgWorlds" >> worldname >> "Clutter" >> _type >> "scaleMin");
+                private _scaleMax = getNumber (configfile >> "CfgWorlds" >> worldname >> "Clutter" >> _type >> "scaleMax");
+                private _scaleMin = getNumber (configfile >> "CfgWorlds" >> worldname >> "Clutter" >> _type >> "scaleMin");
 
-                    private _scale = linearConversion [
-                        0,
-                        1,
-                        (random 1),
-                        _scaleMin,
-                        _scaleMax,
-                        true
-                    ];
+                private _scale = linearConversion [
+                    0,
+                    1,
+                    (random 1),
+                    _scaleMin,
+                    _scaleMax,
+                    true
+                ];
 
-                    _clutter setObjectScale _scale;
-                    _clutter attachTo [_trinagleObject, _attachPos];
-                    _clutter setVectorDirAndUp [_vectorDir, _vectorUp];
+                _clutter setObjectScale _scale;
+                _clutter attachTo [_trinagleObject, _attachPos];
+                _clutter setVectorDirAndUp [_vectorDir, _vectorUp];
 
-                    GRAD_CLUTTER pushBack _clutter;
-                };
-            }forEach _clutterProbability;
-        } else { diag_log format ["GRAD Clutter, no pos found, Index: %1, Value: %2", _i, _posArray select _i]};
-    };
+                //Add check if clutter is in contact with triangle
+                //private _clutterPos = getPosASL _clutter;
+                //private _intersects = lineIntersectsWith [_clutterPos, (_clutterPos vectorAdd [0,0,-0.25]), _clutter, objNull, false];
+
+            };
+        }forEach _clutterProbability;
+    }forEach _posArray;
 }forEach _trianglesPositionsAndObjects;
