@@ -40,5 +40,9 @@ TRACE_2("Surface",_surfaceType,_surfaceDust);
 if (isNumber (_config >> "ACE_canDig")) then {
     (getNumber (_config >> "ACE_canDig")) == 1 // Return
 } else {
-    !(_surfaceType in DIG_SURFACE_BLACKLIST) && {(_surfaceDust >= 0.1) || {_surfaceType in DIG_SURFACE_WHITELIST}} // Return
+    if (!isNil "ace_common_canDigSurfaces") then {
+        ace_common_canDigSurfaces getOrDefault [_surfaceType, (_surfaceDust >= 0.1), true] // return (new ace)
+    } else {
+        !(_surfaceType in DIG_SURFACE_BLACKLIST) && {(_surfaceDust >= 0.1) || {_surfaceType in DIG_SURFACE_WHITELIST}} // Return (old ace)
+    };
 };
