@@ -102,8 +102,8 @@ class CfgVehicles {
         model = QPATHTOF(data\trench_fightinghole.p3d);
         hiddenSelections[] = {"texture_01", "texture_02", "texture_03", "texture_04"};
         hiddenSelectionsTextures[] = {"x\grad_trenches\addons\assets\data\zemlia.paa", "x\grad_trenches\addons\assets\data\zemlia.paa", "x\grad_trenches\addons\assets\data\zemlia.paa", "x\grad_trenches\addons\assets\data\zemlia.paa"};
-        GVAR(borderLines)[] = {{corner_1_1, corner_1_2}, {corner_1_2, corner_2_2}, {corner_2_2, corner_2_1},{corner_2_1, corner_1_1}};
-        GVAR(fillingTriangles)[] = {{corner_1_1, corner_1_2, corner_2_1}, {corner_1_2, corner_2_2, corner_2_1}};
+        GVAR(borderLines)[] = {{"p1", "p2"}, {"p2", "p3"}, {"p3", "p4"}, {"p4", "p5"}, {"p5", "p6"}, {"p6", "p1"}};
+        GVAR(fillingTriangles)[] = {{"p1", "p2", "p3"}, {"p1", "p3", "p4"}, {"p1", "p4", "p5"}, {"p1", "p5", "p6"}};
         GVAR(openCorners)[] = {};
         //editorPreview = QPATHTOF(data\trench_fightinghole.paa);
 

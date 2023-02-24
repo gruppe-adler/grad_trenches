@@ -160,13 +160,6 @@ private _trianglesToDelete = [];
 	} foreach _terrainLines;
 	_terrainLines = _terrainLinesNew;
 
-	//unsure about this part
-	//_terrainLines = _terrainLines + _openLines;
-	/*
-	{
-		_terrainLines pushBackUnique _x;
-	} foreach _openLines;*/
-
 	{_x sort true} foreach _terrainLines;
 
 	// getTerrainHeight is inaccurate and returns slightly different results after a neighboring point has been modified. here i am overriding the z value of places that have been measured before with the old value to prevent them being seen as seperate points
@@ -203,7 +196,6 @@ private _trianglesToDelete = [];
 //remember to redo below this point EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE is done
 
 
-
 private _positionsAndHeights = [];
 
 private _cellsize = getTerrainInfo#2;
@@ -216,7 +208,6 @@ private _cellsize = getTerrainInfo#2;
 } foreach (_PTMForList - _PTMForListToNotLower);
 
 private _trianglesPositionsAndObjects = [_blFromConfig, _terrainLines, _tftFromConfig] call FUNC(createTrianglesToHole);
-
 [_trianglesPositionsAndObjects] call FUNC(replaceClutter);
 
 setTerrainHeight [_positionsAndHeights, false];

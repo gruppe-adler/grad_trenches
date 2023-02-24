@@ -36,6 +36,10 @@ params ["_trianglesPositionsAndObjects"];
         _surfaceType = _str joinString "";
     };
 
+createVehicle ["Sign_Arrow_Cyan_F", (_posA vectorAdd [0,0,0.01]),  [], 0, "CAN_COLLIDE"];
+createVehicle ["Sign_Arrow_Blue_F", (_posB vectorAdd [0,0,0.01]),  [], 0, "CAN_COLLIDE"];
+createVehicle ["Sign_Arrow_F", (_posC vectorAdd [0,0,0.01]),  [], 0, "CAN_COLLIDE"];
+
     // Get clutter objects type and probability
     private _clutterCharacter = getText (configfile >> "CfgSurfaces" >> _surfaceType >> "character");
     private _clutterObjectsType = getArray (configfile >> "CfgSurfaceCharacters" >> _clutterCharacter >> "names");
@@ -49,7 +53,7 @@ params ["_trianglesPositionsAndObjects"];
 
     // Get amount and positions
     private _density = getNumber (configfile >> "CfgWorlds" >> worldname >> "clutterGrid");
-    private _amount = floor (_area/_density);
+    private _amount = (floor (_area/_density)) max 1;
     private _spacing = (_lengthA max _lengthB max _lengthC)/_amount;
 
     private _middlePos = _posB vectorAdd ((_posC vectorDiff _posB) vectorMultiply 0.5);
@@ -63,6 +67,12 @@ params ["_trianglesPositionsAndObjects"];
         private _num = ((floor random 100) +1)/100;
         private _attachPos = _trinagleObject worldToModelVisual _x;
 
+
+	    createVehicle ["Sign_Arrow_Pink_F", _x,  [], 0, "CAN_COLLIDE"];
+        createVehicle ["Sign_Arrow_F", _attachPos,  [], 0, "CAN_COLLIDE"];
+
+
+        /*
         {
             _num = _num -_x;
 
@@ -92,5 +102,6 @@ params ["_trianglesPositionsAndObjects"];
 
             };
         }forEach _clutterProbability;
+        */
     }forEach _posArray;
 }forEach _trianglesPositionsAndObjects;
