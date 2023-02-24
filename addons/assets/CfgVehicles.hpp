@@ -215,7 +215,7 @@ class CfgVehicles {
     class GRAD_trenches_triangleLarge_filler: GRAD_trenches_triangle_filler
 	{
 		displayName			= "Magic Triangle (larger anim range)";									/// displayed in Editor
-		model				= QPATHTOF(data\trinagleLarge_filler.p3d);	/// simple path to model
+		model				= QPATHTOF(data\triangleLarge_filler.p3d);	/// simple path to model
 		hiddenSelections[] = {"camo"}; /// what selection in model could have different textures
 		hiddenSelectionsTextures[] = {"\a3\missions_f_aow\data\img\textures\grass\grass_01_co.paa"}; /// what texture is going to be used
 

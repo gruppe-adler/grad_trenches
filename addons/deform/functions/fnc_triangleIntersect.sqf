@@ -2,7 +2,7 @@
 /*
  * Author: EL_D148L0
  * calculates whether the sides of two triangles cross each other in 2d space.
- * this is no longer an accurate check of trinagle intersection. triangle in triangle is not checked.
+ * this is no longer an accurate check of triangle intersection. triangle in triangle is not checked.
  * coincident sides should return false iirc.
  *
  * Arguments:

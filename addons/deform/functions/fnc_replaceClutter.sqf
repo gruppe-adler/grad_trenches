@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 /*
  * Author: Salbei
- * Replace clutter on trinagles
+ * Replace clutter on triangles
  *
  * Arguments:
  * 0: Array filled with the corners and object of the triangles <ARRAY>
@@ -18,13 +18,13 @@
 params ["_trianglesPositionsAndObjects"];
 
 {
-    _x params ["_trinaglePositions", "_trinagleObject"];
-    _trinaglePositions params ["_posA", "_posB", "_posC"];
+    _x params ["_trianglePositions", "_triangleObject"];
+    _trianglePositions params ["_posA", "_posB", "_posC"];
 
-    private _pos = getPos _trinagleObject;
-    private _dir = getDir _trinagleObject;
-    private _vectorDir = vectorDir _trinagleObject;
-    private _vectorUp = vectorUp _trinagleObject;
+    private _pos = getPos _triangleObject;
+    private _dir = getDir _triangleObject;
+    private _vectorDir = vectorDir _triangleObject;
+    private _vectorUp = vectorUp _triangleObject;
 
     private _surfaceType = surfaceType _pos;
 
@@ -65,7 +65,7 @@ createVehicle ["Sign_Arrow_F", (_posC vectorAdd [0,0,0.01]),  [], 0, "CAN_COLLID
     // Populate the triangle with clutter
     {
         private _num = ((floor random 100) +1)/100;
-        private _attachPos = _trinagleObject worldToModelVisual _x;
+        private _attachPos = _triangleObject worldToModelVisual _x;
 
 
 	    createVehicle ["Sign_Arrow_Pink_F", _x,  [], 0, "CAN_COLLIDE"];
@@ -93,7 +93,7 @@ createVehicle ["Sign_Arrow_F", (_posC vectorAdd [0,0,0.01]),  [], 0, "CAN_COLLID
                 ];
 
                 _clutter setObjectScale _scale;
-                _clutter attachTo [_trinagleObject, _attachPos];
+                _clutter attachTo [_triangleObject, _attachPos];
                 _clutter setVectorDirAndUp [_vectorDir, _vectorUp];
 
                 //Add check if clutter is in contact with triangle

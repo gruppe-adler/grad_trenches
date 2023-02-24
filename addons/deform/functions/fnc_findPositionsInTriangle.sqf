@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 /*
  * Author: Salbei
- * Replace clutter on trinagles
+ * Replace clutter on triangles
  *
  * Arguments:
  * 0: Array filled with the corners and object of the triangles <ARRAY>
