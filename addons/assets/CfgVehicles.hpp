@@ -123,6 +123,12 @@ class CfgVehicles {
             };
         };
     };
+    class GRAD_envelope_entrenchment: GRAD_envelope_fightinghole {
+        model = QPATHTOF(data\trench_entrenchment.p3d);
+        GVAR(borderLines)[] = {{"p1", "p2"}, {"p2", "p3"}, {"p4", "p5"}, {"p5", "p6"}};
+        GVAR(fillingTriangles)[] = {{"p1", "p2", "p3"}, {"p4", "p5", "p6"}};
+        GVAR(openCorners)[] = {{"p1", "p4"}, {"p3", "p6"}};
+    };
     /*
     class GRAD_trenches_peg: BagFence_base_F {
         model = QPATHTOF(data\peg.p3d);

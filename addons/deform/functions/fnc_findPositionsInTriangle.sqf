@@ -22,7 +22,7 @@ private _returnCheck = _oldReturn;
 
  for "_i" from 1 to (_amount * 2)  do {
 	for "_o" from 1 to 15 do {
-		private _newPos = _lastPos getPos [_spacing, ((_dir + (random 360)) mod 360)];
+		private _newPos = _lastPos getPos [(_spacing + (random 1)), ((_dir + (random 360)) mod 360)];
 		private _checkDistance = _returnCheck select {(_x distance _newPos) < _spacing};
 
 		if (

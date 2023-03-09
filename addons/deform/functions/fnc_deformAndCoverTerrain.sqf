@@ -208,7 +208,6 @@ private _cellsize = getTerrainInfo#2;
 } foreach (_PTMForList - _PTMForListToNotLower);
 
 private _trianglesPositionsAndObjects = [_blFromConfig, _terrainLines, _tftFromConfig] call FUNC(createTrianglesToHole);
-[_trianglesPositionsAndObjects] call FUNC(replaceClutter);
 
 setTerrainHeight [_positionsAndHeights, false];
 
@@ -250,3 +249,5 @@ private _thisTrenchListEntry = [
 ];
 
 GVAR(coveredTrenchList) append [_thisTrenchListEntry];
+
+[_trianglesPositionsAndObjects] call FUNC(replaceClutter);
