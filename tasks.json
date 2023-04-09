@@ -1,0 +1,11 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Generate XEH_PREP files",
+            "type": "shell",
+            "command": "python ${workspaceFolder}/x/ELD_magicTriangle/tools/create_prep.py",
+            "problemMatcher": []
+        }
+    ]
+}
