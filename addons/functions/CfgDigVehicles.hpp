@@ -6,7 +6,7 @@ class CfgDigVehicles {
         selection = "plow";
         plowRaised = 0;
         plowLowered = 0.9;
-        distanceToTrench = 3.35;
+        distanceToTrench = 3;
     };
 
     class B_T_APC_Tracked_01_CRV_F {
@@ -15,7 +15,7 @@ class CfgDigVehicles {
         selection = "plow";
         plowRaised = 0;
         plowLowered = 0.9;
-        distanceToTrench = 3.35;
+        distanceToTrench = 3;
     };
 
     class gm_ge_army_bpz2a0 {
@@ -24,7 +24,7 @@ class CfgDigVehicles {
         selection = "dozer_blade_elev";
         plowRaised = 0;
         plowLowered = .7;
-        distanceToTrench = 3.35;
+        distanceToTrench = 3;
     };
 
     class gm_dk_army_bpz2a0 {
@@ -33,6 +33,6 @@ class CfgDigVehicles {
         selection = "dozer_blade_elev";
         plowRaised = 0;
         plowLowered = .7;
-        distanceToTrench = 3.35;
+        distanceToTrench = 3;
     };
 };

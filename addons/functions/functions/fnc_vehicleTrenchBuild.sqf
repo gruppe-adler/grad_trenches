@@ -33,7 +33,10 @@ private _distanceToTrench = getNumber (_config >> "distanceToTrench");
         [_handle] call CBA_fnc_removePerFrameHandler;
     };
 
+    // hardcoded values, adjust if vehicle_trench.p3d changes!
     #define trenchHorizontalOffset -0.227
+    #define trenchVerticalOffset -2.25 
+    
     #define vehicleNotTiltedValue 0.99
 
     // save performance
@@ -59,7 +62,7 @@ private _distanceToTrench = getNumber (_config >> "distanceToTrench");
             [{
                 params ["_vehicle", "_trench", "_distanceToTrench"];
                 _trench setObjectTextureGlobal [0, surfaceTexture getPos _vehicle];
-                _trench attachTo [_vehicle, [trenchHorizontalOffset,_distanceToTrench,-5]];
+                _trench attachTo [_vehicle, [trenchHorizontalOffset,_distanceToTrench,trenchVerticalOffset]];
             }, [_vehicle, _trench, _distanceToTrench], 0.2] call CBA_fnc_waitAndExecute;
         };
 
