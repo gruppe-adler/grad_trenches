@@ -35,8 +35,8 @@ private _distanceToTrench = getNumber (_config >> "distanceToTrench");
 
     // hardcoded values, adjust if vehicle_trench.p3d changes!
     #define trenchHorizontalOffset -0.227
-    #define trenchVerticalOffset -2.25 
-    
+    #define trenchVerticalOffset -3.1 
+
     #define vehicleNotTiltedValue 0.99
 
     // save performance
