@@ -7,6 +7,7 @@
             <Russian>Маскировать окоп</Russian>
             <French>Placer le camouflage</French>
             <Chinesesimp>布置伪装网</Chinesesimp>
+            <Spanish>Colocar camuflaje</Spanish>
         </Key>
         <Key ID="STR_grad_trenches_functions_PlaceCamouflageProgress">
             <English>Placing camouflage...</English>
@@ -14,6 +15,7 @@
             <Russian>Маскирую окоп...</Russian>
             <French>Installation du camouflage...</French>
             <Chinesesimp>正在布置伪装网...</Chinesesimp>
+            <Spanish>Colocando camuflaje...</Spanish>
         </Key>
         <Key ID="STR_grad_trenches_functions_RemoveCamouflage">
             <English>Remove camouflage</English>
@@ -21,6 +23,7 @@
             <Russian>Убрать маскировку</Russian>
             <French>Enlever le camouflage</French>
             <Chinesesimp>移除伪装网</Chinesesimp>
+            <Spanish>Quitar camuflaje</Spanish>
         </Key>
         <Key ID="STR_grad_trenches_functions_RemoveCamouflageProgress">
             <English>Removing camouflage...</English>
@@ -28,6 +31,7 @@
             <Russian>Убираю маскировку окопа...</Russian>
             <French>Suppression du camouflage...</French>
             <Chinesesimp>正在移除伪装网...</Chinesesimp>
+            <Spanish>Quitando camuflaje...</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeGiantName">
             <English>Trench - Giant</English>
@@ -35,6 +39,7 @@
             <Russian>Окоп - Большой</Russian>
             <French>Tranchée - Grande (meurtrières)</French>
             <Chinesesimp>巨型掩体</Chinesesimp>
+            <Spanish>Trinchera - Gigante</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeGiantDescription">
             <English>Giant Personal Trench</English>
@@ -42,6 +47,7 @@
             <Russian>Большой окоп</Russian>
             <French>Grande tranchée avec meurtrières</French>
             <Chinesesimp>巨型掩体</Chinesesimp>
+            <Spanish>Trinchera Personal Gigante</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_DigEnvelopeGiant">
             <English>Dig Giant Trench</English>
@@ -49,6 +55,7 @@
             <Russian>Отрыть большой окоп</Russian>
             <French>Creuser une grande tranchée (meurtrières)</French>
             <Chinesesimp>挖巨型掩体</Chinesesimp>
+            <Spanish>Excavar Trinchera Gigante</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_CamouflageAttribute">
             <English>Apply camouflage</English>
@@ -56,6 +63,7 @@
             <Russian>Маскировать</Russian>
             <French>Appliquer le camouflage</French>
             <Chinesesimp>布置伪装网</Chinesesimp>
+            <Spanish>Aplicar camuflaje</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_CamouflageAttributeTooltip">
             <English>Apply camouflage to this trench</English>
@@ -63,6 +71,7 @@
             <Russian>Маскировать окоп</Russian>
             <French>Appliquer un camouflage à cette tranchée</French>
             <Chinesesimp>为该掩体布置伪装网</Chinesesimp>
+            <Spanish>Aplica camuflaje a esta trinchera</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeVehicleName">
             <English>Trench - Vehicle</English>
@@ -70,6 +79,7 @@
             <Russian>Окоп - Для техники</Russian>
             <French>Tranchée - Véhicule</French>
             <Chinesesimp>载具掩体</Chinesesimp>
+            <Spanish>Trinchera - Vehículo</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeVehicleDescription">
             <English>Vehicle Trench</English>
@@ -77,6 +87,7 @@
             <Russian>Окоп для техники</Russian>
             <French>Tranchée pour véhicule</French>
             <Chinesesimp>载具掩体</Chinesesimp>
+            <Spanish>Trinchera de Vehículo</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_DigEnvelopeVehicle">
             <English>Dig Vehicle Trench</English>
@@ -84,6 +95,7 @@
             <Russian>Отрыть окоп для техники</Russian>
             <French>Creuser une tranchée pour véhicule</French>
             <Chinesesimp>挖载具掩体</Chinesesimp>
+            <Spanish>Excavar Trinchera de Vehículo</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeShortName">
             <English>Trench - Short</English>
@@ -91,6 +103,7 @@
             <Russian>Окоп - Короткий</Russian>
             <French>Tranchée - Petite</French>
             <Chinesesimp>短掩体</Chinesesimp>
+            <Spanish>Trinchera - Corta</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeShortDescription">
             <English>Short Trench</English>
@@ -98,6 +111,7 @@
             <Russian>Короткий окоп</Russian>
             <French>Petite tranchée (meurtrières)</French>
             <Chinesesimp>短掩体</Chinesesimp>
+            <Spanish>Trinchera Corta</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_DigEnvelopeShort">
             <English>Dig Short Trench</English>
@@ -105,6 +119,7 @@
             <Russian>Отрыть короткий окоп</Russian>
             <French>Creuser une petite tranchée</French>
             <Chinesesimp>挖短掩体</Chinesesimp>
+            <Spanish>Excavar Trinchera Corta</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_settingCategory">
             <English>GRAD Trenches</English>
@@ -112,6 +127,7 @@
             <Russian>GRAD окопы</Russian>
             <French>GRAD Tranchées</French>
             <Chinesesimp>GRAD 掩体</Chinesesimp>
+            <Spanish>Trincheras GRAD</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_settingAllowDigging_displayName">
             <English>Allow digging</English>
@@ -119,6 +135,7 @@
             <Russian>Разрешить копать окопы</Russian>
             <French>Autoriser l'excavation</French>
             <Chinesesimp>允许挖掘</Chinesesimp>
+            <Spanish>Permitir excavar</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_settingAllowDigging_tooltip">
             <English>Allow digging trenches with an entrenchment tool</English>
@@ -126,6 +143,7 @@
             <Russian>Разрешить копать окопы лопатой</Russian>
             <French>Autoriser l'excavation des tranchées avec une pelle tactique</French>
             <Chinesesimp>允许使用战备锹挖掘掩体</Chinesesimp>
+            <Spanish>Permite excavar trincheras con la pala</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_settingAllowCamouflage_displayName">
             <English>Allow camouflage</English>
@@ -133,6 +151,7 @@
             <Russian>Разрешить маскировку</Russian>
             <French>Autoriser le camouflage</French>
             <Chinesesimp>允许使用伪装网</Chinesesimp>
+            <Spanish>Permitir camuflaje</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_settingAllowCamouflage_tooltip">
             <English>Allow camouflaging trenches</English>
@@ -140,6 +159,7 @@
             <Russian>Разрешить маскировать окопы</Russian>
             <French>Autoriser le camouflage des tranchées</French>
             <Chinesesimp>允许为掩体布置伪装网</Chinesesimp>
+            <Spanish>Permitir camuflar trincheras</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_settingCamouflageRequireEntrenchmentTool_displayName">
             <English>Require entrenchment tool for camouflaging</English>
@@ -147,6 +167,7 @@
             <Russian>Нужна лопата чтобы маскировать окопы</Russian>
             <French>Pelle tactique pour camouflage</French>
             <Chinesesimp>需要携带战备锹才能布置伪装网</Chinesesimp>
+            <Spanish>Requerir pala para aplicar camuflaje</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_settingCamouflageRequireEntrenchmentTool_tooltip">
             <English>Require entrenchment tool for camouflaging</English>
@@ -154,6 +175,7 @@
             <Russian>Нужна лопата чтобы маскировать окопы</Russian>
             <French>Nécessite une pelle tactique pour appliquer du camouflage</French>
             <Chinesesimp>需要携带战备锹才能布置伪装网</Chinesesimp>
+            <Spanish>Requiere tener una pala para poder aplicar el camuflaje</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowShortEnvelope_displayName">
             <English>Allow short envelope trenches</English>
@@ -161,6 +183,7 @@
             <Russian>Разрешить короткие окопы</Russian>
             <French>Autoriser les tranchées individuelles</French>
             <Chinesesimp>允许挖掘短掩体</Chinesesimp>
+            <Spanish>Permitir trincheras de envoltura corta</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowShortEnvelope_tooltip">
             <English>Allow digging of short envelope trenches</English>
@@ -168,6 +191,7 @@
             <Russian>Разрешить копать короткие окопы</Russian>
             <French>Autoriser de creuser des tranchées individuelles</French>
             <Chinesesimp>允许挖掘短掩体</Chinesesimp>
+            <Spanish>Permite excavar trincheras de envoltura corta</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowSmallEnvelope_displayName">
             <English>Allow small envelope trenches</English>
@@ -175,6 +199,7 @@
             <Russian>Разрешить малые окопы</Russian>
             <French>Autoriser les petites tranchées</French>
             <Chinesesimp>允许挖掘小型掩体</Chinesesimp>
+            <Spanish>Permitir trincheras de envoltura pequeña</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowSmallEnvelope_tooltip">
             <English>Allow digging of small envelope trenches</English>
@@ -182,6 +207,7 @@
             <Russian>Разрешить копать малые окопы</Russian>
             <French>Autoriser de creuser les petites tranchées</French>
             <Chinesesimp>允许挖掘小型掩体</Chinesesimp>
+            <Spanish>Permite las trincheras de envoltura pequeña</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowBigEnvelope_displayName">
             <English>Allow big envelope trenches</English>
@@ -189,6 +215,7 @@
             <Russian>Разрешить средние окопы</Russian>
             <French>Autoriser les petites tranchées (meurtrières)</French>
             <Chinesesimp>允许挖掘大型掩体</Chinesesimp>
+            <Spanish>Permitir trincheras de envoltura grande</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowBigEnvelope_tooltip">
             <English>Allow digging of big envelope trenches</English>
@@ -196,6 +223,7 @@
             <Russian>Разрешить копать средние окопы</Russian>
             <French>Autoriser les petites tranchées avec meurtrières</French>
             <Chinesesimp>允许挖掘大型掩体</Chinesesimp>
+            <Spanish>Permite excavar trincheras de envoltura grande</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowGiantEnvelope_displayName">
             <English>Allow giant envelope trenches</English>
@@ -203,6 +231,7 @@
             <Russian>Разрешить большие окопы</Russian>
             <French>Autoriser les grandes tranchées (meurtrières)</French>
             <Chinesesimp>允许挖掘巨型掩体</Chinesesimp>
+            <Spanish>Permitir trincheras de envoltura gigante</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowGiantEnvelope_tooltip">
             <English>Allow digging of giant envelope trenches</English>
@@ -210,6 +239,7 @@
             <Russian>Разрешить копать большие окопы</Russian>
             <French>Autoriser de creuser de grandes tranchées avec meurtrières</French>
             <Chinesesimp>允许挖掘巨型掩体</Chinesesimp>
+            <Spanish>Permite excavar trincheras de envoltura gigante</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowVehicleEnvelope_displayName">
             <English>Allow vehicle envelope trenches</English>
@@ -217,6 +247,7 @@
             <Russian>Разрешить окопы для техники</Russian>
             <French>Autoriser les tranchées pour véhicule</French>
             <Chinesesimp>允许挖掘载具掩体</Chinesesimp>
+            <Spanish>Permitir trincheras de envoltura de vehículos</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowVehicleEnvelope_tooltip">
             <English>Allow digging of envelope vehicle trenches</English>
@@ -224,6 +255,7 @@
             <Russian>Разрешить копать окопы для техники</Russian>
             <French>Autoriser de creuser des tranchées pour véhicule</French>
             <Chinesesimp>允许挖掘载具掩体</Chinesesimp>
+            <Spanish>Permite excavar trincheras de envoltura de vehículos</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_settingBuildFatigueFactor_displayName">
             <English>Fatigue factor</English>
@@ -231,6 +263,7 @@
             <Russian>Коэффициент усталости</Russian>
             <French>Facteur de fatigue</French>
             <Chinesesimp>疲劳系数</Chinesesimp>
+            <Spanish>Factor de cansancio</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_settingBuildFatigueFactor_tooltip">
             <English>The fatigue factor when building trenches (0 to deactive fatigue use)</English>
@@ -238,14 +271,17 @@
             <Russian>Как сильно повышается усталость от копания (0 чтобы не повышалась)</Russian>
             <French>Le facteur de fatigue lors de la construction de tranchées (si 0, fatigue désactivée)</French>
             <Chinesesimp>建造掩体时的疲劳系数(0表示不考虑疲劳)</Chinesesimp>
+            <Spanish>El factor de cansancio durante la construcción de trincheras (0 para desactivar el cansancio)</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_createTrenchMarker_displayName">
             <English>Create trench map markers</English>
             <Russian>Отмечать окопы на карте</Russian>
+            <Spanish>Crear marcadores de trincheras en mapa</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_createTrenchMarker_tooltip">
             <English>Create map markers for player-dug trenches, but only for the digger's side or any friendly side.</English>
             <Russian>Отмечать отрытые игроком окопы на карте для всех на своей или любой союзной стороне.</Russian>
+            <Spanish>Crea marcadores en mapa para trincheras excavadas por el jugador, pero sólo en el bando del jugador que la excava o cualquier bando aliado.</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_ShortEnvelopeDigTime">
             <English>Dig time (s) for short envelope trenches</English>
@@ -253,6 +289,7 @@
             <Russian>Время (в секундах) копания короткого окопа</Russian>
             <French>Temps d'excavation (s) pour les tranchées individuelles</French>
             <Chinesesimp>挖掘短掩体的时间(秒)</Chinesesimp>
+            <Spanish>Tiempo de excavado (s) para trincheras de envoltura corta</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_SmallEnvelopeDigTime">
             <English>Dig time (s) for small envelope trenches</English>
@@ -260,6 +297,7 @@
             <Russian>Время (в секундах) копания малого окопа</Russian>
             <French>Temps d'excavation (s) pour les petites tranchées</French>
             <Chinesesimp>挖掘小型掩体的时间(秒)</Chinesesimp>
+            <Spanish>Tiempo de excavado (s) para trincheras de envoltura pequeña</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_BigEnvelopeDigTime">
             <English>Dig time (s) for big envelope trenches</English>
@@ -267,6 +305,7 @@
             <Russian>Время (в секундах) копания среднего окопа</Russian>
             <French>Temps d'excavation (s) pour les petites tranchées (meurtrières)</French>
             <Chinesesimp>挖掘大型掩体的时间(秒)</Chinesesimp>
+            <Spanish>Tiempo de excavado (s) para trincheras de envoltura grande</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_GiantEnvelopeDigTime">
             <English>Dig time (s) for giant envelope trenches</English>
@@ -274,6 +313,7 @@
             <Russian>Время (в секундах) копания большого окопа</Russian>
             <French>Temps d'excavation (s) pour les grandes tranchées (meurtrières)</French>
             <Chinesesimp>挖掘巨型掩体的时间(秒)</Chinesesimp>
+            <Spanish>Tiempo de excavado (s) para trincheras de envoltura gigante</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_VehicleEnvelopeDigTime">
             <English>Dig time (s) for vehicle envelope trenches</English>
@@ -281,6 +321,7 @@
             <Russian>Время (в секундах) копания окопа для техники</Russian>
             <French>Temps d'excavation (s) pour les tranchées pour véhicule</French>
             <Chinesesimp>挖掘载具掩体的时间(秒)</Chinesesimp>
+            <Spanish>Tiempo de excavado (s) para trincheras de envoltura de vehículo</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_LongEnvelopeDigTime">
             <English>Dig time (s) for Long envelope trenches</English>
@@ -288,48 +329,56 @@
             <Russian>Время (в секундах) копания длинного окопа</Russian>
             <French>Temps d'excavation (s) pour les grandes tranchées</French>
             <Chinesesimp>挖掘长掩体的时间(秒)</Chinesesimp>
+            <Spanish>Tiempo de excavado (s) para trincheras de envoltura larga</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_ShortEnvelopeRemovalTime">
             <English>Removal time (s) for short envelope trenches.</English>
             <German>Zeit (s) um kurze Gräben zu entfernen.</German>
             <Russian>Время срытия (сек) короткого окопа.</Russian>
             <French>Temps de suppression (s) pour les tranchées individuelles</French>
+            <Spanish>Tiempo de eliminado (s) para trincheras de envoltura corta</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_SmallEnvelopeRemovalTime">
             <English>Removal time (s) for small envelope trenches.</English>
             <German>Zeit (s) um kleine Gräben zu entfernen.</German>
             <Russian>Время срытия (сек) малого окопа.</Russian>
             <French>Temps de suppression (s) pour les petites tranchées</French>
+            <Spanish>Tiempo de eliminado (s) para trincheras de envoltura pequeña</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_BigEnvelopeRemovalTime">
             <English>Removal time (s) for big envelope trenches.</English>
             <German>Zeit (s) um große Gräben zu entfernen.</German>
             <Russian>Время срытия (сек) среднего окопа.</Russian>
             <French>Temps de suppression (s) pour les petites tranchées (meurtrières)</French>
+            <Spanish>Tiempo de eliminado (s) para trincheras de envoltura grande</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_GiantEnvelopeRemovalTime">
             <English>Removal time (s) for giant envelope trenches.</English>
             <German>Zeit (s) um riesige Gräben zu entfernen.</German>
             <Russian>Время срытия (сек) большого окопа.</Russian>
             <French>Temps de suppression (s) pour les grandes tranchées (meurtrières)</French>
+            <Spanish>Tiempo de eliminado (s) para trincheras de envoltura gigante</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_VehicleEnvelopeRemovalTime">
             <English>Removal time (s) for vehicle envelope trenches.</English>
             <German>Zeit (s) um Fahrzeuggräben zu entfernen.</German>
             <Russian>Время срытия (сек) окопа для техники.</Russian>
             <French>Temps de suppression (s) pour les tranchées pour véhicule</French>
+            <Spanish>Tiempo de eliminado (s) para trincheras de envoltura de vehículos</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_LongEnvelopeRemovalTime">
             <English>Removal time (s) for Long envelope trenches.</English>
             <German>Zeit (s) um Lange Gräben zu entfernen.</German>
             <Russian>Время срытия (сек) длинного окопа.</Russian>
             <French>Temps de suppression (s) pour les grandes tranchées</French>
+            <Spanish>Tiempo de eliminado (s) para trincheras de envoltura larga</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeRemovalTime_tooltip">
             <English>-1 takes the dig time.</English>
             <German>-1 nimmt die Grabezeit.</German>
             <Russian>-1 приравнивает к времени откапывания.</Russian>
             <French>-1 prend le temps d'excavation.</French>
+            <Spanish>-1 toma el tiempo de excavado.</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_HelpDigging">
             <English>Help digging</English>
@@ -337,6 +386,7 @@
             <Russian>Помочь отрыть окоп</Russian>
             <French>Aider à creuser</French>
             <Chinesesimp>参与挖掘</Chinesesimp>
+            <Spanish>Ayudar excavando</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_stopBuildingAtFatigueMax_displayName">
             <English>Enable Stop on Fatigue</English>
@@ -344,6 +394,7 @@
             <Russian>Прекратить копать при полной усталости</Russian>
             <French>Activer l'arrêt en cas de fatigue</French>
             <Chinesesimp>疲劳时停止挖掘</Chinesesimp>
+            <Spanish>Habilitar parar si hay cansancio</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_stopBuildingAtFatigueMax_tooltip">
             <English>If enabled the digger will stop digging if his fatigue reaches 0.</English>
@@ -351,13 +402,15 @@
             <Russian>При наступлении полной усталости откапывание окопа прекращается</Russian>
             <French>Si activé, le joueur cessera de creuser si sa fatigue atteint 0.</French>
             <Chinesesimp>启用后, 如果疲劳度达到0, 将停止挖掘。</Chinesesimp>
+            <Spanish>Si habilitado, quien excava dejará de hacerlo cuando su cansancio llegue a 0.</Spanish>
         </Key>
-         <Key ID="STR_GRAD_Trenches_functions_EnvelopeLongName">
+        <Key ID="STR_GRAD_Trenches_functions_EnvelopeLongName">
             <English>Trench - Long</English>
             <German>Graben - Lang</German>
             <Russian>Окоп - Длинный</Russian>
             <French>Tranchée - Grande</French>
             <Chinesesimp>长掩体</Chinesesimp>
+            <Spanish>Trinchera - Larga</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EnvelopeLongDescription">
             <English>Long Trench</English>
@@ -365,6 +418,7 @@
             <Russian>Длинный окоп</Russian>
             <French>Grande tranchée</French>
             <Chinesesimp>长掩体</Chinesesimp>
+            <Spanish>Trinchera Larga</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_DigEnvelopeLong">
             <English>Dig Long Trench</English>
@@ -372,6 +426,7 @@
             <Russian>Отрыть длинный окоп</Russian>
             <French>Creuser une grande tranchée</French>
             <Chinesesimp>挖长掩体</Chinesesimp>
+            <Spanish>Excavar Trinchera Larga</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowLongEnvelope_displayName">
             <English>Allow long trenches</English>
@@ -379,6 +434,7 @@
             <Russian>Разрешить длинные окопы</Russian>
             <French>Autoriser les grandes tranchées</French>
             <Chinesesimp>允许挖掘长掩体</Chinesesimp>
+            <Spanish>Permitir trincheras largas</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowLongEnvelope_tooltip">
             <English>Allow digging of envelope long trenches</English>
@@ -386,6 +442,7 @@
             <Russian>Разрешить откапывание длинных окопов</Russian>
             <French>Autoriser de creuser des grandes tranchées</French>
             <Chinesesimp>允许挖掘长掩体</Chinesesimp>
+            <Spanish>Permitir excavado de trincheras de envoltura larga</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_EntrenchingToolName">
             <English>Entrenching Tool</English>
@@ -519,121 +576,146 @@
             <English>Allow trench decay</English>
             <German>Erlaube Gräben zu verfallen</German>
             <Russian>Разрешить разрушение окопов</Russian>
+            <Spanish>Permitir degradación de trincheras</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowTrenchDecay_tooltip">
             <English>Trenches will automatically start to decay after a set time</English>
             <German>Gräben beginnen automatisch zu verfallen nach einer gegebenen Zeit</German>
             <Russian>Окопы начнут автоматически разрушаться после заданного времени</Russian>
+            <Spanish>Las trincheras comenzarán a degradarse a partir de un tiempo determinado</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_timeoutToDecay_displayName">
             <English>Timeout to decay</English>
             <German>Wartezeit bis zum Verfall</German>
             <Russian>Время до начала разрушения</Russian>
+            <Spanish>Tiempo para degradación</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_timeoutToDecay_tooltip">
             <English>Time the server waits until it starts to decay the trenche</English>
             <German>Zeit die der Server wartet bis der Graben verfällt</German>
             <Russian>Время, отсчитываемое сервером до начала разрушения окопа</Russian>
+            <Spanish>Tiempo que espera el servidor hasta comenzar a degradar la trinchera</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_decayTime_displayName">
             <English>Decay time</English>
             <German>Verfall Zeit</German>
             <Russian>Время разрушения</Russian>
+            <Spanish>Tiempo de degradación</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_decayTime_tooltip">
             <English>Time it takes to fully remove the trench</English>
             <German>Zeit bis der Graben komplett verschwunden ist</German>
             <Russian>Время, которое занимает полное разрушение окопа</Russian>
+            <Spanish>Tiempo que lleva degradarse la trinchera por completo</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_playersInAreaRadius_displayName">
             <English>Player detection radius for preventing decay</English>
             <German>Spielererkennungsradius zur Grabenverfallsverhinderung</German>
+            <Spanish>Radio de detección de jugador para prevenir la degradación</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_playersInAreaRadius_tooltip">
             <English>If players are within the given radius around a trench, it will not decay. To turn off player detection set radius to 0.</English>
             <German>Falls sich Spieler im gegebenen Radius um einen Graben befinden, wird dieser nicht verfallen. Um Spielererkennung auszuschalten Radius auf 0 setzen.</German>
+            <Spanish>Si los jugadores se encuentran dentro de un radio determinado de distancia a la trinchera, esta no sufrirá degradación. Establecer a 0 para deshabilitar detección de jugador dentro del radio.</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_trenchSubCategory">
             <English>Trench settings</English>
             <German>Graben Einstellungen</German>
             <Russian>Настройки окопов</Russian>
+            <Spanish>Opciones de Trinchera</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_decaySubCategory">
             <English>Decay Setting</English>
             <German>Verfall Einstellungen</German>
             <Russian>Настройки разрушения</Russian>
+            <Spanish>Opciones de Degradación</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_hitDecaySubCategory">
             <English>Hit Decay</English>
             <German>Verfall bei Treffer</German>
             <Russian>Разрушение от попаданий</Russian>
+            <Spanish>Degradación por Impactos</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowHitDecay_displayName">
             <English>Allow Decay on Hit</English>
             <German>Verfall bei Treffer erlauben</German>
             <Russian>Разрешить разрушение окопа от попадания</Russian>
+            <Spanish>Permitir degradación por Impactos</Spanish>
         </Key>
-         <Key ID="STR_GRAD_Trenches_functions_allowHitDecay_tooltip">
+        <Key ID="STR_GRAD_Trenches_functions_allowHitDecay_tooltip">
             <English>Hit Damage lets trench sink into ground. HE is most effective.</English>
             <German>Hit Damage lässt Gräben in den Boden sinken. HE ist am effektivsten.</German>
             <Russian>Урон от попадания погружает окоп в землю. Фугасные боеприпасы имеют наибольшую эффективность.</Russian>
+            <Spanish>Daño por Impacto sobre la trinchera provoca que se vaya hundiendo en la tierra. HE es la munición más efectiva para ello.</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_hitDecayMultiplier_displayName">
             <English>Multiplier for Hit Damage</English>
             <German>Multiplikator für Trefferschaden</German>
             <Russian>Множитель урона от попадания</Russian>
+            <Spanish>Multiplicador de Daño por Impacto</Spanish>
         </Key>
-         <Key ID="STR_GRAD_Trenches_functions_hitDecayMultiplier_tooltip">
+        <Key ID="STR_GRAD_Trenches_functions_hitDecayMultiplier_tooltip">
             <English>Multiplier for Hit Damage</English>
             <German>Multiplikator für Trefferschaden</German>
             <Russian>Множитель урона от попадания</Russian>
+            <Spanish>Multiplicador de Daño por Impacto</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_smallEnvelopeDamageMultiplier">
             <English>Small Trench Multiplier</English>
             <German>Multiplikator Kleiner Schützengraben</German>
             <Russian>Множитель урона малого окопа</Russian>
+            <Spanish>Multiplicador de Trinchera Pequeña</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_shortEnvelopeDamageMultiplier">
             <English>Short Trench Multiplier</English>
             <German>Multiplikator kurzer Schützengraben</German>
             <Russian>Множитель урона короткого окопа</Russian>
+            <Spanish>Mulcitplicador de Trinchera Corta</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_bigEnvelopeDamageMultiplier">
             <English>Big Trench Multiplier</English>
             <German>Multiplikator großer Schützengraben</German>
             <Russian>Множитель урона среднего окопа</Russian>
+            <Spanish>Multiplicador de Trinchera Grande</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_giantEnvelopeDamageMultiplier">
             <English>Giant Trench Multiplier</English>
             <German>Multiplikator Sehr großer Schützengraben</German>
             <Russian>Множитель урона большого окопа</Russian>
+            <Spanish>Multiplicador de Trinchera Gigante</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_vehicleEnvelopeDamageMultiplier">
             <English>Vehicle Trench Multiplier</English>
             <German>Multiplikator Fahrzeuggraben</German>
             <Russian>Множитель урона окопа для техники</Russian>
+            <Spanish>Multiplicadro de Trinchera de vehículos</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowEffects_displayName">
             <English>Enable effects</English>
             <German>Effekte aktivieren</German>
             <Russian>Включить эффекты</Russian>
+            <Spanish>Habilitar efectos</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowEffects_tooltip">
             <English>Enables effects &amp; sounds while digging</English>
             <German>Aktiviert Effekte &amp; Geräusche während des Grabens</German>
             <Russian>Включает эффекты и звуки при откапывании</Russian>
+            <Spanish>Habilita efectos y sonidos mientras se excava</Spanish>
         </Key>
-         <Key ID="STR_GRAD_Trenches_functions_vehicleTrenchBuildSpeed_displayName">
+        <Key ID="STR_GRAD_Trenches_functions_vehicleTrenchBuildSpeed_displayName">
             <English>Digging by Vehicle Duration</English>
             <German>Graben per Fahrzeug Dauer</German>
+            <Spanish>Duración de Excavación usando un Vehículo</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_vehicleTrenchBuildSpeed_tooltip">
             <English>Time it takes to raise a vehicle trench when driving forward with plow lowered.</English>
             <German>Zeit, die es dauert, um vorwärts fahrend mit gesenktem Schild einen Fahrzeug-Graben zu bauen.</German>
+            <Spanish>Tiempo que lleva levantar una trinchera cuando se conduce hacia delante con un vehículo que tenga la pala de excavar bajada.</Spanish>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_vehicleTrenchBuildSubCategory">
             <English>Vehicle Digging settings</English>
             <German>Fahrzeug-Graben Einstellungen</German>
-        </Key>        
+            <Spanish>Opciones de Excavación usando un Vehículo</Spanish>
+        </Key>
     </Package>
 </Project>
