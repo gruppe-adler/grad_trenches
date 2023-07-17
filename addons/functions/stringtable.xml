@@ -717,5 +717,27 @@
             <German>Fahrzeug-Graben Einstellungen</German>
             <Spanish>Opciones de Excavación usando un Vehículo</Spanish>
         </Key>
+        <Key ID="STR_GRAD_Trenches_functions_lockTextureKey">
+            <English>Lock Texture</English>
+            <German>Texture festhalten</German>
+            <Spanish>Textura de bloqueo</Spanish>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_lockTextureKeyToolTip">
+            <English>Locks a given Texture so that the trench can be placed in a certain limit, with this texture</English>
+            <German>Sperrt eine bestimmte Textur, sodass der Graben mit dieser Textur an einer bestimmten Grenze platziert werden kann</German>
+            <Spanish>Bloquea una Textura dada para que la zanja se pueda colocar en un cierto límite, con esta textura</Spanish>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_allowTextureLock_displayName">
+            <English>Allow Lock Texture</English>
+            <German>Texture festhalten erlauben</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_allowTextureLock_tooltip">
+            <English>Allows the player to lock a texture for a given distance.</English>
+            <German>Erlaubt es einem Spieler eine texture für eine gegebene Distance.</German>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_textureLockDistance">
+            <English>Lock Texture distance</English>
+            <German>Texture festhalten distanze</German>
+        </Key>
     </Package>
 </Project>

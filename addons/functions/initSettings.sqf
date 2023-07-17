@@ -8,6 +8,10 @@
 //[QGVAR(allowDiggingInVehicle), "CHECKBOX", [LLSTRING(allowDiggingInVehicle_displayName), LLSTRING(allowDiggingInVehicle_tooltip)], LLSTRING(settingCategory), true, true, {}, true] call CBA_fnc_addSetting;
 [QGVAR(allowEffects), "CHECKBOX", [LLSTRING(allowEffects_displayName), LLSTRING(allowEffects_tooltip)], LLSTRING(settingCategory), true, true, {}, true] call CBA_fnc_addSetting;
 
+// Texture Lock
+[QGVAR(allowTextureLock), "CHECKBOX", [LLSTRING(allowTextureLock_displayName), LLSTRING(allowTextureLock_tooltip)], LLSTRING(settingCategory), true, true, {}, true] call CBA_fnc_addSetting;
+[QGVAR(textureLockDistance), "SLIDER", LLSTRING(textureLockDistance), [LLSTRING(settingCategory), LLSTRING(trenchSubCategory)], [0.1, 50, 5, 1], true] call CBA_fnc_addSetting;
+
 // Trench specific settings
 [QGVAR(allowShortEnvelope), "CHECKBOX", [LLSTRING(allowShortEnvelope_displayName), LLSTRING(allowShortEnvelope_tooltip)], [LLSTRING(settingCategory), LLSTRING(trenchSubCategory)], true, true] call CBA_fnc_addSetting;
 [QGVAR(shortEnvelopeDigTime), "SLIDER", LLSTRING(ShortEnvelopeDigTime), [LLSTRING(settingCategory), LLSTRING(trenchSubCategory)], [5, 300, 15, 0], true] call CBA_fnc_addSetting;
