@@ -45,12 +45,12 @@ private _condition = if (!isNil "_diggingType" && {_diggingType == "DOWN"}) then
     }
 };
 
-[
+private _handle = [
     {
         params ["_args", "_handle"];
         _args params ["_unit", "_trench", "_condition"];
 
-        if (isNull _trench || [_trench] call _condition) then {
+        if (isNull _trench || {[_trench] call _condition} || {!alive _unit}) then {
             [_handle] call CBA_fnc_removePerFrameHandler;
         };
 
@@ -69,18 +69,20 @@ private _condition = if (!isNil "_diggingType" && {_diggingType == "DOWN"}) then
 
 // Create progress bar
 private _fnc_onFinish = {
-    (_this select 0) params ["_unit"];
+    (_this select 0) params ["_unit", "_trench", "_handle"];
 
     _unit setVariable [QGVAR(diggingTrench), false, true];
+    [_handle] call CBA_fnc_removePerFrameHandler;
 
     // Reset animation
     [_unit, "", 1] call ace_common_fnc_doAnimation;
 };
 
 private _fnc_onFailure = {
-    (_this select 0) params ["_unit", "_trench"];
+    (_this select 0) params ["_unit", "_trench", "_handle"];
 
     [QGVAR(handleDiggerToGVAR), [_trench, _unit, true]] call CBA_fnc_serverEvent;
+    [_handle] call CBA_fnc_removePerFrameHandler;
     _unit setVariable [QGVAR(diggingTrench), false, true];
 
     // Reset animation
@@ -97,6 +99,6 @@ private _fnc_condition = {
     true
 };
 
-[[_unit, _trench], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_DiggingTrench", _fnc_condition] call FUNC(progressBar);
+[[_unit, _trench, _handle], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_DiggingTrench", _fnc_condition] call FUNC(progressBar);
 
 [_unit] call FUNC(loopanimation);
