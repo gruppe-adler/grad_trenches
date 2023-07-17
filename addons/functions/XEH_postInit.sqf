@@ -40,33 +40,33 @@ if (hasInterface) then {
 
 
 
-[ADDON, GVAR(textureLockKey), [LLSTRING(lockTextureKey), LLSTRING(lockTextureKeyToolTip)], {}, {
+[LLSTRING(settingCategory), QGVAR(textureLockKey), [LLSTRING(lockTextureKey), LLSTRING(lockTextureKeyToolTip)], {}, {
     if (GVAR(allowTextureLock)) then {
         private _unit = [] call CBA_fnc_currentUnit;
 
-        if (_unit getVariable ["ace_trenches_isPlacing", false] && {!(_unit getVariable [GVAR(lockTexture), false])}) then {
+        if (_unit getVariable ["ace_trenches_isPlacing", false] && {!(_unit getVariable [QGVAR(lockTexture), false])}) then {
             private _trench = ace_trenches_trench;
-            _unit setVariable [GVAR(lockTexture), true];
-            _unit setVariable [GVAR(lockTexturePos), (getPosASL _unit)]
+            _unit setVariable [QGVAR(lockTexture), true];
+            _unit setVariable [QGVAR(lockTexturePos), (getPosASL _unit)];
 
             [{
 
                 params ["_unit"];
-                (((getPosASL _unit) distance2D (_unit getVariable GVAR(lockTexturePos))) >= GVAR(textureLockDistance))
+                (((getPosASL _unit) distance2D (_unit getVariable QGVAR(lockTexturePos))) >= GVAR(textureLockDistance))
 
             }, {
 
                 params ["_unit", "_trench"];
-                _unit setVariable [GVAR(lockTexture), false];
-                _unit setVariable [GVAR(lockTexturePos), nil];
-                _trench setVariable [GVAR(lockedTexture), nil];
+                _unit setVariable [QGVAR(lockTexture), false];
+                _unit setVariable [QGVAR(lockTexturePos), nil];
+                _trench setVariable [QGVAR(lockedTexture), nil];
 
             }, [_unit], 120, {
 
                 params ["_unit", "_trench"];
-                _unit setVariable [GVAR(lockTexture), false];
-                _unit setVariable [GVAR(lockTexturePos), nil];
-                _trench setVariable [GVAR(lockedTexture), nil];
+                _unit setVariable [QGVAR(lockTexture), false];
+                _unit setVariable [QGVAR(lockTexturePos), nil];
+                _trench setVariable [QGVAR(lockedTexture), nil];
 
             }] call CBA_fnc_waitUntilAndExecute;
         };
