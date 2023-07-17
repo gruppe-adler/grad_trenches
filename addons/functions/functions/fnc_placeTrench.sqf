@@ -90,13 +90,25 @@ ace_trenches_digPFH = [{
     ace_trenches_trenchPos = _basePos;
 
     if (surfaceType (position _trench) != GVAR(currentSurface)) then {
-        GVAR(currentSurface) = surfaceType (position _trench);
-        _trench setObjectTextureGlobal [0, surfaceTexture (getPos _trench)];
+        if (GVAR(allowTextureLock)  && {(_unit getVariable [QGVAR(lockTexture), false])}) then {
+            if (isNil (_trench getVariable QGVAR(lockedTexture))) then {
+                GVAR(currentSurface) = surfaceType (position _trench);
+                _trench setVariable [QGVAR(lockedTexture), surfaceTexture (getPos _trench)];
+                _trench setObjectTextureGlobal [0, surfaceTexture (getPos _trench)];
+            };
+        } else {
+            GVAR(currentSurface) = surfaceType (position _trench);
+            _trench setObjectTextureGlobal [0, surfaceTexture (getPos _trench)];
+        };
     };
 }, 0, [_unit, _trench]] call CBA_fnc_addPerFrameHandler;
 
 // Add mouse button action and hint
-[localize "STR_ace_trenches_ConfirmDig", localize "STR_ace_trenches_CancelDig"] call ace_interaction_fnc_showMouseHint;
+private _keybind = ([LLSTRING(settingCategory), QGVAR(textureLockKey)] call CBA_fnc_getKeybind) select 5;
+private _keyString = _keybind call CBA_fnc_localizeKey;
+private _keyArray = [_keyString, LLSTRING(lockTextureKey)];
+
+[localize "STR_ace_trenches_ConfirmDig", localize "STR_ace_trenches_CancelDig", "", [_keyArray]] call ace_interaction_fnc_showMouseHint;
 
 _unit setVariable ["ace_trenches_Dig", [
     _unit, "DefaultAction",

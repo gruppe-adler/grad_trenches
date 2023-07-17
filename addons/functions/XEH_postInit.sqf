@@ -1,4 +1,5 @@
 #include "script_component.hpp"
+#include "\a3\ui_f\hpp\defineDIKCodes.inc"
 
 private _digVehicleConfigClasses = "true" configClasses (configFile >> "CfgDigVehicles");
 {
@@ -36,3 +37,38 @@ if (hasInterface) then {
     [QGVAR(hitEHAdd), {_this call FUNC(hitEHAdd);}] call CBA_fnc_addEventHandler;
     [QGVAR(continueDiggingTrench), {_this call FUNC(continueDiggingTrench);}] call CBA_fnc_addEventHandler;
 };
+
+
+
+[LLSTRING(settingCategory), QGVAR(textureLockKey), [LLSTRING(lockTextureKey), LLSTRING(lockTextureKeyToolTip)], {}, {
+    if (GVAR(allowTextureLock)) then {
+        private _unit = [] call CBA_fnc_currentUnit;
+
+        if (_unit getVariable ["ace_trenches_isPlacing", false] && {!(_unit getVariable [QGVAR(lockTexture), false])}) then {
+            private _trench = ace_trenches_trench;
+            _unit setVariable [QGVAR(lockTexture), true];
+            _unit setVariable [QGVAR(lockTexturePos), (getPosASL _unit)];
+
+            [{
+
+                params ["_unit"];
+                (((getPosASL _unit) distance2D (_unit getVariable QGVAR(lockTexturePos))) >= GVAR(textureLockDistance))
+
+            }, {
+
+                params ["_unit", "_trench"];
+                _unit setVariable [QGVAR(lockTexture), false];
+                _unit setVariable [QGVAR(lockTexturePos), nil];
+                _trench setVariable [QGVAR(lockedTexture), nil];
+
+            }, [_unit], 120, {
+
+                params ["_unit", "_trench"];
+                _unit setVariable [QGVAR(lockTexture), false];
+                _unit setVariable [QGVAR(lockTexturePos), nil];
+                _trench setVariable [QGVAR(lockedTexture), nil];
+
+            }] call CBA_fnc_waitUntilAndExecute;
+        };
+    };
+}, [DIK_L, [false, false, false]]] call CBA_fnc_addKeybind;
