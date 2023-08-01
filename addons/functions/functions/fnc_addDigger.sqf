@@ -29,17 +29,22 @@ if (_diggersCount < 1) exitWith {
 _unit setVariable [QGVAR(diggingTrench), true, true];
 
 private _diggingType = _trench getVariable QGVAR(diggingType);
+private _finishCondition = true;
 
 // Non-case sensitive comparison for digging type
 private _condition = if (!isNil "_diggingType" && {_diggingType == "DOWN"}) then {
     {
         params ["_trench"];
 
+       _finishCondition = true;
+
         (_trench getVariable ["ace_trenches_progress", 1]) <= 0
     };
 } else {
     {
         params ["_trench"];
+
+        _finishCondition = false;
 
         (_trench getVariable ["ace_trenches_progress", 0]) >= 1
     }
@@ -99,6 +104,6 @@ private _fnc_condition = {
     true
 };
 
-[[_unit, _trench, _handle], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_DiggingTrench", _fnc_condition] call FUNC(progressBar);
+[[_unit, _trench, _finishCondition], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_DiggingTrench", _fnc_condition] call FUNC(progressBar);
 
 [_unit] call FUNC(loopanimation);
