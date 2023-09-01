@@ -733,11 +733,11 @@
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_allowTextureLock_tooltip">
             <English>Allows the player to lock a texture for a given distance.</English>
-            <German>Erlaubt es einem Spieler eine texture für eine gegebene Distance.</German>
+            <German>Erlaubt es einem Spieler eine Textur bis zur angegebenen Distanz zu sperren.</German>
         </Key>
         <Key ID="STR_GRAD_Trenches_functions_textureLockDistance">
             <English>Lock Texture distance</English>
-            <German>Texture festhalten distanze</German>
+            <German>Textur-Sperren-Distanz</German>
         </Key>
     </Package>
 </Project>
