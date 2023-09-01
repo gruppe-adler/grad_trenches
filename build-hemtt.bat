@@ -13,7 +13,12 @@ if exist x\grad_trenches\addons (
 )
 mklink /j x\grad_trenches\addons addons
 
-tools\hemtt build --force --release
+IF [%1] == [] (
+  tools\hemtt.exe build
+) ELSE (
+  tools\hemtt.exe build %1
+)
+
 set BUILD_STATUS=%errorlevel%
 
 rmdir a3
@@ -26,5 +31,6 @@ if %BUILD_STATUS% neq 0 (
   exit /b %errorlevel%
 ) else (
   echo Build successful
+  sleep 1
   EXIT
 )

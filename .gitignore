@@ -2,11 +2,17 @@ releases/*
 build_keys/*
 keys/*
 .hemtt/local
+.hemttout
 /a3/
 /x/
 
 *.pbo
+*.pbo.bak
 *.cache
 *.biprivatekey
 *.blend
 *.blend1
+*.p3d
+*.rtm
+*.ogg
+*.wss
