@@ -813,7 +813,7 @@ Author:
 #define PATHTOF(var1) PATHTOF_SYS(PREFIX,COMPONENT,var1)
 #define PATHTOEF(var1,var2) PATHTOF_SYS(PREFIX,var1,var2)
 #define QPATHTOF(var1) QUOTE(PATHTOF(var1))
-#define QPATHTOEF(var1,var2) QUOTE(PATHTOEF(var1,var2))
+#define QPATHTOEF(main,var1,var2) QUOTE(PATHTOEF(var1,var2))
 
 #define COMPILE_FILE(var1) COMPILE_FILE_SYS(PREFIX,COMPONENT_F,var1)
 #define COMPILE_FILE_CFG(var1) COMPILE_FILE_CFG_SYS(PREFIX,COMPONENT_F,var1)
@@ -1774,7 +1774,7 @@ Parameters:
 Example:
     (begin example)
         // print "true" if file exists
-        systemChat str FILE_EXISTS("\A3\ui_f\data\igui\cfg\cursors\weapon_ca.paa");
+        systemChat str FILE_EXISTS("\A3\ui_f\data\igui\cfg\cursors\weapon_ca.paa));
     (end)
 
 Author:
