@@ -16,7 +16,7 @@ mklink /j x\grad_trenches\addons addons
 IF [%1] == [] (
   tools\hemtt.exe build
 ) ELSE (
-  tools\hemtt.exe build %1
+  tools\hemtt.exe release
 )
 
 set BUILD_STATUS=%errorlevel%
