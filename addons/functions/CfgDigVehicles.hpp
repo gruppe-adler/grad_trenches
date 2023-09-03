@@ -55,4 +55,13 @@ class CfgDigVehicles {
     class gm_dk_army_bpz2a0_un : gm_dk_army_bpz2a0 {};
     class gm_dk_army_bpz2a0_wdl : gm_dk_army_bpz2a0 {};
     class gm_dk_army_bpz2a0_win : gm_dk_army_bpz2a0 {};
+
+    class PRACS_M88 {
+        type = "animate";
+        animation = "Blade";
+        selection = "Blade";
+        plowRaised = 0;
+        plowLowered = 0.93;
+        distanceToTrench = 3;
+    };
 };
