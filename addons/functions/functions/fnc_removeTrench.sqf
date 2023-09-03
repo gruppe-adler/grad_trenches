@@ -18,7 +18,7 @@
  */
 
 params ["_trench", "_unit", ["_switchingDigger", false, [true]]];
-TRACE_2("removeTrench",_trench,_unit,_switchingDigger);
+TRACE_3("removeTrench",_trench,_unit,_switchingDigger);
 
 private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
 if (_actualProgress <= 0) exitWith {};

@@ -104,7 +104,7 @@ ace_trenches_digPFH = [{
 }, 0, [_unit, _trench]] call CBA_fnc_addPerFrameHandler;
 
 // Add mouse button action and hint
-private _keyArray = if (GVAR(allowTextureLock) then {
+private _keyArray = if (GVAR(allowTextureLock)) then {
     private _keybind = ([LLSTRING(settingCategory), QGVAR(textureLockKey)] call CBA_fnc_getKeybind) select 5;
     private _keyString = _keybind call CBA_fnc_localizeKey;
     [_keyString, LLSTRING(lockTextureKey)]

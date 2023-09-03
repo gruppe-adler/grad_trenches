@@ -105,7 +105,7 @@ class CfgVehicles {
         author = QAUTHOR;
         displayName = CSTRING(EnvelopeSmallName);
         descriptionShort = CSTRING(EnvelopeSmallDescription);
-        GVAR(offset) = 0.585;
+        GVAR(offset) = 1.03;
         ace_trenches_placementData[] = {8,1.1,0};
         editorCategory = "EdCat_Things";
         editorSubcategory = "EdSubcat_Military";
