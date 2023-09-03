@@ -58,10 +58,10 @@ class CfgDigVehicles {
 
     class PRACS_M88 {
         type = "animate";
-        animation = "blade_elev_source";
+        animation = "Blade";
         selection = "Blade";
         plowRaised = 0;
-        plowLowered = 0.9;
+        plowLowered = 0.93;
         distanceToTrench = 3;
     };
 };
