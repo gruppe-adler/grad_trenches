@@ -1,4 +1,21 @@
 #include "script_component.hpp"
+/*
+ * Author: Nomisum, Salbei
+ * Digging trenches with vehicles.
+ *
+ * Arguments:
+ * 0: Vehicle <OBJECT>
+ * 1: Trench Class <STRING>
+ * 2: Offset <ARRAY>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [vehicle ACE_player, ACE_player, [0,0,0]] call grad_trenches_functions_fnc_bpzBuild
+ *
+ * Public: No
+ */
 
 params ["_vehicle"];
 
@@ -18,8 +35,63 @@ if (isServer) then {
 };
 
 if (hasInterface) then {
+/*
+	private _action = [
+		"plow",
+		localize "STR_ACE_Trenches_functions_plow",
+		"",
+		{
+			systemchat "test";
+		},
+		{true},
+		{},
+		[],
+		{[0, 0, 0]},
+        2,
+        [false,false,false,true,false], //add run on hover (4th bit true)
+	] call ace_interact_menu_fnc_createAction;
+
+	[_vehicle, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+
+	private _action1 = [
+		QGVAR(actionLowerPlow),
+		localize "STR_GRAD_Trenches_functions_lowerPlow",
+		"",
+		{
+			_target setDamage 1;
+		},
+		{((_target getVariable [QGVAR(plowlowered), 0]) == 0) && {_player == driver _target}},
+		{},
+		[]
+	] call ace_interact_menu_fnc_createAction;
+
+	[_vehicle, 0, ["ACE_MainActions", QGVAR(plow)], _action1] call ace_interact_menu_fnc_addActionToObject;
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	_vehicle addAction [
-		"Lower Plow",
+		localize "STR_GRAD_Trenches_functions_lowerPlow",
 		{
 			params ["_target", "_caller", "_actionId", "_arguments"];
 
@@ -34,7 +106,7 @@ if (hasInterface) then {
 		    };
 
 		    _target setCruiseControl [7, false];    
-		    _target setVariable ["grad_trenches_functions_plowlowered", -1, true]; // animating state to prevent multi execution
+		    _target setVariable [QGVAR(plowlowered), -1, true]; // animating state to prevent multi execution
 
 		    [{
 		    	params ["_target", "_type", "_animation", "_plowLowered"];
@@ -46,7 +118,7 @@ if (hasInterface) then {
 			},
 		    {	
 		    	params ["_target", "_type", "_animation", "_plowLowered"];
-				_target setVariable ["grad_trenches_functions_plowlowered", 1, true];
+				_target setVariable [QGVAR(plowlowered), 1, true];
 			}, [_target, _type, _animation, _plowLowered]] call CBA_fnc_waitUntilAndExecute;
 		},
 		nil,
@@ -54,7 +126,7 @@ if (hasInterface) then {
 		true,
 		true,
 		"",
-		"((_target getVariable ['grad_trenches_functions_plowlowered', 0]) == 0) && _this == driver _target", // _target, _this, _originalTarget
+		"", // _target, _this, _originalTarget
 		50,
 		false,
 		"",
@@ -62,7 +134,7 @@ if (hasInterface) then {
 	];
 
 	_vehicle addAction [
-		"Raise Plow",
+		localize "STR_GRAD_Trenches_functions_raisePlow",
 		{
 			params ["_target", "_caller", "_actionId", "_arguments"];
 
@@ -76,7 +148,7 @@ if (hasInterface) then {
 		    	_target animatesource [_animation, _plowRaised];
 			};
 		    _target setCruiseControl [0, false];
-		    _target setVariable ["grad_trenches_functions_plowlowered", -1, true]; // animating state to prevent multi execution
+		    _target setVariable [QGVAR(plowlowered), -1, true]; // animating state to prevent multi execution
 
 		    [{
 		    	params ["_target", "_type", "_animation", "_plowRaised"];
@@ -88,7 +160,7 @@ if (hasInterface) then {
 			},
 		    {	
 		    	params ["_target", "_type", "_animation", "_plowRaised"];
-				_target setVariable ["grad_trenches_functions_plowlowered", 0, true];
+				_target setVariable [QGVAR(plowlowered), 0, true];
 			}, [_target, _type, _animation, _plowRaised]] call CBA_fnc_waitUntilAndExecute;
 		    
 		},

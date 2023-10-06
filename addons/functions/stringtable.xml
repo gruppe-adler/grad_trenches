@@ -739,5 +739,14 @@
             <English>Lock Texture distance</English>
             <German>Textur-Sperren-Distanz</German>
         </Key>
+        <Key ID="STR_GRAD_Trenches_functions_lowerPlow">
+            <English>Lower</English>
+        </Key>
+        <Key ID="STR_GRAD_Trenches_functions_raisePlow">
+            <English>Raise</English>
+        </Key>
+        <Key ID="STR_ACE_Trenches_functions_plow">
+            <English>Plow</English>
+        </Key>
     </Package>
 </Project>

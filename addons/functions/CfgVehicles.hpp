@@ -238,4 +238,24 @@ class CfgVehicles {
             position = "[0,-2,3.5]";
         };
     };
+
+    class B_APC_Tracked_01_base_F;
+    class B_APC_Tracked_01_CRV_F: B_APC_Tracked_01_base_F {
+        class ACE_Actions {
+            class ACE_MainActions {
+                displayName = CSTRING(MainAction);
+                position = QUOTE(call ace_interaction_fnc_getVehiclePos);
+                selection = "";
+                distance = 4;
+                condition = "true";
+                class Grad_plow {
+                    displayName = "test";
+                    condition = "true";
+                    statement = "";
+                    exceptions[] = {"isNotSwimming"};
+                    insertChildren = QUOTE(_this call DFUNC(addVehicleAction));
+                };
+            };
+        };
+    };
 };
