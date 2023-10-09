@@ -74,7 +74,7 @@ private _handle = [
 
 // Create progress bar
 private _fnc_onFinish = {
-    (_this select 0) params ["_unit", "_trench", "_handle"];
+    (_this select 0) params ["_unit", "_trench", "_finishCondition", "_handle"];
 
     _unit setVariable [QGVAR(diggingTrench), false, true];
     [_handle] call CBA_fnc_removePerFrameHandler;
@@ -104,6 +104,6 @@ private _fnc_condition = {
     true
 };
 
-[[_unit, _trench, _finishCondition], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_DiggingTrench", _fnc_condition] call FUNC(progressBar);
+[[_unit, _trench, _finishCondition, _handle], _fnc_onFinish, _fnc_onFailure, localize "STR_ace_trenches_DiggingTrench", _fnc_condition] call FUNC(progressBar);
 
 [_unit] call FUNC(loopanimation);
