@@ -1,6 +1,8 @@
 @echo off
 set BIOUTPUT=1
 
+python tools\create_prep.py %*
+
 if exist a3 (
   rmdir a3
 )
