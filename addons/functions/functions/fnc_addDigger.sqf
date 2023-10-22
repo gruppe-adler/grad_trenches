@@ -50,18 +50,36 @@ private _condition = if (!isNil "_diggingType" && {_diggingType == "DOWN"}) then
     }
 };
 
-private _handle = [
+[
     {
         params ["_args", "_handle"];
         _args params ["_unit", "_trench", "_condition"];
 
-        if (isNull _trench || {[_trench] call _condition} || {!alive _unit}) then {
+        systemChat "Helping";
+
+        if (isNull _trench || {[_trench] call _condition} || {!alive _unit}) exitWith {
+
+            systemChat "Stopped PFH Help 1";
+
             [_handle] call CBA_fnc_removePerFrameHandler;
+            _unit setVariable [QGVAR(diggingTrench), false, true];
+            [QGVAR(handleDiggerToGVAR), [_trench, _unit, true]] call CBA_fnc_serverEvent;
         };
 
-        if (_unit getVariable [QGVAR(diggingTrench), false] && {((_trench getVariable [QGVAR(diggers), []]) select 0) isEqualTo ([] call CBA_fnc_currentUnit)}) then {
+        if (_unit getVariable [QGVAR(diggingTrench), false] && {((_trench getVariable [QGVAR(diggers), []]) select 0) isEqualTo ([] call CBA_fnc_currentUnit)}) exitWith {
+
+            systemChat "Stopped PFH Help 2";
+
             [_handle] call CBA_fnc_removePerFrameHandler;
             [_trench, _unit, true] call FUNC(continueDiggingTrench);
+        };
+
+        if !(_unit getVariable [QGVAR(diggingTrench), false]) exitWith {
+
+            systemChat "Stopped PFH Help 3";
+
+            [_handle] call CBA_fnc_removePerFrameHandler;
+            [QGVAR(handleDiggerToGVAR), [_trench, _unit, true]] call CBA_fnc_serverEvent;
         };
 
         // Fatigue impact
@@ -74,21 +92,18 @@ private _handle = [
 
 // Create progress bar
 private _fnc_onFinish = {
-    (_this select 0) params ["_unit", "_trench", "", "_handle"];
+    (_this select 0) params ["_unit", "_trench", ""];
 
     _unit setVariable [QGVAR(diggingTrench), false, true];
-    [_handle] call CBA_fnc_removePerFrameHandler;
 
     // Reset animation
     [_unit, "", 1] call ace_common_fnc_doAnimation;
 };
 
 private _fnc_onFailure = {
-    (_this select 0) params ["_unit", "_trench", "", "_handle"];
+    (_this select 0) params ["_unit", "_trench", ""];
 
-    [QGVAR(handleDiggerToGVAR), [_trench, _unit, true]] call CBA_fnc_serverEvent;
-    [_handle] call CBA_fnc_removePerFrameHandler;
-    _unit setVariable [QGVAR(diggingTrench), false, true];
+    systemChat "Stopped Help Bar";
 
     // Reset animation
     [_unit, "", 1] call ace_common_fnc_doAnimation;

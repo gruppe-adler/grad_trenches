@@ -35,4 +35,5 @@ if (_removeAll) then {
 if (count _diggingPlayers <= 0) then {
     [QGVAR(handleTrenchState), [_trench]] call CBA_fnc_serverEvent;
 };
+
 _trench setVariable [QGVAR(diggers), _diggingPlayers, true];
