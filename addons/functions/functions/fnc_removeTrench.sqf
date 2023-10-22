@@ -24,6 +24,7 @@ private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
 if (_actualProgress <= 0) exitWith {};
 
 // Mark trench as being worked on
+systemChat "Set in Remove line 27";
 _trench setVariable ["ace_trenches_digging", true, true];
 _trench setVariable [QGVAR(diggingType), "DOWN", true];
 _unit setVariable [QGVAR(diggingTrench), true, true];
@@ -102,7 +103,9 @@ private _fnc_condition = {
         systemChat "Stopped PFH remove 1";
 
         [_handle] call CBA_fnc_removePerFrameHandler;
-        _trench setVariable ["ace_trenches_digging", false, true];
+        if (_diggerCount < 1) then {
+            _trench setVariable ["ace_trenches_digging", false, true];
+        };
         [QGVAR(handleDiggerToGVAR), [_trench, _unit, false, true]] call CBA_fnc_serverEvent;
     };
 
@@ -124,15 +127,7 @@ private _fnc_condition = {
     };
 
     // Fatigue impact
-    ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (2 * GVAR(buildFatigueFactor))) max 0;
-    ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + (GVAR(buildFatigueFactor) / 1000)) min 1; // 2 * GVAR(buildFatigueFactor) / 2000
-
-    if (GVAR(stopBuildingAtFatigueMax) && {ace_advanced_fatigue_anReserve <= 0}) exitWith {
-        [_handle] call CBA_fnc_removePerFrameHandler;
-        _trench setVariable ["ace_trenches_digging", false, true];
-        [QGVAR(handleDiggerToGVAR), [_trench, _unit, true]] call CBA_fnc_serverEvent;
-        _unit setVariable [QGVAR(diggingTrench), false];
-    };
+    [QGVAR(applyFatigue), [_trench, _unit], _unit] call CBA_fnc_targetEvent;
 }, 1, [_trench, _unit, _removeTime]] call CBA_fnc_addPerFrameHandler;
 
 // Play animation

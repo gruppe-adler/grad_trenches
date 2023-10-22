@@ -27,6 +27,7 @@ if (_diggersCount < 1) exitWith {
 [QGVAR(handleDiggerToGVAR), [_trench, _unit, false]] call CBA_fnc_serverEvent;
 
 _unit setVariable [QGVAR(diggingTrench), true, true];
+_unit setVariable [QGVAR(helpingFunctionRunning), true];
 
 private _diggingType = _trench getVariable QGVAR(diggingType);
 private _finishCondition = true;
@@ -72,6 +73,7 @@ private _condition = if (!isNil "_diggingType" && {_diggingType == "DOWN"}) then
 
             [_handle] call CBA_fnc_removePerFrameHandler;
             [_trench, _unit, true] call FUNC(continueDiggingTrench);
+            _unit setVariable [QGVAR(helpingFunctionRunning), false];
         };
 
         if !(_unit getVariable [QGVAR(diggingTrench), false]) exitWith {
@@ -83,8 +85,7 @@ private _condition = if (!isNil "_diggingType" && {_diggingType == "DOWN"}) then
         };
 
         // Fatigue impact
-        ace_advanced_fatigue_anReserve = (ace_advanced_fatigue_anReserve - (2 * GVAR(buildFatigueFactor))) max 0;
-        ace_advanced_fatigue_anFatigue = (ace_advanced_fatigue_anFatigue + (GVAR(buildFatigueFactor) / 1000)) min 0.8; // 2 * GVAR(buildFatigueFactor) / 2000
+        [QGVAR(applyFatigue), [_trench, _unit], _unit] call CBA_fnc_targetEvent;
     },
     0.1,
     [_unit, _trench, _condition]
@@ -115,6 +116,7 @@ private _fnc_condition = {
     if (GVAR(stopBuildingAtFatigueMax) && {ace_advanced_fatigue_anReserve <= 0}) exitWith {false};
     if !(_unit getVariable [QGVAR(diggingTrench), false]) exitWith {false};
     if (count (_trench getVariable [QGVAR(diggers), []]) < 1) exitWith {false};
+    if !(_unit getVariable [QGVAR(helpingFunctionRunning), false]) exitWith {false};
 
     true
 };
