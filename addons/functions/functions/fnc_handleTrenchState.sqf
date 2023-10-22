@@ -20,6 +20,5 @@
 
  params ["_trench"];
 
-systemChat "Set in Handle line 23";
 _trench setVariable ["ace_trenches_digging", false, true];
 _trench setVariable [QGVAR(diggingType), nil, true];

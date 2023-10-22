@@ -24,7 +24,6 @@ private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
 if (_actualProgress <= 0) exitWith {};
 
 // Mark trench as being worked on
-systemChat "Set in Remove line 27";
 _trench setVariable ["ace_trenches_digging", true, true];
 _trench setVariable [QGVAR(diggingType), "DOWN", true];
 _unit setVariable [QGVAR(diggingTrench), true, true];
@@ -47,8 +46,6 @@ _trench setVariable [QGVAR(diggers), [_unit], true];
 private _fnc_onFinish = {
     (_this select 0) params ["_unit", "_trench"];
 
-    systemChat "Deleted";
-
     [_trench, _unit] call FUNC(deleteTrench);
 
     // Reset animation
@@ -56,8 +53,6 @@ private _fnc_onFinish = {
 };
 private _fnc_onFailure = {
     (_this select 0) params ["_unit", "_trench"];
-
-    systemChat "Stopped";
 
     _unit setVariable [QGVAR(diggingTrench), false, true];
     [QGVAR(handleDiggerToGVAR), [_trench, _unit, true]] call CBA_fnc_serverEvent;
@@ -89,8 +84,6 @@ private _fnc_condition = {
     params ["_args", "_handle"];
     _args params ["_trench", "_unit", "_removeTime"];
 
-    systemChat "Down";
-
     private _actualProgress = _trench getVariable ["ace_trenches_progress", 0];
     private _diggerCount = count (_trench getVariable [QGVAR(diggers), []]);
 
@@ -100,8 +93,6 @@ private _fnc_condition = {
         {_diggerCount <= 0}
     ) exitWith {
 
-        systemChat "Stopped PFH remove 1";
-
         [_handle] call CBA_fnc_removePerFrameHandler;
         if (_diggerCount < 1) then {
             _trench setVariable ["ace_trenches_digging", false, true];
@@ -110,8 +101,6 @@ private _fnc_condition = {
     };
 
     if (_actualProgress <= 0) exitWith {
-
-        systemChat "Stopped PFH remove 2";
         [_handle] call CBA_fnc_removePerFrameHandler;
     };
 
