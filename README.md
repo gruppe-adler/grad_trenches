@@ -19,8 +19,8 @@
     <a href="https://github.com/gruppe-adler/grad_trenches/blob/master/LICENSE">
         <img src="https://img.shields.io/badge/License-GPLv2-red.svg?style=flat-square" alt="GRAD Trenches License">
     </a>
-    <a href="https://travis-ci.org/gruppe-adler/grad_trenches">
-        <img src="https://travis-ci.org/gruppe-adler/grad_trenches.svg?branch=master" alt="Build status">
+    <a href="https://github.com/gruppe-adler/grad_trenches/actions/workflows/ci.yml">
+        <img src="https://github.com/gruppe-adler/grad_trenches/actions/workflows/ci.yml/badge.svg" alt="Build status">
     </a>
 </p>
 
