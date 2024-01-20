@@ -8,14 +8,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
-    - name: Build with HEMTT
-      uses: gruppe-adler/action-release-with-hemtt@1.1.2
-      id: build
+    - name: Setup HEMTT
+      uses: arma-actions/hemtt@v1
 
-    - name: Upload artifact
-      uses: actions/upload-artifact@1.0.0
+    - name: Build
+      run: hemtt build
+
+    - name: Rename build folder
+      run: mv .hemttout/build .hemttout/@grad_trenches
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
       with:
-        name: 'grad_trenches'
-        path: ${{ steps.build.outputs.zip_path }}
+        name: grad-trenches-${{ github.sha }}
+        path: .hemttout/@*
