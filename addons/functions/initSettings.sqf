@@ -1,3 +1,5 @@
+#include "script_component.hpp"
+
 // Common Settings
 [QGVAR(allowDigging), "CHECKBOX", [LLSTRING(settingAllowDigging_displayName), LLSTRING(settingAllowDigging_tooltip)], LLSTRING(settingCategory), true, true] call CBA_fnc_addSetting;
 [QGVAR(allowCamouflage), "CHECKBOX", [LLSTRING(settingAllowCamouflage_displayName), LLSTRING(settingAllowCamouflage_tooltip)], LLSTRING(settingCategory), true, true] call CBA_fnc_addSetting;
