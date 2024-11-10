@@ -40,4 +40,4 @@ _trench setVariable [QGVAR(trenchMapMarker), _marker, true];
 _trench setVariable [QGVAR(trenchSide), _friendlySide, true];
 
 // JIP compatible hide marker for enemies
-_trench remoteExec [QGVAR(setMarkerVisible), 0, _trench];
+_trench remoteExec [QFUNC(setMarkerVisible), 0, _trench];
